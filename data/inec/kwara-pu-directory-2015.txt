@@ -1,0 +1,3699 @@
+FEDERAL REPUBLIC OF NIGERIA
+Independent National
+Electoral Commission
+(INEC)
+DIRECTORY OF POLLING UNITS
+KWARA 	STATE
+Revised January 2015
+
+-- 1 of 107 --
+
+DISCLAIMER
+The contents of this Directory should not be referred
+to 	as 	a 	legal 	or 	administrative 	document 	for 	the
+purpose 	of 	administrative 	boundary 	or 	political
+claims. 	Any 	error 	of 	omission 	or 	inclusion 	found
+should be brought to the attention of the Independent
+National Electoral Commission.
+Page i	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 2 of 107 --
+
+INEC Nigeria 	Directory of Polling Units 	Revised January 2015 	Page ii
+Table of Contents
+Pages
+Disclaimer............................................................................... 	i
+Table of Contents ……………………………………………….. 	ii
+Foreword................................................................................. 	iv
+Acknowledgement................................................................... 	v
+Summary of Polling Units........................................................ 	1
+LOCAL GOVERNMENT AREAS
+Asa…………………………………………………………. 	2-7
+Baruten ……………………………………………………. 	8-14
+Edu…………………………………………………………. 	15-20
+Ekiti…………………………………………………………. 	21-24
+Ifelodun…………………………………………………….. 	25-34
+Ilorin East………………………………………………….. 	35-44
+Ilorin South………………………………………………… 	45-52
+Ilorin West…………………………………………………. 	53-63
+Irepodun…………………………………………………… 	64-69
+Isin………………………………………………………….. 	70-73
+Kaiama…………………………………………………….. 	74-77
+Moro………………………………………………………... 	78-83
+Offa…………………………………………………………. 	84-88
+Oke-Ero…………………………………………………….. 	89-92
+Oyun……………………………………………………… 	93-97
+Pategi………………………………………………………. 	98-101
+
+-- 3 of 107 --
+
+Page iii	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 4 of 107 --
+
+FOREWARD
+Access to information for Nigerians is an essential plank in our democratic
+march and a condition for a virile electoral process. As part of the preparations
+for 	the 	2015 	General 	Elections, 	the 	Commission 	has 	demonstrated 	its
+commitment to informing stakeholders and the general public through a range
+of activities, and engagements with different strata of society with the aim of
+fostering confidence and participation in the continuing effort to build an
+enduring democratic culture.
+To increase eligible citizens’ participation in exercising their franchise, polling
+units within, or very close to the premises of politicians, traditional rulers,
+religious bodies, state and local authorities, private properties, etc., as well as
+in open spaces, are relocated to public buildings, preferably public schools.
+Thus, the publication of the 2015 Polling Unit Directory (updated January
+2015) by the Commission is another step towards providing valid information
+to the stakeholders and the public alike.
+The Directory lists the Local Government Areas (LGAs) of each State or Area
+Councils (ACs) of the Federal Capital Territory (FCT), Registration Areas
+(RAs) of States or Wards of the FCT, as well as polling units contained
+therein.
+This Directory wiII not only help to address the Polling Unit information needs
+of 	political 	parties, 	developmental 	partners, 	Civil 	Society 	Organizations,
+Ministries, Departments, Agencies, the Press and other Stakeholders, but also
+serve as a reference document for research and information.
+This publication is also designed to help electoral officials irrespective of
+where they are deployed to effectively perform their duties.
+I hope that the Directory will also help to influence and educate election
+officials in the administration of elections in the country.
+Prof. Attahiru M. Jega, OFR
+Chairman
+Independent National Electoral Commission
+Federal Republic of Nigeria
+Page iv	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 5 of 107 --
+
+ACKNOWLEDGEMENT
+In revising the Directory of Polling Units, cognizance has been taken of
+the relocation of existing polling units from unsuitable and unapproved
+locations. The decision by the Commission was taken in its efforts to
+further ensure transparency in the electoral process and provide a level
+playing field for free and fair elections that are credible and acceptable to
+all.
+The Delimitation Division of the Electoral Operations Department has
+worked very hard, together with the Electoral Operations Departments of
+each of the thirty-six (36) States and the Federal Capital Territory, to
+significantly improve the accuracy of this Directory.
+The Commission would like to express its profound gratitude to the
+International Foundation for Electoral Systems (IFES) as well as the
+National Elections Commission (NEC) of Liberia for providing technical
+assistance, 	through 	the 	provision 	of 	a 	specialist 	in 	Geographic
+Information 	System 	(GIS) 	and 	Data 	Management, 	Mr. 	Archie 	A.A.
+Delaney, Sr., who played a major role in the successful completion of
+this 	project. 	The 	fact 	that 	the 	Directory 	was 	generated 	from 	the
+Delimitation Database being constructed is very significant and signals a
+paradigm shift in the way the Commission undertakes its major activities.
+Finally, the support of the Commission, especially the Chairman, Prof.
+Attahiru 	M. 	Jega, 	OFR, 	as 	well 	as 	the 	Members 	of 	the 	Electoral
+Operations and Logistics Committee (EOLC), indeed all other National
+Commissioners, is highly appreciated.
+Engr. Dr. Nuru A. Yakubu, OON
+Chairman, EOLC
+Independent National Electoral Commission
+Page v	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 6 of 107 --
+
+Name 	Code
+KWARA STATE
+THE LIST OF LOCAL GOVERNMENT AREAS
+# of PUs	# of RAs
+01	ASA 	17 	93
+02	BARUTEN 	11 	132
+03	EDU 	10 	111
+04	EKITI 	10 	66
+05	IFELODUN 	18 	197
+06	ILORIN EAST 	12 	218
+07	ILORIN SOUTH 	11 	158
+08	ILORIN WEST 	12 	268
+09	IREPODUN 	11 	133
+10	ISIN 	11 	68
+11	KAIAMA 	10 	56
+12	MORO 	17 	95
+13	OFFA 	12 	86
+14	OKE‐ERO 	10 	63
+15	OYUN 	11 	69
+16	PATEGI 	10 	59
+TOTAL: 	16 	193 	1,872
+Page 1 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 7 of 107 --
+
+KWARA STATE
+ASA
+Code: 01
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	YOWERE/SOSOKI 	4
+02	ADIGBONGBO/AWE/ORIMARO 	5
+03	ELEBUE/AGBONA/FATA 	7
+04	ONIRE/ODEGIWA/ALAPA 	7
+05	YOWERE II/OKEWERU 	5
+06	GAMBARI/AIYEKALE 	2
+07	EFUE/BERIKODO 	3
+08	OWODE/GBOGUN 	4
+09	BALLAH/OTTE 	11
+10	OGBONDOROKO/REKE 	4
+11	AGO‐OJA/OSHIN/SAPATI/LADUBA 	8
+12	AFON 	5
+13	ILA‐OJA 	9
+14	OGELE 	4
+15	BUDO‐EGBA 	7
+16	OKESHO 	2
+17	ODO‐ODE/ABOTO 	6
+TOTAL: 	17 	93
+Page 2 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 8 of 107 --
+
+KWARA STATE
+ASA 	Code: 	01	LGA:
+Yowere/Sosoki 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+SOSOKI L G E A SCH 	001
+ONIYEYE OPEN SPACE 	002
+LAODU 1 OPEN SPACE 	003
+IDI‐OSE L.G.E.A SCH 	004
+TOTAL PUs: 	4
+Adigbongbo/Awe/Orimaro 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ADIGBONGBO L.G.E.A SCH 	001
+AWE L.G.E.A SCH 	002
+AFO‐OJA L.G.E.A SCH 	003
+YEDE/ORIMARO L.G.E.A SCH 	004
+TIRO L.G.E.A SCH 	005
+TOTAL PUs: 	5
+Elebue/Agbona/Fata 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OJA‐IYA L.G.E.A SCH 	001
+AGBONA L.G.E.A SCH 	002
+MEGIDA EDUNJO OPEN SPACE I 	003
+MEGIDA EDUNJO OPEN SPACE II 	004
+OMOJAMO DISPENSARY 	005
+IGBOROKO L.G.E.A SCH 	006
+BUDO TUNTUN OPEN SPACE 	007
+TOTAL PUs: 	7
+Onire/Odegiwa/Alapa 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ALAPA L.G.E.A SCH 	001
+KONDORO L.G.E.A SCH 	002
+ODE‐GIWA MARKET 	003
+ONIKEKE L.G.E.A SCH 	004
+ONIRE ALHAJI OPEN SPACE 	005
+LABITAN L.G.E.A SCH 	006
+ALAPA KORO OPEN SPACE 	007
+TOTAL PUs: 	7
+Page 3 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 9 of 107 --
+
+KWARA STATE
+ASA 	Code: 	01	LGA:
+Yowere II/Okeweru 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ALAPETE DISPENSARY 	001
+BAKASE L.G.E.A SCH 	002
+OLUPO‐IJANA L.G.E.A SCH 	003
+ABIOWA L.G.E.A SCH 	004
+ABEMI L.G.E.A SCH 	005
+TOTAL PUs: 	5
+Gambari/Aiyekale 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+DONGARI ETILE L.G.E.A SCH 	001
+SOKOTO L.G.E.A SCH 	002
+TOTAL PUs: 	2
+Efue/Berikodo 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+EFUE L.G.E.A SCH 	001
+BERIKODO L.G.E.A SCH 	002
+GBENAGBENA L.G.E.A SCH 	003
+TOTAL PUs: 	3
+Owode/Gbogun 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OWODE L.G.E.A.SCH 	001
+AJUWON L.G.E.A.SCH 	002
+GBOGUN L.G.E.A.SCH 	003
+ELERE/TAFATAFA L.G.E.A.SCH 	004
+TOTAL PUs: 	4
+Page 4 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 10 of 107 --
+
+KWARA STATE
+ASA 	Code: 	01	LGA:
+Ballah/Otte 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OTTE L.G.E.A.SCH 	001
+BUDO ARE L.G.E.A.SCH 	002
+BALLAH L.G.E.A.SCH 	003
+ARAROMI L.G.E.A.SCH 	004
+EYENKORIN L.G.E.A.SCH 	005
+OTTE MARKET 	006
+OTTE MATERNITY 	007
+AREA COURT BALLAH 	008
+GBAGBA L.G.E.A.SCH 	009
+ILE ABE OTTE OPEN SPACE 	010
+LASOJU OPEN SPACE 	011
+TOTAL PUs: 	11
+Ogbondoroko/Reke 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+REKE L.G.E.A.SCH 	001
+OGBONDOROKO DISPENSARY 	002
+OGBONDOROKO L.G.E.A.SCH 	003
+OGBONDOROKO A.I.S.S 	004
+TOTAL PUs: 	4
+Ago‐Oja/Oshin/Sapati/Laduba 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LADUBA L.G.E.A.SCH 	001
+LADUBA AREA COURT I 	002
+LADUBA AREA COURT II 	003
+ABAYAWO L.G.E.A.SCH 	004
+SAPATI‐ILE L.G.E.A.SCH 	005
+AGO‐OJA DISPENSARY 	006
+BUDO AGUN OPEN SPACE 	007
+TERU OPEN SPACE 	008
+TOTAL PUs: 	8
+Page 5 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 11 of 107 --
+
+KWARA STATE
+ASA 	Code: 	01	LGA:
+Afon 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AFON L.G.E.A.SCH 	001
+AFON AREA COURT 	002
+AFON C.D OFFICE 	003
+KANKAN L.G.E.A.SCH 	004
+IGBOROKO L.G.E.A.SCH 	005
+TOTAL PUs: 	5
+Ila‐Oja 	Code: 13
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILA OJA L.G.E.A.SCH 	001
+AJELANWA L.G.E.A.SCH 	002
+ABOTO‐ALFA L.G.E.A.SCH 	003
+FOKO L.G.E.A.SCH 	004
+OGUNTOYINBO L.G.E.A.SCH 	005
+ONIGUGURU L.G.E.A.SCH 	006
+OLORO L.G.E.A.SCH 	007
+SAPATI OKO L.G.E.A.SCH 	008
+ONIYERE L.G.E.A.SCH 	009
+TOTAL PUs: 	9
+Ogele 	Code: 14
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OGELE L.G.E.A.SCH 	001
+OGELE DISPENSARY 	002
+PAMPO L.G.E.A.SCH 	003
+ALADERE MOGAJI L.G.E.A.SCH 	004
+TOTAL PUs: 	4
+Page 6 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 12 of 107 --
+
+KWARA STATE
+ASA 	Code: 	01	LGA:
+Budo‐Egba 	Code: 15
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ST KELVIN L.G.E.A.SCH I 	001
+ST KELVIN L.G.E.A.SCH II 	002
+ADABATA L.G.E.A.SCH 	003
+KOROKE L.G.E.A.SCH 	004
+ONIGBO L.G.E.A.SCH 	005
+ELEMI‐NLA L.G.E.A.SCH 	006
+AGBOYI‐NLA L.G.E.A.SCH 	007
+TOTAL PUs: 	7
+Okesho 	Code: 16
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKESHO L.G.E.A.SCH 	001
+AFEYIN L.G.E.A.SCH 	002
+TOTAL PUs: 	2
+Odo‐Ode/Aboto 	Code: 17
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ABOTO L.G.E.A.SCH I 	001
+ABOTO L.G.E.A.SCH II 	002
+BUDO‐ARO L.G.E.A.SCH 	003
+ODO‐ODE L.G.E.A.SCH 	004
+OMOLE L.G.E.A.SCH 	005
+OWODE ALAGBON L.G.E.A.SCH 	006
+TOTAL PUs: 	6
+Page 7 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 13 of 107 --
+
+KWARA STATE
+BARUTEN
+Code: 02
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	BORIYA/SHIYA 	13
+02	GURE/GWASORO 	16
+03	GWEDEBERERU/BABANE 	4
+04	GWANARA 	15
+05	ILESHA 	11
+06	KENU/TABERU 	11
+07	KPAURA/YAKIRU 	11
+08	KIYORU/BWEN 	13
+09	OKUTA 	16
+10	SHINAWU/TUNBUYAN 	7
+11	YASHIKIRA 	15
+TOTAL: 	11 	132
+Page 8 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 14 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Boriya/Shiya 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BORIYA L.G.E.A.SCH 	001
+BORIYA SABO AREA 	002
+DANKORU OPEN SPACE I 	003
+DANKORU OPEN SPACE II 	004
+OGAMUE L.G.E.A.SCH 	005
+BUSHIPARU L.G.E.A.SCH 	006
+BUSHIRU L.G.E.A.SCH 	007
+SHIYA L.G.E.A.SCH 	008
+GBIRIBU/GBAYINA 	009
+KPALURU L.G.E.A.SCH 	010
+SHIYA OLD MARKET 	011
+SHIYA NEW MARKET 	012
+TUNDUN WADA OPEN SPACE SHIYA 	013
+TOTAL PUs: 	13
+Gure/Gwasoro 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MONRE L.G.E.A.SCH 	001
+MOSHI L.G.E.A.SCH 	002
+BWEREGURU L.G.E.A.SCH 	003
+KURABARU L.G.E.A.SCH 	004
+TUGA L.G.E.A.SCH 	005
+GWASORO L.G.E.A.SCH 	006
+GWANE L.G.E.A.SCH 	007
+SABO SARE 	008
+YANRI L.G.E.A.SCH 	009
+AJEGUNLE/GURE NEW MRKET 	010
+BANIKANI/GURE OPEN SPACE 	011
+GURE OLD MARKET 	012
+GURE L.G.E.A.SCH 	013
+SINAGURU L.G.E.A.SCH 	014
+KOSUBOSU AREA COURT 	015
+KOSUBOSU L.G.E.A.SCH 	016
+TOTAL PUs: 	16
+Page 9 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 15 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Gwedebereru/Babane 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GUKONBU MARKET 	001
+WAGURU MARKET 	002
+BABANE L.G.E.A.SCH 	003
+GWEDEBERERU L.G.E.A.SCH 	004
+TOTAL PUs: 	4
+Gwanara 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GOBBO L.G.E.A.SCH 	001
+DOKONU GOBBO OPEN SPACE 	002
+MARESUNOKPARU L.G.E.A.SCH 	003
+MAMUNEKPERU L.G.E.A.SCH 	004
+KIYAYERU L.G.E.A.SCH 	005
+MUNKO L.G.E.A.SCH 	006
+KUBURE L.G.E.A.SCH 	007
+GBIRINU/NINGURUME L.G.E.A.SCH 	008
+NINGURUME OLD MARKET 	009
+NINGURUME L.G.E.A.SCH 	010
+GINAWARA NEW MARKET 	011
+GWANARA L.G.E.A.SCH 	012
+GWANARA CENTRAL OFFICE I 	013
+GWANARA CENTRAL OFFICE II 	014
+GWANARA L.G.E.A.SCH 	015
+TOTAL PUs: 	15
+Page 10 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 16 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Ilesha 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KPAKOTORU L.G.E.A.SCH 	001
+YAKIBURARU MARKET 	002
+KOSOMONO L.G.E.A.SCH 	003
+NANORU L.G.E.A.SCH 	004
+ILESHA AREA COURT 	005
+ILESHA SABO AREA I 	006
+ILESHA SABO AREA II 	007
+ILESHA T.V CENTRE I 	008
+ILESHA T.V CENTRE II 	009
+ILESHA L.G.E.A.SCH 	010
+ILESHA DISPENSARY 	011
+TOTAL PUs: 	11
+Kenu/Taberu 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+NIKKIKPERU L.G.E.A.SCH 	001
+BAAH L.G.E.A.SCH 	002
+GANKOTORU L.G.E.A.SCH 	003
+YANBEREKU L.G.E.A.SCH 	004
+GBENGBERERU L.G.E.A.SCH 	005
+YAKPARU L.G.E.A.SCH 	006
+SHEYE L.G.E.A.SCH 	007
+KENU NEW MARKET 	008
+KENU L.G.E.A.SCH 	009
+TABERU OLD MARKET 	010
+TABERU L.G.E.A.SCH 	011
+TOTAL PUs: 	11
+Page 11 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 17 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Kpaura/Yakiru 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GBONGBORU L.G.E.A.SCH 	001
+DOGERE L.G.E.A.SCH 	002
+KONTUBARU L.G.E.A.SCH I 	003
+KONTUBARU L.G.E.A.SCH II 	004
+MUNDURO L.G.E.A.SCH 	005
+AYOO L.G.E.A.SCH 	006
+WONKORU L.G.E.A.SCH 	007
+KERO L.G.E.A.SCH 	008
+BEKIA KERO 	009
+YAKIRU MARKET 	010
+YAKIRU L.G.E.A.SCH 	011
+TOTAL PUs: 	11
+Kiyoru/Bwen 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BIOGBERU L.G.E.A.SCH I 	001
+BIOGBERU L.G.E.A.SCH II 	002
+DAWIRU L.G.E.A.SCH 	003
+BUDO AIKI L.G.E.A.SCH 	004
+KIYORU L.G.E.A.SCH 	005
+BOROBIYE L.G.E.A.SCH 	006
+BWEN L.G.E.A.SCH 	007
+BUKURO L.G.E.A.SCH 	008
+GBABE MARKET 	009
+GBABE L.G.E.A.SCH 	010
+DAMERA L.G.E.A.SCH 	011
+SINDIBURO MARKET 	012
+KOBIARO MARKET 	013
+TOTAL PUs: 	13
+Page 12 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 18 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Okuta 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+TENGE L.G.E.A.SCH 	001
+BERO L.G.E.A.SCH 	002
+TEMIDIRE/AROGURU L.G.E.A.SCH 	003
+TEU L.G.E.A.SCH 	004
+FONFON L.G.E.A.SCH 	005
+BANKUBU L.G.E.A.SCH 	006
+TENBONU L.G.E.A SCH 	007
+KABODONORU L.G.E.A SCH 	008
+GBANA GURU L.G.E.A SCH 	009
+OKUTA GONGO BORU MARKET 	010
+OKUTA GOROBANI MARKET 	011
+OKUTA BARIKE PEOPLES' BANK 	012
+OKUTA BAPTIST L.G.E.A SCH 	013
+OKUTA SANGO MARKET 	014
+OKUTA CENTRAL L.G.E.A SCH 	015
+OKUTA NASARAWA NEW MARKET 	016
+TOTAL PUs: 	16
+Shinawu/Tunbuyan 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+TEBETABERU MARKET 	001
+TUNBUYAN L.G.E.A SCH 	002
+BUKARU L.G.E.A SCH 	003
+SUBAYO L.G.E.A SCH 	004
+SHINAWU OLD MARKET I 	005
+SHINAWU OLD MARKET II 	006
+SHINAWU L.G.E.A SCH 	007
+TOTAL PUs: 	7
+Page 13 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 19 of 107 --
+
+KWARA STATE
+BARUTEN 	Code: 	02	LGA:
+Yashikira 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+DOGARI MARKET 	001
+WODORA L.G.E.A SCH 	002
+KARONJI L.G.E.A SCH 	003
+GWETTE L.G.E.A SCH 	004
+BWERU/GANDO L.G.E.A SCH 	005
+SHINATOKO L.G.E.A SCH 	006
+KUBURUFU L.G.E.A SCH 	007
+KENUGBE MARKET 	008
+SEKUGBE MARKET 	009
+YASHIKIRA OLD MARKET 	010
+YASHIKIRA L.G.E.A SCH 	011
+CHIKANDA OLD MARKET 	012
+CHIKANDA L.G.E.A SCH 	013
+CHIKANDA SANGO AREA 	014
+GWETTE SAAMU OPEN SPACE 	015
+TOTAL PUs: 	15
+Page 14 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 20 of 107 --
+
+KWARA STATE
+EDU
+Code: 03
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	LAFIAGI I 	11
+02	LAFIAGI II 	11
+03	LAFIAGI III 	12
+04	LAFIAGI IV 	13
+05	TSARAGI I 	10
+06	TSARAGI II 	12
+07	TSARAGI III 	13
+08	TSONGA I 	10
+09	TSONGA II 	9
+10	TSONGA III 	10
+TOTAL: 	10 	111
+Page 15 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 21 of 107 --
+
+KWARA STATE
+EDU 	Code: 	03	LGA:
+Lafiagi I 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH SOMASUN I 	001
+L.G.E.A SCH SOMASUN II 	002
+L.G.E.A SCH SOMASUN III 	003
+L.G.E.A SCH TAKO‐GABI I 	004
+L.G.E.A SCH TAKO‐GABI II 	005
+OPEN SPACE EGBAN MAKUN AREA 	006
+OPEN SPACE EGBAN NAFENE AREA 	007
+OPEN SPACE EGBAN BARAKA AREA 	008
+OPEN SPACE LAFIGYAMI AREA 	009
+OPEN SPACE EGBAN LIORAN SWASUN 	010
+MAGISTRATE COURT LAFIAGI 	011
+TOTAL PUs: 	11
+Lafiagi II 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH ABAGYAMA I 	001
+L.G.E.A SCH ABAGYAMA II 	002
+LOCAL GOVT DISPENSARY 	003
+AREA COURT LAFIAGI 	004
+L.G.E.A SCH CENTRAL I 	005
+L.G.E.A SCH CENTRAL II 	006
+OPEN SPACE MANKITABU 	007
+OPEN SPACE EGBAN NDAMARAKI 	008
+L.G.E.A SCH KOKODO 	009
+CO‐OPERATIVE STORE 	010
+OPEN SPACE EGBAN NDEJI AREA 	011
+TOTAL PUs: 	11
+Page 16 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 22 of 107 --
+
+KWARA STATE
+EDU 	Code: 	03	LGA:
+Lafiagi III 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH ZAMBUFU 	001
+L.G.E.A SCH GUYEDADI 	002
+L.G.E.A SCH GUYE DOKO 	003
+L.G.E.A SCH GBALE 	004
+L.G.E.A SCH GANAGAGI 	005
+L.G.E.A SCH KPOTUNKO 	006
+L.G.E.A SCH YAWU 	007
+L.G.E.A SCH GBUGBU 	008
+VET OFFICE GAGARA 	009
+L.G.E.A SCH SABAGINA 	010
+L.G.E.A SCH CHEKO SHAABAN 	011
+L.G.E.A SCH NDEJI 	012
+TOTAL PUs: 	12
+Lafiagi IV 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE LUMABA VILLAGE 	001
+L.G.E.A SCH KPASHA 	002
+L.G.E.A SCH LIPATA 	003
+L.G.E.A SCH PUTA 	004
+L.G.E.A SCH GONDANGI 	005
+L.G.E.A SCH EDOGI‐DOKUN I 	006
+L.G.E.A SCH EDOGI‐DOKUN II 	007
+L.G.E.A SCH DZARA 	008
+OPEN SPACE FUNTI VILLAGE 	009
+L.G.E.A SCH EKKO 	010
+L.G.E.A SCH ESUN 	011
+L.G.E.A SCH TSWAKO 	012
+L.G.E.A SCH KPANKPARAGI 	013
+TOTAL PUs: 	13
+Page 17 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 23 of 107 --
+
+KWARA STATE
+EDU 	Code: 	03	LGA:
+Tsaragi I 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH KANGE 	001
+L.G.E.A SCH PATIKO 	002
+L.G.E.A SCH DADA 	003
+L.G.E.A SCH ESANZHI 	004
+L.G.E.A SCH KPANDARAGI 	005
+L.G.E.A SCH BATAKPAN 	006
+L.G.E.A SCH JIYADE 	007
+L.G.E.A SCH GBAGUTA 	008
+L.G.E.A SCH NINGUBA 	009
+OPEN SPACE MAWOKPAN VILLAGE 	010
+TOTAL PUs: 	10
+Tsaragi II 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LOCAL GOVT DISPENSARY BACITA I 	001
+LOCAL GOVT DISPENSARY BACITA II 	002
+OPEN SPACE PATI‐TUNKU AREA 	003
+UMCA PRIMARY SCH BACITA 	004
+LOCAL GOVT SUB OFFICE BACITA 	005
+LOCAL GOVT DISPENSARY BACITA VILLAGE 	006
+L.G.E.A SCH MANFU 	007
+L.G.E.A SCH BELLE 	008
+L.G.E.A SCH FANAGU 	009
+L.G.E.A SCH SHISHITA 	010
+L.G.E.A SCH EGBANGI 	011
+L.G.E.A SCH LEALEA WORO 	012
+TOTAL PUs: 	12
+Page 18 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 24 of 107 --
+
+KWARA STATE
+EDU 	Code: 	03	LGA:
+Tsaragi III 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+DISTRICT OFFICE TSARAGI I 	001
+DISTRICT OFFICE TSARAGI II 	002
+L.G.E.A SCH TSARAGI 	003
+LOCAL GOVT DISPENSARY TSARAGI 	004
+L.G.E.A SCH BOKUNGI 	005
+L.G.E.A SCH PATIDZURU 	006
+L.G.E.A SCH KOSUMUNU 	007
+OPEN SPACE OLD GARAGE TSARAGI 	008
+L.G.E.A SCH DUBANGI 	009
+L.G.E.A SCH TSAKPATA 	010
+OPEN SPACE MAYARA AREA TSARAGI 	011
+OPEN SPACE KPATAYARU AREA 	012
+OPEN SPACE TSWAATAFU AREA 	013
+TOTAL PUs: 	13
+Tsonga I 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+DISTRICT OFFICE TSONGA 	001
+LOCAL GOVT DISPENSARY TSONGA 	002
+L.G.E.A SCH KUCHITA 	003
+L.G.E.A SCH EMI‐NDEJI I 	004
+L.G.E.A SCH EMI‐NDEJI II 	005
+L.G.E.A SCH BONZO I 	006
+L.G.E.A SCH BONZO II 	007
+OPEN SPACE YIMAGI VILLAGE 	008
+OPEN SPACE KUSOGI VILLAGE 	009
+OPEN SPACE KPATAKO VILLAGE 	010
+TOTAL PUs: 	10
+Page 19 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 25 of 107 --
+
+KWARA STATE
+EDU 	Code: 	03	LGA:
+Tsonga II 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH DUMAGI I 	001
+L.G.E.A SCH DUMAGI II 	002
+L.G.E.A SCH GBORO 	003
+L.G.E.A SCH TSPATA 	004
+L.G.E.A SCH PATI OKUN 	005
+L.G.E.A SCH KANKO 	006
+L.G.E.A SCH SINASUN 	007
+L.G.E.A SCH MANUGA 	008
+L.G.E.A SCH TSUFENE 	009
+TOTAL PUs: 	9
+Tsonga III 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH MAYAKI 	001
+L.G.E.A SCH FAIGI 	002
+MARKET SQ FAIGI 	003
+L.G.E.A SCH BIDUGI 	004
+L.G.E.A SCH SANCHITAGI I 	005
+L.G.E.A SCH SANCHITAGI II 	006
+L.G.E.A SCH OGUDU I 	007
+L.G.E.A SCH OGUDU II 	008
+L.G.E.A SCH TADA 	009
+L.G.E.A SCH NDAKANSA 	010
+TOTAL PUs: 	10
+Page 20 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 26 of 107 --
+
+KWARA STATE
+EKITI
+Code: 04
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	ERUKU 	7
+02	ISAPA 	6
+03	KORO 	3
+04	OBBO‐AIYEGGUNLE I 	5
+05	OBBO‐AIYEGGUNLE II 	5
+06	OBBO‐ILE 	5
+07	OSI I 	8
+08	OSI II 	6
+09	OPIN 	13
+10	OKE‐OPIN/ETAN 	8
+TOTAL: 	10 	66
+Page 21 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 27 of 107 --
+
+KWARA STATE
+EKITI 	Code: 	04	LGA:
+Eruku 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ST CYPRIAN SCH. ERUKU I 	001
+ST CYPRIAN SCH. ERUKU II 	002
+MARKET CENTRE, ERUKU 	003
+OPEN SPACE OKE‐OGI, ERUKU 	004
+OPEN SPACE ODOLOMU , ERUKU 	005
+CO‐OPERATIVE L.G.E.A SCH ERUKU I 	006
+CO‐OPERATIVE L.G.E.A SCH ERUKU II 	007
+TOTAL PUs: 	7
+Isapa 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ODO‐AGO ISAPA 	001
+L.G.E.A SCH ISAPA 	002
+OPEN SPACE IBERIKEDO ISAPA 	003
+OPEN SPACE ODO‐ITAN ISAPA 	004
+OPEN SPACE OKE‐IPO ISAPA 	005
+OPEN SPACE OKESA/MISSION 	006
+TOTAL PUs: 	6
+Koro 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH KORO 	001
+HEALTH CENTRE KORO 	002
+MARKET CENTRE KORO 	003
+TOTAL PUs: 	3
+Obbo‐Aiyeggunle I 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE EKELA 	001
+OPEN SPACE ILEMESIN 	002
+OPEN SPACE AJIU 	003
+OPEN SPACE OBBO‐OKE 	004
+OPEN SPACE OKE‐OWA 	005
+TOTAL PUs: 	5
+Page 22 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 28 of 107 --
+
+KWARA STATE
+EKITI 	Code: 	04	LGA:
+Obbo‐Aiyeggunle II 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ILEMO OBBO‐AIYEGUNLE I 	001
+OPEN SPACE IPETU OBBO‐AIYEGUNLE II 	002
+OPEN SPACE ILAWE I OBBO‐AIYEGUNLE 	003
+OPEN SPACE ILAWE II OBBO‐AIYEGUNLE 	004
+OPEN SPACE IWODI OBBO‐AIYEGUNLE 	005
+TOTAL PUs: 	5
+Obbo‐Ile 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+TOWN HALL,OBBO‐ILE 	001
+MARKET CENTRE, OBBO‐ILE 	002
+OPEN SPACE ILAWE OBBO‐ILE 	003
+ST LUKE'S LGEA OBBO‐ILE 	004
+OPEN SPACE ORA OBBO‐ILE 	005
+TOTAL PUs: 	5
+Osi I 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+S.D.A SCH, OSI 	001
+EKITI LOCAL GOVT VOCATIONAL CENTRE, OSI 	002
+NEW SHOPPING COMPLEX, OSI 	003
+OPEN SAPACE ILE OHUN, OSI 	004
+MAGISTRATE COURT, OSI 	005
+NEW POST OFFICE, OSI 	006
+AGBARA MARKET, OSI 	007
+TOWN HALL, OSI 	008
+TOTAL PUs: 	8
+Osi II 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ST BRIDGE'S SCH, OSI 	001
+AREA COURT, OSI 	002
+OPEN SPACE ODORE‐OKE, OSI 	003
+OLD POSTAL AGENCY 	004
+COMM LGEA SCH OSI 	005
+OPEN SPACE IGBO‐OGO, OSI 	006
+TOTAL PUs: 	6
+Page 23 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 29 of 107 --
+
+KWARA STATE
+EKITI 	Code: 	04	LGA:
+Opin 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH, IKERIN I 	001
+L.G.E.A SCH, IKERIN II 	002
+L.G.E.A SCH, ISOLO‐OPIN I 	003
+L.G.E.A SCH, ISOLO‐OPEN II 	004
+L.G.E.A SCH, EPE‐OPIN I 	005
+L.G.E.A SCH, EPE‐OPIN II 	006
+L.G.E.A SCH, ISARE I 	007
+L.G.E.A SCH, ISARE II 	008
+L.G.E.A SCH AJUBA 	009
+HEALTH CENTRE, OWA OTUN 	010
+L.G.E.A SCH, IDERA 	011
+L.G.E.A SCH, ARAROMI OPIN 	012
+OPEN SPACE AARE 	013
+TOTAL PUs: 	13
+Oke‐Opin/Etan 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+CENTRAL L.G.E.A SCH, OKE‐OPIN 	001
+TOWN HALL, OKE‐OPIN 	002
+OPEN SPACE OLOWI'S COMPD, OKE‐OPIN 	003
+OPEN SPACE ADETIFA, OKE‐OPIN 	004
+HEALTH CENTRE, OKE‐OPIN 	005
+ST PATRICK L.G.E.A SCH ETAN 	006
+MARKET CENTRE, ETAN 	007
+OPEN SPACE HEALTH CENTRE, ETAN 	008
+TOTAL PUs: 	8
+Page 24 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 30 of 107 --
+
+KWARA STATE
+IFELODUN
+Code: 05
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	OKE‐ODE I 	11
+02	OKE‐ODE II 	11
+03	OKE‐ODE III 	9
+04	ORA 	10
+05	ILE‐IRE 	19
+06	AGUNJIN 	8
+07	ORO‐AGO 	15
+08	OMUPO 	18
+09	SHARE I 	8
+10	SHARE II 	9
+11	SHARE III 	9
+12	SHARE IV 	8
+13	SHARE V 	10
+14	IGBAJA I 	13
+15	IGBAJA II 	9
+16	IGBAJA III 	10
+17	IDOFIAN I 	9
+18	IDOFIAN II 	11
+TOTAL: 	18 	197
+Page 25 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 31 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Oke‐Ode I 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECWA SCH OKE‐ODE 	001
+ARABIC SCH OKE‐ODE 	002
+COMM SCH OKE‐ODE 	003
+TOWN HALL OKE‐ODE 	004
+OKE AGO OKE‐ODE 	005
+MATERNITY OKE‐ODE 	006
+OPEN SPACE IDIAPA OKE‐ODE 	007
+ILE ELEMOSHO OKE‐ODE 	008
+ECWA SCH OKE‐ODE 	009
+LOCAL GOVT DISPENSARY 	010
+QURANIC SCH OKE‐ODE 	011
+TOTAL PUs: 	11
+Oke‐Ode II 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECWA SCH SHAGBE I 	001
+ECWA SCH SHAGBE II 	002
+ECWA SCH AGBEE I 	003
+ECWA SCH AGBEE II 	004
+COMM SCH AJEGUNLE 	005
+COMM SCH BANKOLE 	006
+COMM SCH OLOGORUN 	007
+MARKET SQUARE ALAWON ALASORO 	008
+COMM SCH FAMOLE 	009
+COMM SCH ALABE‐OJA 	010
+COMM SCH OLOGOMO 	011
+TOTAL PUs: 	11
+Page 26 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 32 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Oke‐Ode III 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH ALADE 	001
+COMM SCH LABAKA IDERA 	002
+COMM SCH ASUNGBALE 	003
+COMM SCH DABU OROKI 	004
+COMM SCH ELEIYELE 	005
+ECWA SCH LABAKA‐OJA 	006
+ECWA SCH LABAKA‐OJA 	007
+COMM SCH OMI‐ARO 	008
+COMM SCH GBEDE 	009
+TOTAL PUs: 	9
+Ora 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECWA SCH ORA 	001
+OPEN SPACE ARAROMI OKE 	002
+COMM SCH OKE‐AYO 	003
+MARKET SQUARE ORA 	004
+COMM SCH MANASARA 	005
+COMM SCH ADIGUN 	006
+OPEN SPACE BALOGUN VILLAGE 	007
+COMM SCH DESENI 	008
+COMM SCH AIREKE 	009
+COMM SCH MAGBON 	010
+TOTAL PUs: 	10
+Page 27 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 33 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Ile‐Ire 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH BABANLA 	001
+COUNCIL HALL BABANLA 	002
+OPEN SPACE ILENDEJI BABANLA I 	003
+OPEN SPACE ILENDEJI BABANLA II 	004
+LOCAL GOVT DISPENSARY OKE‐OYAN 	005
+ECWA SCH ALABE I 	006
+ECWA SCH ALABE II 	007
+ECWA SCH IDERA I 	008
+ECWA SCH IDERA II 	009
+COMM SCH IKOSIN 	010
+COMM SCH OWODE I 	011
+COMM SCH OWODE II 	012
+TOWN HALL KAJOLA 	013
+COMM SCH OWA ONIRE 	014
+COMM SCH OREKE 	015
+COMM SCH GANMU 	016
+COMM SCH BUDOIDOWU 	017
+MARKET SQUARE IDOBA/OBIN 	018
+COMM SCH AFIN 	019
+TOTAL PUs: 	19
+Agunjin 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH AGUNJIN 	001
+COUNCIL HALL AGUNJIN 	002
+ECWA SCH OLAYINKA 	003
+COMM. SCH., OREE 	004
+ECWA SCH AGBEKU 	005
+MARKET SQUARE AGBEKU 	006
+COMM SCH AMORI WANDE 	007
+ECWA SCH PATAKO 	008
+TOTAL PUs: 	8
+Page 28 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 34 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Oro‐Ago 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECWA SCH ORO‐AGO 	001
+COMM SCH ORO‐AGO 	002
+COMM SCH OKE‐AYIN 	003
+ECWA SCH OYATE 	004
+OPEN SPACE AHUN VILLAGE 	005
+ECWA SCH OKEDABA 	006
+ECWA SCH OKEDABA 	007
+COMM SCH OMUGO 	008
+COMM SCH IRABON 	009
+COMM SCH OKEDIO 	010
+COMM SCH AJEGUNLE 	011
+COMM SCH AJEGUNLE/OWA 	012
+COMM SCH OKE‐OWA 	013
+OPEN SPACE AIYETORO 	014
+ADULT SCH OYATE 	015
+TOTAL PUs: 	15
+Omupo 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH OMUPO 	001
+ST MICHAEL SCH OMUPO 	002
+ARABIC SCH OMUPO 	003
+SHEIK ISLAMIC SCH OMUPO 	004
+ARABIC COLLEGE OMUPO 	005
+COMM SCH AMODU 	006
+GOVT TECH SCH AMODU 	007
+COMM SCH KOKO 	008
+L.G.E.A SCH KOKO 	009
+WESLEY SCH OKANLE 	010
+COMM SCH BASANYIN 	011
+ANSARUL ISLAM SCH IGBOWU 	012
+COMM SCH MALOKO 	013
+COMM SCH OKO‐ODE 	014
+COMM SCH ZULU 	015
+COMM SCH OBALOYAN 	016
+L.G.E.A SCH ARUGBO 	017
+OPEN SPACE ATANDA NDA ALIYU 	018
+TOTAL PUs: 	18
+Page 29 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 35 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Share I 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH SHARE 	001
+ILE BALE OJABUTU SHARE 	002
+ILE GARBA SOJA SHARE 	003
+SHAYO L.G.E.A SCH SHARE 	004
+AREA COURT SHARE 	005
+ILE ONIBI SHARE 	006
+ILE BALE II SHARE 	007
+ILE ADEBIOPON SHARE 	008
+TOTAL PUs: 	8
+Share II 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+N.Y.S.C BUS STOP SHARE 	001
+ILE ABOLOGBON SHARE 	002
+ILE OLULOKE SHARE 	003
+ILE ADEYI SHARE 	004
+ILE AGUN SHARE 	005
+OPEN SPACE MOTOR PARK SHARE 	006
+ILE OLOWOLAIYEMO SHARE 	007
+TOWN HALL SHARE 	008
+ILE AIYEGBO SHARE 	009
+TOTAL PUs: 	9
+Share III 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KATALAGBON OPEN SPACE 	001
+OPEN SPACE TITALAGOLO 	002
+MARKET SQUARE LOMA 	003
+COMM SCH LOMA 	004
+AGUN AREA LOMA 	005
+OPEN SPACE ARUSA LOMA 	006
+OPEN SPACE OLABALU LOMA 	007
+OPEN SPACE AWUWO LOMA 	008
+OPEN SPACE FADEYI LOMA 	009
+TOTAL PUs: 	9
+Page 30 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 36 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Share IV 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE GBOGILEMU 	001
+COMM SCH OKOSE 	002
+COUNCIL HALL LOMA 	003
+ILE OLUODE LOMA 	004
+OPEN SPACE ODENIYI AREA LOMA 	005
+OPEN SPACE ONIPE AREA LOMA 	006
+OPEN SPACE AFARI AREA LOMA 	007
+OPEN SPACE MALETE AREA LOMA 	008
+TOTAL PUs: 	8
+Share V 	Code: 13
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE FAJE VILLAGE 	001
+COMM SCH SHARE JUNCTION 	002
+OPEN SPACE SEKUN VILLAGE 	003
+COMM SCH LAKANLA 	004
+COMM SCH ALEGONGO 	005
+COMM SCH TEMIDIRE 	006
+COMM SCH SANGOTAYO/BUDO UMORU 	007
+ST MARTIN'S SCH ADIO 	008
+COMM SCH ILUPEJU 	009
+COMM SCH ALERA 	010
+TOTAL PUs: 	10
+Page 31 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 37 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Igbaja I 	Code: 14
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MARKET SQUARE IGBAJA 	001
+ECWA SCH IGBAJA 	002
+COMM SCH IGBAJA 	003
+JAMAAT SCH IGBAJA 	004
+JAMAAT SCH IGBAJA 	005
+BAPTIST SCH IGBAJA 	006
+OPEN SPACE ISALE IGBAJA 	007
+OPEN SPACE ISALE IGBAJA 	008
+ILE BALOGUN IGBAJA 	009
+ECWA DEM SCH IGBAJA 	010
+ECWA DEM SCH IGBAJA 	011
+MARKET SQUARE IGBAJA 	012
+MARKET SQUARE IGBAJA 	013
+TOTAL PUs: 	13
+Igbaja II 	Code: 15
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH OFFARESE 	001
+COMM SCH ADANLA 	002
+COMM SCH ALAKA 	003
+COMM SCH ALASORO 	004
+COMM SCH ATIRAN 	005
+COMM SCH ILUPEJU 	006
+COMM SCH BALOGUN OJA 	007
+JAMAT SCH IDIAPA 	008
+COMM SCH ONIJO 	009
+TOTAL PUs: 	9
+Page 32 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 38 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Igbaja III 	Code: 16
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH YARU 	001
+MARKET SQUARE YARU 	002
+COMM SCH DUROSOTO 	003
+OPEN SPACE MASUDO 	004
+OPEN SPACE GBOLOKO 	005
+OPEN SPACE TONGOLO 	006
+OPEN SPACE OROKI OJA 	007
+MARKET SQUARE BAYERO 	008
+L.G.E.A SCH AJIBOWO 	009
+COMM SCH KUNMI 	010
+TOTAL PUs: 	10
+Idofian I 	Code: 17
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH IDOFIAN 	001
+ST JOHN'S SCH IDOFIAN I 	002
+ST JOHN'S SCH IDOFIAN II 	003
+COUNCIL HALL IDOFIAN 	004
+COMM SCH JIMBA OJA 	005
+ST JAME'S SCH FALOKUN‐OJA 	006
+MARKET SQUARE FALOKUN 	007
+COMM SCH ALAKUKO 	008
+OPEN SPACE GATTA 	009
+TOTAL PUs: 	9
+Page 33 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 39 of 107 --
+
+KWARA STATE
+IFELODUN 	Code: 	05	LGA:
+Idofian II 	Code: 18
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM SCH GANMO 	001
+ARABIC SCH GANMO 	002
+WESLEY SCH ELERINJARE I 	003
+WESLEY SCH ELERINJARE II 	004
+WESLEY SCH ELERINJARE III 	005
+ECWA SCH AMAYO 	006
+OPEN SPACE AMAYO 	007
+COMM SCH KABBA/DONGARI 	008
+OPEN SPACE KABBA/KAJOLA 	009
+OPEN SPACE KABBA/OWODE 	010
+OPEN SPACE GBAGEDE 	011
+TOTAL PUs: 	11
+Page 34 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 40 of 107 --
+
+KWARA STATE
+ILORIN EAST
+Code: 06
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	AGBEYANGI/GBADAMU/OSIN 	17
+02	GAMBARI I 	16
+03	BALOGUN GAMBARI II 	16
+04	IBAGUN 	24
+05	APADO 	8
+06	IPONRIN 	8
+07	MAGAJI ARE I 	25
+08	MAGAJI ARE II 	24
+09	MARAFA/PEPELE 	19
+10	MAYA/ILE‐APA 	19
+11	OKE OYI/OKE OSE/ALALUBOSA 	24
+12	ZANGO 	18
+TOTAL: 	12 	218
+Page 35 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 41 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Agbeyangi/Gbadamu/Osin 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKAKA LGEA SCH OKAKA 	001
+AJIPONMI VILLAGE 	002
+GBADAMU LGEA SCH 	003
+BUDO ODUNBAKU SCH 	004
+AREGUN LGEA SCH 	005
+AGBEYANGI LGEA SCH 	006
+AGBEYANGI LGEA SCH 	007
+ODE BALE ONIKOKO VILLAGE 	008
+ODE MAGAJI OSHIN VILLAGE 	009
+BADI VILLAGE 	010
+PANADA LGEA SCH 	011
+ADELU VILLAGE 	012
+BUDO OYO OPEN SPACE 	013
+ABANGBE/JOLASUN LGEA 	014
+ODE‐BALE MAPE VILLAGE 	015
+ODE BALE ADOBASIN 	016
+AGBEYANGI LGEA SCH 	017
+TOTAL PUs: 	17
+Gambari I 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BALOGUN GAMBARI TAX OFFICE I 	001
+BALOGUN GAMBARI TAX OFFICE II 	002
+OPPOSITE ITA AJIA 	003
+OPEN SPACE MASANKORE 	004
+ODE KOLAWOLE I 	005
+ODE KOLAWOLE II 	006
+ITA MAGAJI 	007
+ODE AJIBADE 	008
+ODE JAPA (KORO TAPA) 	009
+ODE ILE NLA AKANLABI 	010
+AWODI MARKET I 	011
+AWODI MARKET II 	012
+ODE ILE ELERAN ITA ADU 	013
+AWODI MARKET III 	014
+ODE ILE NLA AKANLABI 	015
+ORI OKO AWODI 	016
+TOTAL PUs: 	16
+Page 36 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 42 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Balogun Gambari II 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE WAZIRI GOBIR I 	001
+ODE WAZIRI 	002
+INFRONT OF ALABI BARE I 	003
+INFRONT OF ALABI BARE II 	004
+KARUMA L.G.E.A SCH I 	005
+KARUMA L.G.E.A SCH II 	006
+ADEDO LANE 	007
+OJAGBORO MINI MARKET I 	008
+OJAGBORO MINI MARKET II 	009
+OJAGBORO L.G.E.A SCH I 	010
+KARUMA L.G.E.A SCH 	011
+OJAGBORO L.G.E.A SCH II 	012
+OPEN SPACE PATAKI 	013
+ODE WAZIRI GOBIR II 	014
+INFRONT OF ALABI BARE III 	015
+ODE SHABA PATAKI 	016
+TOTAL PUs: 	16
+Page 37 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 43 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Ibagun 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GOVT. DAY SEC SCH AMULE I 	001
+GOVT. DAY SEC SCH AMULE II 	002
+ODE ALAWONLA OKELELE I 	003
+ODE ALAWONLA OKELELE II 	004
+INFRONT OF JAGUN MOSQUE 	005
+OKELELE L.G.E.A SCH I 	006
+OKELELE L.G.E.A SCH II 	007
+OKELELE L.G.E.A SCH III 	008
+KANKATU MINI MARKET I 	009
+KANKATU MINI MARKET II 	010
+ODE SEFURA OKELELE 	011
+SAMSUDEEN L.G.E.A SCH I 	012
+SAMSUDEEN L.G.E.A SCH II 	013
+SAMSUDEEN L.G.E.A SCH III 	014
+ODE BANIGBE (DADA K) 	015
+AKEREBIATA OPEN SPACE 	016
+ODE ONDUGBE OKELELE 	017
+ODE ELESIN OKELELE 	018
+ODE ASINLEKE 	019
+ODE ONITOBI IDI ARO 	020
+INFRONT OF JAGUN MOSQUE 	021
+ODE ONITOBI IDIARO AREA 	022
+GOVT DAY SEC SCH AMULE 	023
+OKELELE L.G.E.A SCH 	024
+TOTAL PUs: 	24
+Apado 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+FAMOLE L.G.E.A SCH 	001
+WORU L.G.E.A SCH 	002
+APADO L.G.E.A SCH 	003
+AIGORO 	004
+ALOKO/AFARA L.G.E.A SCH 	005
+APADO VILLAGE I 	006
+APADO L.G.E.A SCH 	007
+APADO VILLAGE II 	008
+TOTAL PUs: 	8
+Page 38 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 44 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Iponrin 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OLORO L.G.E.A SCH 	001
+IPONRIN L.G.E.A SCH 	002
+ODE BALE ISAMU VILLAGE 	003
+ODE BALE ALADE VILLAGE 	004
+ODE BALE BUDO FULANI 	005
+ODE BALE ISAJE OJA IPONRIN 	006
+ODE BALE IPONRIN 	007
+IPONRIN L.G.E.A SCH 	008
+TOTAL PUs: 	8
+Magaji Are I 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE SAUTA ADIFA I 	001
+ODE SAUTA ADIFA II 	002
+IDI APE MARKET I 	003
+IDI APE MARKET II 	004
+ODE BABA ORO 	005
+ODE BABA ORO GBAGEDE 	006
+IDI AGBEDE MARKET 	007
+ODE ABUDU 	008
+ODE ILE GANGAN AKODUDU 	009
+ODE ILE GANGAN 	010
+OKE OKUTA I 	011
+OKE OKUTA II 	012
+ODE DAUDU AMULE 	013
+ODE OBA ONILU 	014
+OPEN SPACE ORISANKOKO I 	015
+OPEN SPACE ORISANKOKO II 	016
+ODE AGBADAMU I 	017
+ILE ELETU I 	018
+ODE ILE ELETU 	019
+ODE ONILU OKEKURA 	020
+OKEKURA OPEN SPACE 	021
+ODE AGBADAMU II 	022
+IDI APE MARKET III 	023
+ILE ELETU II 	024
+IDI APE MARKET IV 	025
+TOTAL PUs: 	25
+Page 39 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 45 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Magaji Are II 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ALALUBOSA N.MARABA GARAGE I 	001
+ALALUBOSA N.MARABA GARAGE II 	002
+ST JOHN'S L.G.E.A I 	003
+ST JOHN'S L.G.E.A II 	004
+ST JOHN'S L.G.E.A III 	005
+ST. JOHN'S L.G.E.A. IV 	006
+GOVT SEC SCH ILORIN I 	007
+GOVT SEC SCH ILORIN II 	008
+GOVT SEC SCH ILORIN III 	009
+OPP COMM OF POLICE 	010
+INFRONT OF KWARA HOTEL I 	011
+INFRONT OF KWARA HOTEL II 	012
+INFRONT OF KWARA HOTEL III 	013
+INFRONT OF POLICE "A" DIVISION I 	014
+INFRONT OF POLICE "A" DIVISION II 	015
+OPPOSITE GOVT HOUSE ILORIN I 	016
+OPPOSITE GOVT HOUSE ILORIN II 	017
+OPPOSITE GOVT HOUSE ILORIN III 	018
+OPPOSITE GOVT HOUSE ILORIN IV 	019
+ST BARNABAS L.G.E.A SCH I 	020
+ST BARNABAS L.G.E.A SCH II 	021
+ST BARNABAS L.G.E.A SCH III 	022
+ST BARNABAS L.G.E.A SCH IV 	023
+ST BARNABAS L.G.E.A SCH V 	024
+TOTAL PUs: 	24
+Page 40 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 46 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Marafa/Pepele 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ELESINMETA L.G.E.A. SCH I 	001
+ELESINMETA L.G.E.A. SCH II 	002
+MARAFA L.G.E.A. SCH I 	003
+MARAFA L.G.E.A. SCH II 	004
+PEPELE L.G.E.A. SCH 	005
+BUDO OBA L.G.E.A. SCH 	006
+KURE L.G.E.A. SCH 	007
+DALEMA L.G.E.A. SCH 	008
+JABI L.G.E.A. SCH 	009
+AJELENDE L.G.E.A. SCH 	010
+AIYETORO ILE L.G.E.A. SCH 	011
+LAJOLO L.G.E.A. SCH 	012
+ELESINMETA VILLAGE 	013
+MARAFA VILLAGE 	014
+ADANDA VILLAGE 	015
+KELEBE VILLAGE 	016
+PEPELE L.G.E.A. SCH 	017
+OYO IDERA OPEN SPACE 	018
+OLORORO VILLAGE (OPEN SPACE) 	019
+TOTAL PUs: 	19
+Page 41 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 47 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Maya/Ile‐Apa 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ARAMONU L.G.E.A. SCH 	001
+ZENTU L.G.E.A. SCH 	002
+MAYA L.G.E.A. SCH 	003
+BUDO ALFA 	004
+ODE BALE ATIKAN 	005
+BUDO ARE L.G.E.A. SCH 	006
+AKE L.G.E.A. SCH 	007
+OHA ISSA 	008
+OHA L.G.E.A. SCH 	009
+LAJIKI L.G.E.A. SCH 	010
+ILE ADAN 	011
+ALASE L.G.E.A. SCH 	012
+OHA GBAGI 	013
+LAJIKI L.G.E.A. SCH I 	014
+LAJIKI L.G.E.A. SCH II 	015
+BUDO ARE L.G.E.A. SCH 	016
+OKE‐ODO 	017
+AKE L.G.E.A. SCH 	018
+OPEN SPACE ATERE VILLAGE 	019
+TOTAL PUs: 	19
+Page 42 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 48 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Oke Oyi/Oke Ose/Alalubosa 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKE OYI AREA COUNCIL 	001
+ODE BODE OKE OYI 	002
+ODE BALE OKE OYI 	003
+OKE OYI L.G.E.A. SCH 	004
+ODE BALE IDI APA VILLAGE 	005
+ODE BALE IPAKO OBO 	006
+ODE BALE AFEYIN VILLAGE 	007
+ODE BALE OTEFON VILLAGE 	008
+OKE OSE L.G.E.A. SCH 	009
+ODE MAGAJI VILLAGE ALALUBOSA 	010
+ODE MAGAJI VILLAGE GAMBE 	011
+ODE BALE AGBOGE VILLAGE 	012
+ODE BALE ABATA VILLAGE 	013
+ODE BALE AYIKALE VILLAGE 	014
+ODE BALE DANGII 	015
+ODE BALE ARIYIBI VILLAGE 	016
+ODE BALE APATA YAKUBA 	017
+L.G.E.A. SCH BUDO OBA 	018
+LAJOLO VILLAGE 	019
+FAJE TUNTUN VILLAGE 	020
+ALALUBOSA VILLAGE I 	021
+ALALUBOSA VILLAGE II 	022
+ODE BALE AIYETORO 	023
+L.G.E.A. SCH OKE‐OYI 	024
+TOTAL PUs: 	24
+Page 43 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 49 of 107 --
+
+KWARA STATE
+ILORIN EAST 	Code: 	06	LGA:
+Zango 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKESUNA L.G.E.A. SCH I 	001
+OKESUNA L.G.E.A. SCH II 	002
+OPEN SPACE AT BACK OF OKESUNA SCH I 	003
+OPEN SPACE AT BACK OF OKESUNA SCH II 	004
+PAKE L.G.E.A. SCH I 	005
+PAKE L.G.E.A. SCH II 	006
+OJAGBORO COMM BANK 	007
+ODE SERIKI GAMBARI I 	008
+ODE SERIKI GAMBARI II 	009
+MAD. ALFA OMO IYA ISALE KANIKE I 	010
+MAD. ALFA OMO IYA ISALE KANIKE II 	011
+ODE SERIKI ZANGO 	012
+ODE MAYAKI ILORIN 	013
+ODE UBANDAWAKI 	014
+ADUALERE OPEN SPACE 	015
+PAKE L.G.E.A. SCH 	016
+ODE ILE ALATA 	017
+ODE ILE MAYAKI 	018
+TOTAL PUs: 	18
+Page 44 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 50 of 107 --
+
+KWARA STATE
+ILORIN SOUTH
+Code: 07
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	AKANBI ‐I 	10
+02	AKANBI ‐II 	8
+03	AKANBI ‐III 	23
+04	AKANBI ‐IV 	25
+05	AKANBI ‐V 	19
+06	BALOGUN‐FULANI I 	18
+07	BALOGUN‐FULANI II 	10
+08	BALOGUN‐FULANI III 	9
+09	OKAKA I 	12
+10	OKAKA II 	11
+11	OKE‐OGUN 	13
+TOTAL: 	11 	158
+Page 45 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 51 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Akanbi ‐I 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+FUFU L.G.E.A SCH 	001
+OMOLERE L.G.E.A SCH 	002
+OPEN SPACE AJOKO 	003
+INFRONT OLOTA'S PALACE 	004
+OPEN SPACE ILOTA AIYETORO 	005
+OPEN SPACE APAOLA BALE'S HOUSE 	006
+OPEN SPACE ABELU‐BADA VILLAGE 	007
+OPEN SPACE AGARA VILLAGE 	008
+OPEN SPACE OLOTA'S PALACE 	009
+OPEN SPACE APAOLA 	010
+TOTAL PUs: 	10
+Akanbi ‐II 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE KAJOLA VILLAGE 	001
+OMODE L.G.E.A SCH 	002
+OPEN SPACE MAGAJI VILLAGE 	003
+JOROMO OSHIN L.G.E.A SCH I 	004
+OJE L.G.E.A SCH 	005
+OPEN SPACE ALAYA VILLAGE 	006
+OPEN SPACE ISOKUN VILLAGE 	007
+JOROMO OSHIN L.G.E.A SCH II 	008
+TOTAL PUs: 	8
+Page 46 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 52 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Akanbi ‐III 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPOLO L.G.E.A SCH 	001
+OPEN SPACE ALANGWA GAA AKANBI 	002
+OPEN SPACE GBENLE PRESS 	003
+OPEN SPACE ADJACENT DEEPER LIFE 	004
+OPEN SPACE EBENEZER NUR/PRY SCH I 	005
+OPEN SPACE EBENEZER NUR/PRY SCH II 	006
+OKE OGUN HEALTH CENTRE 	007
+AGBABIAKA L.G.E.A SCH 	008
+OPEN SPACE PIPELINE JUNCTION GAA AKANBI 	009
+OPEN SPACE IYAN‐LA'S HOUSE I 	010
+BESIDES IYAN‐LA'S HOUSE 	011
+OPEN SPACE ERO OMO ATIKEKERE 	012
+OPEN SPACE ODO‐ERI RD GAA AKANBI 	013
+OPEN SPACE BUDO AGBANKA 	014
+OPEN SPACE ITA AYISA VILLAGE 	015
+OPEN SPACE BUDO OLU LANDE 	016
+OPEN SPACE ONIREKE VILLAGE 	017
+OPEN SPACE BUDO SALAKO 	018
+'DANIALU L.G.E.A SCH 	019
+OPEN SPACE ERO‐OMO GARAGE‐OFFA 	020
+OPEN SPACE ERO‐OMO SAW‐MILL GARAGE 	021
+OPEN SPACE IYAN‐LA'S HOUSE II 	022
+OPEN SPACE ALAGBEDE VILLAGE 	023
+TOTAL PUs: 	23
+Page 47 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 53 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Akanbi ‐IV 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+UNILORIN MAIN CAMPUS I 	001
+UNILORIN MAIN CAMPUS II 	002
+OPEN SPACE UNILORIN STAFF QTRS 	003
+OPEN SPACE BUDO JALALA 	004
+OPEN SPACE MIN OF HEALTH FATE I 	005
+OPEN SPACE OPP. MIN OF HEALTH FATE II 	006
+TANKE L.G.E.A SCH ALENIBORO I 	007
+TANKE L.G.E.A SCH ALENIBORO II 	008
+TANKE L.G.E.A SCH ALENIBORO III 	009
+OPEN SPACE MIN OF HEALTH FATE III 	010
+OPEN SPACE OPP MIN OF HEALTH FATE IV 	011
+TANKE GOVT DAY SEC SCH I 	012
+TANKE GOVT DAY SEC SCH II 	013
+OPEN SPACE BUDO AJANAKU VILLAGE 	014
+OPEN SPACE BUDO LAWANI 	015
+OPEN SPACE RIVER BASIN I 	016
+OPEN SPACE RIVER BASIN II 	017
+ODOFIN JUNCTION BASIN RD I 	018
+ODOFIN JUNCTION BASIN RD II 	019
+FATE L.G.E.A SCH I 	020
+FATE L.G.E.A SCH II 	021
+OPEN SPACE BUDO MASUDO 	022
+OPEN SPACE BUDO BOLORUNDURO 	023
+OPEN SPACE DE‐FASHION INSTITUTE 	024
+AGO‐AIYEKALE L.G.E.A SCH 	025
+TOTAL PUs: 	25
+Page 48 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 54 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Akanbi ‐V 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KANGILE L.G.E.A SCH 	001
+OPEN SPACE BUDO GBAGBA 	002
+OPEN SPACE GAA OSIBI 	003
+FED TRAINING CENTRE KULENDE I 	004
+FED TRAINING CENTRE KULENDE II 	005
+FED TRAINING CENTRE KULENDE III 	006
+FED TRAINING CENTRE KULENDE IV 	007
+INFRONT OF SERIKIN HAUSAWA KULENDE 	008
+OPP SERIKIN‐HAUSAWA KULENDE I 	009
+OPP SERIKIN‐HAUSAWA KULENDE II 	010
+OPEN SPACE OKE ANDI 	011
+OPEN SPACE AJEGUNLE AREA I 	012
+OPEN SPACE AJEGUNLE AREA II 	013
+OPEN SPACE ALAPARUN 	014
+ANSARUL‐ISLAM OGIDI 	015
+FED. GOVERNMENT COLLEGE OGIDI 	016
+KULENDE L.G.E.A SCH 	017
+OPEN SPACE SOBI ALAGBADO 	018
+OPEN SPACE LOW COST HOUSING OLOJE 	019
+TOTAL PUs: 	19
+Page 49 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 55 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Balogun‐Fulani I 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AREA COURT CENTRE IGBORO 	001
+POST OFFICE CENTRE IGBORO 	002
+DISPENSARY/CLINIC CENTRE IGBORO 	003
+DOMESTIC TRAINING CENTRE IGBORO 	004
+OPEN SPACE ILE OLOWO 	005
+ODE SAADU LAUFE 	006
+INFRONT OF MAKAMA'S MOSQUE 	007
+OPEN SPACE IDI‐ADAN I 	008
+OPEN SPACE IDI‐ADAN II 	009
+OPEN SPACE ERUBU LANE I 	010
+OPEN SPACE ERUBU LANE II 	011
+OPEN SPACE GBENLE PRESS 	012
+ODE ALFA AMINU 	013
+OPEN SPACE ILE DAGBO 	014
+OPEN SPACE ASUNNARA 	015
+OPEN SPACE ILE OMOLEWA 	016
+OPEN SPACE ITA SEKUN 	017
+ODE KPATAKO OPEN SPACE 	018
+TOTAL PUs: 	18
+Balogun‐Fulani II 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ODE BALOGUN FULANI I 	001
+OPEN SPACE ODE BALOGUN FULANI II 	002
+OPEN SPACE IDI AGBON 	003
+OPEN SPACE ODE ALFA DEMBO 	004
+OPEN SPACE BELLO MOTOR'S HOUSE I 	005
+OPEN SPACE BELLO MOTOR'S HOUSE II 	006
+ISALE MALIKI L.G.E.A I 	007
+ISALE MALIKI L.G.E.A II 	008
+ISALE MALIKI L.G.E.A III 	009
+ISALE MALIKI L.G.E.A IV 	010
+TOTAL PUs: 	10
+Page 50 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 56 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Balogun‐Fulani III 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE GBABIABIDUN I 	001
+OPEN SPACE GBABIABIDUN II 	002
+ODE BABAGIWA 	003
+OPEN SPACE ODE OLORIN I 	004
+OPEN SPACE ODE OLORIN II 	005
+OPEN SPACE ODE ALFA IBEJI 	006
+GOVT GIRLS DAY SEC SCH OKESUNA I 	007
+GOVT GIRLS DAY SEC SCH OKESUNA II 	008
+GOVT GIRLS DAY SEC SCH OKESUNA III 	009
+TOTAL PUs: 	9
+Okaka I 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ODE OLODO ALUKO I 	001
+OPEN SPACE ODE OLODO ALUKO II 	002
+OPEN SPACE ODE A.K SULE I 	003
+OPEN SPACE ODE A.K SULE II 	004
+OPEN SPACE EBU‐GADA 	005
+OPEN SPACE ODE AMINU 	006
+OPEN SPACE ODE IKOKORO I 	007
+OPEN SPACE ODE IKOKORO II 	008
+OPEN SPACE ODE OPELE 	009
+ODE ADETO HUNWA I 	010
+ODE ADETO HUNWA II 	011
+ST WILLIAMS L.G.E.A 	012
+TOTAL PUs: 	12
+Page 51 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 57 of 107 --
+
+KWARA STATE
+ILORIN SOUTH 	Code: 	07	LGA:
+Okaka II 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ANSARUL‐ISLAM L.G.E.A SCH I 	001
+ANSARUL‐ISLAM L.G.E.A SCH II 	002
+ANSARUL‐ISLAM L.G.E.A SCH III 	003
+ANSARUL‐ISLAM L.G.E.A SCH IV 	004
+ANSARUL‐ISLAM L.G.E.A SCH V 	005
+ANSARUL‐ISLAM L.G.E.A SCH VI 	006
+ANSARUL‐ISLAM L.G.E.A SCH VII 	007
+ST MACHEAL L.G.E.A SCH I 	008
+ST MACHEAL L.G.E.A SCH II 	009
+ST MACHEAL L.G.E.A SCH III 	010
+ST MACHEAL L.G.E.A SCH IV 	011
+TOTAL PUs: 	11
+Oke‐Ogun 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ODE AKARAJE 	001
+ODE ALFA EDUN 	002
+ODE ILE NMA 	003
+ODE AKANO ALEGE 	004
+ODE MAGAJI OKE‐OGUN I 	005
+ODE AYIPO 	006
+ODE ILE OTEFUN 	007
+ODE FALOKUN 	008
+ODE MAIGIDA EDUN 	009
+ODE LABALA 	010
+ODE MAGAJI AJANAKU 	011
+ODE ALEGE 	012
+ODE MAGAJI OKE OGUN II 	013
+TOTAL PUs: 	13
+Page 52 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 58 of 107 --
+
+KWARA STATE
+ILORIN WEST
+Code: 08
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	ADEWOLE 	17
+02	AJIKOBI 	40
+03	BABOKO 	13
+04	BADARI 	16
+05	BALOGUN ALANAMU CENTRAL 	45
+06	MAGAJI NGERI 	17
+07	OLOJE 	15
+08	OGIDI 	13
+09	OJUEKUN/ZARUMI 	34
+10	OKO‐ERIN 	25
+11	UBANDAWAKI 	9
+12	WARRAH/EGBE JILA/OSHIN 	24
+TOTAL: 	12 	268
+Page 53 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 59 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Adewole 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE OLOGBIN 	001
+ODE OLODO ADEWOLE 	002
+ADETA L.G.E.A SCH 	003
+IDI IGBA OPEN SPACE 	004
+SAKELE OPEN SPACE 	005
+OKE AGODI OPEN SPACE 	006
+KUNTU L.G.E.A SCH 	007
+GAA AREMU OPEN SPACE 	008
+GOVERNMENT HIGH SCH I 	009
+GOVERNMENT HIGH SCH II 	010
+FEDERAL STAFF PRY SCH 	011
+ADEWOLE HEALTH CENTRE 	012
+ADETA L.G.E.A SCH 	013
+OJUDE ELEFO 	014
+OKE AGODI 	015
+GAA AREMU OPEN SPACE 	016
+OPEN SPACE OJUDE OLODE OKUTA (KUNTU) 	017
+TOTAL PUs: 	17
+Page 54 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 60 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Ajikobi 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE BALOGUN AJIKOBI I 	001
+ODE BALOGUN AJIKOBI II 	002
+ODE ALAGBE 	003
+'ODE ELESINLA 	004
+ODE OPOBIYI I 	005
+ODE OPOBIYI II 	006
+ODE SAURA (AGBAJI) I 	007
+ODE SAURA (AGBAJI) II 	008
+ODE AKINLANSO I 	009
+ODE AKINLANSO II 	010
+ODE KOTO (POPO GIWA) 	011
+ODE ONIGUGURU 	012
+ODE ALARO (ALORE) 	013
+ODE AROWASI 	014
+ODE ARIBI/IDI‐ISIN 	015
+ODE OYAN 	016
+SOLAGBERU L.G.E.A SCH 	017
+ABATA ASUNKERE 	018
+ODE OKUBIYI I 	019
+ODE OKUBIYI II 	020
+ODE OPOBIYI III 	021
+ANSARU‐ISLAM L.G.E.A SCH I 	022
+ANSARU‐ISLAM L.G.E.A SCH II 	023
+ODE ABOJUMEJI 	024
+ODE ALAGBEDE I 	025
+ODE ALAWIYE I 	026
+ODE ALAWIYE II 	027
+ODE MOGAJI ABEMI 	028
+ODE ELESIN WERE 	029
+ODE AJIBAYE 	030
+ODE ASILEKE 	031
+ODE ABOJUMEJI 	032
+ODE ALAGBEDE II 	033
+ODE ELESINLA 	034
+ODE AROWASI 	035
+ODE ALAWIYE III 	036
+ANSARUL‐ISLAM L.G.E.A SCH III 	037
+ODE AJIBAIYE 	038
+ANSARUL‐ISLAM L.G.E.A SCH IV 	039
+Page 55 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 61 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Ajikobi 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ANSARUL‐ISLAM L.G.E.A SCH V 	040
+TOTAL PUs: 	40
+Baboko 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE ALIKALI (YIDI ROAD) 	001
+LADIPO HOUSE FRONTAGE (YIDI RD) 	002
+INFRONT OF MAGAJIN‐NGARI CLINIC 	003
+ODE OMO (ERUDA)_ 	004
+ODE MAGAJI BABOKO 	005
+ODE SARIKI FAWA (ALAPATA) 	006
+ODE AJIDO 	007
+ODE OJODU 	008
+ODE BAYERO 	009
+ODE ELEGBEDE 	010
+ODE IMAM IJETA (BABOKO) 	011
+ODE ONITANGANRAN I 	012
+ODE ONITANGANRAN II 	013
+TOTAL PUs: 	13
+Page 56 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 62 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Badari 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECWA L.G.E.A SCH I 	001
+ECWA L.G.E.A SCH II 	002
+ODE BILEWU 	003
+ILORIN TEACHER'S COLLEGE I 	004
+AGBO‐OBA ILORIN I 	005
+AGBO‐OBA ILORIN II 	006
+COLLEGE OF EDUCATION 	007
+UNIVERSITY OF ILORIN I 	008
+UNIVERSITY OF ILORIN II 	009
+BUNMI NURSERY/PRY SCH 	010
+ODE BILEWU 	011
+ODE MAFOLAKU 	012
+AGBO OBA ILORIN III 	013
+ECWA L.G.E.A SCH III 	014
+ILORIN TEACHER'S COLLEGE II 	015
+UNIVERSITY OF ILORIN III 	016
+TOTAL PUs: 	16
+Page 57 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 63 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Balogun Alanamu Central 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE BALOGUN ALANAMU I 	001
+ODE BALOGUN ALANAMU II 	002
+ODE OLOYIN (ITA ELEPA) 	003
+ANIFOWOSE (OKEKURA) 	004
+ODE ONIJA 	005
+ODE AJIA 	006
+ODE ELETA 	007
+ODE ELELU 	008
+ODE ONIMAGO 	009
+ODE BABA ORO ABATA 	010
+ODE ZENI 	011
+ODE ELESINFUNFUN 	012
+ODE KARATU 	013
+ODE KURANGA (OLOMODA) 	014
+ODE EBO DANIYAN 	015
+ODE IKOLABA 	016
+ODE OLODO (KUDIMA) 	017
+ODE OLOMO I 	018
+ODE OLOMO II 	019
+ODE ALFA IWO 	020
+ODE APABIEKUN 	021
+HIWANU L.G.E.A SCH I 	022
+ODE AKOTA OKE 	023
+ODE AIYIBASAN I 	024
+ODE AIYIBASAN II 	025
+ODE AKUJI 	026
+ODE BABA OLORI 	027
+ODE ELEJA ADABATA 	028
+PAKATA L.G.E.A SCH 	029
+ODE KOBE 	030
+ODE ISOWO 	031
+ODE GBAGIRIMAJO 	032
+ODE OLOKOBA POPO‐GIWA I 	033
+ODE OLOKOBA POPO‐GIWA II 	034
+ODE EPO 	035
+ODE ONILA 	036
+IDI ARABA KUDIMA 	037
+ODE ANIFOWOSHE OKE KUKA 	038
+ODE OGANIJA 	039
+Page 58 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 64 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Balogun Alanamu Central 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE AJIA SAKASAKA 	040
+ODE BABA ORO ADABATA 	041
+OKE KURANGA POPO OLOMOBA 	042
+HIWANU L.G.E.A SCH II 	043
+ODE AKUJI 	044
+ODE ELELU 	045
+TOTAL PUs: 	45
+Magaji Ngeri 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE ISIAKA OMOBA 	001
+ARE OGELE ORIOKOH 	002
+KORO GURUMOH 	003
+ODE JIMBA I 	004
+ODE AMUDA OMO‐IYA 	005
+ODE ALIKALI SOKOTO 	006
+ODE KAWU AGAKA 	007
+ODE DONGARI 	008
+ODE GALADIMA 	009
+INFRONT OF L.G SECRETARIAT I 	010
+INFRONT OF L.G SECRETARIAT II 	011
+INFRONT OF L.G SECRETARIAT III 	012
+BAPTIST L.G.E.A SCH I 	013
+BAPTIST L.G.E.A SCH II 	014
+ODE IDOMI AGAKA 	015
+ODE ISIAKA OMOBA 	016
+ODE JIMBA II 	017
+TOTAL PUs: 	17
+Page 59 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 65 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Oloje 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MOUNT CARMEL COLLEGE I 	001
+MOUNT CARMEL COLLEGE II 	002
+ODE OPELOYERU 	003
+GOVT. DAY SEC SCH ALORE I 	004
+AIR FORCE PRY SCH I 	005
+ODE ONILE ARO 	006
+ODE ALASEJU 	007
+ODE MAGAJI OLOJE 	008
+MOUNT CARMEL COLLEGE III 	009
+GOVT DAY SEC SCH ALORE II 	010
+AIR FORCE PRY SCH II 	011
+ODE OPELOYERU 	012
+ODE ONILE ARO 	013
+ODE OBA YAHAYA 	014
+ODE ONIYAN ELELU 	015
+TOTAL PUs: 	15
+Ogidi 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE MOGAJI OGIDI 	001
+INFRONT OF ALORE MOSQUE 	002
+ODE ALFA BANNI 	003
+ODE ILOBU 	004
+ODE TATALO 	005
+ODE GUNIYAN 	006
+BANNI COM. SEC SCH 	007
+ODE OLORIEGBE 	008
+ODE AGORO 	009
+ODE TAKAN 	010
+ODE DAUDU BANNI 	011
+ODE ALFA BANNI 	012
+ODE ILOBU 	013
+TOTAL PUs: 	13
+Page 60 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 66 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Ojuekun/Zarumi 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ODE MOGAJI OJUEKUN I 	001
+ODE MOGAJI OJUEKUN II 	002
+ODE OKUBI I 	003
+ODE OKUBI II 	004
+ODE AGARA 	005
+ODE ADIGBONGBO I 	006
+ODE ADIGBONGBO II 	007
+ODE NAGERI I 	008
+ODE NAGERI II 	009
+ODE ELESINLA (OKE APOMU) 	010
+ODE KURE (POPO IGBONA) 	011
+ODE OLORI 	012
+ODE TUNTUN (POPO IGBONA) 	013
+ODE KAREBU 	014
+ODE KOTO 	015
+ODE OLOMO MESAN 	016
+ODE OJIBARA I 	017
+ODE OJIBARA II 	018
+ODE BABA ONILA 	019
+ODE ASILEKE 	020
+ODE AFASE 	021
+ODE OGUNTOLU 	022
+ODE FARA 	023
+ODE SOFUN 	024
+ODE AGO OLOWO 	025
+ABAYOMI MARKET 	026
+OJUDE SARUMI 	027
+OJUDE BATURE 	028
+ODE ORA BABA 	029
+ODE ASILEKE 	030
+ODE AGO OLOWO 	031
+ILE KOTO 	032
+ODE ELESINLA 	033
+OJUDE ALFA NLA 	034
+TOTAL PUs: 	34
+Page 61 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 67 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Oko‐Erin 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OMIDOYIN STADIUM AREA I 	001
+OMIDOYIN STADIUM AREA II 	002
+QUEEN SCH ILORIN I 	003
+ILORIN GRAMMAR SCH I 	004
+ILORIN GRAMMAR SCH II 	005
+ILORIN GRAMMAR SCH III 	006
+ILORIN GRAMMAR SCH IV 	007
+OSERE JUNCTION 	008
+UNITED L.G.E.A SCH I 	009
+UNITED L.G.E.A SCH II 	010
+ANSARUL L.G.E.A SCH I 	011
+ODE MAGAJI ODOKUN 	012
+ODOTA L.G.E.A SCH I 	013
+L.G.E.A SCH GAA IMMAN 	014
+JORO VILLAGE 	015
+WESLEY L.G.E.A SCH 	016
+INFRONT OF COCA COLA 	017
+BABA ODE VILLAGE 	018
+OLORUNSOGO OPEN SPACE 	019
+ILE‐ALHAJI IDI‐OPOTO OSERE 	020
+QUENN SCH ILORIN II 	021
+ANSARUL L.G.E.A SCH II 	022
+ODOTA L.G.E.A SCH II 	023
+JORO VILLAGE 	024
+ODE MAGAJI AIYETORO 	025
+TOTAL PUs: 	25
+Page 62 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 68 of 107 --
+
+KWARA STATE
+ILORIN WEST 	Code: 	08	LGA:
+Ubandawaki 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OJUDE UBANDAWAKI 	001
+OJUDE ALADIRE 	002
+GOVT GIRLS' DAY SEC SCH PAKATA 	003
+OKE EBO L.G.E.A SCH 	004
+ODE ALAYA 	005
+BARAKAT L.G.E.A SCH 	006
+MADI VILLAGE 	007
+ANIFOWOSE OPEN SPACE 	008
+OJUDE ALADIRE 	009
+TOTAL PUs: 	9
+Warrah/Egbe Jila/Oshin 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OGUNDELE L.G.E.A SCH 	001
+WARRAH L.G.E.A SCH 	002
+ERU‐OBA/ABEOKUTA 	003
+GALADIMA VILLAGE 	004
+GBA GBA VILLAGE 	005
+AIRFORCE QTRS 	006
+EGBEJILA VILLAGE 	007
+OBANISUA L.G.E.A SCH 	008
+ODORE VILLAGE 	009
+IWANTE VILLAGE 	010
+BUDO NUHU VILLAGE 	011
+BUDO OLOHUNLADE 	012
+IDI‐EGUN/ALENIBORO I 	013
+IDI‐EGUN/ALENIBORO II 	014
+OSHIN AREMU L.G.E.A 	015
+BUDO KAWU 	016
+APATA‐OLU VILLAGE 	017
+ELEPA VILLAGE 	018
+ITA‐ALAMU 	019
+BUDO KANGUSU 	020
+BUDO LATUNJI 	021
+BUDO NUHU 	022
+OPEN SPACE GEREWU 	023
+OPEN SPACE IDIEGUN 	024
+TOTAL PUs: 	24
+Page 63 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 69 of 107 --
+
+KWARA STATE
+IREPODUN
+Code: 09
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	AJASE IPO I 	16
+02	AJASE IPO II 	15
+03	ARANDUN 	14
+04	ESIE/IJAN 	8
+05	IPETU/RORE/ARAN‐ORIN 	15
+06	OMU‐ARAN I (ARAN) 	11
+07	OMU‐ARAN II (IHAYE) 	12
+08	OMU‐ARAN III (IFAJA) 	13
+09	ORO I 	10
+10	ORO II 	13
+11	OKO 	6
+TOTAL: 	11 	133
+Page 64 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 70 of 107 --
+
+KWARA STATE
+IREPODUN 	Code: 	09	LGA:
+Ajase Ipo I 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OLD POLICE STATION AJASE‐IPO 	001
+ILE BALE AJASE‐IPO 	002
+MUSLIM PRIMARY SCH AJASE‐IPO 	003
+OLD IGBAJA GARAGE AJASE‐IPO 	004
+BAPTIST PRIMARY SCH AJASE‐IPO 	005
+NEPA OFFICE AJASE‐IPO 	006
+ELEYOKA/FALOKUN 	007
+TOWN CENTRE MEMUDU 	008
+OKO AWO COMP. OKEYA 	009
+COMM PRY SCH OKEYA 	010
+MATERNITY CENTRE ILALA 	011
+NEAR OBA'S PALACE ILALA 	012
+CENTRAL MARKET ILALA 	013
+ECWA SCH BUHARI 	014
+OPEN SPACE AT EGGI 	015
+BALE'S COMPD APATA/KAJOLA 	016
+TOTAL PUs: 	16
+Ajase Ipo II 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A. SCH AGBONDA 	001
+ILE OBALOKE AGBONDA 	002
+NEAR OBA'S PALACE AGBONDA/ADIGUN 	003
+AJENIPA'S QTRS SANMORA 	004
+L.G.E.A SCH SANMORA 	005
+ST PAUL'S SCH AGBAMU I 	006
+ST PAUL'S SCH AGBAMU II 	007
+HEALTH CENTRE AGBAMU 	008
+ILE BALE IGBONLA 	009
+AGANJU IGBONLA 	010
+L.G.E.A SCH OMIDO 	011
+CENTRAL MARKET OMIDO 	012
+NEAR OBA'S PALACE AJENGBE 	013
+OLOTA'S COMPD ISALE‐IJU ILUDUN 	014
+CENTRAL MARKET EGUDU 	015
+TOTAL PUs: 	15
+Page 65 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 71 of 107 --
+
+KWARA STATE
+IREPODUN 	Code: 	09	LGA:
+Arandun 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+HOME ECONS CENTRE ARANDUN 	001
+ILE AWURE ARANDUN 	002
+OJU‐OJA ARANDUN 	003
+ILE OKI ARANDUN 	004
+KAA AGAN ARANDUN 	005
+ILE OLUPO JUNCTION ARANDUN 	006
+ILE OBA ILUFEMILOYE ARANDUN 	007
+ISALE OLA ARANDUN 	008
+ILE OBA BUOYE ARANDUN 	009
+OKE ARAN VILLAGE 	010
+OWODE VILLAGE 	011
+OMINRINRIN VILLAGE 	012
+AJEBANDELE VILLAGE 	013
+L.G.E.A SCH ARANDUN 	014
+TOTAL PUs: 	14
+Esie/Ijan 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE OBA ESIE 	001
+ILE OSOLO ESIE 	002
+ST MICHAEL SCH ESIE 	003
+ILE OJOMU OKEASANLU ESIE 	004
+ILE ARO ESIE 	005
+L.G.E.A SCH IJAN 	006
+OLD PRY SCH IJAN 	007
+L.G.E.A SCH AGBELE 	008
+TOTAL PUs: 	8
+Page 66 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 72 of 107 --
+
+KWARA STATE
+IREPODUN 	Code: 	09	LGA:
+Ipetu/Rore/Aran‐Orin 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH IPETU 	001
+BASIC HEALTH CENTRE IPETU 	002
+L.G.E.A SCH RORE 	003
+ILE ARO RORE I 	004
+ILE EDU RORE II 	005
+ILE OBA RORE III 	006
+RORE JUNCTION ARANORIN 	007
+UNITED L.G.E.A SCH ARANORIN 	008
+IGBESI COMP ARAN‐ORIN 	009
+OKE‐OJE COMPOUND ARAN‐ORIN 	010
+ILE ASANLU ARAN‐ORIN 	011
+NEW MARKET ARAN‐ORIN 	012
+TOWN HALL ARAN‐ORIN 	013
+L.G.E.A SCH OLOMI‐OJA 	014
+OPEN SPACE ALOMILOGBA COMPOUND RORE 	015
+TOTAL PUs: 	15
+Omu‐Aran I (Aran) 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE OLUPO OKE OMU‐ARAN I 	001
+ILE OLUPO ODO OMU‐ARAN II 	002
+MODE COMPOUND OMU‐ARAN 	003
+ADEKUN COMPOUND OMU‐ARAN 	004
+OKESAN COMPOUND OMU‐ARAN 	005
+OKE APA COMPOUND OMU‐ARAN 	006
+ILE ADE/ODO‐OPIN OMU‐ARAN 	007
+OKE AJAH OMU‐ARAN 	008
+ILE OTAN OMU‐ARAN 	009
+ST PAUL'S SCH OMU‐ARAN 	010
+ILE AROGUN/AMULE OMU‐ARAN 	011
+TOTAL PUs: 	11
+Page 67 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 73 of 107 --
+
+KWARA STATE
+IREPODUN 	Code: 	09	LGA:
+Omu‐Aran II (Ihaye) 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE ELEMO AFIN OMU‐ARAN 	001
+ILE EDEMO OMU‐ARAN 	002
+RABA COMP. OMU‐ARAN 	003
+ILE AYOMU IGANGU OMU‐ARAN 	004
+ORA COMP. OMU‐ARAN 	005
+OKE ESA COMP OMU‐ARAN 	006
+IKOJA COMP OMU‐ARAN 	007
+ECWA SCH OROLODO OMU‐ARAN 	008
+ITA BUOYE GBELEJE OMU‐ARAN 	009
+ILARO COMP OMU‐ARAN 	010
+ECWA SCH AGANMO OMU‐ARAN 	011
+OPPOSITE F.G.G.C OMU‐ARAN 	012
+TOTAL PUs: 	12
+Omu‐Aran III (Ifaja) 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE OLASANKALE OMU‐ARAN 	001
+ILE ORO OMU‐ARAN 	002
+ILE ASANLU OMU‐ARAN 	003
+ILE OBA OMU‐ARAN 	004
+ITA OKORE OMU‐ARAN 	005
+ITA OLOYE IJOKO OMU‐ARAN 	006
+ODO ORO GBAGIDA OMU‐ARAN 	007
+S.D.A IMOLEKERE OMU‐ARAN 	008
+NEW MARKET AREA OMU‐ARAN 	009
+AREA COMMANDER OFFICE OMU‐ARAN 	010
+L.G.E.A SCH OKEGBALA OMU‐ARAN 	011
+EKAN GARAGE OMU‐ARAN 	012
+ILE NLA ILE OBA OMU‐ARAN 	013
+TOTAL PUs: 	13
+Page 68 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 74 of 107 --
+
+KWARA STATE
+IREPODUN 	Code: 	09	LGA:
+Oro I 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AFIN OLORO OKERIMI ORO 	001
+ST PETER'S SCH OKERIMI ORO 	002
+ILE AYEDUN OKERIMI ORO 	003
+ILE BALE IDDO ORO 	004
+NEAR TOWN HALL IJOMU ORO 	005
+ILE BALE'S COMP IJOMU ORO 	006
+MUSLIM SCH IJOMU ORO 	007
+AYETORO IJOMU ORO 	008
+ILE BAA IJOMU ORO 	009
+L.G.E.A SCH SIE/OLORUNSOGO 	010
+TOTAL PUs: 	10
+Oro II 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE BALE ORO 	001
+ILE BALE ORO 	002
+ST ANDREW SCH ORO 	003
+ILE ONIJALA ORO 	004
+MUSLIM SCH ORO 	005
+NEAR GENERAL HOSPITAL ORO 	006
+MUSLIM SCH, OKEOLA ORO 	007
+ILE BALE OKE OLA ORO 	008
+MUSLIM SCH AGBEOLA ORO 	009
+ILE BALE ILUDUN ORO 	010
+ILE ALAPE ILUDUN ORO 	011
+ST JAMES SCH ILUDUN ORO 	012
+ANSARUL L.G.E.A SCH, ILUDUN ORO 	013
+TOTAL PUs: 	13
+Oko 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE OBA OKO 	001
+MARKET CENTRE OKO 	002
+ILE PETU OKO 	003
+L.G.E.A SCH OKO 	004
+ADULT L.G.E.A SCH INISHAN OKO 	005
+ITA ODOKO OKO 	006
+TOTAL PUs: 	6
+Page 69 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 75 of 107 --
+
+KWARA STATE
+ISIN
+Code: 10
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	ALLA 	4
+02	EDIDI 	4
+03	ISANLU I 	7
+04	ISANLU II 	7
+05	IJARA 	9
+06	IWO 	6
+07	OWU ISIN 	8
+08	OKE ONIGBIN 	6
+09	SABAJA/PAMO 	3
+10	OKE ABA 	8
+11	OLLA 	6
+TOTAL: 	11 	68
+Page 70 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 76 of 107 --
+
+KWARA STATE
+ISIN 	Code: 	10	LGA:
+Alla 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MARKET CENTRE OPEN SPACE 	001
+L.G.E.A SCH OPONDA 	002
+OWODE KAJOLA OPEN SPACE 	003
+ILE OBA, ALLA OPEN SPACE 	004
+TOTAL PUs: 	4
+Edidi 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ST ANDREW L.G.E.A SCH 	001
+BALE'S AREA OPEN SPACE 	002
+MARKET CENTRE OPEN SPACE 	003
+ILE‐LOKE OPEN SPACE 	004
+TOTAL PUs: 	4
+Isanlu I 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE‐LOKE ISANLU OPEN SPACE 	001
+ST JOSEPH'S L.G.E.A SCH 	002
+AIYETORO OPEN SPACE 	003
+BAPTIST L.G.E.A SCH 	004
+MARKET CENTRE ELEYIN 	005
+ODOGBO OPEN SPACE 	006
+ILE OLOGBA AREA 	007
+TOTAL PUs: 	7
+Isanlu II 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE AGBASIN OPEN SPACE 	001
+MARKET CENTRE OPEN SPACE 	002
+OKE‐EPA OPEN SPACE 	003
+MATERNITY CENTRE 	004
+AIYEDE OPEN SPACE 	005
+IGBAGBOTEDO OPEN SPACE 	006
+ILE OLOMUJO OPEN SPACE 	007
+TOTAL PUs: 	7
+Page 71 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 77 of 107 --
+
+KWARA STATE
+ISIN 	Code: 	10	LGA:
+Ijara 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKE IGUNSIN OPEN SPACE 	001
+MARKET CENTRE OPEN SPACE 	002
+BAPTIST L.G.E.A SCH 	003
+BALE'S AREA OPEN SPACE 	004
+OLD COURT OPEN SPACE 	005
+ILE OLUSIN OPEN SPACE 	006
+ILE NLA OPEN SPACE 	007
+AJEGUNLE OPEN SPACE 	008
+OFATEDO OPEN SPACE 	009
+TOTAL PUs: 	9
+Iwo 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ILE OBA OPEN SPACE 	001
+COMM LGEA SCHOOL 	002
+ILE NLA OPEN SPACE 	003
+OKE‐OPE OPEN SPACE 	004
+MATERNITY CENTRE OPEN SPACE I 	005
+MATERNITY CENTRE OPEN SPACE II 	006
+TOTAL PUs: 	6
+Owu Isin 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COURT AREA OPEN SPACE 	001
+ILE OBA OWU OPEN SPACE I 	002
+ILE OBA OWU OPEN SPACE II 	003
+LGEA SCH OWU 	004
+LGEA SCH IJI‐ISIN I 	005
+LGEA SCH IJI‐ISIN II 	006
+MARKET CENTRE KUDU 	007
+MARKET CENTRE OYI 	008
+TOTAL PUs: 	8
+Page 72 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 78 of 107 --
+
+KWARA STATE
+ISIN 	Code: 	10	LGA:
+Oke Onigbin 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GARAGE OKE ONIGBIN OPEN SPACE 	001
+ALL SAINTS, LGEA SCH 	002
+ODO‐IGBESI OPEN SPACE 	003
+COURT AREA OPEN SPACE 	004
+IGBESI LGEA SCH 	005
+ADIGUN OPEN SPACE 	006
+TOTAL PUs: 	6
+Sabaja/Pamo 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+PAMO LGEA SCH 	001
+OBA‐ISIN LGEA SCH 	002
+SABAJA OPEN SPACE 	003
+TOTAL PUs: 	3
+Oke Aba 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OKE ABA LGEA SCH 	001
+ODO EKU LGEA SCH 	002
+BALE'S AREA ODO ORE 	003
+MAGAJI OLOKIN OPEN SPACE 	004
+OKE ABA TOWN HALL 	005
+ODO‐EKU MARKET CENTRE 	006
+IDI AGBEDE OKE ABA 	007
+OKE ABA MARKET CENTRE 	008
+TOTAL PUs: 	8
+Olla 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AIYEKALE OLLA OPEN SPACE 	001
+OLLA MARKET CENTRE 	002
+AGAMO OPEN SPACE 	003
+ECWA LGEA SCH OLLA 	004
+COMM LGEA SCH OLLA 	005
+ODOFIN AREA OLLA OPEN SPACE 	006
+TOTAL PUs: 	6
+Page 73 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 79 of 107 --
+
+KWARA STATE
+KAIAMA
+Code: 11
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	ADENA 	4
+02	BANI 	8
+03	GWANABE I 	7
+04	GWANABE II 	6
+05	GWARI A (GWARIA) 	6
+06	KAIAMA I 	4
+07	KAIAMA II 	6
+08	KAIAMA III 	4
+09	KEMANJI 	4
+10	WAJIBE 	7
+TOTAL: 	10 	56
+Page 74 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 80 of 107 --
+
+KWARA STATE
+KAIAMA 	Code: 	11	LGA:
+Adena 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KLGEA SCH ADENA 	001
+KLGEA SCH DADA 	002
+KLGEA SCH KOSA 	003
+GBAJIBO OPEN SPACE 	004
+TOTAL PUs: 	4
+Bani 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BANI KLGEA SCH 	001
+ZANGO MARKET, BANI 	002
+OLOKOTINTIN KLGEA SCH 	003
+FONLO OPEN SPACE 	004
+BANI‐OLORI KLGEA SCH 	005
+KAAGBONA KLGEA (NOM. SCH) 	006
+FAMINI KLGEA SCH 	007
+OGUNIYI OPEN SPACE 	008
+TOTAL PUs: 	8
+Gwanabe I 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KANIKOKO PRY SCH I 	001
+KANIKOKO PRY SCH II 	002
+VENRA KLGEA SCH 	003
+WORO KLGEA SCH 	004
+TUNGA MAJA PRY SCH 	005
+NUKUZI KLGEA SCH 	006
+GOROBANI OPEN SPACE 	007
+TOTAL PUs: 	7
+Page 75 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 81 of 107 --
+
+KWARA STATE
+KAIAMA 	Code: 	11	LGA:
+Gwanabe II 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GWATTEKUTA KLGEA SCH 	001
+TUNGA‐ABOKI KLGEA SCH 	002
+SOPERE KLGEA SCH 	003
+KOROKUN OPEN SPACE 	004
+TUNGA ATIKU DARUSALAM (NS) 	005
+OWODE NOM. SCH 	006
+TOTAL PUs: 	6
+Gwari A (Gwaria) 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+GWARIA KLGEA SCH 	001
+MOZHI‐GADA KLGEA SCH 	002
+GWARIA‐WUZI KLGEA SCH 	003
+APATA WELEWELE KLGEA SCH 	004
+NOMADIC SCH, GORODEGE 	005
+GATE KLGEA SCH 	006
+TOTAL PUs: 	6
+Kaiama I 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+CENTRAL PRY SCH, KAIAMA 	001
+NRC SECRETARIAT, KAIAMA I 	002
+NRC SECRETARIAT, KAIAMA II 	003
+KPAKPEN OPEN SPACE 	004
+TOTAL PUs: 	4
+Kaiama II 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MOW CAMP DEMONSTRATION SCH 	001
+NASSARAWA OPEN SPACE 	002
+KULINGIZIN ISLAMIYA OLD SCH 	003
+GBANAGIZI KLGEA SCH 	004
+OSIWERA VIEWING CENTRE, KAIAMA 	005
+KLGEA SCH, SABON‐NGARI 	006
+TOTAL PUs: 	6
+Page 76 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 82 of 107 --
+
+KWARA STATE
+KAIAMA 	Code: 	11	LGA:
+Kaiama III 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KABARU OPEN SPACE 	001
+POST OFFICE, KAIAMA 	002
+ZANGO OPEN SPACE 	003
+OGA‐SAANI OPEN SPACE 	004
+TOTAL PUs: 	4
+Kemanji 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+KIBENFADI KLGEA SCH 	001
+KPEDEZIN KLGEA SCH 	002
+BABETE NOMADIC SCH 	003
+TENEBO KLGEA SCH 	004
+TOTAL PUs: 	4
+Wajibe 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+SHIRI‐GWARIA KLGEA SCH 	001
+KUGIJI KLGEA SCH 	002
+BANISULA KLGEA SCH 	003
+KARO CAMP, KLGEA SCH 	004
+KARO CAMP MARKET SQUARE 	005
+BEZIRA KLGEA SCH 	006
+NANU KLGEA SCH 	007
+TOTAL PUs: 	7
+Page 77 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 83 of 107 --
+
+KWARA STATE
+MORO
+Code: 12
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	JEBBA 	11
+02	BODE‐SAADU 	5
+03	OKEMI 	4
+04	LANWA 	6
+05	EJIDONGARI 	4
+06	OKUTALA 	6
+07	BABADUDU 	7
+08	OLORU 	5
+09	PAKUNMO 	6
+10	WOMI/AYAKI 	6
+11	ABATI/ALARA 	5
+12	SHAO 	7
+13	LOGUN/JEHUNKUNNU 	4
+14	MALETE/GBUGUDU 	4
+15	AJANAKU 	4
+16	MEGIDA 	6
+17	AROBADI 	5
+TOTAL: 	17 	95
+Page 78 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 84 of 107 --
+
+KWARA STATE
+MORO 	Code: 	12	LGA:
+Jebba 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+UMCA IDI AGBON JEBBA 	001
+ST THERESA SCH JEBBA 	002
+WAITING ROOM, RAILWAY STATION 	003
+BERGER MARKET 	004
+ANSARUL ISLAM SCH 	005
+LABOUR CAMP JEBBA 	006
+LGEA SCH ONIPAKO 	007
+LGEA SCH IYANA, BACITA 	008
+LGEA SCH MORAFA 	009
+LGEA SCH FANGAN 	010
+LGEA SCH ADEKANBI 	011
+TOTAL PUs: 	11
+Bode‐Saadu 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+VIEWING CENTRE BODE‐SAADU 	001
+COMM PRY SCH BODE‐SAADU 	002
+LAKANLA VILLAGE 	003
+LGEA SCH LASAKI FALA 	004
+GATTA VILLAGE 	005
+TOTAL PUs: 	5
+Okemi 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH OKEMI 	001
+LGEA SCH ADIO LANWA 	002
+LGEA SCH OLOWODE 	003
+LGEA SCH MAYA 	004
+TOTAL PUs: 	4
+Page 79 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 85 of 107 --
+
+KWARA STATE
+MORO 	Code: 	12	LGA:
+Lanwa 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH LANWA 	001
+LGEA SCH ELEBU 	002
+GBODI VILLAGE 	003
+LGEA SCH BUDO‐ODE 	004
+ELEMOSHO VILLAGE 	005
+GOVT. SEC SCH LANWA 	006
+TOTAL PUs: 	6
+Ejidongari 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH EJIDONGARI 	001
+LGEA SCH AGOGO 	002
+LGEA SCH MAGAJI OGUNBO 	003
+LGEA SCH OLOKITI NLA 	004
+TOTAL PUs: 	4
+Okutala 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH OKUTALA 	001
+LGEA SCH BI‐ELESIN 	002
+LGEA SCH AMOO 	003
+LGEA SCH LADOJO 	004
+LGEA SCH OLOKO 	005
+OPEN SPACE JOWA‐IDISIN 	006
+TOTAL PUs: 	6
+Babadudu 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH OGUNTULU 	001
+LGEA SCH IGBO‐EMU 	002
+LGEA SCH SHEJI 	003
+LGEA SCH JODOMA 	004
+L.G.E.A. SCH AGBAKU‐EJI 	005
+L.G.E.A. SCH BABADUDU 	006
+OPEN SPACE IGBIRA 	007
+TOTAL PUs: 	7
+Page 80 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 86 of 107 --
+
+KWARA STATE
+MORO 	Code: 	12	LGA:
+Oloru 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A. SCH OLORU 	001
+L.G.E.A. SCH OGUN‐EDUN 	002
+L.G.E.A. SCH MAMA 	003
+OPEN SPACE KANBI 	004
+SECONDARY SCH OLORU 	005
+TOTAL PUs: 	5
+Pakunmo 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MATERNITY DISPENSARY BUDO‐OKE 	001
+L.G.E.A. SCH OBADA 	002
+L.G.E.A. SCH PAKUNMO 	003
+APOYA VILLAGE 	004
+MOLEKE VILLAGE 	005
+OPEN SPACE ABAMBA 	006
+TOTAL PUs: 	6
+Womi/Ayaki 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ZURU VILLAGE 	001
+L.G.E.A. SCH ELEMERE 	002
+L.G.E.A. SCH ADIO 	003
+L.G.E.A. SCH APATA OLONI 	004
+L.G.E.A. SCH ABEYA 	005
+L.G.E.A. SCH ANIMAJE 	006
+TOTAL PUs: 	6
+Abati/Alara 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH TEPATAN 	001
+L.G.E.A SCH ARA 	002
+L.G.E.A SCH BUDO ARE 	003
+L.G.E.A SCH KIRIBI 	004
+L.G.E.A SCH ELEKO‐YANGAN 	005
+TOTAL PUs: 	5
+Page 81 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 87 of 107 --
+
+KWARA STATE
+MORO 	Code: 	12	LGA:
+Shao 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+S.D.A SCH SHAO 	001
+L.G.E.A SCH SHAO 	002
+OKE SINNIGA SHAO 	003
+TOWN HALL SHAO 	004
+I.A.D.P SHAO 	005
+ODE ALAWON SHAO 	006
+MATERNITY CENTRE SHAO 	007
+TOTAL PUs: 	7
+Logun/Jehunkunnu 	Code: 13
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH JEUNKUNNU 	001
+KARIBUJE VILLAGE 	002
+BUDO‐ABO VILLAGE 	003
+L.G.E.A SCH OLOWU 	004
+TOTAL PUs: 	4
+Malete/Gbugudu 	Code: 14
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH MALETE 	001
+L.G.E.A SCH BUSAMU‐ADU 	002
+L.G.E.A SCH GBUGUDU 	003
+L.G.E.A SCH OKETE‐JAGODO 	004
+TOTAL PUs: 	4
+Ajanaku 	Code: 15
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH BUDO ARE 	001
+L.G.E.A SCH AGBAKU 	002
+L.G.E.A SCH PAKU 	003
+L.G.E.A SCH AGAR 	004
+TOTAL PUs: 	4
+Page 82 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 88 of 107 --
+
+KWARA STATE
+MORO 	Code: 	12	LGA:
+Megida 	Code: 16
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH IPAIYE 	001
+L.G.E.A SCH BABALOKE 	002
+L.G.E.A SCH OLOWORU 	003
+L.G.E.A SCH ALAGBO 	004
+L.G.E.A SCH ABEREJO 	005
+L.G.E.A SCH AGBAKU 	006
+TOTAL PUs: 	6
+Arobadi 	Code: 17
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH AROBADI 	001
+L.G.E.A SCH GUDU 	002
+L.G.E.A SCH ADARA 	003
+L.G.E.A. SCHOOL PRIMARY ODONIGI 	004
+L.G.E.A SCH AWUYAN 	005
+TOTAL PUs: 	5
+Page 83 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 89 of 107 --
+
+KWARA STATE
+OFFA
+Code: 13
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	BALOGUN 	10
+02	SHAWO SOUTH WEST 	8
+03	SHAWO CENTRAL 	8
+04	SHAWO SOUTH EAST 	7
+05	ESSA ‐ A 	6
+06	ESSA ‐ B 	5
+07	ESSA ‐ C 	7
+08	OJOMU NORTH/NORTH WEST 	9
+09	OJOMU CENTRAL I 	6
+10	OJOMU CENTRAL II 	5
+11	OJOMU SOUTH EAST 	10
+12	IGBOIDUN 	5
+TOTAL: 	12 	86
+Page 84 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 90 of 107 --
+
+KWARA STATE
+OFFA 	Code: 	13	LGA:
+Balogun 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE TIDI BOGEDE L.G.E.A 	001
+OPEN SPACE BALOGUN MARKET 	002
+OPEN SPACE AROWOSODUN AREA 	003
+OPEN SPACE IDI‐ISIN AREA 	004
+OPEN SPACE AJODA AREA 	005
+OPEN SPACE A.U.D AREA 	006
+OPEN SPACE IYERU‐OKIN L.G.E.A I 	007
+OPEN SPACE IYERU‐OKIN L.G.E.A II 	008
+OPEN SPACE AKINGBASA AREA 	009
+OPEN SPACE AMOKO COMP 	010
+TOTAL PUs: 	10
+Shawo South West 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ADEOLA JUNCTION 	001
+OPEN SPACE NEAR IGBONNA MOSQUE AREA 	002
+OPEN SPACE FREEDOM HOTEL AREA 	003
+OPEN SPACE OMO‐OWO AREA 	004
+OPEN SPACE, ST CYPRIAN SCH I 	005
+OPEN SPACE, ST CYPRIAN SCH II 	006
+OPEN SPACE, AFOLARIN AREA 	007
+OPEN SPACE, KANMONU ALAYIN 	008
+TOTAL PUs: 	8
+Shawo Central 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE, BOLUDE AREA 	001
+OPEN SPACE, OGANLA AREA 	002
+OPEN SPACE, ANBE AREA 	003
+OPEN SPACE, AKOSIN AREA 	004
+OPEN SPACE, ALUBATA AREA 	005
+OPEN SPACE, POPO MARKET 	006
+OPEN SPACE, AJIA AREA 	007
+OPEN SPACE, IKOLABA AREA 	008
+TOTAL PUs: 	8
+Page 85 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 91 of 107 --
+
+KWARA STATE
+OFFA 	Code: 	13	LGA:
+Shawo South East 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE, ARE ONILU AREA 	001
+OPEN SPACE, OLUWE AREA 	002
+OPEN SPACE, ELEPA AREA 	003
+OPEN SPACE, IDI OGUN AREA 	004
+OPEN SPACE, BELEORE AREA 	005
+OPEN SPACE, OKIN CINEMA AREA 	006
+OPEN SPACE, SAKOSI JUNCTION 	007
+TOTAL PUs: 	7
+Essa ‐ A 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE, ONIJU AREA 	001
+OPEN SPACE, OBADABOYE AREA 	002
+OPEN SPACE, AKINLOFI AREA 	003
+OPEN SPACE,OPPOSITE OLOFA'S GATE 	004
+OPEN SPACE, AROLE AREA 	005
+IGBO‐ORO HEALTH CENTRE 	006
+TOTAL PUs: 	6
+Essa ‐ B 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ONA‐ARA BAKERY 	001
+DE‐CROWN RESTRAURANT OLOYA AREA 	002
+OPEN SPACE OLOYABANLEKU AREA 	003
+OPEN SPACE SAJIKU AREA 	004
+OPEN SPACE ESSA SQUARE 	005
+TOTAL PUs: 	5
+Page 86 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 92 of 107 --
+
+KWARA STATE
+OFFA 	Code: 	13	LGA:
+Essa ‐ C 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ODIWO AREA 	001
+OPEN SPACE OLUAWO AREA 	002
+IDI‐OGUN SAWMILL AREA 	003
+OPEN SPACE ALAPE AREA 	004
+BAPTIST LGEA ITAFA 	005
+OPEN SPACE O.D.U SECRETARIAT I 	006
+OPEN SPACE O.D.U SECRETARIAT II 	007
+TOTAL PUs: 	7
+Ojomu North/North West 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE IST BAPTIST L.G.E.A 	001
+OPEN SPACE AGUN BAPTIST L.G.E.A 	002
+OPEN SPACE ADELEKE ROAD 	003
+OPEN SPACE MUU ROAD 	004
+OPEN SPACE O.G.S 	005
+OPEN SPACE OLUOLO 	006
+OPEN SPACE PRINCE MOTEL 	007
+OPEN SPACE POST OFFICE 	008
+OPEN SPACE OGAKUNRIN AREA 	009
+TOTAL PUs: 	9
+Ojomu Central I 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE ESO BABA ALATA 	001
+OPEN SPACE EJISUN AREA 	002
+OPEN SPACE CHILDREN WELFARE 	003
+OPEN SPACE ANADOWO AREA 	004
+OPEN SPACE ALAGURE AREA 	005
+OPEN SPACE OLA ISALE AREA 	006
+TOTAL PUs: 	6
+Page 87 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 93 of 107 --
+
+KWARA STATE
+OFFA 	Code: 	13	LGA:
+Ojomu Central II 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE OBATIWAJUOYE AREA 	001
+OPEN SPACE ASALOFA AREA 	002
+OPEN SPACE OLADODO AREA 	003
+OPEN SPACE ESO PATAKI AREA 	004
+OPEN SPACE ST THOMAS L.G.E.A 	005
+TOTAL PUs: 	5
+Ojomu South East 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A WESLEY SCH 	001
+OPPOSITE IST BAPTIST CHURCH SURULERE 	002
+ITA APONBI BUS STOP 	003
+OPEN SPACE ITA ERIN AREA 	004
+OPEN SPACE ESINKIN AREA 	005
+OPEN SPACE GEDEGBE AREA 	006
+OPEN SPACE OGANRAN AREA 	007
+OPEN SPACE AROJOJOYE AREA 	008
+OPEN SPACE OPELOYERU AREA I 	009
+OPEN SPACE OPELOYERU AREA II 	010
+TOTAL PUs: 	10
+Igboidun 	Code: 12
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+IGBOIDUN L.G.E.A 	001
+IGBAWERE L.G.E.A 	002
+OPEN SPACE GBOSUN OGBONDOROKO 	003
+OPEN SPACE PANDORO 	004
+OPEN SPACE AJEGUNLE 	005
+TOTAL PUs: 	5
+Page 88 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 94 of 107 --
+
+KWARA STATE
+OKE‐ERO
+Code: 14
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	AIYEDUN 	7
+02	EKAN 	9
+03	IMOJI/ILALE/ERINMOPE 	4
+04	ILOFFA 	7
+05	IMODE/EGOSI 	5
+06	IDOFIN IGBANA I 	6
+07	IDOFIN IGBANA II 	5
+08	IDOFIN /ODO‐ASHE 	8
+09	ODO‐OWA I 	7
+10	ODO‐OWA II 	5
+TOTAL: 	10 	63
+Page 89 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 95 of 107 --
+
+KWARA STATE
+OKE‐ERO 	Code: 	14	LGA:
+Aiyedun 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MARKET CENTRE I 	001
+MARKET CENTRE II 	002
+IJELU CENTRE I 	003
+IJELU CENTRE II 	004
+ILE ALA 	005
+ADODO 	006
+ODE EDE 	007
+TOTAL PUs: 	7
+Ekan 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ERI EGUN 	001
+OPEN SPACE AFIN 	002
+IDERA ROAD 	003
+OKE ILEGUN 	004
+ILE TARA 	005
+ODO‐OWA 	006
+ILE‐AGBEDU 	007
+OKE‐OKIN 	008
+AJURE 	009
+TOTAL PUs: 	9
+Imoji/Ilale/Erinmope 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+COMM L.G.E.A SCH IMOJI 	001
+COMM L.G.E.A SCH ILALE 	002
+MARKET CENTRE ERINMOPE 	003
+ODO OYE ILALE 	004
+TOTAL PUs: 	4
+Page 90 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 96 of 107 --
+
+KWARA STATE
+OKE‐ERO 	Code: 	14	LGA:
+Iloffa 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+JAMAT L.G.E.A SCH 	001
+OLD MARKET 	002
+IREPE COMPOUND 	003
+OKE IPO I 	004
+OKE IPO II 	005
+ST JOHN C.A.C SCH I 	006
+ST JOHN C.A.C SCH II 	007
+TOTAL PUs: 	7
+Imode/Egosi 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+EGOSI TOWN HALL 	001
+IDI‐EKITI 	002
+OKE‐OWA/OKO‐ORU 	003
+OKE‐ARO COMPOUND 	004
+BOLORUNDURO 	005
+TOTAL PUs: 	5
+Idofin Igbana I 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ADULT L.G.E.A SCH 	001
+COURT PREMISES 	002
+MARKET CENTRE 	003
+ST PAUL L.G.E.A SCH 	004
+ODOLOKE COMPOUND 	005
+ODO‐AGBEDE COMPOUND 	006
+TOTAL PUs: 	6
+Idofin Igbana II 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MOTOR PARK 	001
+AREA OFFICE 	002
+ODO‐OSE COMPOUND 	003
+KOBA 	004
+KADE 	005
+TOTAL PUs: 	5
+Page 91 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 97 of 107 --
+
+KWARA STATE
+OKE‐ERO 	Code: 	14	LGA:
+Idofin /Odo‐Ashe 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+L.G.E.A SCH AYEKALE 	001
+MARKET CENTRE EHINAFO 	002
+COMM L.G.E.A SCH EHINAFO 	003
+ILE OLUKOSE AYEKALE 	004
+ILE ALAYE ODO AGA 	005
+OKE MAPO/MAKURDI I 	006
+OKE MAPO/MAKURDI II 	007
+POLICE STATION 	008
+TOTAL PUs: 	8
+Odo‐Owa I 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AFIN COMPOUND 	001
+ARINRIN COMPOUND 	002
+IKOTUN COMPOUND 	003
+C.A.C L.G.E.A SCH 	004
+ADULT L.G.E.A SCH 	005
+ST THOMAS PRY SCH 	006
+IGBEDE COMPOUND 	007
+TOTAL PUs: 	7
+Odo‐Owa II 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+IPEKUN COMPOUND 	001
+IGBINLO COMPOUND 	002
+IGBIRA COMPOUND 	003
+ST JOSEPH PRY SCH 	004
+TEMIDIRE (YASOLA) 	005
+TOTAL PUs: 	5
+Page 92 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 98 of 107 --
+
+KWARA STATE
+OYUN
+Code: 15
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	ERIN‐ILE SOUTH 	6
+02	ILEMONA 	6
+03	IGBONA 	7
+04	IRRA 	5
+05	INAJA/AHOGBADA 	6
+06	IKOTUN 	7
+07	OJOKU 	7
+08	IJAGBO 	5
+09	IGOSUN 	6
+10	IPEE 	7
+11	ERIN‐ILE NORTH 	7
+TOTAL: 	11 	69
+Page 93 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 99 of 107 --
+
+KWARA STATE
+OYUN 	Code: 	15	LGA:
+Erin‐Ile South 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BAPTIST LGEA SCH, ERIN‐ILE 	001
+ERIN‐ILE GARAGE 	002
+OPPOSITE POLICE STATION, ERIN‐ILE 	003
+MAGISTRATE COURT, ERIN‐ILE 	004
+MUSLIM SCH, ERIN‐ILE 	005
+AGO IWOYE 	006
+TOTAL PUs: 	6
+Ilemona 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH, ILEMONA 	001
+LGEA SCH, ADINIMODO 	002
+ISAOYE 	003
+LGEA SCH REKE 	004
+AJOKO 	005
+COURT AREA, ILEMONA 	006
+TOTAL PUs: 	6
+Igbona 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+TOWN HAL, IGBONA 	001
+LGEA SCH, IGBONA 	002
+ELEKU 	003
+KERE‐AJE LGEA SCH 	004
+BOLORUNDURO LGEA SCH 	005
+AGBARA LGEA SCH 	006
+OPEN SPACE ISALE IGBONA, ELEKU 	007
+TOTAL PUs: 	7
+Irra 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ST PETER'S LGEA SCH , IRRA 	001
+INFRONT OF OJOMU'S COMPOUND, IRRA 	002
+IRRA GRAMMAR SCH, IRRA 	003
+INFRONT OF ARO'S COMPOUND, IRRA 	004
+MUSLIM LGEA SCH, IRRA 	005
+TOTAL PUs: 	5
+Page 94 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 100 of 107 --
+
+KWARA STATE
+OYUN 	Code: 	15	LGA:
+Inaja/Ahogbada 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LGEA SCH , INAJA MALIKI 	001
+LGEA SCH , INAJA ALARO 	002
+ILOBU ‐ KAJOLA 	003
+LGEA SCH, AHOGBADA 	004
+LGEA SCH, SANNI ODE 	005
+LGEA SCH, AFIJAGBA 	006
+TOTAL PUs: 	6
+Ikotun 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+IKOTUN COURT FRONTAGE 	001
+ANSARUL‐ISLAM LGEA SCH, IKOTUN 	002
+LGEA SCH FALOKUN/FADE 	003
+GUDUGBA/OKE‐OYE 	004
+LGEA SCH IGBOTELE 	005
+AGBAMU 	006
+ANSARUL‐ISLAM LGEA SCH, IKOTUN 	007
+TOTAL PUs: 	7
+Ojoku 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MUSLIM LGEA SCH, OJOKU 	001
+INFRONT OF ONIDUN'S COMP, OJOKU 	002
+INFRONT OF GBOYE'S COMP, OJOKU 	003
+OPPOSITE COUNCIL HALL, OJOKU 	004
+WESLEY LGEA SCH, OJOKU 	005
+LGEA SCH, AWONIYI 	006
+MUSLIM SCH, ISALE IDERA 	007
+TOTAL PUs: 	7
+Page 95 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 101 of 107 --
+
+KWARA STATE
+OYUN 	Code: 	15	LGA:
+Ijagbo 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BAPTIST LGEA SCH, IJAGBO I 	001
+BAPTIST LGEA SCH, IJAGBO II 	002
+POST OFFICE, IJAGBO 	003
+A.U.D LGEA SCH, IJAGBO 	004
+LGEA SCH ADELEKE 	005
+TOTAL PUs: 	5
+Igosun 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+INFRONT OF ONILU'S COMP, IGOSUN 	001
+OLD MARKET IGOSUN 	002
+BESIDE NEPA OFFICE, IGOSUN 	003
+MUSLIM LGEA SCH, IGOSUN 	004
+AGO IDERA 	005
+INFRONT OF OLU‐ODE'S COMP, IGOSUN 	006
+TOTAL PUs: 	6
+Ipee 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+MUSLIM LGEA SCH, IPEE 	001
+BAPTIST LGEA SCH, IPEE 	002
+CENTRAL MARKET, IPEE 	003
+BUDO AIYEKALE 	004
+LGEA SCH, AJOKO 	005
+BUDO‐ALFA 	006
+IBGS JUNCTION, ORIWO 	007
+TOTAL PUs: 	7
+Page 96 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 102 of 107 --
+
+KWARA STATE
+OYUN 	Code: 	15	LGA:
+Erin‐Ile North 	Code: 11
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+OPEN SPACE OLOWE 	001
+ST MATHIAS LGEA SCH, ERIN‐ILE I 	002
+ST MATHIAS LGEA SCH, ERIN‐ILE II 	003
+EBENEZER LGEA SCH, ERIN‐ILE 	004
+INFRONT OF OLOBA'S COMP, ERIN‐ILE 	005
+INFRONT OF OKIKI'S COMP, ERIN‐ILE 	006
+SURAJUDEEN LGEA SCH, ERIN‐ILE 	007
+TOTAL PUs: 	7
+Page 97 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 103 of 107 --
+
+KWARA STATE
+PATEGI
+Code: 16
+LGA:
+NAME 	Code
+THE LIST OF REGISTRATION AREAS IN THE LOCAL
+GOVERNMENT AREA
+# of PUs
+01	PATIGI I 	5
+02	PATIGI II 	3
+03	PATIGI III 	4
+04	PATIGI IV 	7
+05	KPADA I 	10
+06	KPADA II 	8
+07	KPADA III 	4
+08	LADE I 	6
+09	LADE II 	6
+10	LADE III 	6
+TOTAL: 	10 	59
+Page 98 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 104 of 107 --
+
+KWARA STATE
+PATEGI 	Code: 	16	LGA:
+Patigi I 	Code: 01
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BASIC HEALTH CENTRE 	001
+CENTRAL OFFICE 	002
+CENTRAL SCHOOL 	003
+REST HOUSE 	004
+S.I.M SCHOOL 	005
+TOTAL PUs: 	5
+Patigi II 	Code: 02
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+EFUNGUNZHI OPEN SPACE 	001
+GBOKE LGEA SCH I 	002
+GBOKE LGEA SCH II 	003
+TOTAL PUs: 	3
+Patigi III 	Code: 03
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+DISPENSARY CENTRE 	001
+PUBLIC HEALTH OPEN SPACE 	002
+TSADU'S GATE 	003
+MAMANNAWO'S GATE 	004
+TOTAL PUs: 	4
+Patigi IV 	Code: 04
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+EDOGI LGEA SCH 	001
+ELLA LGEA SCH 	002
+GBADOKIN LGEA SCH 	003
+GBARADOGI LGEA SCH 	004
+GODIWAGI LGEA SCH 	005
+MAWOGI OPEN SPACE 	006
+TSWATAGI LGEA SCH 	007
+TOTAL PUs: 	7
+Page 99 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 105 of 107 --
+
+KWARA STATE
+PATEGI 	Code: 	16	LGA:
+Kpada I 	Code: 05
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BASIC HEALTH CENTRE 	001
+DURO LGEA SCH 	002
+EMIWOROGI LGEA SCH 	003
+GAKPAN LGEA SCH 	004
+GULUGI LGEA SCH 	005
+KAJITA LGEA SCH 	006
+KPADA MARKET SQUARE 	007
+KPADA S.I.M SCH 	008
+TSABAN LGEA SCH 	009
+WAKO LGEA SCH 	010
+TOTAL PUs: 	10
+Kpada II 	Code: 06
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+ECHIWADA LGEA SCH 	001
+EGWAMAMA LGEA SCH 	002
+EZIGHIKO OPEN SPACE 	003
+FEY LGEA SCH 	004
+GULUKA LGEA SCH 	005
+KORO LGEA SCH 	006
+KUSOGI C.S.S 	007
+ROGUN LGEA SCH 	008
+TOTAL PUs: 	8
+Kpada III 	Code: 07
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+AGBORO LGEA SCH 	001
+RIFUN LGEA SCH 	002
+TAMKPAFU LGEA SCH 	003
+MATOKUN LGEA SCH 	004
+TOTAL PUs: 	4
+Page 100 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 106 of 107 --
+
+KWARA STATE
+PATEGI 	Code: 	16	LGA:
+Lade I 	Code: 08
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+BONGI LGEA SCH 	001
+CHITTA LGEA SCH 	002
+GBADASHABA LGEA SCH 	003
+MAGYA LGEA SCH 	004
+SUNKUSO LGEA SCH 	005
+SANCHITA OPEN SPACE 	006
+TOTAL PUs: 	6
+Lade II 	Code: 09
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+LADE CENTRAL LGEA SCH 	001
+DINA LGEA SCH 	002
+DISTRICT OFFICE LADE 	003
+RANI‐NDAKO LGEA SCH 	004
+TSUBA LGEA SCH 	005
+COTTAGE HOSPITAL 	006
+TOTAL PUs: 	6
+Lade III 	Code: 10
+PU Name [NOTE: The old name/location of relocated PUs appear in parenthesis] 	CODE
+RA:
+EDOGI‐CHAPPA LGEA SCH 	001
+DZAKO LGEA SCH 	002
+LALAGI LGEA SCH 	003
+LATA LGEA SCH 	004
+SAKPEFU LGEA SCH 	005
+WODATA LGEA SCH 	006
+TOTAL PUs: 	6
+Page 101 of 101	Directory of Polling Units 	Revised January 2015	INEC Nigeria
+
+-- 107 of 107 --
+

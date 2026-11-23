@@ -1,0 +1,6190 @@
+{
+  "source": {
+    "publisher": "Independent National Electoral Commission (INEC)",
+    "document": "Directory of Polling Units — Kwara State (Kwara South Senatorial District extract)",
+    "revision": "January 2015",
+    "url": "https://inecnigeria.org/wp-content/uploads/2019/02/PU_Directory_Revised_January_2015_Kwara.pdf",
+    "parsedAt": "2026-11-23T19:43:21.048Z",
+    "caveat": "Ward-level polling unit enumeration predates the 2021 INEC polling unit expansion (682 enumerated vs 907 post-2021 district total). Ward and LGA structure is stable, and coverage denominators use the authoritative 907 figure."
+  },
+  "totals": {
+    "lgas": 7,
+    "wards": 83,
+    "pollingUnits": 682
+  },
+  "lgas": [
+    {
+      "code": "04",
+      "name": "Ekiti",
+      "inecName": "EKITI",
+      "declaredWardCount": 10,
+      "declaredPollingUnitCount": 66
+    },
+    {
+      "code": "05",
+      "name": "Ifelodun",
+      "inecName": "IFELODUN",
+      "declaredWardCount": 18,
+      "declaredPollingUnitCount": 197
+    },
+    {
+      "code": "09",
+      "name": "Irepodun",
+      "inecName": "IREPODUN",
+      "declaredWardCount": 11,
+      "declaredPollingUnitCount": 133
+    },
+    {
+      "code": "10",
+      "name": "Isin",
+      "inecName": "ISIN",
+      "declaredWardCount": 11,
+      "declaredPollingUnitCount": 68
+    },
+    {
+      "code": "13",
+      "name": "Offa",
+      "inecName": "OFFA",
+      "declaredWardCount": 12,
+      "declaredPollingUnitCount": 86
+    },
+    {
+      "code": "14",
+      "name": "Oke-Ero",
+      "inecName": "OKE-ERO",
+      "declaredWardCount": 10,
+      "declaredPollingUnitCount": 63
+    },
+    {
+      "code": "15",
+      "name": "Oyun",
+      "inecName": "OYUN",
+      "declaredWardCount": 11,
+      "declaredPollingUnitCount": 69
+    }
+  ],
+  "wards": [
+    {
+      "lgaCode": "04",
+      "code": "01",
+      "id": "04-01",
+      "name": "Eruku",
+      "inecName": "ERUKU",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "04",
+      "code": "02",
+      "id": "04-02",
+      "name": "Isapa",
+      "inecName": "ISAPA",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "04",
+      "code": "03",
+      "id": "04-03",
+      "name": "Koro",
+      "inecName": "KORO",
+      "declaredPollingUnitCount": 3
+    },
+    {
+      "lgaCode": "04",
+      "code": "04",
+      "id": "04-04",
+      "name": "Obbo-Aiyeggunle I",
+      "inecName": "OBBO-AIYEGGUNLE I",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "04",
+      "code": "05",
+      "id": "04-05",
+      "name": "Obbo-Aiyeggunle II",
+      "inecName": "OBBO-AIYEGGUNLE II",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "04",
+      "code": "06",
+      "id": "04-06",
+      "name": "Obbo-Ile",
+      "inecName": "OBBO-ILE",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "04",
+      "code": "07",
+      "id": "04-07",
+      "name": "Osi I",
+      "inecName": "OSI I",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "04",
+      "code": "08",
+      "id": "04-08",
+      "name": "Osi II",
+      "inecName": "OSI II",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "04",
+      "code": "09",
+      "id": "04-09",
+      "name": "Opin",
+      "inecName": "OPIN",
+      "declaredPollingUnitCount": 13
+    },
+    {
+      "lgaCode": "04",
+      "code": "10",
+      "id": "04-10",
+      "name": "Oke-Opin/Etan",
+      "inecName": "OKE-OPIN/ETAN",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "05",
+      "code": "01",
+      "id": "05-01",
+      "name": "Oke-Ode I",
+      "inecName": "OKE-ODE I",
+      "declaredPollingUnitCount": 11
+    },
+    {
+      "lgaCode": "05",
+      "code": "02",
+      "id": "05-02",
+      "name": "Oke-Ode II",
+      "inecName": "OKE-ODE II",
+      "declaredPollingUnitCount": 11
+    },
+    {
+      "lgaCode": "05",
+      "code": "03",
+      "id": "05-03",
+      "name": "Oke-Ode III",
+      "inecName": "OKE-ODE III",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "05",
+      "code": "04",
+      "id": "05-04",
+      "name": "Ora",
+      "inecName": "ORA",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "05",
+      "code": "05",
+      "id": "05-05",
+      "name": "Ile-Ire",
+      "inecName": "ILE-IRE",
+      "declaredPollingUnitCount": 19
+    },
+    {
+      "lgaCode": "05",
+      "code": "06",
+      "id": "05-06",
+      "name": "Agunjin",
+      "inecName": "AGUNJIN",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "05",
+      "code": "07",
+      "id": "05-07",
+      "name": "Oro-Ago",
+      "inecName": "ORO-AGO",
+      "declaredPollingUnitCount": 15
+    },
+    {
+      "lgaCode": "05",
+      "code": "08",
+      "id": "05-08",
+      "name": "Omupo",
+      "inecName": "OMUPO",
+      "declaredPollingUnitCount": 18
+    },
+    {
+      "lgaCode": "05",
+      "code": "09",
+      "id": "05-09",
+      "name": "Share I",
+      "inecName": "SHARE I",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "05",
+      "code": "10",
+      "id": "05-10",
+      "name": "Share II",
+      "inecName": "SHARE II",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "05",
+      "code": "11",
+      "id": "05-11",
+      "name": "Share III",
+      "inecName": "SHARE III",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "05",
+      "code": "12",
+      "id": "05-12",
+      "name": "Share IV",
+      "inecName": "SHARE IV",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "05",
+      "code": "13",
+      "id": "05-13",
+      "name": "Share V",
+      "inecName": "SHARE V",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "05",
+      "code": "14",
+      "id": "05-14",
+      "name": "Igbaja I",
+      "inecName": "IGBAJA I",
+      "declaredPollingUnitCount": 13
+    },
+    {
+      "lgaCode": "05",
+      "code": "15",
+      "id": "05-15",
+      "name": "Igbaja II",
+      "inecName": "IGBAJA II",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "05",
+      "code": "16",
+      "id": "05-16",
+      "name": "Igbaja III",
+      "inecName": "IGBAJA III",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "05",
+      "code": "17",
+      "id": "05-17",
+      "name": "Idofian I",
+      "inecName": "IDOFIAN I",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "05",
+      "code": "18",
+      "id": "05-18",
+      "name": "Idofian II",
+      "inecName": "IDOFIAN II",
+      "declaredPollingUnitCount": 11
+    },
+    {
+      "lgaCode": "09",
+      "code": "01",
+      "id": "09-01",
+      "name": "Ajase Ipo I",
+      "inecName": "AJASE IPO I",
+      "declaredPollingUnitCount": 16
+    },
+    {
+      "lgaCode": "09",
+      "code": "02",
+      "id": "09-02",
+      "name": "Ajase Ipo II",
+      "inecName": "AJASE IPO II",
+      "declaredPollingUnitCount": 15
+    },
+    {
+      "lgaCode": "09",
+      "code": "03",
+      "id": "09-03",
+      "name": "Arandun",
+      "inecName": "ARANDUN",
+      "declaredPollingUnitCount": 14
+    },
+    {
+      "lgaCode": "09",
+      "code": "04",
+      "id": "09-04",
+      "name": "Esie/Ijan",
+      "inecName": "ESIE/IJAN",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "09",
+      "code": "05",
+      "id": "09-05",
+      "name": "Ipetu/Rore/Aran-Orin",
+      "inecName": "IPETU/RORE/ARAN-ORIN",
+      "declaredPollingUnitCount": 15
+    },
+    {
+      "lgaCode": "09",
+      "code": "06",
+      "id": "09-06",
+      "name": "Omu-Aran I (aran)",
+      "inecName": "OMU-ARAN I (ARAN)",
+      "declaredPollingUnitCount": 11
+    },
+    {
+      "lgaCode": "09",
+      "code": "07",
+      "id": "09-07",
+      "name": "Omu-Aran II (ihaye)",
+      "inecName": "OMU-ARAN II (IHAYE)",
+      "declaredPollingUnitCount": 12
+    },
+    {
+      "lgaCode": "09",
+      "code": "08",
+      "id": "09-08",
+      "name": "Omu-Aran III (ifaja)",
+      "inecName": "OMU-ARAN III (IFAJA)",
+      "declaredPollingUnitCount": 13
+    },
+    {
+      "lgaCode": "09",
+      "code": "09",
+      "id": "09-09",
+      "name": "Oro I",
+      "inecName": "ORO I",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "09",
+      "code": "10",
+      "id": "09-10",
+      "name": "Oro II",
+      "inecName": "ORO II",
+      "declaredPollingUnitCount": 13
+    },
+    {
+      "lgaCode": "09",
+      "code": "11",
+      "id": "09-11",
+      "name": "Oko",
+      "inecName": "OKO",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "10",
+      "code": "01",
+      "id": "10-01",
+      "name": "Alla",
+      "inecName": "ALLA",
+      "declaredPollingUnitCount": 4
+    },
+    {
+      "lgaCode": "10",
+      "code": "02",
+      "id": "10-02",
+      "name": "Edidi",
+      "inecName": "EDIDI",
+      "declaredPollingUnitCount": 4
+    },
+    {
+      "lgaCode": "10",
+      "code": "03",
+      "id": "10-03",
+      "name": "Isanlu I",
+      "inecName": "ISANLU I",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "10",
+      "code": "04",
+      "id": "10-04",
+      "name": "Isanlu II",
+      "inecName": "ISANLU II",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "10",
+      "code": "05",
+      "id": "10-05",
+      "name": "Ijara",
+      "inecName": "IJARA",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "10",
+      "code": "06",
+      "id": "10-06",
+      "name": "Iwo",
+      "inecName": "IWO",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "10",
+      "code": "07",
+      "id": "10-07",
+      "name": "Owu Isin",
+      "inecName": "OWU ISIN",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "10",
+      "code": "08",
+      "id": "10-08",
+      "name": "Oke Onigbin",
+      "inecName": "OKE ONIGBIN",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "10",
+      "code": "09",
+      "id": "10-09",
+      "name": "Sabaja/Pamo",
+      "inecName": "SABAJA/PAMO",
+      "declaredPollingUnitCount": 3
+    },
+    {
+      "lgaCode": "10",
+      "code": "10",
+      "id": "10-10",
+      "name": "Oke Aba",
+      "inecName": "OKE ABA",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "10",
+      "code": "11",
+      "id": "10-11",
+      "name": "Olla",
+      "inecName": "OLLA",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "13",
+      "code": "01",
+      "id": "13-01",
+      "name": "Balogun",
+      "inecName": "BALOGUN",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "13",
+      "code": "02",
+      "id": "13-02",
+      "name": "Shawo South West",
+      "inecName": "SHAWO SOUTH WEST",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "13",
+      "code": "03",
+      "id": "13-03",
+      "name": "Shawo Central",
+      "inecName": "SHAWO CENTRAL",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "13",
+      "code": "04",
+      "id": "13-04",
+      "name": "Shawo South East",
+      "inecName": "SHAWO SOUTH EAST",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "13",
+      "code": "05",
+      "id": "13-05",
+      "name": "Essa - A",
+      "inecName": "ESSA - A",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "13",
+      "code": "06",
+      "id": "13-06",
+      "name": "Essa - B",
+      "inecName": "ESSA - B",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "13",
+      "code": "07",
+      "id": "13-07",
+      "name": "Essa - C",
+      "inecName": "ESSA - C",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "13",
+      "code": "08",
+      "id": "13-08",
+      "name": "Ojomu North/North West",
+      "inecName": "OJOMU NORTH/NORTH WEST",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "13",
+      "code": "09",
+      "id": "13-09",
+      "name": "Ojomu Central I",
+      "inecName": "OJOMU CENTRAL I",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "13",
+      "code": "10",
+      "id": "13-10",
+      "name": "Ojomu Central II",
+      "inecName": "OJOMU CENTRAL II",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "13",
+      "code": "11",
+      "id": "13-11",
+      "name": "Ojomu South East",
+      "inecName": "OJOMU SOUTH EAST",
+      "declaredPollingUnitCount": 10
+    },
+    {
+      "lgaCode": "13",
+      "code": "12",
+      "id": "13-12",
+      "name": "Igboidun",
+      "inecName": "IGBOIDUN",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "14",
+      "code": "01",
+      "id": "14-01",
+      "name": "Aiyedun",
+      "inecName": "AIYEDUN",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "14",
+      "code": "02",
+      "id": "14-02",
+      "name": "Ekan",
+      "inecName": "EKAN",
+      "declaredPollingUnitCount": 9
+    },
+    {
+      "lgaCode": "14",
+      "code": "03",
+      "id": "14-03",
+      "name": "Imoji/Ilale/Erinmope",
+      "inecName": "IMOJI/ILALE/ERINMOPE",
+      "declaredPollingUnitCount": 4
+    },
+    {
+      "lgaCode": "14",
+      "code": "04",
+      "id": "14-04",
+      "name": "Iloffa",
+      "inecName": "ILOFFA",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "14",
+      "code": "05",
+      "id": "14-05",
+      "name": "Imode/Egosi",
+      "inecName": "IMODE/EGOSI",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "14",
+      "code": "06",
+      "id": "14-06",
+      "name": "Idofin Igbana I",
+      "inecName": "IDOFIN IGBANA I",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "14",
+      "code": "07",
+      "id": "14-07",
+      "name": "Idofin Igbana II",
+      "inecName": "IDOFIN IGBANA II",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "14",
+      "code": "08",
+      "id": "14-08",
+      "name": "Idofin /Odo-Ashe",
+      "inecName": "IDOFIN /ODO-ASHE",
+      "declaredPollingUnitCount": 8
+    },
+    {
+      "lgaCode": "14",
+      "code": "09",
+      "id": "14-09",
+      "name": "Odo-Owa I",
+      "inecName": "ODO-OWA I",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "14",
+      "code": "10",
+      "id": "14-10",
+      "name": "Odo-Owa II",
+      "inecName": "ODO-OWA II",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "15",
+      "code": "01",
+      "id": "15-01",
+      "name": "Erin-Ile South",
+      "inecName": "ERIN-ILE SOUTH",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "15",
+      "code": "02",
+      "id": "15-02",
+      "name": "Ilemona",
+      "inecName": "ILEMONA",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "15",
+      "code": "03",
+      "id": "15-03",
+      "name": "Igbona",
+      "inecName": "IGBONA",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "15",
+      "code": "04",
+      "id": "15-04",
+      "name": "Irra",
+      "inecName": "IRRA",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "15",
+      "code": "05",
+      "id": "15-05",
+      "name": "Inaja/Ahogbada",
+      "inecName": "INAJA/AHOGBADA",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "15",
+      "code": "06",
+      "id": "15-06",
+      "name": "Ikotun",
+      "inecName": "IKOTUN",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "15",
+      "code": "07",
+      "id": "15-07",
+      "name": "Ojoku",
+      "inecName": "OJOKU",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "15",
+      "code": "08",
+      "id": "15-08",
+      "name": "Ijagbo",
+      "inecName": "IJAGBO",
+      "declaredPollingUnitCount": 5
+    },
+    {
+      "lgaCode": "15",
+      "code": "09",
+      "id": "15-09",
+      "name": "Igosun",
+      "inecName": "IGOSUN",
+      "declaredPollingUnitCount": 6
+    },
+    {
+      "lgaCode": "15",
+      "code": "10",
+      "id": "15-10",
+      "name": "Ipee",
+      "inecName": "IPEE",
+      "declaredPollingUnitCount": 7
+    },
+    {
+      "lgaCode": "15",
+      "code": "11",
+      "id": "15-11",
+      "name": "Erin-Ile North",
+      "inecName": "ERIN-ILE NORTH",
+      "declaredPollingUnitCount": 7
+    }
+  ],
+  "pollingUnits": [
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "001",
+      "id": "04-01-001",
+      "name": "St Cyprian Sch. Eruku I",
+      "inecName": "ST CYPRIAN SCH. ERUKU I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "002",
+      "id": "04-01-002",
+      "name": "St Cyprian Sch. Eruku II",
+      "inecName": "ST CYPRIAN SCH. ERUKU II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "003",
+      "id": "04-01-003",
+      "name": "Market Centre, Eruku",
+      "inecName": "MARKET CENTRE, ERUKU"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "004",
+      "id": "04-01-004",
+      "name": "Open Space Oke-Ogi, Eruku",
+      "inecName": "OPEN SPACE OKE-OGI, ERUKU"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "005",
+      "id": "04-01-005",
+      "name": "Open Space Odolomu , Eruku",
+      "inecName": "OPEN SPACE ODOLOMU , ERUKU"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "006",
+      "id": "04-01-006",
+      "name": "Co-Operative LGEA Sch Eruku I",
+      "inecName": "CO-OPERATIVE L.G.E.A SCH ERUKU I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "01",
+      "code": "007",
+      "id": "04-01-007",
+      "name": "Co-Operative LGEA Sch Eruku II",
+      "inecName": "CO-OPERATIVE L.G.E.A SCH ERUKU II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "001",
+      "id": "04-02-001",
+      "name": "Open Space Odo-Ago Isapa",
+      "inecName": "OPEN SPACE ODO-AGO ISAPA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "002",
+      "id": "04-02-002",
+      "name": "LGEA Sch Isapa",
+      "inecName": "L.G.E.A SCH ISAPA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "003",
+      "id": "04-02-003",
+      "name": "Open Space Iberikedo Isapa",
+      "inecName": "OPEN SPACE IBERIKEDO ISAPA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "004",
+      "id": "04-02-004",
+      "name": "Open Space Odo-Itan Isapa",
+      "inecName": "OPEN SPACE ODO-ITAN ISAPA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "005",
+      "id": "04-02-005",
+      "name": "Open Space Oke-Ipo Isapa",
+      "inecName": "OPEN SPACE OKE-IPO ISAPA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "02",
+      "code": "006",
+      "id": "04-02-006",
+      "name": "Open Space Okesa/Mission",
+      "inecName": "OPEN SPACE OKESA/MISSION"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "03",
+      "code": "001",
+      "id": "04-03-001",
+      "name": "Comm Sch Koro",
+      "inecName": "COMM SCH KORO"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "03",
+      "code": "002",
+      "id": "04-03-002",
+      "name": "Health Centre Koro",
+      "inecName": "HEALTH CENTRE KORO"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "03",
+      "code": "003",
+      "id": "04-03-003",
+      "name": "Market Centre Koro",
+      "inecName": "MARKET CENTRE KORO"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "04",
+      "code": "001",
+      "id": "04-04-001",
+      "name": "Open Space Ekela",
+      "inecName": "OPEN SPACE EKELA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "04",
+      "code": "002",
+      "id": "04-04-002",
+      "name": "Open Space Ilemesin",
+      "inecName": "OPEN SPACE ILEMESIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "04",
+      "code": "003",
+      "id": "04-04-003",
+      "name": "Open Space Ajiu",
+      "inecName": "OPEN SPACE AJIU"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "04",
+      "code": "004",
+      "id": "04-04-004",
+      "name": "Open Space Obbo-Oke",
+      "inecName": "OPEN SPACE OBBO-OKE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "04",
+      "code": "005",
+      "id": "04-04-005",
+      "name": "Open Space Oke-Owa",
+      "inecName": "OPEN SPACE OKE-OWA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "05",
+      "code": "001",
+      "id": "04-05-001",
+      "name": "Open Space Ilemo Obbo-Aiyegunle I",
+      "inecName": "OPEN SPACE ILEMO OBBO-AIYEGUNLE I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "05",
+      "code": "002",
+      "id": "04-05-002",
+      "name": "Open Space Ipetu Obbo-Aiyegunle II",
+      "inecName": "OPEN SPACE IPETU OBBO-AIYEGUNLE II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "05",
+      "code": "003",
+      "id": "04-05-003",
+      "name": "Open Space Ilawe I Obbo-Aiyegunle",
+      "inecName": "OPEN SPACE ILAWE I OBBO-AIYEGUNLE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "05",
+      "code": "004",
+      "id": "04-05-004",
+      "name": "Open Space Ilawe II Obbo-Aiyegunle",
+      "inecName": "OPEN SPACE ILAWE II OBBO-AIYEGUNLE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "05",
+      "code": "005",
+      "id": "04-05-005",
+      "name": "Open Space Iwodi Obbo-Aiyegunle",
+      "inecName": "OPEN SPACE IWODI OBBO-AIYEGUNLE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "06",
+      "code": "001",
+      "id": "04-06-001",
+      "name": "Town Hall,obbo-Ile",
+      "inecName": "TOWN HALL,OBBO-ILE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "06",
+      "code": "002",
+      "id": "04-06-002",
+      "name": "Market Centre, Obbo-Ile",
+      "inecName": "MARKET CENTRE, OBBO-ILE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "06",
+      "code": "003",
+      "id": "04-06-003",
+      "name": "Open Space Ilawe Obbo-Ile",
+      "inecName": "OPEN SPACE ILAWE OBBO-ILE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "06",
+      "code": "004",
+      "id": "04-06-004",
+      "name": "St Luke'S LGEA Obbo-Ile",
+      "inecName": "ST LUKE'S LGEA OBBO-ILE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "06",
+      "code": "005",
+      "id": "04-06-005",
+      "name": "Open Space Ora Obbo-Ile",
+      "inecName": "OPEN SPACE ORA OBBO-ILE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "001",
+      "id": "04-07-001",
+      "name": "S.D.A Sch, Osi",
+      "inecName": "S.D.A SCH, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "002",
+      "id": "04-07-002",
+      "name": "Ekiti Local Govt Vocational Centre, Osi",
+      "inecName": "EKITI LOCAL GOVT VOCATIONAL CENTRE, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "003",
+      "id": "04-07-003",
+      "name": "New Shopping Complex, Osi",
+      "inecName": "NEW SHOPPING COMPLEX, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "004",
+      "id": "04-07-004",
+      "name": "Open Sapace Ile Ohun, Osi",
+      "inecName": "OPEN SAPACE ILE OHUN, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "005",
+      "id": "04-07-005",
+      "name": "Magistrate Court, Osi",
+      "inecName": "MAGISTRATE COURT, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "006",
+      "id": "04-07-006",
+      "name": "New Post Office, Osi",
+      "inecName": "NEW POST OFFICE, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "007",
+      "id": "04-07-007",
+      "name": "Agbara Market, Osi",
+      "inecName": "AGBARA MARKET, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "07",
+      "code": "008",
+      "id": "04-07-008",
+      "name": "Town Hall, Osi",
+      "inecName": "TOWN HALL, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "001",
+      "id": "04-08-001",
+      "name": "St Bridge'S Sch, Osi",
+      "inecName": "ST BRIDGE'S SCH, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "002",
+      "id": "04-08-002",
+      "name": "Area Court, Osi",
+      "inecName": "AREA COURT, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "003",
+      "id": "04-08-003",
+      "name": "Open Space Odore-Oke, Osi",
+      "inecName": "OPEN SPACE ODORE-OKE, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "004",
+      "id": "04-08-004",
+      "name": "Old Postal Agency",
+      "inecName": "OLD POSTAL AGENCY"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "005",
+      "id": "04-08-005",
+      "name": "Comm LGEA Sch Osi",
+      "inecName": "COMM LGEA SCH OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "08",
+      "code": "006",
+      "id": "04-08-006",
+      "name": "Open Space Igbo-Ogo, Osi",
+      "inecName": "OPEN SPACE IGBO-OGO, OSI"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "001",
+      "id": "04-09-001",
+      "name": "LGEA Sch, Ikerin I",
+      "inecName": "L.G.E.A SCH, IKERIN I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "002",
+      "id": "04-09-002",
+      "name": "LGEA Sch, Ikerin II",
+      "inecName": "L.G.E.A SCH, IKERIN II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "003",
+      "id": "04-09-003",
+      "name": "LGEA Sch, Isolo-Opin I",
+      "inecName": "L.G.E.A SCH, ISOLO-OPIN I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "004",
+      "id": "04-09-004",
+      "name": "LGEA Sch, Isolo-Open II",
+      "inecName": "L.G.E.A SCH, ISOLO-OPEN II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "005",
+      "id": "04-09-005",
+      "name": "LGEA Sch, Epe-Opin I",
+      "inecName": "L.G.E.A SCH, EPE-OPIN I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "006",
+      "id": "04-09-006",
+      "name": "LGEA Sch, Epe-Opin II",
+      "inecName": "L.G.E.A SCH, EPE-OPIN II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "007",
+      "id": "04-09-007",
+      "name": "LGEA Sch, Isare I",
+      "inecName": "L.G.E.A SCH, ISARE I"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "008",
+      "id": "04-09-008",
+      "name": "LGEA Sch, Isare II",
+      "inecName": "L.G.E.A SCH, ISARE II"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "009",
+      "id": "04-09-009",
+      "name": "LGEA Sch Ajuba",
+      "inecName": "L.G.E.A SCH AJUBA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "010",
+      "id": "04-09-010",
+      "name": "Health Centre, Owa Otun",
+      "inecName": "HEALTH CENTRE, OWA OTUN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "011",
+      "id": "04-09-011",
+      "name": "LGEA Sch, Idera",
+      "inecName": "L.G.E.A SCH, IDERA"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "012",
+      "id": "04-09-012",
+      "name": "LGEA Sch, Araromi Opin",
+      "inecName": "L.G.E.A SCH, ARAROMI OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "09",
+      "code": "013",
+      "id": "04-09-013",
+      "name": "Open Space Aare",
+      "inecName": "OPEN SPACE AARE"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "001",
+      "id": "04-10-001",
+      "name": "Central LGEA Sch, Oke-Opin",
+      "inecName": "CENTRAL L.G.E.A SCH, OKE-OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "002",
+      "id": "04-10-002",
+      "name": "Town Hall, Oke-Opin",
+      "inecName": "TOWN HALL, OKE-OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "003",
+      "id": "04-10-003",
+      "name": "Open Space Olowi'S Compd, Oke-Opin",
+      "inecName": "OPEN SPACE OLOWI'S COMPD, OKE-OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "004",
+      "id": "04-10-004",
+      "name": "Open Space Adetifa, Oke-Opin",
+      "inecName": "OPEN SPACE ADETIFA, OKE-OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "005",
+      "id": "04-10-005",
+      "name": "Health Centre, Oke-Opin",
+      "inecName": "HEALTH CENTRE, OKE-OPIN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "006",
+      "id": "04-10-006",
+      "name": "St Patrick LGEA Sch Etan",
+      "inecName": "ST PATRICK L.G.E.A SCH ETAN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "007",
+      "id": "04-10-007",
+      "name": "Market Centre, Etan",
+      "inecName": "MARKET CENTRE, ETAN"
+    },
+    {
+      "lgaCode": "04",
+      "wardCode": "10",
+      "code": "008",
+      "id": "04-10-008",
+      "name": "Open Space Health Centre, Etan",
+      "inecName": "OPEN SPACE HEALTH CENTRE, ETAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "001",
+      "id": "05-01-001",
+      "name": "Ecwa Sch Oke-Ode",
+      "inecName": "ECWA SCH OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "002",
+      "id": "05-01-002",
+      "name": "Arabic Sch Oke-Ode",
+      "inecName": "ARABIC SCH OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "003",
+      "id": "05-01-003",
+      "name": "Comm Sch Oke-Ode",
+      "inecName": "COMM SCH OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "004",
+      "id": "05-01-004",
+      "name": "Town Hall Oke-Ode",
+      "inecName": "TOWN HALL OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "005",
+      "id": "05-01-005",
+      "name": "Oke Ago Oke-Ode",
+      "inecName": "OKE AGO OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "006",
+      "id": "05-01-006",
+      "name": "Maternity Oke-Ode",
+      "inecName": "MATERNITY OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "007",
+      "id": "05-01-007",
+      "name": "Open Space Idiapa Oke-Ode",
+      "inecName": "OPEN SPACE IDIAPA OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "008",
+      "id": "05-01-008",
+      "name": "Ile Elemosho Oke-Ode",
+      "inecName": "ILE ELEMOSHO OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "009",
+      "id": "05-01-009",
+      "name": "Ecwa Sch Oke-Ode",
+      "inecName": "ECWA SCH OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "010",
+      "id": "05-01-010",
+      "name": "Local Govt Dispensary",
+      "inecName": "LOCAL GOVT DISPENSARY"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "01",
+      "code": "011",
+      "id": "05-01-011",
+      "name": "Quranic Sch Oke-Ode",
+      "inecName": "QURANIC SCH OKE-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "001",
+      "id": "05-02-001",
+      "name": "Ecwa Sch Shagbe I",
+      "inecName": "ECWA SCH SHAGBE I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "002",
+      "id": "05-02-002",
+      "name": "Ecwa Sch Shagbe II",
+      "inecName": "ECWA SCH SHAGBE II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "003",
+      "id": "05-02-003",
+      "name": "Ecwa Sch Agbee I",
+      "inecName": "ECWA SCH AGBEE I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "004",
+      "id": "05-02-004",
+      "name": "Ecwa Sch Agbee II",
+      "inecName": "ECWA SCH AGBEE II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "005",
+      "id": "05-02-005",
+      "name": "Comm Sch Ajegunle",
+      "inecName": "COMM SCH AJEGUNLE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "006",
+      "id": "05-02-006",
+      "name": "Comm Sch Bankole",
+      "inecName": "COMM SCH BANKOLE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "007",
+      "id": "05-02-007",
+      "name": "Comm Sch Ologorun",
+      "inecName": "COMM SCH OLOGORUN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "008",
+      "id": "05-02-008",
+      "name": "Market Square Alawon Alasoro",
+      "inecName": "MARKET SQUARE ALAWON ALASORO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "009",
+      "id": "05-02-009",
+      "name": "Comm Sch Famole",
+      "inecName": "COMM SCH FAMOLE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "010",
+      "id": "05-02-010",
+      "name": "Comm Sch Alabe-Oja",
+      "inecName": "COMM SCH ALABE-OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "02",
+      "code": "011",
+      "id": "05-02-011",
+      "name": "Comm Sch Ologomo",
+      "inecName": "COMM SCH OLOGOMO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "001",
+      "id": "05-03-001",
+      "name": "Comm Sch Alade",
+      "inecName": "COMM SCH ALADE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "002",
+      "id": "05-03-002",
+      "name": "Comm Sch Labaka Idera",
+      "inecName": "COMM SCH LABAKA IDERA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "003",
+      "id": "05-03-003",
+      "name": "Comm Sch Asungbale",
+      "inecName": "COMM SCH ASUNGBALE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "004",
+      "id": "05-03-004",
+      "name": "Comm Sch Dabu Oroki",
+      "inecName": "COMM SCH DABU OROKI"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "005",
+      "id": "05-03-005",
+      "name": "Comm Sch Eleiyele",
+      "inecName": "COMM SCH ELEIYELE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "006",
+      "id": "05-03-006",
+      "name": "Ecwa Sch Labaka-Oja",
+      "inecName": "ECWA SCH LABAKA-OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "007",
+      "id": "05-03-007",
+      "name": "Ecwa Sch Labaka-Oja",
+      "inecName": "ECWA SCH LABAKA-OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "008",
+      "id": "05-03-008",
+      "name": "Comm Sch Omi-Aro",
+      "inecName": "COMM SCH OMI-ARO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "03",
+      "code": "009",
+      "id": "05-03-009",
+      "name": "Comm Sch Gbede",
+      "inecName": "COMM SCH GBEDE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "001",
+      "id": "05-04-001",
+      "name": "Ecwa Sch Ora",
+      "inecName": "ECWA SCH ORA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "002",
+      "id": "05-04-002",
+      "name": "Open Space Araromi Oke",
+      "inecName": "OPEN SPACE ARAROMI OKE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "003",
+      "id": "05-04-003",
+      "name": "Comm Sch Oke-Ayo",
+      "inecName": "COMM SCH OKE-AYO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "004",
+      "id": "05-04-004",
+      "name": "Market Square Ora",
+      "inecName": "MARKET SQUARE ORA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "005",
+      "id": "05-04-005",
+      "name": "Comm Sch Manasara",
+      "inecName": "COMM SCH MANASARA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "006",
+      "id": "05-04-006",
+      "name": "Comm Sch Adigun",
+      "inecName": "COMM SCH ADIGUN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "007",
+      "id": "05-04-007",
+      "name": "Open Space Balogun Village",
+      "inecName": "OPEN SPACE BALOGUN VILLAGE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "008",
+      "id": "05-04-008",
+      "name": "Comm Sch Deseni",
+      "inecName": "COMM SCH DESENI"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "009",
+      "id": "05-04-009",
+      "name": "Comm Sch Aireke",
+      "inecName": "COMM SCH AIREKE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "04",
+      "code": "010",
+      "id": "05-04-010",
+      "name": "Comm Sch Magbon",
+      "inecName": "COMM SCH MAGBON"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "001",
+      "id": "05-05-001",
+      "name": "Comm Sch Babanla",
+      "inecName": "COMM SCH BABANLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "002",
+      "id": "05-05-002",
+      "name": "Council Hall Babanla",
+      "inecName": "COUNCIL HALL BABANLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "003",
+      "id": "05-05-003",
+      "name": "Open Space Ilendeji Babanla I",
+      "inecName": "OPEN SPACE ILENDEJI BABANLA I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "004",
+      "id": "05-05-004",
+      "name": "Open Space Ilendeji Babanla II",
+      "inecName": "OPEN SPACE ILENDEJI BABANLA II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "005",
+      "id": "05-05-005",
+      "name": "Local Govt Dispensary Oke-Oyan",
+      "inecName": "LOCAL GOVT DISPENSARY OKE-OYAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "006",
+      "id": "05-05-006",
+      "name": "Ecwa Sch Alabe I",
+      "inecName": "ECWA SCH ALABE I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "007",
+      "id": "05-05-007",
+      "name": "Ecwa Sch Alabe II",
+      "inecName": "ECWA SCH ALABE II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "008",
+      "id": "05-05-008",
+      "name": "Ecwa Sch Idera I",
+      "inecName": "ECWA SCH IDERA I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "009",
+      "id": "05-05-009",
+      "name": "Ecwa Sch Idera II",
+      "inecName": "ECWA SCH IDERA II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "010",
+      "id": "05-05-010",
+      "name": "Comm Sch Ikosin",
+      "inecName": "COMM SCH IKOSIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "011",
+      "id": "05-05-011",
+      "name": "Comm Sch Owode I",
+      "inecName": "COMM SCH OWODE I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "012",
+      "id": "05-05-012",
+      "name": "Comm Sch Owode II",
+      "inecName": "COMM SCH OWODE II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "013",
+      "id": "05-05-013",
+      "name": "Town Hall Kajola",
+      "inecName": "TOWN HALL KAJOLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "014",
+      "id": "05-05-014",
+      "name": "Comm Sch Owa Onire",
+      "inecName": "COMM SCH OWA ONIRE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "015",
+      "id": "05-05-015",
+      "name": "Comm Sch Oreke",
+      "inecName": "COMM SCH OREKE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "016",
+      "id": "05-05-016",
+      "name": "Comm Sch Ganmu",
+      "inecName": "COMM SCH GANMU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "017",
+      "id": "05-05-017",
+      "name": "Comm Sch Budoidowu",
+      "inecName": "COMM SCH BUDOIDOWU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "018",
+      "id": "05-05-018",
+      "name": "Market Square Idoba/Obin",
+      "inecName": "MARKET SQUARE IDOBA/OBIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "05",
+      "code": "019",
+      "id": "05-05-019",
+      "name": "Comm Sch Afin",
+      "inecName": "COMM SCH AFIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "001",
+      "id": "05-06-001",
+      "name": "Comm Sch Agunjin",
+      "inecName": "COMM SCH AGUNJIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "002",
+      "id": "05-06-002",
+      "name": "Council Hall Agunjin",
+      "inecName": "COUNCIL HALL AGUNJIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "003",
+      "id": "05-06-003",
+      "name": "Ecwa Sch Olayinka",
+      "inecName": "ECWA SCH OLAYINKA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "004",
+      "id": "05-06-004",
+      "name": "Comm. Sch., Oree",
+      "inecName": "COMM. SCH., OREE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "005",
+      "id": "05-06-005",
+      "name": "Ecwa Sch Agbeku",
+      "inecName": "ECWA SCH AGBEKU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "006",
+      "id": "05-06-006",
+      "name": "Market Square Agbeku",
+      "inecName": "MARKET SQUARE AGBEKU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "007",
+      "id": "05-06-007",
+      "name": "Comm Sch Amori Wande",
+      "inecName": "COMM SCH AMORI WANDE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "06",
+      "code": "008",
+      "id": "05-06-008",
+      "name": "Ecwa Sch Patako",
+      "inecName": "ECWA SCH PATAKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "001",
+      "id": "05-07-001",
+      "name": "Ecwa Sch Oro-Ago",
+      "inecName": "ECWA SCH ORO-AGO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "002",
+      "id": "05-07-002",
+      "name": "Comm Sch Oro-Ago",
+      "inecName": "COMM SCH ORO-AGO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "003",
+      "id": "05-07-003",
+      "name": "Comm Sch Oke-Ayin",
+      "inecName": "COMM SCH OKE-AYIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "004",
+      "id": "05-07-004",
+      "name": "Ecwa Sch Oyate",
+      "inecName": "ECWA SCH OYATE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "005",
+      "id": "05-07-005",
+      "name": "Open Space Ahun Village",
+      "inecName": "OPEN SPACE AHUN VILLAGE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "006",
+      "id": "05-07-006",
+      "name": "Ecwa Sch Okedaba",
+      "inecName": "ECWA SCH OKEDABA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "007",
+      "id": "05-07-007",
+      "name": "Ecwa Sch Okedaba",
+      "inecName": "ECWA SCH OKEDABA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "008",
+      "id": "05-07-008",
+      "name": "Comm Sch Omugo",
+      "inecName": "COMM SCH OMUGO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "009",
+      "id": "05-07-009",
+      "name": "Comm Sch Irabon",
+      "inecName": "COMM SCH IRABON"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "010",
+      "id": "05-07-010",
+      "name": "Comm Sch Okedio",
+      "inecName": "COMM SCH OKEDIO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "011",
+      "id": "05-07-011",
+      "name": "Comm Sch Ajegunle",
+      "inecName": "COMM SCH AJEGUNLE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "012",
+      "id": "05-07-012",
+      "name": "Comm Sch Ajegunle/Owa",
+      "inecName": "COMM SCH AJEGUNLE/OWA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "013",
+      "id": "05-07-013",
+      "name": "Comm Sch Oke-Owa",
+      "inecName": "COMM SCH OKE-OWA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "014",
+      "id": "05-07-014",
+      "name": "Open Space Aiyetoro",
+      "inecName": "OPEN SPACE AIYETORO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "07",
+      "code": "015",
+      "id": "05-07-015",
+      "name": "Adult Sch Oyate",
+      "inecName": "ADULT SCH OYATE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "001",
+      "id": "05-08-001",
+      "name": "Comm Sch Omupo",
+      "inecName": "COMM SCH OMUPO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "002",
+      "id": "05-08-002",
+      "name": "St Michael Sch Omupo",
+      "inecName": "ST MICHAEL SCH OMUPO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "003",
+      "id": "05-08-003",
+      "name": "Arabic Sch Omupo",
+      "inecName": "ARABIC SCH OMUPO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "004",
+      "id": "05-08-004",
+      "name": "Sheik Islamic Sch Omupo",
+      "inecName": "SHEIK ISLAMIC SCH OMUPO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "005",
+      "id": "05-08-005",
+      "name": "Arabic College Omupo",
+      "inecName": "ARABIC COLLEGE OMUPO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "006",
+      "id": "05-08-006",
+      "name": "Comm Sch Amodu",
+      "inecName": "COMM SCH AMODU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "007",
+      "id": "05-08-007",
+      "name": "Govt Tech Sch Amodu",
+      "inecName": "GOVT TECH SCH AMODU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "008",
+      "id": "05-08-008",
+      "name": "Comm Sch Koko",
+      "inecName": "COMM SCH KOKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "009",
+      "id": "05-08-009",
+      "name": "LGEA Sch Koko",
+      "inecName": "L.G.E.A SCH KOKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "010",
+      "id": "05-08-010",
+      "name": "Wesley Sch Okanle",
+      "inecName": "WESLEY SCH OKANLE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "011",
+      "id": "05-08-011",
+      "name": "Comm Sch Basanyin",
+      "inecName": "COMM SCH BASANYIN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "012",
+      "id": "05-08-012",
+      "name": "Ansarul Islam Sch Igbowu",
+      "inecName": "ANSARUL ISLAM SCH IGBOWU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "013",
+      "id": "05-08-013",
+      "name": "Comm Sch Maloko",
+      "inecName": "COMM SCH MALOKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "014",
+      "id": "05-08-014",
+      "name": "Comm Sch Oko-Ode",
+      "inecName": "COMM SCH OKO-ODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "015",
+      "id": "05-08-015",
+      "name": "Comm Sch Zulu",
+      "inecName": "COMM SCH ZULU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "016",
+      "id": "05-08-016",
+      "name": "Comm Sch Obaloyan",
+      "inecName": "COMM SCH OBALOYAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "017",
+      "id": "05-08-017",
+      "name": "LGEA Sch Arugbo",
+      "inecName": "L.G.E.A SCH ARUGBO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "08",
+      "code": "018",
+      "id": "05-08-018",
+      "name": "Open Space Atanda Nda Aliyu",
+      "inecName": "OPEN SPACE ATANDA NDA ALIYU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "001",
+      "id": "05-09-001",
+      "name": "Comm Sch Share",
+      "inecName": "COMM SCH SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "002",
+      "id": "05-09-002",
+      "name": "Ile Bale Ojabutu Share",
+      "inecName": "ILE BALE OJABUTU SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "003",
+      "id": "05-09-003",
+      "name": "Ile Garba Soja Share",
+      "inecName": "ILE GARBA SOJA SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "004",
+      "id": "05-09-004",
+      "name": "Shayo LGEA Sch Share",
+      "inecName": "SHAYO L.G.E.A SCH SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "005",
+      "id": "05-09-005",
+      "name": "Area Court Share",
+      "inecName": "AREA COURT SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "006",
+      "id": "05-09-006",
+      "name": "Ile Onibi Share",
+      "inecName": "ILE ONIBI SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "007",
+      "id": "05-09-007",
+      "name": "Ile Bale II Share",
+      "inecName": "ILE BALE II SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "09",
+      "code": "008",
+      "id": "05-09-008",
+      "name": "Ile Adebiopon Share",
+      "inecName": "ILE ADEBIOPON SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "001",
+      "id": "05-10-001",
+      "name": "N.Y.S.C Bus Stop Share",
+      "inecName": "N.Y.S.C BUS STOP SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "002",
+      "id": "05-10-002",
+      "name": "Ile Abologbon Share",
+      "inecName": "ILE ABOLOGBON SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "003",
+      "id": "05-10-003",
+      "name": "Ile Oluloke Share",
+      "inecName": "ILE OLULOKE SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "004",
+      "id": "05-10-004",
+      "name": "Ile Adeyi Share",
+      "inecName": "ILE ADEYI SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "005",
+      "id": "05-10-005",
+      "name": "Ile Agun Share",
+      "inecName": "ILE AGUN SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "006",
+      "id": "05-10-006",
+      "name": "Open Space Motor Park Share",
+      "inecName": "OPEN SPACE MOTOR PARK SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "007",
+      "id": "05-10-007",
+      "name": "Ile Olowolaiyemo Share",
+      "inecName": "ILE OLOWOLAIYEMO SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "008",
+      "id": "05-10-008",
+      "name": "Town Hall Share",
+      "inecName": "TOWN HALL SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "10",
+      "code": "009",
+      "id": "05-10-009",
+      "name": "Ile Aiyegbo Share",
+      "inecName": "ILE AIYEGBO SHARE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "001",
+      "id": "05-11-001",
+      "name": "Katalagbon Open Space",
+      "inecName": "KATALAGBON OPEN SPACE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "002",
+      "id": "05-11-002",
+      "name": "Open Space Titalagolo",
+      "inecName": "OPEN SPACE TITALAGOLO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "003",
+      "id": "05-11-003",
+      "name": "Market Square Loma",
+      "inecName": "MARKET SQUARE LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "004",
+      "id": "05-11-004",
+      "name": "Comm Sch Loma",
+      "inecName": "COMM SCH LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "005",
+      "id": "05-11-005",
+      "name": "Agun Area Loma",
+      "inecName": "AGUN AREA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "006",
+      "id": "05-11-006",
+      "name": "Open Space Arusa Loma",
+      "inecName": "OPEN SPACE ARUSA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "007",
+      "id": "05-11-007",
+      "name": "Open Space Olabalu Loma",
+      "inecName": "OPEN SPACE OLABALU LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "008",
+      "id": "05-11-008",
+      "name": "Open Space Awuwo Loma",
+      "inecName": "OPEN SPACE AWUWO LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "11",
+      "code": "009",
+      "id": "05-11-009",
+      "name": "Open Space Fadeyi Loma",
+      "inecName": "OPEN SPACE FADEYI LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "001",
+      "id": "05-12-001",
+      "name": "Open Space Gbogilemu",
+      "inecName": "OPEN SPACE GBOGILEMU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "002",
+      "id": "05-12-002",
+      "name": "Comm Sch Okose",
+      "inecName": "COMM SCH OKOSE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "003",
+      "id": "05-12-003",
+      "name": "Council Hall Loma",
+      "inecName": "COUNCIL HALL LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "004",
+      "id": "05-12-004",
+      "name": "Ile Oluode Loma",
+      "inecName": "ILE OLUODE LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "005",
+      "id": "05-12-005",
+      "name": "Open Space Odeniyi Area Loma",
+      "inecName": "OPEN SPACE ODENIYI AREA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "006",
+      "id": "05-12-006",
+      "name": "Open Space Onipe Area Loma",
+      "inecName": "OPEN SPACE ONIPE AREA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "007",
+      "id": "05-12-007",
+      "name": "Open Space Afari Area Loma",
+      "inecName": "OPEN SPACE AFARI AREA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "12",
+      "code": "008",
+      "id": "05-12-008",
+      "name": "Open Space Malete Area Loma",
+      "inecName": "OPEN SPACE MALETE AREA LOMA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "001",
+      "id": "05-13-001",
+      "name": "Open Space Faje Village",
+      "inecName": "OPEN SPACE FAJE VILLAGE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "002",
+      "id": "05-13-002",
+      "name": "Comm Sch Share Junction",
+      "inecName": "COMM SCH SHARE JUNCTION"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "003",
+      "id": "05-13-003",
+      "name": "Open Space Sekun Village",
+      "inecName": "OPEN SPACE SEKUN VILLAGE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "004",
+      "id": "05-13-004",
+      "name": "Comm Sch Lakanla",
+      "inecName": "COMM SCH LAKANLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "005",
+      "id": "05-13-005",
+      "name": "Comm Sch Alegongo",
+      "inecName": "COMM SCH ALEGONGO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "006",
+      "id": "05-13-006",
+      "name": "Comm Sch Temidire",
+      "inecName": "COMM SCH TEMIDIRE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "007",
+      "id": "05-13-007",
+      "name": "Comm Sch Sangotayo/Budo Umoru",
+      "inecName": "COMM SCH SANGOTAYO/BUDO UMORU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "008",
+      "id": "05-13-008",
+      "name": "St Martin'S Sch Adio",
+      "inecName": "ST MARTIN'S SCH ADIO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "009",
+      "id": "05-13-009",
+      "name": "Comm Sch Ilupeju",
+      "inecName": "COMM SCH ILUPEJU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "13",
+      "code": "010",
+      "id": "05-13-010",
+      "name": "Comm Sch Alera",
+      "inecName": "COMM SCH ALERA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "001",
+      "id": "05-14-001",
+      "name": "Market Square Igbaja",
+      "inecName": "MARKET SQUARE IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "002",
+      "id": "05-14-002",
+      "name": "Ecwa Sch Igbaja",
+      "inecName": "ECWA SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "003",
+      "id": "05-14-003",
+      "name": "Comm Sch Igbaja",
+      "inecName": "COMM SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "004",
+      "id": "05-14-004",
+      "name": "Jamaat Sch Igbaja",
+      "inecName": "JAMAAT SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "005",
+      "id": "05-14-005",
+      "name": "Jamaat Sch Igbaja",
+      "inecName": "JAMAAT SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "006",
+      "id": "05-14-006",
+      "name": "Baptist Sch Igbaja",
+      "inecName": "BAPTIST SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "007",
+      "id": "05-14-007",
+      "name": "Open Space Isale Igbaja",
+      "inecName": "OPEN SPACE ISALE IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "008",
+      "id": "05-14-008",
+      "name": "Open Space Isale Igbaja",
+      "inecName": "OPEN SPACE ISALE IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "009",
+      "id": "05-14-009",
+      "name": "Ile Balogun Igbaja",
+      "inecName": "ILE BALOGUN IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "010",
+      "id": "05-14-010",
+      "name": "Ecwa Dem Sch Igbaja",
+      "inecName": "ECWA DEM SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "011",
+      "id": "05-14-011",
+      "name": "Ecwa Dem Sch Igbaja",
+      "inecName": "ECWA DEM SCH IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "012",
+      "id": "05-14-012",
+      "name": "Market Square Igbaja",
+      "inecName": "MARKET SQUARE IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "14",
+      "code": "013",
+      "id": "05-14-013",
+      "name": "Market Square Igbaja",
+      "inecName": "MARKET SQUARE IGBAJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "001",
+      "id": "05-15-001",
+      "name": "Comm Sch Offarese",
+      "inecName": "COMM SCH OFFARESE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "002",
+      "id": "05-15-002",
+      "name": "Comm Sch Adanla",
+      "inecName": "COMM SCH ADANLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "003",
+      "id": "05-15-003",
+      "name": "Comm Sch Alaka",
+      "inecName": "COMM SCH ALAKA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "004",
+      "id": "05-15-004",
+      "name": "Comm Sch Alasoro",
+      "inecName": "COMM SCH ALASORO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "005",
+      "id": "05-15-005",
+      "name": "Comm Sch Atiran",
+      "inecName": "COMM SCH ATIRAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "006",
+      "id": "05-15-006",
+      "name": "Comm Sch Ilupeju",
+      "inecName": "COMM SCH ILUPEJU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "007",
+      "id": "05-15-007",
+      "name": "Comm Sch Balogun Oja",
+      "inecName": "COMM SCH BALOGUN OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "008",
+      "id": "05-15-008",
+      "name": "Jamat Sch Idiapa",
+      "inecName": "JAMAT SCH IDIAPA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "15",
+      "code": "009",
+      "id": "05-15-009",
+      "name": "Comm Sch Onijo",
+      "inecName": "COMM SCH ONIJO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "001",
+      "id": "05-16-001",
+      "name": "Comm Sch Yaru",
+      "inecName": "COMM SCH YARU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "002",
+      "id": "05-16-002",
+      "name": "Market Square Yaru",
+      "inecName": "MARKET SQUARE YARU"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "003",
+      "id": "05-16-003",
+      "name": "Comm Sch Durosoto",
+      "inecName": "COMM SCH DUROSOTO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "004",
+      "id": "05-16-004",
+      "name": "Open Space Masudo",
+      "inecName": "OPEN SPACE MASUDO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "005",
+      "id": "05-16-005",
+      "name": "Open Space Gboloko",
+      "inecName": "OPEN SPACE GBOLOKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "006",
+      "id": "05-16-006",
+      "name": "Open Space Tongolo",
+      "inecName": "OPEN SPACE TONGOLO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "007",
+      "id": "05-16-007",
+      "name": "Open Space Oroki Oja",
+      "inecName": "OPEN SPACE OROKI OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "008",
+      "id": "05-16-008",
+      "name": "Market Square Bayero",
+      "inecName": "MARKET SQUARE BAYERO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "009",
+      "id": "05-16-009",
+      "name": "LGEA Sch Ajibowo",
+      "inecName": "L.G.E.A SCH AJIBOWO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "16",
+      "code": "010",
+      "id": "05-16-010",
+      "name": "Comm Sch Kunmi",
+      "inecName": "COMM SCH KUNMI"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "001",
+      "id": "05-17-001",
+      "name": "Comm Sch Idofian",
+      "inecName": "COMM SCH IDOFIAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "002",
+      "id": "05-17-002",
+      "name": "St John'S Sch Idofian I",
+      "inecName": "ST JOHN'S SCH IDOFIAN I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "003",
+      "id": "05-17-003",
+      "name": "St John'S Sch Idofian II",
+      "inecName": "ST JOHN'S SCH IDOFIAN II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "004",
+      "id": "05-17-004",
+      "name": "Council Hall Idofian",
+      "inecName": "COUNCIL HALL IDOFIAN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "005",
+      "id": "05-17-005",
+      "name": "Comm Sch Jimba Oja",
+      "inecName": "COMM SCH JIMBA OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "006",
+      "id": "05-17-006",
+      "name": "St Jame'S Sch Falokun-Oja",
+      "inecName": "ST JAME'S SCH FALOKUN-OJA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "007",
+      "id": "05-17-007",
+      "name": "Market Square Falokun",
+      "inecName": "MARKET SQUARE FALOKUN"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "008",
+      "id": "05-17-008",
+      "name": "Comm Sch Alakuko",
+      "inecName": "COMM SCH ALAKUKO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "17",
+      "code": "009",
+      "id": "05-17-009",
+      "name": "Open Space Gatta",
+      "inecName": "OPEN SPACE GATTA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "001",
+      "id": "05-18-001",
+      "name": "Comm Sch Ganmo",
+      "inecName": "COMM SCH GANMO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "002",
+      "id": "05-18-002",
+      "name": "Arabic Sch Ganmo",
+      "inecName": "ARABIC SCH GANMO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "003",
+      "id": "05-18-003",
+      "name": "Wesley Sch Elerinjare I",
+      "inecName": "WESLEY SCH ELERINJARE I"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "004",
+      "id": "05-18-004",
+      "name": "Wesley Sch Elerinjare II",
+      "inecName": "WESLEY SCH ELERINJARE II"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "005",
+      "id": "05-18-005",
+      "name": "Wesley Sch Elerinjare III",
+      "inecName": "WESLEY SCH ELERINJARE III"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "006",
+      "id": "05-18-006",
+      "name": "Ecwa Sch Amayo",
+      "inecName": "ECWA SCH AMAYO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "007",
+      "id": "05-18-007",
+      "name": "Open Space Amayo",
+      "inecName": "OPEN SPACE AMAYO"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "008",
+      "id": "05-18-008",
+      "name": "Comm Sch Kabba/Dongari",
+      "inecName": "COMM SCH KABBA/DONGARI"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "009",
+      "id": "05-18-009",
+      "name": "Open Space Kabba/Kajola",
+      "inecName": "OPEN SPACE KABBA/KAJOLA"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "010",
+      "id": "05-18-010",
+      "name": "Open Space Kabba/Owode",
+      "inecName": "OPEN SPACE KABBA/OWODE"
+    },
+    {
+      "lgaCode": "05",
+      "wardCode": "18",
+      "code": "011",
+      "id": "05-18-011",
+      "name": "Open Space Gbagede",
+      "inecName": "OPEN SPACE GBAGEDE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "001",
+      "id": "09-01-001",
+      "name": "Old Police Station Ajase-Ipo",
+      "inecName": "OLD POLICE STATION AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "002",
+      "id": "09-01-002",
+      "name": "Ile Bale Ajase-Ipo",
+      "inecName": "ILE BALE AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "003",
+      "id": "09-01-003",
+      "name": "Muslim Primary Sch Ajase-Ipo",
+      "inecName": "MUSLIM PRIMARY SCH AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "004",
+      "id": "09-01-004",
+      "name": "Old Igbaja Garage Ajase-Ipo",
+      "inecName": "OLD IGBAJA GARAGE AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "005",
+      "id": "09-01-005",
+      "name": "Baptist Primary Sch Ajase-Ipo",
+      "inecName": "BAPTIST PRIMARY SCH AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "006",
+      "id": "09-01-006",
+      "name": "Nepa Office Ajase-Ipo",
+      "inecName": "NEPA OFFICE AJASE-IPO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "007",
+      "id": "09-01-007",
+      "name": "Eleyoka/Falokun",
+      "inecName": "ELEYOKA/FALOKUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "008",
+      "id": "09-01-008",
+      "name": "Town Centre Memudu",
+      "inecName": "TOWN CENTRE MEMUDU"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "009",
+      "id": "09-01-009",
+      "name": "Oko Awo Comp. Okeya",
+      "inecName": "OKO AWO COMP. OKEYA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "010",
+      "id": "09-01-010",
+      "name": "Comm Pry Sch Okeya",
+      "inecName": "COMM PRY SCH OKEYA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "011",
+      "id": "09-01-011",
+      "name": "Maternity Centre Ilala",
+      "inecName": "MATERNITY CENTRE ILALA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "012",
+      "id": "09-01-012",
+      "name": "Near Oba'S Palace Ilala",
+      "inecName": "NEAR OBA'S PALACE ILALA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "013",
+      "id": "09-01-013",
+      "name": "Central Market Ilala",
+      "inecName": "CENTRAL MARKET ILALA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "014",
+      "id": "09-01-014",
+      "name": "Ecwa Sch Buhari",
+      "inecName": "ECWA SCH BUHARI"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "015",
+      "id": "09-01-015",
+      "name": "Open Space At Eggi",
+      "inecName": "OPEN SPACE AT EGGI"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "01",
+      "code": "016",
+      "id": "09-01-016",
+      "name": "Bale'S Compd Apata/Kajola",
+      "inecName": "BALE'S COMPD APATA/KAJOLA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "001",
+      "id": "09-02-001",
+      "name": "LGEA. Sch Agbonda",
+      "inecName": "L.G.E.A. SCH AGBONDA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "002",
+      "id": "09-02-002",
+      "name": "Ile Obaloke Agbonda",
+      "inecName": "ILE OBALOKE AGBONDA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "003",
+      "id": "09-02-003",
+      "name": "Near Oba'S Palace Agbonda/Adigun",
+      "inecName": "NEAR OBA'S PALACE AGBONDA/ADIGUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "004",
+      "id": "09-02-004",
+      "name": "Ajenipa'S Qtrs Sanmora",
+      "inecName": "AJENIPA'S QTRS SANMORA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "005",
+      "id": "09-02-005",
+      "name": "LGEA Sch Sanmora",
+      "inecName": "L.G.E.A SCH SANMORA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "006",
+      "id": "09-02-006",
+      "name": "St Paul'S Sch Agbamu I",
+      "inecName": "ST PAUL'S SCH AGBAMU I"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "007",
+      "id": "09-02-007",
+      "name": "St Paul'S Sch Agbamu II",
+      "inecName": "ST PAUL'S SCH AGBAMU II"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "008",
+      "id": "09-02-008",
+      "name": "Health Centre Agbamu",
+      "inecName": "HEALTH CENTRE AGBAMU"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "009",
+      "id": "09-02-009",
+      "name": "Ile Bale Igbonla",
+      "inecName": "ILE BALE IGBONLA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "010",
+      "id": "09-02-010",
+      "name": "Aganju Igbonla",
+      "inecName": "AGANJU IGBONLA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "011",
+      "id": "09-02-011",
+      "name": "LGEA Sch Omido",
+      "inecName": "L.G.E.A SCH OMIDO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "012",
+      "id": "09-02-012",
+      "name": "Central Market Omido",
+      "inecName": "CENTRAL MARKET OMIDO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "013",
+      "id": "09-02-013",
+      "name": "Near Oba'S Palace Ajengbe",
+      "inecName": "NEAR OBA'S PALACE AJENGBE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "014",
+      "id": "09-02-014",
+      "name": "Olota'S Compd Isale-Iju Iludun",
+      "inecName": "OLOTA'S COMPD ISALE-IJU ILUDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "02",
+      "code": "015",
+      "id": "09-02-015",
+      "name": "Central Market Egudu",
+      "inecName": "CENTRAL MARKET EGUDU"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "001",
+      "id": "09-03-001",
+      "name": "Home Econs Centre Arandun",
+      "inecName": "HOME ECONS CENTRE ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "002",
+      "id": "09-03-002",
+      "name": "Ile Awure Arandun",
+      "inecName": "ILE AWURE ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "003",
+      "id": "09-03-003",
+      "name": "Oju-Oja Arandun",
+      "inecName": "OJU-OJA ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "004",
+      "id": "09-03-004",
+      "name": "Ile Oki Arandun",
+      "inecName": "ILE OKI ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "005",
+      "id": "09-03-005",
+      "name": "Kaa Agan Arandun",
+      "inecName": "KAA AGAN ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "006",
+      "id": "09-03-006",
+      "name": "Ile Olupo Junction Arandun",
+      "inecName": "ILE OLUPO JUNCTION ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "007",
+      "id": "09-03-007",
+      "name": "Ile Oba Ilufemiloye Arandun",
+      "inecName": "ILE OBA ILUFEMILOYE ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "008",
+      "id": "09-03-008",
+      "name": "Isale Ola Arandun",
+      "inecName": "ISALE OLA ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "009",
+      "id": "09-03-009",
+      "name": "Ile Oba Buoye Arandun",
+      "inecName": "ILE OBA BUOYE ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "010",
+      "id": "09-03-010",
+      "name": "Oke Aran Village",
+      "inecName": "OKE ARAN VILLAGE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "011",
+      "id": "09-03-011",
+      "name": "Owode Village",
+      "inecName": "OWODE VILLAGE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "012",
+      "id": "09-03-012",
+      "name": "Ominrinrin Village",
+      "inecName": "OMINRINRIN VILLAGE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "013",
+      "id": "09-03-013",
+      "name": "Ajebandele Village",
+      "inecName": "AJEBANDELE VILLAGE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "03",
+      "code": "014",
+      "id": "09-03-014",
+      "name": "LGEA Sch Arandun",
+      "inecName": "L.G.E.A SCH ARANDUN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "001",
+      "id": "09-04-001",
+      "name": "Ile Oba Esie",
+      "inecName": "ILE OBA ESIE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "002",
+      "id": "09-04-002",
+      "name": "Ile Osolo Esie",
+      "inecName": "ILE OSOLO ESIE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "003",
+      "id": "09-04-003",
+      "name": "St Michael Sch Esie",
+      "inecName": "ST MICHAEL SCH ESIE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "004",
+      "id": "09-04-004",
+      "name": "Ile Ojomu Okeasanlu Esie",
+      "inecName": "ILE OJOMU OKEASANLU ESIE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "005",
+      "id": "09-04-005",
+      "name": "Ile Aro Esie",
+      "inecName": "ILE ARO ESIE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "006",
+      "id": "09-04-006",
+      "name": "LGEA Sch Ijan",
+      "inecName": "L.G.E.A SCH IJAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "007",
+      "id": "09-04-007",
+      "name": "Old Pry Sch Ijan",
+      "inecName": "OLD PRY SCH IJAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "04",
+      "code": "008",
+      "id": "09-04-008",
+      "name": "LGEA Sch Agbele",
+      "inecName": "L.G.E.A SCH AGBELE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "001",
+      "id": "09-05-001",
+      "name": "LGEA Sch Ipetu",
+      "inecName": "L.G.E.A SCH IPETU"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "002",
+      "id": "09-05-002",
+      "name": "Basic Health Centre Ipetu",
+      "inecName": "BASIC HEALTH CENTRE IPETU"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "003",
+      "id": "09-05-003",
+      "name": "LGEA Sch Rore",
+      "inecName": "L.G.E.A SCH RORE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "004",
+      "id": "09-05-004",
+      "name": "Ile Aro Rore I",
+      "inecName": "ILE ARO RORE I"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "005",
+      "id": "09-05-005",
+      "name": "Ile Edu Rore II",
+      "inecName": "ILE EDU RORE II"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "006",
+      "id": "09-05-006",
+      "name": "Ile Oba Rore III",
+      "inecName": "ILE OBA RORE III"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "007",
+      "id": "09-05-007",
+      "name": "Rore Junction Aranorin",
+      "inecName": "RORE JUNCTION ARANORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "008",
+      "id": "09-05-008",
+      "name": "United LGEA Sch Aranorin",
+      "inecName": "UNITED L.G.E.A SCH ARANORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "009",
+      "id": "09-05-009",
+      "name": "Igbesi Comp Aran-Orin",
+      "inecName": "IGBESI COMP ARAN-ORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "010",
+      "id": "09-05-010",
+      "name": "Oke-Oje Compound Aran-Orin",
+      "inecName": "OKE-OJE COMPOUND ARAN-ORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "011",
+      "id": "09-05-011",
+      "name": "Ile Asanlu Aran-Orin",
+      "inecName": "ILE ASANLU ARAN-ORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "012",
+      "id": "09-05-012",
+      "name": "New Market Aran-Orin",
+      "inecName": "NEW MARKET ARAN-ORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "013",
+      "id": "09-05-013",
+      "name": "Town Hall Aran-Orin",
+      "inecName": "TOWN HALL ARAN-ORIN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "014",
+      "id": "09-05-014",
+      "name": "LGEA Sch Olomi-Oja",
+      "inecName": "L.G.E.A SCH OLOMI-OJA"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "05",
+      "code": "015",
+      "id": "09-05-015",
+      "name": "Open Space Alomilogba Compound Rore",
+      "inecName": "OPEN SPACE ALOMILOGBA COMPOUND RORE"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "001",
+      "id": "09-06-001",
+      "name": "Ile Olupo Oke Omu-Aran I",
+      "inecName": "ILE OLUPO OKE OMU-ARAN I"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "002",
+      "id": "09-06-002",
+      "name": "Ile Olupo Odo Omu-Aran II",
+      "inecName": "ILE OLUPO ODO OMU-ARAN II"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "003",
+      "id": "09-06-003",
+      "name": "Mode Compound Omu-Aran",
+      "inecName": "MODE COMPOUND OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "004",
+      "id": "09-06-004",
+      "name": "Adekun Compound Omu-Aran",
+      "inecName": "ADEKUN COMPOUND OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "005",
+      "id": "09-06-005",
+      "name": "Okesan Compound Omu-Aran",
+      "inecName": "OKESAN COMPOUND OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "006",
+      "id": "09-06-006",
+      "name": "Oke Apa Compound Omu-Aran",
+      "inecName": "OKE APA COMPOUND OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "007",
+      "id": "09-06-007",
+      "name": "Ile Ade/Odo-Opin Omu-Aran",
+      "inecName": "ILE ADE/ODO-OPIN OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "008",
+      "id": "09-06-008",
+      "name": "Oke Ajah Omu-Aran",
+      "inecName": "OKE AJAH OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "009",
+      "id": "09-06-009",
+      "name": "Ile Otan Omu-Aran",
+      "inecName": "ILE OTAN OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "010",
+      "id": "09-06-010",
+      "name": "St Paul'S Sch Omu-Aran",
+      "inecName": "ST PAUL'S SCH OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "06",
+      "code": "011",
+      "id": "09-06-011",
+      "name": "Ile Arogun/Amule Omu-Aran",
+      "inecName": "ILE AROGUN/AMULE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "001",
+      "id": "09-07-001",
+      "name": "Ile Elemo Afin Omu-Aran",
+      "inecName": "ILE ELEMO AFIN OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "002",
+      "id": "09-07-002",
+      "name": "Ile Edemo Omu-Aran",
+      "inecName": "ILE EDEMO OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "003",
+      "id": "09-07-003",
+      "name": "Raba Comp. Omu-Aran",
+      "inecName": "RABA COMP. OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "004",
+      "id": "09-07-004",
+      "name": "Ile Ayomu Igangu Omu-Aran",
+      "inecName": "ILE AYOMU IGANGU OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "005",
+      "id": "09-07-005",
+      "name": "Ora Comp. Omu-Aran",
+      "inecName": "ORA COMP. OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "006",
+      "id": "09-07-006",
+      "name": "Oke Esa Comp Omu-Aran",
+      "inecName": "OKE ESA COMP OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "007",
+      "id": "09-07-007",
+      "name": "Ikoja Comp Omu-Aran",
+      "inecName": "IKOJA COMP OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "008",
+      "id": "09-07-008",
+      "name": "Ecwa Sch Orolodo Omu-Aran",
+      "inecName": "ECWA SCH OROLODO OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "009",
+      "id": "09-07-009",
+      "name": "Ita Buoye Gbeleje Omu-Aran",
+      "inecName": "ITA BUOYE GBELEJE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "010",
+      "id": "09-07-010",
+      "name": "Ilaro Comp Omu-Aran",
+      "inecName": "ILARO COMP OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "011",
+      "id": "09-07-011",
+      "name": "Ecwa Sch Aganmo Omu-Aran",
+      "inecName": "ECWA SCH AGANMO OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "07",
+      "code": "012",
+      "id": "09-07-012",
+      "name": "Opposite F.G.G.C Omu-Aran",
+      "inecName": "OPPOSITE F.G.G.C OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "001",
+      "id": "09-08-001",
+      "name": "Ile Olasankale Omu-Aran",
+      "inecName": "ILE OLASANKALE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "002",
+      "id": "09-08-002",
+      "name": "Ile Oro Omu-Aran",
+      "inecName": "ILE ORO OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "003",
+      "id": "09-08-003",
+      "name": "Ile Asanlu Omu-Aran",
+      "inecName": "ILE ASANLU OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "004",
+      "id": "09-08-004",
+      "name": "Ile Oba Omu-Aran",
+      "inecName": "ILE OBA OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "005",
+      "id": "09-08-005",
+      "name": "Ita Okore Omu-Aran",
+      "inecName": "ITA OKORE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "006",
+      "id": "09-08-006",
+      "name": "Ita Oloye Ijoko Omu-Aran",
+      "inecName": "ITA OLOYE IJOKO OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "007",
+      "id": "09-08-007",
+      "name": "Odo Oro Gbagida Omu-Aran",
+      "inecName": "ODO ORO GBAGIDA OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "008",
+      "id": "09-08-008",
+      "name": "S.D.A Imolekere Omu-Aran",
+      "inecName": "S.D.A IMOLEKERE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "009",
+      "id": "09-08-009",
+      "name": "New Market Area Omu-Aran",
+      "inecName": "NEW MARKET AREA OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "010",
+      "id": "09-08-010",
+      "name": "Area Commander Office Omu-Aran",
+      "inecName": "AREA COMMANDER OFFICE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "011",
+      "id": "09-08-011",
+      "name": "LGEA Sch Okegbala Omu-Aran",
+      "inecName": "L.G.E.A SCH OKEGBALA OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "012",
+      "id": "09-08-012",
+      "name": "Ekan Garage Omu-Aran",
+      "inecName": "EKAN GARAGE OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "08",
+      "code": "013",
+      "id": "09-08-013",
+      "name": "Ile Nla Ile Oba Omu-Aran",
+      "inecName": "ILE NLA ILE OBA OMU-ARAN"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "001",
+      "id": "09-09-001",
+      "name": "Afin Oloro Okerimi Oro",
+      "inecName": "AFIN OLORO OKERIMI ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "002",
+      "id": "09-09-002",
+      "name": "St Peter'S Sch Okerimi Oro",
+      "inecName": "ST PETER'S SCH OKERIMI ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "003",
+      "id": "09-09-003",
+      "name": "Ile Ayedun Okerimi Oro",
+      "inecName": "ILE AYEDUN OKERIMI ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "004",
+      "id": "09-09-004",
+      "name": "Ile Bale Iddo Oro",
+      "inecName": "ILE BALE IDDO ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "005",
+      "id": "09-09-005",
+      "name": "Near Town Hall Ijomu Oro",
+      "inecName": "NEAR TOWN HALL IJOMU ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "006",
+      "id": "09-09-006",
+      "name": "Ile Bale'S Comp Ijomu Oro",
+      "inecName": "ILE BALE'S COMP IJOMU ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "007",
+      "id": "09-09-007",
+      "name": "Muslim Sch Ijomu Oro",
+      "inecName": "MUSLIM SCH IJOMU ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "008",
+      "id": "09-09-008",
+      "name": "Ayetoro Ijomu Oro",
+      "inecName": "AYETORO IJOMU ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "009",
+      "id": "09-09-009",
+      "name": "Ile Baa Ijomu Oro",
+      "inecName": "ILE BAA IJOMU ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "09",
+      "code": "010",
+      "id": "09-09-010",
+      "name": "LGEA Sch Sie/Olorunsogo",
+      "inecName": "L.G.E.A SCH SIE/OLORUNSOGO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "001",
+      "id": "09-10-001",
+      "name": "Ile Bale Oro",
+      "inecName": "ILE BALE ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "002",
+      "id": "09-10-002",
+      "name": "Ile Bale Oro",
+      "inecName": "ILE BALE ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "003",
+      "id": "09-10-003",
+      "name": "St Andrew Sch Oro",
+      "inecName": "ST ANDREW SCH ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "004",
+      "id": "09-10-004",
+      "name": "Ile Onijala Oro",
+      "inecName": "ILE ONIJALA ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "005",
+      "id": "09-10-005",
+      "name": "Muslim Sch Oro",
+      "inecName": "MUSLIM SCH ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "006",
+      "id": "09-10-006",
+      "name": "Near General Hospital Oro",
+      "inecName": "NEAR GENERAL HOSPITAL ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "007",
+      "id": "09-10-007",
+      "name": "Muslim Sch, Okeola Oro",
+      "inecName": "MUSLIM SCH, OKEOLA ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "008",
+      "id": "09-10-008",
+      "name": "Ile Bale Oke Ola Oro",
+      "inecName": "ILE BALE OKE OLA ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "009",
+      "id": "09-10-009",
+      "name": "Muslim Sch Agbeola Oro",
+      "inecName": "MUSLIM SCH AGBEOLA ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "010",
+      "id": "09-10-010",
+      "name": "Ile Bale Iludun Oro",
+      "inecName": "ILE BALE ILUDUN ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "011",
+      "id": "09-10-011",
+      "name": "Ile Alape Iludun Oro",
+      "inecName": "ILE ALAPE ILUDUN ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "012",
+      "id": "09-10-012",
+      "name": "St James Sch Iludun Oro",
+      "inecName": "ST JAMES SCH ILUDUN ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "10",
+      "code": "013",
+      "id": "09-10-013",
+      "name": "Ansarul LGEA Sch, Iludun Oro",
+      "inecName": "ANSARUL L.G.E.A SCH, ILUDUN ORO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "001",
+      "id": "09-11-001",
+      "name": "Ile Oba Oko",
+      "inecName": "ILE OBA OKO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "002",
+      "id": "09-11-002",
+      "name": "Market Centre Oko",
+      "inecName": "MARKET CENTRE OKO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "003",
+      "id": "09-11-003",
+      "name": "Ile Petu Oko",
+      "inecName": "ILE PETU OKO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "004",
+      "id": "09-11-004",
+      "name": "LGEA Sch Oko",
+      "inecName": "L.G.E.A SCH OKO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "005",
+      "id": "09-11-005",
+      "name": "Adult LGEA Sch Inishan Oko",
+      "inecName": "ADULT L.G.E.A SCH INISHAN OKO"
+    },
+    {
+      "lgaCode": "09",
+      "wardCode": "11",
+      "code": "006",
+      "id": "09-11-006",
+      "name": "Ita Odoko Oko",
+      "inecName": "ITA ODOKO OKO"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "01",
+      "code": "001",
+      "id": "10-01-001",
+      "name": "Market Centre Open Space",
+      "inecName": "MARKET CENTRE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "01",
+      "code": "002",
+      "id": "10-01-002",
+      "name": "LGEA Sch Oponda",
+      "inecName": "L.G.E.A SCH OPONDA"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "01",
+      "code": "003",
+      "id": "10-01-003",
+      "name": "Owode Kajola Open Space",
+      "inecName": "OWODE KAJOLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "01",
+      "code": "004",
+      "id": "10-01-004",
+      "name": "Ile Oba, Alla Open Space",
+      "inecName": "ILE OBA, ALLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "02",
+      "code": "001",
+      "id": "10-02-001",
+      "name": "St Andrew LGEA Sch",
+      "inecName": "ST ANDREW L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "02",
+      "code": "002",
+      "id": "10-02-002",
+      "name": "Bale'S Area Open Space",
+      "inecName": "BALE'S AREA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "02",
+      "code": "003",
+      "id": "10-02-003",
+      "name": "Market Centre Open Space",
+      "inecName": "MARKET CENTRE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "02",
+      "code": "004",
+      "id": "10-02-004",
+      "name": "Ile-Loke Open Space",
+      "inecName": "ILE-LOKE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "001",
+      "id": "10-03-001",
+      "name": "Ile-Loke Isanlu Open Space",
+      "inecName": "ILE-LOKE ISANLU OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "002",
+      "id": "10-03-002",
+      "name": "St Joseph'S LGEA Sch",
+      "inecName": "ST JOSEPH'S L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "003",
+      "id": "10-03-003",
+      "name": "Aiyetoro Open Space",
+      "inecName": "AIYETORO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "004",
+      "id": "10-03-004",
+      "name": "Baptist LGEA Sch",
+      "inecName": "BAPTIST L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "005",
+      "id": "10-03-005",
+      "name": "Market Centre Eleyin",
+      "inecName": "MARKET CENTRE ELEYIN"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "006",
+      "id": "10-03-006",
+      "name": "Odogbo Open Space",
+      "inecName": "ODOGBO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "03",
+      "code": "007",
+      "id": "10-03-007",
+      "name": "Ile Ologba Area",
+      "inecName": "ILE OLOGBA AREA"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "001",
+      "id": "10-04-001",
+      "name": "Ile Agbasin Open Space",
+      "inecName": "ILE AGBASIN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "002",
+      "id": "10-04-002",
+      "name": "Market Centre Open Space",
+      "inecName": "MARKET CENTRE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "003",
+      "id": "10-04-003",
+      "name": "Oke-Epa Open Space",
+      "inecName": "OKE-EPA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "004",
+      "id": "10-04-004",
+      "name": "Maternity Centre",
+      "inecName": "MATERNITY CENTRE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "005",
+      "id": "10-04-005",
+      "name": "Aiyede Open Space",
+      "inecName": "AIYEDE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "006",
+      "id": "10-04-006",
+      "name": "Igbagbotedo Open Space",
+      "inecName": "IGBAGBOTEDO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "04",
+      "code": "007",
+      "id": "10-04-007",
+      "name": "Ile Olomujo Open Space",
+      "inecName": "ILE OLOMUJO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "001",
+      "id": "10-05-001",
+      "name": "Oke Igunsin Open Space",
+      "inecName": "OKE IGUNSIN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "002",
+      "id": "10-05-002",
+      "name": "Market Centre Open Space",
+      "inecName": "MARKET CENTRE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "003",
+      "id": "10-05-003",
+      "name": "Baptist LGEA Sch",
+      "inecName": "BAPTIST L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "004",
+      "id": "10-05-004",
+      "name": "Bale'S Area Open Space",
+      "inecName": "BALE'S AREA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "005",
+      "id": "10-05-005",
+      "name": "Old Court Open Space",
+      "inecName": "OLD COURT OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "006",
+      "id": "10-05-006",
+      "name": "Ile Olusin Open Space",
+      "inecName": "ILE OLUSIN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "007",
+      "id": "10-05-007",
+      "name": "Ile Nla Open Space",
+      "inecName": "ILE NLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "008",
+      "id": "10-05-008",
+      "name": "Ajegunle Open Space",
+      "inecName": "AJEGUNLE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "05",
+      "code": "009",
+      "id": "10-05-009",
+      "name": "Ofatedo Open Space",
+      "inecName": "OFATEDO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "001",
+      "id": "10-06-001",
+      "name": "Ile Oba Open Space",
+      "inecName": "ILE OBA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "002",
+      "id": "10-06-002",
+      "name": "Comm LGEA School",
+      "inecName": "COMM LGEA SCHOOL"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "003",
+      "id": "10-06-003",
+      "name": "Ile Nla Open Space",
+      "inecName": "ILE NLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "004",
+      "id": "10-06-004",
+      "name": "Oke-Ope Open Space",
+      "inecName": "OKE-OPE OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "005",
+      "id": "10-06-005",
+      "name": "Maternity Centre Open Space I",
+      "inecName": "MATERNITY CENTRE OPEN SPACE I"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "06",
+      "code": "006",
+      "id": "10-06-006",
+      "name": "Maternity Centre Open Space II",
+      "inecName": "MATERNITY CENTRE OPEN SPACE II"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "001",
+      "id": "10-07-001",
+      "name": "Court Area Open Space",
+      "inecName": "COURT AREA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "002",
+      "id": "10-07-002",
+      "name": "Ile Oba Owu Open Space I",
+      "inecName": "ILE OBA OWU OPEN SPACE I"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "003",
+      "id": "10-07-003",
+      "name": "Ile Oba Owu Open Space II",
+      "inecName": "ILE OBA OWU OPEN SPACE II"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "004",
+      "id": "10-07-004",
+      "name": "LGEA Sch Owu",
+      "inecName": "LGEA SCH OWU"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "005",
+      "id": "10-07-005",
+      "name": "LGEA Sch Iji-Isin I",
+      "inecName": "LGEA SCH IJI-ISIN I"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "006",
+      "id": "10-07-006",
+      "name": "LGEA Sch Iji-Isin II",
+      "inecName": "LGEA SCH IJI-ISIN II"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "007",
+      "id": "10-07-007",
+      "name": "Market Centre Kudu",
+      "inecName": "MARKET CENTRE KUDU"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "07",
+      "code": "008",
+      "id": "10-07-008",
+      "name": "Market Centre Oyi",
+      "inecName": "MARKET CENTRE OYI"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "001",
+      "id": "10-08-001",
+      "name": "Garage Oke Onigbin Open Space",
+      "inecName": "GARAGE OKE ONIGBIN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "002",
+      "id": "10-08-002",
+      "name": "All Saints, LGEA Sch",
+      "inecName": "ALL SAINTS, LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "003",
+      "id": "10-08-003",
+      "name": "Odo-Igbesi Open Space",
+      "inecName": "ODO-IGBESI OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "004",
+      "id": "10-08-004",
+      "name": "Court Area Open Space",
+      "inecName": "COURT AREA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "005",
+      "id": "10-08-005",
+      "name": "Igbesi LGEA Sch",
+      "inecName": "IGBESI LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "08",
+      "code": "006",
+      "id": "10-08-006",
+      "name": "Adigun Open Space",
+      "inecName": "ADIGUN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "09",
+      "code": "001",
+      "id": "10-09-001",
+      "name": "Pamo LGEA Sch",
+      "inecName": "PAMO LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "09",
+      "code": "002",
+      "id": "10-09-002",
+      "name": "Oba-Isin LGEA Sch",
+      "inecName": "OBA-ISIN LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "09",
+      "code": "003",
+      "id": "10-09-003",
+      "name": "Sabaja Open Space",
+      "inecName": "SABAJA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "001",
+      "id": "10-10-001",
+      "name": "Oke Aba LGEA Sch",
+      "inecName": "OKE ABA LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "002",
+      "id": "10-10-002",
+      "name": "Odo Eku LGEA Sch",
+      "inecName": "ODO EKU LGEA SCH"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "003",
+      "id": "10-10-003",
+      "name": "Bale'S Area Odo Ore",
+      "inecName": "BALE'S AREA ODO ORE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "004",
+      "id": "10-10-004",
+      "name": "Magaji Olokin Open Space",
+      "inecName": "MAGAJI OLOKIN OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "005",
+      "id": "10-10-005",
+      "name": "Oke Aba Town Hall",
+      "inecName": "OKE ABA TOWN HALL"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "006",
+      "id": "10-10-006",
+      "name": "Odo-Eku Market Centre",
+      "inecName": "ODO-EKU MARKET CENTRE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "007",
+      "id": "10-10-007",
+      "name": "Idi Agbede Oke Aba",
+      "inecName": "IDI AGBEDE OKE ABA"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "10",
+      "code": "008",
+      "id": "10-10-008",
+      "name": "Oke Aba Market Centre",
+      "inecName": "OKE ABA MARKET CENTRE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "001",
+      "id": "10-11-001",
+      "name": "Aiyekale Olla Open Space",
+      "inecName": "AIYEKALE OLLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "002",
+      "id": "10-11-002",
+      "name": "Olla Market Centre",
+      "inecName": "OLLA MARKET CENTRE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "003",
+      "id": "10-11-003",
+      "name": "Agamo Open Space",
+      "inecName": "AGAMO OPEN SPACE"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "004",
+      "id": "10-11-004",
+      "name": "Ecwa LGEA Sch Olla",
+      "inecName": "ECWA LGEA SCH OLLA"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "005",
+      "id": "10-11-005",
+      "name": "Comm LGEA Sch Olla",
+      "inecName": "COMM LGEA SCH OLLA"
+    },
+    {
+      "lgaCode": "10",
+      "wardCode": "11",
+      "code": "006",
+      "id": "10-11-006",
+      "name": "Odofin Area Olla Open Space",
+      "inecName": "ODOFIN AREA OLLA OPEN SPACE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "001",
+      "id": "13-01-001",
+      "name": "Open Space Tidi Bogede LGEA",
+      "inecName": "OPEN SPACE TIDI BOGEDE L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "002",
+      "id": "13-01-002",
+      "name": "Open Space Balogun Market",
+      "inecName": "OPEN SPACE BALOGUN MARKET"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "003",
+      "id": "13-01-003",
+      "name": "Open Space Arowosodun Area",
+      "inecName": "OPEN SPACE AROWOSODUN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "004",
+      "id": "13-01-004",
+      "name": "Open Space Idi-Isin Area",
+      "inecName": "OPEN SPACE IDI-ISIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "005",
+      "id": "13-01-005",
+      "name": "Open Space Ajoda Area",
+      "inecName": "OPEN SPACE AJODA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "006",
+      "id": "13-01-006",
+      "name": "Open Space A.U.D Area",
+      "inecName": "OPEN SPACE A.U.D AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "007",
+      "id": "13-01-007",
+      "name": "Open Space Iyeru-Okin LGEA I",
+      "inecName": "OPEN SPACE IYERU-OKIN L.G.E.A I"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "008",
+      "id": "13-01-008",
+      "name": "Open Space Iyeru-Okin LGEA II",
+      "inecName": "OPEN SPACE IYERU-OKIN L.G.E.A II"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "009",
+      "id": "13-01-009",
+      "name": "Open Space Akingbasa Area",
+      "inecName": "OPEN SPACE AKINGBASA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "01",
+      "code": "010",
+      "id": "13-01-010",
+      "name": "Open Space Amoko Comp",
+      "inecName": "OPEN SPACE AMOKO COMP"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "001",
+      "id": "13-02-001",
+      "name": "Open Space Adeola Junction",
+      "inecName": "OPEN SPACE ADEOLA JUNCTION"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "002",
+      "id": "13-02-002",
+      "name": "Open Space Near Igbonna Mosque Area",
+      "inecName": "OPEN SPACE NEAR IGBONNA MOSQUE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "003",
+      "id": "13-02-003",
+      "name": "Open Space Freedom Hotel Area",
+      "inecName": "OPEN SPACE FREEDOM HOTEL AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "004",
+      "id": "13-02-004",
+      "name": "Open Space Omo-Owo Area",
+      "inecName": "OPEN SPACE OMO-OWO AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "005",
+      "id": "13-02-005",
+      "name": "Open Space, St Cyprian Sch I",
+      "inecName": "OPEN SPACE, ST CYPRIAN SCH I"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "006",
+      "id": "13-02-006",
+      "name": "Open Space, St Cyprian Sch II",
+      "inecName": "OPEN SPACE, ST CYPRIAN SCH II"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "007",
+      "id": "13-02-007",
+      "name": "Open Space, Afolarin Area",
+      "inecName": "OPEN SPACE, AFOLARIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "02",
+      "code": "008",
+      "id": "13-02-008",
+      "name": "Open Space, Kanmonu Alayin",
+      "inecName": "OPEN SPACE, KANMONU ALAYIN"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "001",
+      "id": "13-03-001",
+      "name": "Open Space, Bolude Area",
+      "inecName": "OPEN SPACE, BOLUDE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "002",
+      "id": "13-03-002",
+      "name": "Open Space, Oganla Area",
+      "inecName": "OPEN SPACE, OGANLA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "003",
+      "id": "13-03-003",
+      "name": "Open Space, Anbe Area",
+      "inecName": "OPEN SPACE, ANBE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "004",
+      "id": "13-03-004",
+      "name": "Open Space, Akosin Area",
+      "inecName": "OPEN SPACE, AKOSIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "005",
+      "id": "13-03-005",
+      "name": "Open Space, Alubata Area",
+      "inecName": "OPEN SPACE, ALUBATA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "006",
+      "id": "13-03-006",
+      "name": "Open Space, Popo Market",
+      "inecName": "OPEN SPACE, POPO MARKET"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "007",
+      "id": "13-03-007",
+      "name": "Open Space, Ajia Area",
+      "inecName": "OPEN SPACE, AJIA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "03",
+      "code": "008",
+      "id": "13-03-008",
+      "name": "Open Space, Ikolaba Area",
+      "inecName": "OPEN SPACE, IKOLABA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "001",
+      "id": "13-04-001",
+      "name": "Open Space, Are Onilu Area",
+      "inecName": "OPEN SPACE, ARE ONILU AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "002",
+      "id": "13-04-002",
+      "name": "Open Space, Oluwe Area",
+      "inecName": "OPEN SPACE, OLUWE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "003",
+      "id": "13-04-003",
+      "name": "Open Space, Elepa Area",
+      "inecName": "OPEN SPACE, ELEPA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "004",
+      "id": "13-04-004",
+      "name": "Open Space, Idi Ogun Area",
+      "inecName": "OPEN SPACE, IDI OGUN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "005",
+      "id": "13-04-005",
+      "name": "Open Space, Beleore Area",
+      "inecName": "OPEN SPACE, BELEORE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "006",
+      "id": "13-04-006",
+      "name": "Open Space, Okin Cinema Area",
+      "inecName": "OPEN SPACE, OKIN CINEMA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "04",
+      "code": "007",
+      "id": "13-04-007",
+      "name": "Open Space, Sakosi Junction",
+      "inecName": "OPEN SPACE, SAKOSI JUNCTION"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "001",
+      "id": "13-05-001",
+      "name": "Open Space, Oniju Area",
+      "inecName": "OPEN SPACE, ONIJU AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "002",
+      "id": "13-05-002",
+      "name": "Open Space, Obadaboye Area",
+      "inecName": "OPEN SPACE, OBADABOYE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "003",
+      "id": "13-05-003",
+      "name": "Open Space, Akinlofi Area",
+      "inecName": "OPEN SPACE, AKINLOFI AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "004",
+      "id": "13-05-004",
+      "name": "Open Space,opposite Olofa'S Gate",
+      "inecName": "OPEN SPACE,OPPOSITE OLOFA'S GATE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "005",
+      "id": "13-05-005",
+      "name": "Open Space, Arole Area",
+      "inecName": "OPEN SPACE, AROLE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "05",
+      "code": "006",
+      "id": "13-05-006",
+      "name": "Igbo-Oro Health Centre",
+      "inecName": "IGBO-ORO HEALTH CENTRE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "06",
+      "code": "001",
+      "id": "13-06-001",
+      "name": "Open Space Ona-Ara Bakery",
+      "inecName": "OPEN SPACE ONA-ARA BAKERY"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "06",
+      "code": "002",
+      "id": "13-06-002",
+      "name": "De-Crown Restraurant Oloya Area",
+      "inecName": "DE-CROWN RESTRAURANT OLOYA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "06",
+      "code": "003",
+      "id": "13-06-003",
+      "name": "Open Space Oloyabanleku Area",
+      "inecName": "OPEN SPACE OLOYABANLEKU AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "06",
+      "code": "004",
+      "id": "13-06-004",
+      "name": "Open Space Sajiku Area",
+      "inecName": "OPEN SPACE SAJIKU AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "06",
+      "code": "005",
+      "id": "13-06-005",
+      "name": "Open Space Essa Square",
+      "inecName": "OPEN SPACE ESSA SQUARE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "001",
+      "id": "13-07-001",
+      "name": "Open Space Odiwo Area",
+      "inecName": "OPEN SPACE ODIWO AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "002",
+      "id": "13-07-002",
+      "name": "Open Space Oluawo Area",
+      "inecName": "OPEN SPACE OLUAWO AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "003",
+      "id": "13-07-003",
+      "name": "Idi-Ogun Sawmill Area",
+      "inecName": "IDI-OGUN SAWMILL AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "004",
+      "id": "13-07-004",
+      "name": "Open Space Alape Area",
+      "inecName": "OPEN SPACE ALAPE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "005",
+      "id": "13-07-005",
+      "name": "Baptist LGEA Itafa",
+      "inecName": "BAPTIST LGEA ITAFA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "006",
+      "id": "13-07-006",
+      "name": "Open Space O.D.U Secretariat I",
+      "inecName": "OPEN SPACE O.D.U SECRETARIAT I"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "07",
+      "code": "007",
+      "id": "13-07-007",
+      "name": "Open Space O.D.U Secretariat II",
+      "inecName": "OPEN SPACE O.D.U SECRETARIAT II"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "001",
+      "id": "13-08-001",
+      "name": "Open Space Ist Baptist LGEA",
+      "inecName": "OPEN SPACE IST BAPTIST L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "002",
+      "id": "13-08-002",
+      "name": "Open Space Agun Baptist LGEA",
+      "inecName": "OPEN SPACE AGUN BAPTIST L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "003",
+      "id": "13-08-003",
+      "name": "Open Space Adeleke Road",
+      "inecName": "OPEN SPACE ADELEKE ROAD"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "004",
+      "id": "13-08-004",
+      "name": "Open Space Muu Road",
+      "inecName": "OPEN SPACE MUU ROAD"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "005",
+      "id": "13-08-005",
+      "name": "Open Space O.G.S",
+      "inecName": "OPEN SPACE O.G.S"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "006",
+      "id": "13-08-006",
+      "name": "Open Space Oluolo",
+      "inecName": "OPEN SPACE OLUOLO"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "007",
+      "id": "13-08-007",
+      "name": "Open Space Prince Motel",
+      "inecName": "OPEN SPACE PRINCE MOTEL"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "008",
+      "id": "13-08-008",
+      "name": "Open Space Post Office",
+      "inecName": "OPEN SPACE POST OFFICE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "08",
+      "code": "009",
+      "id": "13-08-009",
+      "name": "Open Space Ogakunrin Area",
+      "inecName": "OPEN SPACE OGAKUNRIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "001",
+      "id": "13-09-001",
+      "name": "Open Space Eso Baba Alata",
+      "inecName": "OPEN SPACE ESO BABA ALATA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "002",
+      "id": "13-09-002",
+      "name": "Open Space Ejisun Area",
+      "inecName": "OPEN SPACE EJISUN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "003",
+      "id": "13-09-003",
+      "name": "Open Space Children Welfare",
+      "inecName": "OPEN SPACE CHILDREN WELFARE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "004",
+      "id": "13-09-004",
+      "name": "Open Space Anadowo Area",
+      "inecName": "OPEN SPACE ANADOWO AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "005",
+      "id": "13-09-005",
+      "name": "Open Space Alagure Area",
+      "inecName": "OPEN SPACE ALAGURE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "09",
+      "code": "006",
+      "id": "13-09-006",
+      "name": "Open Space Ola Isale Area",
+      "inecName": "OPEN SPACE OLA ISALE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "10",
+      "code": "001",
+      "id": "13-10-001",
+      "name": "Open Space Obatiwajuoye Area",
+      "inecName": "OPEN SPACE OBATIWAJUOYE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "10",
+      "code": "002",
+      "id": "13-10-002",
+      "name": "Open Space Asalofa Area",
+      "inecName": "OPEN SPACE ASALOFA AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "10",
+      "code": "003",
+      "id": "13-10-003",
+      "name": "Open Space Oladodo Area",
+      "inecName": "OPEN SPACE OLADODO AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "10",
+      "code": "004",
+      "id": "13-10-004",
+      "name": "Open Space Eso Pataki Area",
+      "inecName": "OPEN SPACE ESO PATAKI AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "10",
+      "code": "005",
+      "id": "13-10-005",
+      "name": "Open Space St Thomas LGEA",
+      "inecName": "OPEN SPACE ST THOMAS L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "001",
+      "id": "13-11-001",
+      "name": "LGEA Wesley Sch",
+      "inecName": "L.G.E.A WESLEY SCH"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "002",
+      "id": "13-11-002",
+      "name": "Opposite Ist Baptist Church Surulere",
+      "inecName": "OPPOSITE IST BAPTIST CHURCH SURULERE"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "003",
+      "id": "13-11-003",
+      "name": "Ita Aponbi Bus Stop",
+      "inecName": "ITA APONBI BUS STOP"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "004",
+      "id": "13-11-004",
+      "name": "Open Space Ita Erin Area",
+      "inecName": "OPEN SPACE ITA ERIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "005",
+      "id": "13-11-005",
+      "name": "Open Space Esinkin Area",
+      "inecName": "OPEN SPACE ESINKIN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "006",
+      "id": "13-11-006",
+      "name": "Open Space Gedegbe Area",
+      "inecName": "OPEN SPACE GEDEGBE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "007",
+      "id": "13-11-007",
+      "name": "Open Space Oganran Area",
+      "inecName": "OPEN SPACE OGANRAN AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "008",
+      "id": "13-11-008",
+      "name": "Open Space Arojojoye Area",
+      "inecName": "OPEN SPACE AROJOJOYE AREA"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "009",
+      "id": "13-11-009",
+      "name": "Open Space Opeloyeru Area I",
+      "inecName": "OPEN SPACE OPELOYERU AREA I"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "11",
+      "code": "010",
+      "id": "13-11-010",
+      "name": "Open Space Opeloyeru Area II",
+      "inecName": "OPEN SPACE OPELOYERU AREA II"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "12",
+      "code": "001",
+      "id": "13-12-001",
+      "name": "Igboidun LGEA",
+      "inecName": "IGBOIDUN L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "12",
+      "code": "002",
+      "id": "13-12-002",
+      "name": "Igbawere LGEA",
+      "inecName": "IGBAWERE L.G.E.A"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "12",
+      "code": "003",
+      "id": "13-12-003",
+      "name": "Open Space Gbosun Ogbondoroko",
+      "inecName": "OPEN SPACE GBOSUN OGBONDOROKO"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "12",
+      "code": "004",
+      "id": "13-12-004",
+      "name": "Open Space Pandoro",
+      "inecName": "OPEN SPACE PANDORO"
+    },
+    {
+      "lgaCode": "13",
+      "wardCode": "12",
+      "code": "005",
+      "id": "13-12-005",
+      "name": "Open Space Ajegunle",
+      "inecName": "OPEN SPACE AJEGUNLE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "001",
+      "id": "14-01-001",
+      "name": "Market Centre I",
+      "inecName": "MARKET CENTRE I"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "002",
+      "id": "14-01-002",
+      "name": "Market Centre II",
+      "inecName": "MARKET CENTRE II"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "003",
+      "id": "14-01-003",
+      "name": "Ijelu Centre I",
+      "inecName": "IJELU CENTRE I"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "004",
+      "id": "14-01-004",
+      "name": "Ijelu Centre II",
+      "inecName": "IJELU CENTRE II"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "005",
+      "id": "14-01-005",
+      "name": "Ile Ala",
+      "inecName": "ILE ALA"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "006",
+      "id": "14-01-006",
+      "name": "Adodo",
+      "inecName": "ADODO"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "01",
+      "code": "007",
+      "id": "14-01-007",
+      "name": "Ode Ede",
+      "inecName": "ODE EDE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "001",
+      "id": "14-02-001",
+      "name": "Eri Egun",
+      "inecName": "ERI EGUN"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "002",
+      "id": "14-02-002",
+      "name": "Open Space Afin",
+      "inecName": "OPEN SPACE AFIN"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "003",
+      "id": "14-02-003",
+      "name": "Idera Road",
+      "inecName": "IDERA ROAD"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "004",
+      "id": "14-02-004",
+      "name": "Oke Ilegun",
+      "inecName": "OKE ILEGUN"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "005",
+      "id": "14-02-005",
+      "name": "Ile Tara",
+      "inecName": "ILE TARA"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "006",
+      "id": "14-02-006",
+      "name": "Odo-Owa",
+      "inecName": "ODO-OWA"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "007",
+      "id": "14-02-007",
+      "name": "Ile-Agbedu",
+      "inecName": "ILE-AGBEDU"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "008",
+      "id": "14-02-008",
+      "name": "Oke-Okin",
+      "inecName": "OKE-OKIN"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "02",
+      "code": "009",
+      "id": "14-02-009",
+      "name": "Ajure",
+      "inecName": "AJURE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "03",
+      "code": "001",
+      "id": "14-03-001",
+      "name": "Comm LGEA Sch Imoji",
+      "inecName": "COMM L.G.E.A SCH IMOJI"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "03",
+      "code": "002",
+      "id": "14-03-002",
+      "name": "Comm LGEA Sch Ilale",
+      "inecName": "COMM L.G.E.A SCH ILALE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "03",
+      "code": "003",
+      "id": "14-03-003",
+      "name": "Market Centre Erinmope",
+      "inecName": "MARKET CENTRE ERINMOPE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "03",
+      "code": "004",
+      "id": "14-03-004",
+      "name": "Odo Oye Ilale",
+      "inecName": "ODO OYE ILALE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "001",
+      "id": "14-04-001",
+      "name": "Jamat LGEA Sch",
+      "inecName": "JAMAT L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "002",
+      "id": "14-04-002",
+      "name": "Old Market",
+      "inecName": "OLD MARKET"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "003",
+      "id": "14-04-003",
+      "name": "Irepe Compound",
+      "inecName": "IREPE COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "004",
+      "id": "14-04-004",
+      "name": "Oke Ipo I",
+      "inecName": "OKE IPO I"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "005",
+      "id": "14-04-005",
+      "name": "Oke Ipo II",
+      "inecName": "OKE IPO II"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "006",
+      "id": "14-04-006",
+      "name": "St John C.A.C Sch I",
+      "inecName": "ST JOHN C.A.C SCH I"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "04",
+      "code": "007",
+      "id": "14-04-007",
+      "name": "St John C.A.C Sch II",
+      "inecName": "ST JOHN C.A.C SCH II"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "05",
+      "code": "001",
+      "id": "14-05-001",
+      "name": "Egosi Town Hall",
+      "inecName": "EGOSI TOWN HALL"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "05",
+      "code": "002",
+      "id": "14-05-002",
+      "name": "Idi-Ekiti",
+      "inecName": "IDI-EKITI"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "05",
+      "code": "003",
+      "id": "14-05-003",
+      "name": "Oke-Owa/Oko-Oru",
+      "inecName": "OKE-OWA/OKO-ORU"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "05",
+      "code": "004",
+      "id": "14-05-004",
+      "name": "Oke-Aro Compound",
+      "inecName": "OKE-ARO COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "05",
+      "code": "005",
+      "id": "14-05-005",
+      "name": "Bolorunduro",
+      "inecName": "BOLORUNDURO"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "001",
+      "id": "14-06-001",
+      "name": "Adult LGEA Sch",
+      "inecName": "ADULT L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "002",
+      "id": "14-06-002",
+      "name": "Court Premises",
+      "inecName": "COURT PREMISES"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "003",
+      "id": "14-06-003",
+      "name": "Market Centre",
+      "inecName": "MARKET CENTRE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "004",
+      "id": "14-06-004",
+      "name": "St Paul LGEA Sch",
+      "inecName": "ST PAUL L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "005",
+      "id": "14-06-005",
+      "name": "Odoloke Compound",
+      "inecName": "ODOLOKE COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "06",
+      "code": "006",
+      "id": "14-06-006",
+      "name": "Odo-Agbede Compound",
+      "inecName": "ODO-AGBEDE COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "07",
+      "code": "001",
+      "id": "14-07-001",
+      "name": "Motor Park",
+      "inecName": "MOTOR PARK"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "07",
+      "code": "002",
+      "id": "14-07-002",
+      "name": "Area Office",
+      "inecName": "AREA OFFICE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "07",
+      "code": "003",
+      "id": "14-07-003",
+      "name": "Odo-Ose Compound",
+      "inecName": "ODO-OSE COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "07",
+      "code": "004",
+      "id": "14-07-004",
+      "name": "Koba",
+      "inecName": "KOBA"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "07",
+      "code": "005",
+      "id": "14-07-005",
+      "name": "Kade",
+      "inecName": "KADE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "001",
+      "id": "14-08-001",
+      "name": "LGEA Sch Ayekale",
+      "inecName": "L.G.E.A SCH AYEKALE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "002",
+      "id": "14-08-002",
+      "name": "Market Centre Ehinafo",
+      "inecName": "MARKET CENTRE EHINAFO"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "003",
+      "id": "14-08-003",
+      "name": "Comm LGEA Sch Ehinafo",
+      "inecName": "COMM L.G.E.A SCH EHINAFO"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "004",
+      "id": "14-08-004",
+      "name": "Ile Olukose Ayekale",
+      "inecName": "ILE OLUKOSE AYEKALE"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "005",
+      "id": "14-08-005",
+      "name": "Ile Alaye Odo Aga",
+      "inecName": "ILE ALAYE ODO AGA"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "006",
+      "id": "14-08-006",
+      "name": "Oke Mapo/Makurdi I",
+      "inecName": "OKE MAPO/MAKURDI I"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "007",
+      "id": "14-08-007",
+      "name": "Oke Mapo/Makurdi II",
+      "inecName": "OKE MAPO/MAKURDI II"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "08",
+      "code": "008",
+      "id": "14-08-008",
+      "name": "Police Station",
+      "inecName": "POLICE STATION"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "001",
+      "id": "14-09-001",
+      "name": "Afin Compound",
+      "inecName": "AFIN COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "002",
+      "id": "14-09-002",
+      "name": "Arinrin Compound",
+      "inecName": "ARINRIN COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "003",
+      "id": "14-09-003",
+      "name": "Ikotun Compound",
+      "inecName": "IKOTUN COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "004",
+      "id": "14-09-004",
+      "name": "C.A.C LGEA Sch",
+      "inecName": "C.A.C L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "005",
+      "id": "14-09-005",
+      "name": "Adult LGEA Sch",
+      "inecName": "ADULT L.G.E.A SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "006",
+      "id": "14-09-006",
+      "name": "St Thomas Pry Sch",
+      "inecName": "ST THOMAS PRY SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "09",
+      "code": "007",
+      "id": "14-09-007",
+      "name": "Igbede Compound",
+      "inecName": "IGBEDE COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "10",
+      "code": "001",
+      "id": "14-10-001",
+      "name": "Ipekun Compound",
+      "inecName": "IPEKUN COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "10",
+      "code": "002",
+      "id": "14-10-002",
+      "name": "Igbinlo Compound",
+      "inecName": "IGBINLO COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "10",
+      "code": "003",
+      "id": "14-10-003",
+      "name": "Igbira Compound",
+      "inecName": "IGBIRA COMPOUND"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "10",
+      "code": "004",
+      "id": "14-10-004",
+      "name": "St Joseph Pry Sch",
+      "inecName": "ST JOSEPH PRY SCH"
+    },
+    {
+      "lgaCode": "14",
+      "wardCode": "10",
+      "code": "005",
+      "id": "14-10-005",
+      "name": "Temidire (yasola)",
+      "inecName": "TEMIDIRE (YASOLA)"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "001",
+      "id": "15-01-001",
+      "name": "Baptist LGEA Sch, Erin-Ile",
+      "inecName": "BAPTIST LGEA SCH, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "002",
+      "id": "15-01-002",
+      "name": "Erin-Ile Garage",
+      "inecName": "ERIN-ILE GARAGE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "003",
+      "id": "15-01-003",
+      "name": "Opposite Police Station, Erin-Ile",
+      "inecName": "OPPOSITE POLICE STATION, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "004",
+      "id": "15-01-004",
+      "name": "Magistrate Court, Erin-Ile",
+      "inecName": "MAGISTRATE COURT, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "005",
+      "id": "15-01-005",
+      "name": "Muslim Sch, Erin-Ile",
+      "inecName": "MUSLIM SCH, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "01",
+      "code": "006",
+      "id": "15-01-006",
+      "name": "Ago Iwoye",
+      "inecName": "AGO IWOYE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "001",
+      "id": "15-02-001",
+      "name": "LGEA Sch, Ilemona",
+      "inecName": "LGEA SCH, ILEMONA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "002",
+      "id": "15-02-002",
+      "name": "LGEA Sch, Adinimodo",
+      "inecName": "LGEA SCH, ADINIMODO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "003",
+      "id": "15-02-003",
+      "name": "Isaoye",
+      "inecName": "ISAOYE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "004",
+      "id": "15-02-004",
+      "name": "LGEA Sch Reke",
+      "inecName": "LGEA SCH REKE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "005",
+      "id": "15-02-005",
+      "name": "Ajoko",
+      "inecName": "AJOKO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "02",
+      "code": "006",
+      "id": "15-02-006",
+      "name": "Court Area, Ilemona",
+      "inecName": "COURT AREA, ILEMONA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "001",
+      "id": "15-03-001",
+      "name": "Town Hal, Igbona",
+      "inecName": "TOWN HAL, IGBONA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "002",
+      "id": "15-03-002",
+      "name": "LGEA Sch, Igbona",
+      "inecName": "LGEA SCH, IGBONA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "003",
+      "id": "15-03-003",
+      "name": "Eleku",
+      "inecName": "ELEKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "004",
+      "id": "15-03-004",
+      "name": "Kere-Aje LGEA Sch",
+      "inecName": "KERE-AJE LGEA SCH"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "005",
+      "id": "15-03-005",
+      "name": "Bolorunduro LGEA Sch",
+      "inecName": "BOLORUNDURO LGEA SCH"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "006",
+      "id": "15-03-006",
+      "name": "Agbara LGEA Sch",
+      "inecName": "AGBARA LGEA SCH"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "03",
+      "code": "007",
+      "id": "15-03-007",
+      "name": "Open Space Isale Igbona, Eleku",
+      "inecName": "OPEN SPACE ISALE IGBONA, ELEKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "04",
+      "code": "001",
+      "id": "15-04-001",
+      "name": "St Peter'S LGEA Sch , Irra",
+      "inecName": "ST PETER'S LGEA SCH , IRRA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "04",
+      "code": "002",
+      "id": "15-04-002",
+      "name": "Infront Of Ojomu'S Compound, Irra",
+      "inecName": "INFRONT OF OJOMU'S COMPOUND, IRRA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "04",
+      "code": "003",
+      "id": "15-04-003",
+      "name": "Irra Grammar Sch, Irra",
+      "inecName": "IRRA GRAMMAR SCH, IRRA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "04",
+      "code": "004",
+      "id": "15-04-004",
+      "name": "Infront Of Aro'S Compound, Irra",
+      "inecName": "INFRONT OF ARO'S COMPOUND, IRRA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "04",
+      "code": "005",
+      "id": "15-04-005",
+      "name": "Muslim LGEA Sch, Irra",
+      "inecName": "MUSLIM LGEA SCH, IRRA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "001",
+      "id": "15-05-001",
+      "name": "LGEA Sch , Inaja Maliki",
+      "inecName": "LGEA SCH , INAJA MALIKI"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "002",
+      "id": "15-05-002",
+      "name": "LGEA Sch , Inaja Alaro",
+      "inecName": "LGEA SCH , INAJA ALARO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "003",
+      "id": "15-05-003",
+      "name": "Ilobu - Kajola",
+      "inecName": "ILOBU - KAJOLA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "004",
+      "id": "15-05-004",
+      "name": "LGEA Sch, Ahogbada",
+      "inecName": "LGEA SCH, AHOGBADA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "005",
+      "id": "15-05-005",
+      "name": "LGEA Sch, Sanni Ode",
+      "inecName": "LGEA SCH, SANNI ODE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "05",
+      "code": "006",
+      "id": "15-05-006",
+      "name": "LGEA Sch, Afijagba",
+      "inecName": "LGEA SCH, AFIJAGBA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "001",
+      "id": "15-06-001",
+      "name": "Ikotun Court Frontage",
+      "inecName": "IKOTUN COURT FRONTAGE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "002",
+      "id": "15-06-002",
+      "name": "Ansarul-Islam LGEA Sch, Ikotun",
+      "inecName": "ANSARUL-ISLAM LGEA SCH, IKOTUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "003",
+      "id": "15-06-003",
+      "name": "LGEA Sch Falokun/Fade",
+      "inecName": "LGEA SCH FALOKUN/FADE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "004",
+      "id": "15-06-004",
+      "name": "Gudugba/Oke-Oye",
+      "inecName": "GUDUGBA/OKE-OYE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "005",
+      "id": "15-06-005",
+      "name": "LGEA Sch Igbotele",
+      "inecName": "LGEA SCH IGBOTELE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "006",
+      "id": "15-06-006",
+      "name": "Agbamu",
+      "inecName": "AGBAMU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "06",
+      "code": "007",
+      "id": "15-06-007",
+      "name": "Ansarul-Islam LGEA Sch, Ikotun",
+      "inecName": "ANSARUL-ISLAM LGEA SCH, IKOTUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "001",
+      "id": "15-07-001",
+      "name": "Muslim LGEA Sch, Ojoku",
+      "inecName": "MUSLIM LGEA SCH, OJOKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "002",
+      "id": "15-07-002",
+      "name": "Infront Of Onidun'S Comp, Ojoku",
+      "inecName": "INFRONT OF ONIDUN'S COMP, OJOKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "003",
+      "id": "15-07-003",
+      "name": "Infront Of Gboye'S Comp, Ojoku",
+      "inecName": "INFRONT OF GBOYE'S COMP, OJOKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "004",
+      "id": "15-07-004",
+      "name": "Opposite Council Hall, Ojoku",
+      "inecName": "OPPOSITE COUNCIL HALL, OJOKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "005",
+      "id": "15-07-005",
+      "name": "Wesley LGEA Sch, Ojoku",
+      "inecName": "WESLEY LGEA SCH, OJOKU"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "006",
+      "id": "15-07-006",
+      "name": "LGEA Sch, Awoniyi",
+      "inecName": "LGEA SCH, AWONIYI"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "07",
+      "code": "007",
+      "id": "15-07-007",
+      "name": "Muslim Sch, Isale Idera",
+      "inecName": "MUSLIM SCH, ISALE IDERA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "08",
+      "code": "001",
+      "id": "15-08-001",
+      "name": "Baptist LGEA Sch, Ijagbo I",
+      "inecName": "BAPTIST LGEA SCH, IJAGBO I"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "08",
+      "code": "002",
+      "id": "15-08-002",
+      "name": "Baptist LGEA Sch, Ijagbo II",
+      "inecName": "BAPTIST LGEA SCH, IJAGBO II"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "08",
+      "code": "003",
+      "id": "15-08-003",
+      "name": "Post Office, Ijagbo",
+      "inecName": "POST OFFICE, IJAGBO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "08",
+      "code": "004",
+      "id": "15-08-004",
+      "name": "A.U.D LGEA Sch, Ijagbo",
+      "inecName": "A.U.D LGEA SCH, IJAGBO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "08",
+      "code": "005",
+      "id": "15-08-005",
+      "name": "LGEA Sch Adeleke",
+      "inecName": "LGEA SCH ADELEKE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "001",
+      "id": "15-09-001",
+      "name": "Infront Of Onilu'S Comp, Igosun",
+      "inecName": "INFRONT OF ONILU'S COMP, IGOSUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "002",
+      "id": "15-09-002",
+      "name": "Old Market Igosun",
+      "inecName": "OLD MARKET IGOSUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "003",
+      "id": "15-09-003",
+      "name": "Beside Nepa Office, Igosun",
+      "inecName": "BESIDE NEPA OFFICE, IGOSUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "004",
+      "id": "15-09-004",
+      "name": "Muslim LGEA Sch, Igosun",
+      "inecName": "MUSLIM LGEA SCH, IGOSUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "005",
+      "id": "15-09-005",
+      "name": "Ago Idera",
+      "inecName": "AGO IDERA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "09",
+      "code": "006",
+      "id": "15-09-006",
+      "name": "Infront Of Olu-Ode'S Comp, Igosun",
+      "inecName": "INFRONT OF OLU-ODE'S COMP, IGOSUN"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "001",
+      "id": "15-10-001",
+      "name": "Muslim LGEA Sch, Ipee",
+      "inecName": "MUSLIM LGEA SCH, IPEE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "002",
+      "id": "15-10-002",
+      "name": "Baptist LGEA Sch, Ipee",
+      "inecName": "BAPTIST LGEA SCH, IPEE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "003",
+      "id": "15-10-003",
+      "name": "Central Market, Ipee",
+      "inecName": "CENTRAL MARKET, IPEE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "004",
+      "id": "15-10-004",
+      "name": "Budo Aiyekale",
+      "inecName": "BUDO AIYEKALE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "005",
+      "id": "15-10-005",
+      "name": "LGEA Sch, Ajoko",
+      "inecName": "LGEA SCH, AJOKO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "006",
+      "id": "15-10-006",
+      "name": "Budo-Alfa",
+      "inecName": "BUDO-ALFA"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "10",
+      "code": "007",
+      "id": "15-10-007",
+      "name": "Ibgs Junction, Oriwo",
+      "inecName": "IBGS JUNCTION, ORIWO"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "001",
+      "id": "15-11-001",
+      "name": "Open Space Olowe",
+      "inecName": "OPEN SPACE OLOWE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "002",
+      "id": "15-11-002",
+      "name": "St Mathias LGEA Sch, Erin-Ile I",
+      "inecName": "ST MATHIAS LGEA SCH, ERIN-ILE I"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "003",
+      "id": "15-11-003",
+      "name": "St Mathias LGEA Sch, Erin-Ile II",
+      "inecName": "ST MATHIAS LGEA SCH, ERIN-ILE II"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "004",
+      "id": "15-11-004",
+      "name": "Ebenezer LGEA Sch, Erin-Ile",
+      "inecName": "EBENEZER LGEA SCH, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "005",
+      "id": "15-11-005",
+      "name": "Infront Of Oloba'S Comp, Erin-Ile",
+      "inecName": "INFRONT OF OLOBA'S COMP, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "006",
+      "id": "15-11-006",
+      "name": "Infront Of Okiki'S Comp, Erin-Ile",
+      "inecName": "INFRONT OF OKIKI'S COMP, ERIN-ILE"
+    },
+    {
+      "lgaCode": "15",
+      "wardCode": "11",
+      "code": "007",
+      "id": "15-11-007",
+      "name": "Surajudeen LGEA Sch, Erin-Ile",
+      "inecName": "SURAJUDEEN LGEA SCH, ERIN-ILE"
+    }
+  ]
+}
