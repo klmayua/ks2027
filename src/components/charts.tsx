@@ -1,8 +1,9 @@
 /**
- * Chart primitives — KS2027 War Room.
+ * Interactive chart primitives — KS2027 War Room.
  *
- * Built against the dark war room surface (#11151d). Series 0 uses PDP emerald (#199e70) so the
- * principal's party reads cleanly alongside APC (#3987e5), SDP (#d95926), and ADC/others (#c98500).
+ * Every primary visual primitive supports optional `onSelect` / `activeId` interaction so bars,
+ * heat cells, KPI cards, and mosaic tiles become deep drill-down triggers on both desktop and
+ * mobile touchscreens.
  */
 
 import type { ReactNode } from 'react';
@@ -10,7 +11,6 @@ import type { ReactNode } from 'react';
 /** Validated categorical series palette: PDP emerald, APC blue, SDP orange, ADC/others amber. */
 export const SERIES = ['#199e70', '#3987e5', '#d95926', '#c98500'] as const;
 
-/** Sequential ramp (emerald, light→dark) for turnout and funnel magnitude encoding. */
 const SEQUENTIAL = [
   '#c8f3df', '#96e4c1', '#60d09f', '#2db67d', '#199e70', '#127a56', '#0b563c',
 ];
@@ -44,7 +44,7 @@ export function Stat({
   }[tone];
   const sizeClass = {
     sm: 'text-xl sm:text-2xl',
-    md: 'text-3xl sm:text-4xl',
+    md: 'text-2xl sm:text-3xl',
     lg: 'text-4xl sm:text-6xl',
   }[size];
 
@@ -61,12 +61,53 @@ export function Stat({
   );
 }
 
+/** Interactive KPI card with crisp hover/tap state and drill-down chevron. */
+export function InteractiveStatCard({
+  label,
+  value,
+  sub,
+  tone = 'neutral',
+  active = false,
+  onClick,
+}: {
+  label: string;
+  value: string | number;
+  sub?: ReactNode;
+  tone?: 'neutral' | 'good' | 'warn' | 'bad' | 'accent';
+  active?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`group flex w-full flex-col justify-between rounded-lg border p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
+        active
+          ? 'border-accent/60 bg-accent/10'
+          : 'border-line bg-surface hover:border-line-bright hover:bg-surface-raised'
+      }`}
+    >
+      <div className="flex w-full items-start justify-between gap-2">
+        <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-ink-faint">
+          {label}
+        </span>
+        <span className="text-xs text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
+          ›
+        </span>
+      </div>
+      <div className="mt-2">
+        <Stat label="" value={value} sub={sub} tone={tone} size="md" />
+      </div>
+    </button>
+  );
+}
+
 export interface BarDatum {
+  id?: string;
   label: string;
   value: number;
   note?: string;
   color?: string;
-  href?: string;
 }
 
 export function RankedBars({
@@ -75,42 +116,78 @@ export function RankedBars({
   max,
   showValue = true,
   barClass = '',
+  activeId,
+  onSelect,
 }: {
   data: BarDatum[];
   valueFormat?: (n: number) => string;
   max?: number;
   showValue?: boolean;
   barClass?: string;
+  activeId?: string | null;
+  onSelect?: (datum: BarDatum) => void;
 }) {
   const peak = max ?? Math.max(...data.map((d) => d.value), 1);
 
   return (
-    <div className="space-y-1.5">
-      {data.map((d) => (
-        <div key={d.label} className="group flex items-center gap-3">
-          <div className="w-20 shrink-0 truncate text-right sm:w-28">
-            <div className="truncate text-xs text-ink" title={d.label}>
-              {d.label}
+    <div className="space-y-1">
+      {data.map((d) => {
+        const key = d.id ?? d.label;
+        const isActive = activeId === key;
+        const content = (
+          <>
+            <div className="w-20 shrink-0 truncate text-right sm:w-28">
+              <div className="truncate text-xs font-medium text-ink" title={d.label}>
+                {d.label}
+              </div>
+              {d.note && <div className="truncate text-[10px] text-ink-faint">{d.note}</div>}
             </div>
-            {d.note && <div className="truncate text-[10px] text-ink-faint">{d.note}</div>}
-          </div>
-          <div className="h-4 flex-1">
-            <div
-              className={`h-full rounded-r-[4px] transition-opacity group-hover:opacity-100 ${barClass}`}
-              style={{
-                width: `${Math.max((d.value / peak) * 100, 0.6)}%`,
-                background: d.color ?? SERIES[0],
-              }}
-              title={`${d.label}: ${valueFormat(d.value)}`}
-            />
-          </div>
-          {showValue && (
-            <div className="figure w-14 shrink-0 text-right text-xs tabular-nums text-ink sm:w-20">
-              {valueFormat(d.value)}
+            <div className="h-4 flex-1">
+              <div
+                className={`h-full rounded-r-[4px] transition-all group-hover:brightness-110 ${barClass}`}
+                style={{
+                  width: `${Math.max((d.value / peak) * 100, 1.5)}%`,
+                  background: d.color ?? SERIES[0],
+                }}
+              />
             </div>
-          )}
-        </div>
-      ))}
+            {showValue && (
+              <div className="figure flex w-16 shrink-0 items-center justify-end gap-1 text-right text-xs tabular-nums text-ink sm:w-20">
+                <span>{valueFormat(d.value)}</span>
+                {onSelect && (
+                  <span className="text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
+                    ›
+                  </span>
+                )}
+              </div>
+            )}
+          </>
+        );
+
+        if (onSelect) {
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onSelect(d)}
+              className={`group flex w-full items-center gap-3 rounded-md px-2 py-2 text-left transition-colors active:scale-[0.995] ${
+                isActive
+                  ? 'bg-accent/10 ring-1 ring-accent/40'
+                  : 'hover:bg-surface-raised'
+              }`}
+              title={`${d.label}: ${valueFormat(d.value)} — click for details`}
+            >
+              {content}
+            </button>
+          );
+        }
+
+        return (
+          <div key={key} className="group flex items-center gap-3 py-1">
+            {content}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -170,46 +247,88 @@ export function Legend({ items }: { items: { label: string; color: string; value
   );
 }
 
+export interface DivergingDatum {
+  id?: string;
+  label: string;
+  value: number;
+  note?: string;
+}
+
 export function DivergingBars({
   data,
   format = (n: number) => `${n > 0 ? '+' : ''}${n.toFixed(1)}`,
+  activeId,
+  onSelect,
 }: {
-  data: { label: string; value: number; note?: string }[];
+  data: DivergingDatum[];
   format?: (n: number) => string;
+  activeId?: string | null;
+  onSelect?: (datum: DivergingDatum) => void;
 }) {
   const extent = Math.max(...data.map((d) => Math.abs(d.value)), 1);
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1">
       {data.map((d) => {
+        const key = d.id ?? d.label;
         const w = (Math.abs(d.value) / extent) * 50;
         const positive = d.value >= 0;
-        return (
-          <div key={d.label} className="flex items-center gap-3">
+        const isActive = activeId === key;
+
+        const inner = (
+          <>
             <div className="w-20 shrink-0 text-right sm:w-28">
-              <div className="truncate text-xs text-ink">{d.label}</div>
+              <div className="truncate text-xs font-medium text-ink">{d.label}</div>
               {d.note && <div className="truncate text-[10px] text-ink-faint">{d.note}</div>}
             </div>
             <div className="relative h-5 flex-1">
               <div className="absolute inset-y-0 left-1/2 w-px bg-line-bright" />
               <div
-                className="absolute top-0 h-full"
+                className="absolute top-0 h-full transition-all group-hover:brightness-110"
                 style={{
                   left: positive ? '50%' : `${50 - w}%`,
                   width: `${w}%`,
                   background: positive ? SERIES[0] : '#d03b3b',
                   borderRadius: positive ? '0 4px 4px 0' : '4px 0 0 4px',
                 }}
-                title={`${d.label}: ${format(d.value)}`}
               />
             </div>
             <div
-              className={`figure w-12 shrink-0 text-right text-xs tabular-nums sm:w-16 ${
+              className={`figure flex w-14 shrink-0 items-center justify-end gap-1 text-right text-xs tabular-nums sm:w-16 ${
                 positive ? 'text-ink' : 'text-aggrieved'
               }`}
             >
-              {format(d.value)}
+              <span>{format(d.value)}</span>
+              {onSelect && (
+                <span className="text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
+                  ›
+                </span>
+              )}
             </div>
+          </>
+        );
+
+        if (onSelect) {
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onSelect(d)}
+              className={`group flex w-full items-center gap-3 rounded-md px-2 py-2 text-left transition-colors active:scale-[0.995] ${
+                isActive
+                  ? 'bg-accent/10 ring-1 ring-accent/40'
+                  : 'hover:bg-surface-raised'
+              }`}
+              title={`${d.label}: ${format(d.value)} — click for details`}
+            >
+              {inner}
+            </button>
+          );
+        }
+
+        return (
+          <div key={key} className="group flex items-center gap-3 py-1">
+            {inner}
           </div>
         );
       })}
@@ -313,7 +432,7 @@ export interface MosaicCell {
   color: string;
   title: string;
   label?: string;
-  href?: string;
+  name?: string;
 }
 
 export interface MosaicRow {
@@ -324,30 +443,73 @@ export interface MosaicRow {
   cells: MosaicCell[];
 }
 
-export function WeightedMosaic({ rows, height = 22 }: { rows: MosaicRow[]; height?: number }) {
+export function WeightedMosaic({
+  rows,
+  height = 26,
+  onSelectRow,
+  onSelectCell,
+}: {
+  rows: MosaicRow[];
+  height?: number;
+  onSelectRow?: (rowId: string) => void;
+  onSelectCell?: (cellId: string, rowId: string) => void;
+}) {
   const widest = Math.max(...rows.map((r) => r.weight), 1);
 
   return (
-    <div className="space-y-1.5">
+    <div className="space-y-2">
       {rows.map((row) => {
         const rowTotal = row.cells.reduce((s, c) => s + c.weight, 0) || 1;
         return (
           <div key={row.id} className="flex items-center gap-2 sm:gap-3">
-            <div className="w-[68px] shrink-0 text-right sm:w-24">
-              <div className="truncate text-[10px] text-ink sm:text-[11px]" title={row.label}>
-                {row.label}
+            {onSelectRow ? (
+              <button
+                type="button"
+                onClick={() => onSelectRow(row.id)}
+                className="w-[74px] shrink-0 rounded px-1 py-0.5 text-right transition-colors hover:bg-surface-raised sm:w-24"
+                title={`Inspect ${row.label}`}
+              >
+                <div className="truncate text-[11px] font-medium text-ink">{row.label}</div>
+                {row.note && (
+                  <div className="figure truncate text-[10px] text-ink-faint">{row.note}</div>
+                )}
+              </button>
+            ) : (
+              <div className="w-[74px] shrink-0 text-right sm:w-24">
+                <div className="truncate text-[11px] text-ink" title={row.label}>
+                  {row.label}
+                </div>
+                {row.note && (
+                  <div className="figure truncate text-[10px] text-ink-faint">{row.note}</div>
+                )}
               </div>
-              {row.note && (
-                <div className="figure truncate text-[10px] text-ink-faint">{row.note}</div>
-              )}
-            </div>
+            )}
+
             <div className="flex-1">
               <div
-                className="flex gap-[2px] overflow-hidden rounded-[3px]"
+                className="flex gap-[2px] overflow-hidden rounded-[4px]"
                 style={{ width: `${(row.weight / widest) * 100}%`, height }}
               >
                 {row.cells.map((c) => {
                   const share = c.weight / rowTotal;
+                  if (onSelectCell) {
+                    return (
+                      <button
+                        key={c.id}
+                        type="button"
+                        onClick={() => onSelectCell(c.id, row.id)}
+                        title={c.title}
+                        className="flex cursor-pointer items-center justify-center overflow-hidden transition-all hover:brightness-125 focus-visible:z-10"
+                        style={{ width: `${share * 100}%`, background: c.color }}
+                      >
+                        {c.label && share > 0.13 && (
+                          <span className="figure truncate px-1 text-[9px] font-semibold text-ground/90">
+                            {c.label}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  }
                   return (
                     <div
                       key={c.id}
@@ -380,21 +542,21 @@ export function Funnel({
   const top = stages[0]?.value || 1;
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-1.5">
       {stages.map((s, i) => {
         const share = s.value / top;
         const prev = i > 0 ? stages[i - 1].value : s.value;
         const drop = prev > 0 ? 1 - s.value / prev : 0;
         return (
           <div key={s.label} className="flex items-center gap-3">
-            <div className="w-20 shrink-0 text-right text-[11px] text-ink-muted sm:w-32">
+            <div className="w-24 shrink-0 text-right text-[11px] text-ink-muted sm:w-32">
               {s.label}
             </div>
             <div className="h-7 flex-1">
               <div
                 className="flex h-full items-center rounded-[4px] px-2"
                 style={{
-                  width: `${Math.max(share * 100, 4)}%`,
+                  width: `${Math.max(share * 100, 6)}%`,
                   background: sequentialColor(1 - i / Math.max(stages.length - 1, 1)),
                 }}
               >
@@ -403,7 +565,7 @@ export function Funnel({
                 </span>
               </div>
             </div>
-            <div className="w-14 shrink-0 text-right sm:w-24">
+            <div className="w-14 shrink-0 text-right sm:w-20">
               <div className="figure text-[11px] text-ink">{(share * 100).toFixed(0)}%</div>
               {i > 0 && drop > 0.005 && (
                 <div className="figure text-[10px] text-aggrieved">
@@ -418,27 +580,64 @@ export function Funnel({
   );
 }
 
+export interface HeatCell {
+  id?: string;
+  label: string;
+  t: number;
+  value: string;
+  title: string;
+}
+
 export function HeatGrid({
   cells,
+  onSelect,
 }: {
-  cells: { label: string; t: number; value: string; title: string }[];
+  cells: HeatCell[];
+  onSelect?: (cell: HeatCell) => void;
 }) {
   return (
-    <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       {cells.map((c) => {
         const bg = sequentialColor(c.t);
-        const ink = c.t > 0.5 ? '#ffffff' : '#0b0b0b';
+        const ink = c.t > 0.45 ? '#ffffff' : '#0b0b0b';
+        if (onSelect) {
+          return (
+            <button
+              key={c.id ?? c.label}
+              type="button"
+              onClick={() => onSelect(c)}
+              className="group rounded-md px-3 py-2.5 text-left transition-all hover:brightness-110 active:scale-[0.98]"
+              style={{ background: bg }}
+              title={c.title}
+            >
+              <div className="flex items-center justify-between gap-1">
+                <span
+                  className="truncate text-[10px] font-semibold"
+                  style={{ color: ink, opacity: 0.85 }}
+                >
+                  {c.label}
+                </span>
+                <span className="text-xs opacity-60 transition-transform group-hover:translate-x-0.5" style={{ color: ink }}>
+                  ›
+                </span>
+              </div>
+              <div className="figure mt-0.5 text-base font-semibold tabular-nums" style={{ color: ink }}>
+                {c.value}
+              </div>
+            </button>
+          );
+        }
         return (
           <div
-            key={c.label}
-            className="rounded-[4px] px-2.5 py-2"
+            key={c.id ?? c.label}
+            className="rounded-md px-3 py-2.5"
             style={{ background: bg }}
             title={c.title}
           >
             <div className="truncate text-[10px] font-medium" style={{ color: ink, opacity: 0.78 }}>
               {c.label}
             </div>
-            <div className="figure text-sm font-semibold tabular-nums" style={{ color: ink }}>
+            <div className="figure mt-0.5 text-sm font-semibold tabular-nums" style={{ color: ink }}>
               {c.value}
             </div>
           </div>

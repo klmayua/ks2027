@@ -1,29 +1,41 @@
+'use client';
+
+import { useMemo, useState } from 'react';
+
+import { DetailDrawer } from '@/components/detail-drawer';
 import { campaignConfig } from '@/config/campaign.config';
-import { lgas } from '@/lib/geography';
+import { getLga, getWard, lgas } from '@/lib/geography';
 import { computeCoverage, computeTally } from '@/lib/election';
 import { seedAgents, seedSubmissions } from '@/lib/simulation/seed-election';
 
 const pct = (n: number, dp = 1) => `${(n * 100).toFixed(dp)}%`;
 
 export default function PublicResultsPage() {
-  const agents = seedAgents();
-  const submissions = seedSubmissions(agents);
-  const coverage = computeCoverage(submissions, agents);
-  const tally = computeTally(submissions);
+  const agents = useMemo(() => seedAgents(), []);
+  const submissions = useMemo(() => seedSubmissions(agents), [agents]);
+  const coverage = useMemo(() => computeCoverage(submissions, agents), [submissions, agents]);
+  const tally = useMemo(() => computeTally(submissions), [submissions]);
+
+  const [selectedLga, setSelectedLga] = useState<string | null>(null);
 
   const outstanding = coverage.totalPollingUnits - coverage.reported;
   const lateSync = submissions.filter((s) => s.form.syncedLate).length;
-
   const byLowestCoverage = [...coverage.byLga].sort((a, b) => a.rate - b.rate);
+
+  const lgaSubmissions = useMemo(
+    () => (selectedLga ? submissions.filter((s) => s.lgaCode === selectedLga) : []),
+    [submissions, selectedLga]
+  );
+  const lgaTally = useMemo(() => computeTally(lgaSubmissions), [lgaSubmissions]);
 
   return (
     <>
       {campaignConfig.simulation.enabled && (
-        <div className="mb-8 rounded border border-[--ledger-warn]/40 bg-[--ledger-warn]/8 p-4">
+        <div className="mb-6 rounded-lg border border-[--ledger-warn]/40 bg-[--ledger-warn]/8 p-4">
           <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-[--ledger-warn]">
             Preview — not published
           </div>
-          <p className="mt-1.5 text-sm leading-relaxed text-[--ledger-ink-muted]">
+          <p className="mt-1.5 text-xs leading-relaxed text-[--ledger-ink-muted] sm:text-sm">
             Seeded demonstration data for the 16 January 2027 Kwara South Senate election. Nothing
             on this page is a real result.
           </p>
@@ -31,33 +43,32 @@ export default function PublicResultsPage() {
       )}
 
       <section>
-        <h1 className="text-2xl font-semibold tracking-tight text-[--ledger-ink]">
+        <h1 className="text-xl font-semibold tracking-tight text-[--ledger-ink] sm:text-2xl">
           Collected Kwara South results, and what is still missing
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[--ledger-ink-muted]">
-          These figures are read from photographed Form EC8A sheets submitted by accredited PDP
-          polling agents across Kwara South&rsquo;s 7 local governments, each carrying a location,
-          timestamp and named submitter. They are a parallel verification record — INEC alone
-          declares official results at the Omu-Aran collation centre.
+          Read from photographed Form EC8A sheets submitted by accredited PDP polling agents across
+          Kwara South&rsquo;s 7 local governments. Tap any LGA below to inspect its parallel count
+          and individual polling unit forms.
         </p>
       </section>
 
-      <section className="mt-8 rounded border border-[--ledger-line] bg-[--ledger-surface] p-6">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+      <section className="mt-6 rounded-lg border border-[--ledger-line] bg-[--ledger-surface] p-5 sm:p-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <div className="text-[10px] uppercase tracking-[0.12em] text-[--ledger-ink-faint]">
               Kwara South polling units reported
             </div>
-            <div className="figure mt-1 text-5xl font-semibold text-[--ledger-ink]">
+            <div className="figure mt-1 text-4xl font-semibold text-[--ledger-ink] sm:text-5xl">
               {coverage.reported.toLocaleString('en-NG')}
-              <span className="text-2xl text-[--ledger-ink-faint]">
+              <span className="text-xl text-[--ledger-ink-faint] sm:text-2xl">
                 {' '}
                 / {coverage.totalPollingUnits.toLocaleString('en-NG')}
               </span>
             </div>
           </div>
           <div className="text-right">
-            <div className="figure text-3xl font-semibold text-[--ledger-warn]">
+            <div className="figure text-2xl font-semibold text-[--ledger-warn] sm:text-3xl">
               {outstanding.toLocaleString('en-NG')}
             </div>
             <div className="text-[11px] text-[--ledger-ink-faint]">still outstanding</div>
@@ -68,29 +79,15 @@ export default function PublicResultsPage() {
           <div className="h-full bg-[--ledger-good]" style={{ width: `${coverage.rate * 100}%` }} />
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-[--ledger-ink-muted]">
-          <span className="font-medium text-[--ledger-ink]">{pct(coverage.rate)}</span> of Kwara
-          South polling units have reported. The remaining{' '}
-          <span className="font-medium text-[--ledger-ink]">
-            {outstanding.toLocaleString('en-NG')}
-          </span>{' '}
-          are displayed first because a count that hides missing units is not evidence.
-        </p>
-
-        <p className="mt-3 border-t border-[--ledger-line] pt-3 text-xs leading-relaxed text-[--ledger-ink-muted]">
-          The denominator is Kwara South&rsquo;s{' '}
+        <p className="mt-3 text-xs leading-relaxed text-[--ledger-ink-muted]">
+          Denominator is Kwara South&rsquo;s{' '}
           <span className="figure font-medium text-[--ledger-ink]">
-            {coverage.totalPollingUnits.toLocaleString('en-NG')}
+            {coverage.totalPollingUnits}
           </span>{' '}
-          polling units after INEC&rsquo;s 2021 expansion (+225 converted voting points across the 7
-          LGAs). Ward-level detail is loaded for{' '}
-          <span className="figure">{coverage.enumeratedPollingUnits.toLocaleString('en-NG')}</span>{' '}
-          units from the 2015 directory; the remaining{' '}
-          <span className="figure">{coverage.unallocatedPollingUnits.toLocaleString('en-NG')}</span>{' '}
-          stay in the denominator until INEC Kwara&rsquo;s current ward list is imported. Reporting
-          against the smaller subset would show{' '}
-          <span className="figure">{pct(coverage.rateOfEnumerated)}</span> — we publish the lower,
-          truer figure.
+          post-2021 polling units ({coverage.enumeratedPollingUnits} ward-enumerated +{' '}
+          {coverage.unallocatedPollingUnits} unallocated). Against the enumerated subset alone this
+          would show <span className="figure">{pct(coverage.rateOfEnumerated)}</span> — we publish
+          the lower, truer <span className="figure">{pct(coverage.rate)}</span>.
         </p>
       </section>
 
@@ -100,9 +97,9 @@ export default function PublicResultsPage() {
         </h2>
         <div className="mt-4 space-y-3">
           {tally.parties.map((p) => (
-            <div key={p.partyCode} className="flex items-center gap-4">
+            <div key={p.partyCode} className="flex items-center gap-3 sm:gap-4">
               <span
-                className={`figure w-12 shrink-0 text-base font-semibold ${
+                className={`figure w-10 shrink-0 text-sm font-semibold sm:w-12 sm:text-base ${
                   p.partyCode === 'PDP' ? 'text-[--ledger-accent]' : 'text-[--ledger-ink]'
                 }`}
               >
@@ -113,21 +110,21 @@ export default function PublicResultsPage() {
                   className={`flex h-full items-center pl-2 ${
                     p.partyCode === 'PDP' ? 'bg-[--ledger-accent]' : 'bg-[--ledger-ink-muted]/65'
                   }`}
-                  style={{ width: `${Math.max(p.share * 100, 7)}%` }}
+                  style={{ width: `${Math.max(p.share * 100, 9)}%` }}
                 >
                   <span className="figure text-[11px] font-semibold text-white">
                     {pct(p.share)}
                   </span>
                 </div>
               </div>
-              <span className="figure w-24 shrink-0 text-right text-sm text-[--ledger-ink]">
+              <span className="figure w-20 shrink-0 text-right text-sm text-[--ledger-ink] sm:w-24">
                 {p.votes.toLocaleString('en-NG')}
               </span>
             </div>
           ))}
         </div>
 
-        <dl className="mt-6 grid gap-4 border-t border-[--ledger-line] pt-4 sm:grid-cols-4">
+        <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-[--ledger-line] pt-4 sm:grid-cols-4">
           <div>
             <dt className="text-[10px] uppercase tracking-[0.12em] text-[--ledger-ink-faint]">
               Votes counted
@@ -138,7 +135,7 @@ export default function PublicResultsPage() {
           </div>
           <div>
             <dt className="text-[10px] uppercase tracking-[0.12em] text-[--ledger-ink-faint]">
-              Turnout of reporting units
+              Turnout (reporting)
             </dt>
             <dd className="figure text-lg text-[--ledger-ink]">{pct(tally.turnoutOfReporting)}</dd>
           </div>
@@ -157,68 +154,109 @@ export default function PublicResultsPage() {
             <dd className="figure text-lg text-[--ledger-bad]">{tally.disputedCount}</dd>
           </div>
         </dl>
-
-        <p className="mt-4 text-xs leading-relaxed text-[--ledger-ink-muted]">
-          <span className="font-medium text-[--ledger-bad]">
-            {tally.disputedCount} polling units
-          </span>{' '}
-          have a conflicting second submission. Both are retained and published openly for
-          collation review at Omu-Aran.
-        </p>
       </section>
 
+      {/* Clickable LGA Coverage Cards */}
       <section className="mt-8">
         <h2 className="border-b border-[--ledger-line] pb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[--ledger-ink-faint]">
-          Coverage across all 7 Kwara South LGAs
+          Coverage across all 7 Kwara South LGAs — tap any LGA to inspect forms
         </h2>
-        <table className="mt-3 w-full text-sm">
-          <thead>
-            <tr className="text-left text-[10px] uppercase tracking-[0.12em] text-[--ledger-ink-faint]">
-              <th className="pb-2 font-medium">Local government</th>
-              <th className="pb-2 text-right font-medium">Reported</th>
-              <th className="pb-2 text-right font-medium">Post-2021 PUs</th>
-              <th className="pb-2 text-right font-medium">Coverage</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-[--ledger-line]">
-            {byLowestCoverage.map((row) => (
-              <tr key={row.lgaCode}>
-                <td className="py-2.5 text-[--ledger-ink]">
+        <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+          {byLowestCoverage.map((row) => (
+            <button
+              key={row.lgaCode}
+              type="button"
+              onClick={() => setSelectedLga(row.lgaCode)}
+              className="group flex items-center justify-between gap-3 rounded-lg border border-[--ledger-line] bg-[--ledger-surface] p-3.5 text-left transition-all hover:border-[--ledger-accent]/50 active:scale-[0.99]"
+            >
+              <div>
+                <div className="text-sm font-semibold text-[--ledger-ink]">
                   {lgas.find((l) => l.code === row.lgaCode)?.name}
-                </td>
-                <td className="figure py-2.5 text-right text-[--ledger-ink-muted]">
-                  {row.reported}
-                </td>
-                <td className="figure py-2.5 text-right text-[--ledger-ink-faint]">{row.total}</td>
-                <td className="figure py-2.5 text-right text-[--ledger-warn]">{pct(row.rate)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+                <div className="figure mt-0.5 text-xs text-[--ledger-ink-muted]">
+                  {row.reported} of {row.total} post-2021 PUs
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="figure text-sm font-semibold text-[--ledger-warn]">
+                  {pct(row.rate)}
+                </span>
+                <span className="text-[--ledger-accent] transition-transform group-hover:translate-x-0.5">
+                  ›
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
         <p className="mt-3 text-xs leading-relaxed text-[--ledger-ink-muted]">
           <span className="figure text-[--ledger-ink]">{lateSync}</span> forms were captured offline
-          and synchronised once signal returned, preserving original timestamps and GPS coordinates.
+          and synchronised once signal returned, preserving original timestamps and GPS.
         </p>
       </section>
 
-      <section className="mt-8 rounded border border-[--ledger-line] bg-[--ledger-surface] p-5">
-        <h2 className="text-sm font-medium text-[--ledger-ink]">How to verify this yourself</h2>
-        <ul className="mt-3 space-y-2 text-xs leading-relaxed text-[--ledger-ink-muted]">
-          <li>
-            Every figure traces to an individual photographed Form EC8A carrying the polling unit
-            code, capture time, GPS coordinates, and accredited agent ID.
-          </li>
-          <li>
-            The full Kwara South dataset is structured for open export so journalists, observers,
-            and legal teams can audit totals independently.
-          </li>
-          <li>
-            Where our parallel record and INEC&rsquo;s official record differ, INEC&rsquo;s
-            declaration governs — and any discrepancy enters legal review backed by primary EC8A
-            evidence.
-          </li>
-        </ul>
-      </section>
+      <DetailDrawer
+        open={selectedLga !== null}
+        onClose={() => setSelectedLga(null)}
+        tone="ledger"
+        eyebrow="Parallel count audit · 16 Jan 2027"
+        title={`${getLga(selectedLga ?? '')?.name ?? ''} Local Government`}
+        subtitle={`${lgaSubmissions.length} photographed Form EC8A sheets collected`}
+      >
+        {selectedLga && (
+          <div className="space-y-5">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {lgaTally.parties.map((p) => (
+                <div
+                  key={p.partyCode}
+                  className="rounded-lg border border-[--ledger-line] bg-[--ledger-raised] p-3 text-center"
+                >
+                  <div className="text-[10px] font-semibold text-[--ledger-ink-faint]">
+                    {p.partyCode}
+                  </div>
+                  <div className="figure mt-0.5 text-base font-semibold text-[--ledger-ink]">
+                    {p.votes.toLocaleString('en-NG')}
+                  </div>
+                  <div className="figure text-[10px] text-[--ledger-accent]">{pct(p.share)}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[--ledger-ink-faint]">
+                Sampled EC8A submissions ({Math.min(20, lgaSubmissions.length)} of{' '}
+                {lgaSubmissions.length})
+              </h3>
+              {lgaSubmissions.slice(0, 20).map((s) => (
+                <div
+                  key={s.id}
+                  className="rounded-lg border border-[--ledger-line] bg-[--ledger-raised]/50 p-3 text-xs"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-medium text-[--ledger-ink]">
+                      {getWard(s.wardId)?.name} · PU <span className="figure">{s.pollingUnitId}</span>
+                    </span>
+                    {s.disputed && (
+                      <span className="rounded bg-[--ledger-bad]/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase text-[--ledger-bad]">
+                        Disputed
+                      </span>
+                    )}
+                  </div>
+                  <div className="figure mt-1.5 flex flex-wrap gap-3 text-[11px] text-[--ledger-ink-muted]">
+                    {Object.entries(s.votes).map(([k, v]) => (
+                      <span key={k}>
+                        {k}: <strong className="text-[--ledger-ink]">{v}</strong>
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-1 text-[10px] text-[--ledger-ink-faint]">
+                    Agent: {s.agentName} · GPS {s.form.lat.toFixed(3)}, {s.form.lng.toFixed(3)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </DetailDrawer>
     </>
   );
 }

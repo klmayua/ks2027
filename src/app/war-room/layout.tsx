@@ -1,40 +1,8 @@
 import Link from 'next/link';
 
 import { BottomNav } from '@/components/bottom-nav';
+import { SidebarNav } from '@/components/sidebar-nav';
 import { campaignConfig, daysUntil, primaryElection } from '@/config/campaign.config';
-
-const SECTIONS: {
-  group: string;
-  items: { href: string; label: string; milestone: string; ready: boolean }[];
-}[] = [
-  {
-    group: 'Structure',
-    items: [
-      { href: '/war-room', label: 'Overview', milestone: 'M1', ready: true },
-      { href: '/war-room/structure', label: 'Power map', milestone: 'M1', ready: true },
-      { href: '/war-room/reconciliation', label: 'Reconciliation', milestone: 'M1', ready: true },
-    ],
-  },
-  {
-    group: 'Operations',
-    items: [
-      { href: '/war-room/comms', label: 'Directives', milestone: 'M2', ready: true },
-      { href: '/war-room/narrative', label: 'Narrative & OSINT', milestone: 'M3', ready: true },
-      { href: '/war-room/election-day', label: 'Election day', milestone: 'M4', ready: true },
-    ],
-  },
-  {
-    group: 'Field',
-    items: [{ href: '/field', label: 'Ward officer view', milestone: 'M2', ready: true }],
-  },
-  {
-    group: 'Public',
-    items: [
-      { href: '/ledger', label: 'Public ledger', milestone: 'M5', ready: true },
-      { href: '/ledger/results', label: 'Public results', milestone: 'M5', ready: true },
-    ],
-  },
-];
 
 export default function WarRoomLayout({ children }: { children: React.ReactNode }) {
   const election = primaryElection();
@@ -45,24 +13,29 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
       {/* Mobile header */}
       <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-surface/95 backdrop-blur lg:hidden">
         <div className="pdp-bar h-[2px] w-full" />
-        <div className="flex items-center justify-between px-4 py-2">
+        <div className="flex items-center justify-between px-4 py-2.5">
           <Link href="/war-room" className="min-w-0">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-              {campaignConfig.district.code} · {campaignConfig.principal.partyAbbreviation}
+            <div className="flex items-center gap-1.5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+                {campaignConfig.district.code}
+              </span>
+              <span className="rounded-sm border border-accent/40 bg-accent/10 px-1 py-px text-[8px] font-bold uppercase tracking-[0.1em] text-accent">
+                {campaignConfig.principal.partyAbbreviation}
+              </span>
             </div>
             <div className="truncate text-xs font-medium text-ink">
               {campaignConfig.principal.shortName} · War Room
             </div>
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             {campaignConfig.simulation.enabled && (
               <span className="rounded-sm border border-passive/40 bg-passive/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-passive">
                 Sim
               </span>
             )}
-            <div className="text-right">
-              <div className="figure text-sm font-semibold leading-none text-ink">{days}</div>
-              <div className="text-[9px] leading-none text-ink-faint">days to poll</div>
+            <div className="rounded border border-line bg-surface-raised px-2 py-1 text-right">
+              <div className="figure text-xs font-semibold leading-none text-accent">{days}d</div>
+              <div className="text-[8px] uppercase leading-tight text-ink-faint">Jan 16</div>
             </div>
           </div>
         </div>
@@ -87,38 +60,7 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
           </Link>
         </div>
 
-        <nav className="flex-1 overflow-y-auto px-2 py-4">
-          {SECTIONS.map((section) => (
-            <div key={section.group} className="mb-5">
-              <div className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-faint">
-                {section.group}
-              </div>
-              <ul className="space-y-px">
-                {section.items.map((item) => (
-                  <li key={item.href}>
-                    {item.ready ? (
-                      <Link
-                        href={item.href}
-                        className="flex items-center justify-between rounded px-3 py-1.5 text-sm text-ink-muted transition-colors hover:bg-surface-raised hover:text-ink"
-                      >
-                        {item.label}
-                        <span className="figure text-[10px] text-ink-faint">{item.milestone}</span>
-                      </Link>
-                    ) : (
-                      <span
-                        className="flex cursor-not-allowed items-center justify-between rounded px-3 py-1.5 text-sm text-ink-faint/60"
-                        title={`Planned — milestone ${item.milestone}`}
-                      >
-                        {item.label}
-                        <span className="figure text-[10px]">{item.milestone}</span>
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </nav>
+        <SidebarNav />
 
         {campaignConfig.simulation.enabled && (
           <div className="border-t border-line px-5 py-3">

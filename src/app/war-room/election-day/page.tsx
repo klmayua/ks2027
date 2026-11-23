@@ -1,4 +1,9 @@
-import { Legend, SERIES, WeightedMosaic } from '@/components/charts';
+'use client';
+
+import { useMemo, useState } from 'react';
+
+import { Legend, SERIES, StackedBar, WeightedMosaic } from '@/components/charts';
+import { DetailDrawer } from '@/components/detail-drawer';
 import { PageHeader, Panel } from '@/components/shell';
 import { getLga, getWard, lgas, wardsInLga } from '@/lib/geography';
 import { resultFor } from '@/lib/geography/results-2023';
@@ -12,6 +17,7 @@ import {
   computeCoverage,
   computeTally,
   surfaced,
+  type Incident,
   type IncidentDesk,
   type IncidentSeverity,
   type IncidentStatus,
@@ -47,47 +53,109 @@ const PARTY_COLOR: Record<string, string> = {
 
 const pct = (n: number, dp = 0) => `${(n * 100).toFixed(dp)}%`;
 
+type DrawerState =
+  | { kind: 'ward'; wardId: string; fromLga?: string }
+  | { kind: 'lga'; lgaCode: string }
+  | { kind: 'incident'; id: string }
+  | null;
+
 export default function ElectionDayPage() {
-  const agents = seedAgents();
-  const submissions = seedSubmissions(agents);
-  const citizenReports = seedCitizenReports();
-  const incidents = seedIncidents();
+  const agents = useMemo(() => seedAgents(), []);
+  const allSubmissions = useMemo(() => seedSubmissions(agents), [agents]);
+  const allCitizenReports = useMemo(() => seedCitizenReports(), []);
+  const initialIncidents = useMemo(() => seedIncidents(), []);
 
-  const coverage = computeCoverage(submissions, agents);
-  const tally = computeTally(submissions);
+  const [lgaFilter, setLgaFilter] = useState<string>('all');
+  const [deskFilter, setDeskFilter] = useState<'all' | IncidentDesk>('all');
+  const [incidentOverrides, setIncidentOverrides] = useState<Record<string, IncidentStatus>>({});
+  const [drawer, setDrawer] = useState<DrawerState>(null);
 
-  const reportedWards = new Set(submissions.map((s) => s.wardId));
-  const wardSubmissionCount = new Map<string, number>();
-  for (const s of submissions) {
-    wardSubmissionCount.set(s.wardId, (wardSubmissionCount.get(s.wardId) ?? 0) + 1);
-  }
+  const incidents: Incident[] = useMemo(
+    () =>
+      initialIncidents.map((inc) =>
+        incidentOverrides[inc.id] ? { ...inc, status: incidentOverrides[inc.id] } : inc
+      ),
+    [initialIncidents, incidentOverrides]
+  );
 
-  const openIncidents = incidents.filter(
+  const scopedSubmissions = useMemo(
+    () =>
+      lgaFilter === 'all'
+        ? allSubmissions
+        : allSubmissions.filter((s) => s.lgaCode === lgaFilter),
+    [allSubmissions, lgaFilter]
+  );
+  const scopedAgents = useMemo(
+    () => (lgaFilter === 'all' ? agents : agents.filter((a) => a.lgaCode === lgaFilter)),
+    [agents, lgaFilter]
+  );
+  const scopedIncidents = useMemo(
+    () =>
+      incidents.filter((i) => {
+        if (lgaFilter !== 'all' && i.lgaCode !== lgaFilter) return false;
+        if (deskFilter !== 'all' && i.desk !== deskFilter) return false;
+        return true;
+      }),
+    [incidents, lgaFilter, deskFilter]
+  );
+  const scopedCitizenReports = useMemo(
+    () =>
+      lgaFilter === 'all'
+        ? allCitizenReports
+        : allCitizenReports.filter((r) => r.lgaCode === lgaFilter),
+    [allCitizenReports, lgaFilter]
+  );
+
+  const coverage = useMemo(() => computeCoverage(allSubmissions, agents), [allSubmissions, agents]);
+  const tally = useMemo(() => computeTally(scopedSubmissions), [scopedSubmissions]);
+
+  const reportedWards = useMemo(() => new Set(allSubmissions.map((s) => s.wardId)), [allSubmissions]);
+  const wardSubmissionCount = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const s of allSubmissions) map.set(s.wardId, (map.get(s.wardId) ?? 0) + 1);
+    return map;
+  }, [allSubmissions]);
+
+  const openIncidents = scopedIncidents.filter(
     (i) => i.status === 'open' || i.status === 'acknowledged'
   );
   const byDesk = (['legal', 'security_liaison', 'media', 'operations'] as IncidentDesk[]).map(
     (desk) => ({
       desk,
-      open: incidents.filter((i) => i.desk === desk && i.status === 'open').length,
-      total: incidents.filter((i) => i.desk === desk).length,
+      open: incidents.filter(
+        (i) =>
+          (lgaFilter === 'all' || i.lgaCode === lgaFilter) &&
+          i.desk === desk &&
+          i.status === 'open'
+      ).length,
+      total: incidents.filter(
+        (i) => (lgaFilter === 'all' || i.lgaCode === lgaFilter) && i.desk === desk
+      ).length,
     })
   );
 
-  const visibleReports = surfaced(citizenReports);
-  const lateSync = submissions.filter((s) => s.form.syncedLate).length;
+  const visibleReports = surfaced(scopedCitizenReports);
+  const lateSync = scopedSubmissions.filter((s) => s.form.syncedLate).length;
+
+  const activeIncident =
+    drawer?.kind === 'incident' ? incidents.find((i) => i.id === drawer.id) : undefined;
+
+  const visibleLgas = lgas
+    .filter((l) => lgaFilter === 'all' || l.code === lgaFilter)
+    .sort((x, y) => (resultFor(y.code)?.validVotes ?? 0) - (resultFor(x.code)?.validVotes ?? 0));
 
   return (
     <>
       <PageHeader
         eyebrow="Election day · Saturday, 16 January 2027"
         title="The evidence is primary, the number is derived"
-        lede="Every Kwara South Senate figure here is read off a photographed Form EC8A carrying a geotag, a timestamp and an accredited PDP polling agent. Open citizen reports corroborate and raise incidents but never enter the count. The platform reports what was collected — INEC alone declares the winner at Omu-Aran."
+        lede="Filter by LGA below or tap any ward, desk, or incident card to inspect raw photographed EC8A returns, disputes, and live incident action logs."
         aside={
-          <div className="rounded border border-line bg-surface-raised px-5 py-4 text-right">
+          <div className="rounded-lg border border-line bg-surface-raised px-5 py-4 text-right">
             <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-              Polling units reported
+              Kwara South PUs reported
             </div>
-            <div className="figure mt-1 text-4xl font-semibold text-ink">
+            <div className="figure mt-1 text-3xl font-semibold text-ink sm:text-4xl">
               {coverage.reported.toLocaleString('en-NG')}
               <span className="text-xl text-ink-faint">
                 /{coverage.totalPollingUnits.toLocaleString('en-NG')}
@@ -102,110 +170,126 @@ export default function ElectionDayPage() {
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
+        {/* LGA Filter Strip */}
+        <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+          <button
+            type="button"
+            onClick={() => setLgaFilter('all')}
+            className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+              lgaFilter === 'all'
+                ? 'border-accent/60 bg-accent/15 text-accent'
+                : 'border-line bg-surface text-ink-muted hover:text-ink'
+            }`}
+          >
+            All Kwara South ({coverage.reported}/{coverage.totalPollingUnits})
+          </button>
+          {lgas.map((l) => {
+            const row = coverage.byLga.find((x) => x.lgaCode === l.code);
+            return (
+              <button
+                key={l.code}
+                type="button"
+                onClick={() => setLgaFilter((cur) => (cur === l.code ? 'all' : l.code))}
+                className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                  lgaFilter === l.code
+                    ? 'border-accent/60 bg-accent/15 text-accent'
+                    : 'border-line bg-surface text-ink-muted hover:text-ink'
+                }`}
+              >
+                {l.name}{' '}
+                <span className="figure text-[10px] opacity-75">
+                  {row?.reported}/{row?.total}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Coverage Panel */}
         <Panel
           title="Coverage"
-          note="Stated before any result — a dashboard that hides its gaps is not evidence"
+          note="Stated before any result — denominator is 907 post-2021 polling units"
         >
           <div className="mb-4 h-3 overflow-hidden rounded-sm bg-surface-raised">
             <div className="h-full bg-aligned" style={{ width: `${coverage.rate * 100}%` }} />
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            <div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="rounded-lg border border-line bg-surface-raised p-3">
               <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Reported</div>
-              <div className="figure text-2xl font-semibold text-aligned">{coverage.reported}</div>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Outstanding
+              <div className="figure mt-1 text-2xl font-semibold text-aligned">
+                {scopedSubmissions.length}
               </div>
-              <div className="figure text-2xl font-semibold text-aggrieved">
+            </div>
+            <div className="rounded-lg border border-line bg-surface-raised p-3">
+              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+                Outstanding (district)
+              </div>
+              <div className="figure mt-1 text-2xl font-semibold text-aggrieved">
                 {coverage.totalPollingUnits - coverage.reported}
               </div>
             </div>
-            <div>
+            <div className="rounded-lg border border-line bg-surface-raised p-3">
               <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
                 Silent wards
               </div>
-              <div className="figure text-2xl font-semibold text-passive">
+              <div className="figure mt-1 text-2xl font-semibold text-passive">
                 {coverage.silentWardIds.length}
               </div>
             </div>
-            <div>
+            <div className="rounded-lg border border-line bg-surface-raised p-3">
               <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
                 Agents checked in
               </div>
-              <div className="figure text-2xl font-semibold text-ink">
-                {coverage.agentsCheckedIn}
+              <div className="figure mt-1 text-2xl font-semibold text-ink">
+                {scopedAgents.filter((a) => a.status === 'checked_in').length}
               </div>
             </div>
-            <div>
+            <div className="rounded-lg border border-line bg-surface-raised p-3">
               <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
                 Synced offline
               </div>
-              <div className="figure text-2xl font-semibold text-reconciled">{lateSync}</div>
+              <div className="figure mt-1 text-2xl font-semibold text-reconciled">{lateSync}</div>
             </div>
           </div>
 
-          <p className="mt-4 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-            <span className="figure text-reconciled">{lateSync}</span> EC8A forms were photographed
-            without mobile signal and synced later with original timestamp and GPS intact. Across
-            rural parts of Ifelodun, Ekiti, Isin and Oke-Ero, offline capture is the normal path.
-          </p>
-          <div className="mt-3 rounded border border-passive/30 bg-passive/5 p-3">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-passive">
-              Denominator note
-            </div>
-            <p className="mt-1 text-[11px] leading-relaxed text-ink-muted">
-              Coverage is measured against{' '}
-              <span className="figure text-ink">
-                {coverage.totalPollingUnits.toLocaleString('en-NG')}
-              </span>{' '}
-              polling units — Kwara South&rsquo;s post-2021 total after INEC converted 225 voting
-              points (including +87 in Offa alone). Only{' '}
-              <span className="figure text-ink">
-                {coverage.enumeratedPollingUnits.toLocaleString('en-NG')}
-              </span>{' '}
-              are ward-enumerated in the 2015 directory, leaving{' '}
-              <span className="figure text-passive">
-                {coverage.unallocatedPollingUnits.toLocaleString('en-NG')}
-              </span>{' '}
-              units in the denominator that cannot yet be placed on the ward mosaic below.
-            </p>
-            <p className="mt-1.5 text-[11px] leading-relaxed text-ink-faint">
-              Against the enumerated subset alone coverage would read{' '}
-              <span className="figure">{pct(coverage.rateOfEnumerated, 1)}</span> rather than{' '}
-              <span className="figure">{pct(coverage.rate, 1)}</span>. We display the lower, truer
-              number.
-            </p>
+          <div className="mt-3 rounded-lg border border-passive/30 bg-passive/5 p-3 text-[11px] leading-relaxed text-ink-muted">
+            <span className="font-semibold uppercase tracking-[0.1em] text-passive">
+              Denominator note:{' '}
+            </span>
+            Coverage is measured against{' '}
+            <span className="figure text-ink">{coverage.totalPollingUnits}</span> post-2021 PUs (
+            <span className="figure text-ink">{coverage.enumeratedPollingUnits}</span> ward-enumerated
+            + <span className="figure text-passive">{coverage.unallocatedPollingUnits}</span>{' '}
+            unallocated). Against the enumerated subset alone it would read{' '}
+            <span className="figure">{pct(coverage.rateOfEnumerated, 1)}</span> — we display the
+            lower, truer <span className="figure text-ink">{pct(coverage.rate, 1)}</span>.
           </div>
         </Panel>
 
+        {/* Ward returns mosaic (desktop) + tappable LGA cards (mobile) */}
         <Panel
-          title="Where the returns are"
-          note="Row width = LGA votes cast (2023 proxy) · cell width = polling units"
+          title="Where the EC8A returns are"
+          note="Tap any LGA or ward block to inspect individual polling unit forms"
         >
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <Legend
               items={[
                 { label: 'Reporting wards', color: '#16a34a', value: String(reportedWards.size) },
                 { label: 'Partial', color: '#fab219' },
-                {
-                  label: 'Silent',
-                  color: '#d03b3b',
-                  value: String(coverage.silentWardIds.length),
-                },
+                { label: 'Silent', color: '#d03b3b', value: String(coverage.silentWardIds.length) },
               ]}
             />
-            <span className="text-[11px] text-ink-faint">
-              Missing returns in Ifelodun, Offa or Irepodun move the Senate tally fastest.
-            </span>
           </div>
 
-          <WeightedMosaic
-            height={26}
-            rows={lgas
-              .map((lga) => {
+          <div className="hidden sm:block">
+            <WeightedMosaic
+              height={28}
+              onSelectRow={(lgaCode) => setDrawer({ kind: 'lga', lgaCode })}
+              onSelectCell={(wardId, lgaCode) =>
+                setDrawer({ kind: 'ward', wardId, fromLga: lgaCode })
+              }
+              rows={visibleLgas.map((lga) => {
                 const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
                 return {
                   id: lga.code,
@@ -224,18 +308,61 @@ export default function ElectionDayPage() {
                         id: w.id,
                         weight: w.declaredPollingUnitCount,
                         color: got === 0 ? '#d03b3b' : share >= 0.8 ? '#16a34a' : '#fab219',
-                        title: `${w.name} (${w.id})\n${got} of ${w.declaredPollingUnitCount} enumerated polling units reported`,
+                        title: `${w.name} (${w.id}) — ${got}/${w.declaredPollingUnitCount} enumerated PUs · click to inspect EC8As`,
                       };
                     }),
                 };
-              })
-              .sort((x, y) => y.weight - x.weight)}
-          />
+              })}
+            />
+          </div>
+
+          {/* Mobile LGA EC8A drill-down cards */}
+          <div className="space-y-2 sm:hidden">
+            {visibleLgas.map((lga) => {
+              const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
+              return (
+                <button
+                  key={lga.code}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'lga', lgaCode: lga.code })}
+                  className="flex w-full items-center justify-between gap-3 rounded-lg border border-line bg-surface-raised px-3.5 py-3 text-left active:scale-[0.99]"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-ink">{lga.name}</span>
+                      <span className="figure text-xs text-ink-muted">
+                        {row?.reported}/{row?.total} PUs
+                      </span>
+                    </div>
+                    {row && (
+                      <div className="mt-2">
+                        <StackedBar
+                          height="h-2"
+                          segments={[
+                            { label: 'Reported', value: row.reported, color: '#16a34a' },
+                            {
+                              label: 'Outstanding',
+                              value: Math.max(0, row.total - row.reported),
+                              color: '#2b3444',
+                            },
+                          ]}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <span className="figure text-xs text-accent">
+                    {row ? `${pct(row.rate, 0)} ›` : '›'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </Panel>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        {/* Tally + Clickable Incident Desks */}
+        <div className="grid gap-4 lg:grid-cols-3">
           <Panel
-            title="Collected Senate tally"
+            title={`Collected Senate tally${lgaFilter === 'all' ? '' : ` — ${getLga(lgaFilter)?.name}`}`}
             note="Tier one only — accredited PDP agents"
             className="lg:col-span-2"
           >
@@ -249,11 +376,11 @@ export default function ElectionDayPage() {
                   >
                     {p.partyCode}
                   </span>
-                  <div className="h-5 flex-1 overflow-hidden rounded-sm bg-surface-raised">
+                  <div className="h-6 flex-1 overflow-hidden rounded-sm bg-surface-raised">
                     <div
                       className="flex h-full items-center pl-2"
                       style={{
-                        width: `${Math.max(p.share * 100, 6)}%`,
+                        width: `${Math.max(p.share * 100, 8)}%`,
                         background: PARTY_COLOR[p.partyCode] ?? '#38bdf8',
                       }}
                     >
@@ -295,25 +422,22 @@ export default function ElectionDayPage() {
                 <dd className="figure text-lg text-aggrieved">{tally.disputedCount}</dd>
               </div>
             </dl>
-
-            <p className="mt-4 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              Turnout is computed against registered voters on the{' '}
-              <span className="figure text-ink">{coverage.reported}</span> EC8As received so far,
-              not the full district roll.{' '}
-              <span className="figure text-aggrieved">{tally.disputedCount}</span> units have a
-              conflicting second submission and stay visibly flagged for the Omu-Aran collation
-              legal team.
-            </p>
           </Panel>
 
-          <Panel title="Incident desks" note={`${openIncidents.length} open`}>
+          <Panel title="Incident desks" note={`${openIncidents.length} open · tap to filter`}>
             <div className="space-y-2">
               {byDesk.map(({ desk, open, total }) => (
-                <div
+                <button
                   key={desk}
-                  className="flex items-center justify-between rounded border border-line bg-surface-raised px-3 py-2"
+                  type="button"
+                  onClick={() => setDeskFilter((cur) => (cur === desk ? 'all' : desk))}
+                  className={`flex w-full items-center justify-between rounded-lg border px-3.5 py-2.5 text-left transition-colors ${
+                    deskFilter === desk
+                      ? 'border-accent/60 bg-accent/15'
+                      : 'border-line bg-surface-raised hover:border-line-bright'
+                  }`}
                 >
-                  <span className="text-xs text-ink">{DESK_LABELS[desk]}</span>
+                  <span className="text-xs font-medium text-ink">{DESK_LABELS[desk]}</span>
                   <span className="flex items-baseline gap-2">
                     <span
                       className={`figure text-lg font-semibold ${open > 0 ? 'text-aggrieved' : 'text-ink-faint'}`}
@@ -322,19 +446,54 @@ export default function ElectionDayPage() {
                     </span>
                     <span className="figure text-[10px] text-ink-faint">of {total}</span>
                   </span>
-                </div>
+                </button>
               ))}
             </div>
-            <p className="mt-3 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              Deterministic routing by incident type and severity keeps legal, security liaison,
-              media, and operations desks closing cases visibly while polls are open.
-            </p>
           </Panel>
         </div>
 
-        <Panel title="Incident queue" note="Most recent first">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[880px]">
+        {/* Incident Queue — Mobile Tappable Cards + Desktop Clickable Table */}
+        <Panel
+          title="Incident queue"
+          note={`${scopedIncidents.length} incidents · tap any to view log & update status`}
+        >
+          <div className="space-y-2.5 md:hidden">
+            {scopedIncidents.slice(0, 14).map((i) => {
+              const ward = getWard(i.wardId);
+              return (
+                <button
+                  key={i.id}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'incident', id: i.id })}
+                  className="block w-full rounded-lg border border-line bg-surface-raised p-3.5 text-left active:scale-[0.99]"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="text-sm font-medium text-ink">
+                        {INCIDENT_TYPE_LABELS[i.type]}
+                      </div>
+                      <div className="text-[11px] text-ink-faint">
+                        {ward?.name} · {getLga(i.lgaCode)?.name}
+                      </div>
+                    </div>
+                    <span
+                      className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${STATUS_TONE[i.status]}`}
+                    >
+                      {INCIDENT_STATUS_LABELS[i.status]}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-ink-muted">{i.description}</p>
+                  <div className="mt-2 flex items-center justify-between border-t border-line pt-2 text-[10px] uppercase tracking-[0.08em]">
+                    <span className={SEVERITY_TONE[i.severity]}>{i.severity} · {DESK_LABELS[i.desk]}</span>
+                    <span className="text-accent">Action log ›</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-[780px]">
               <thead>
                 <tr className="border-b border-line text-left text-[10px] uppercase tracking-[0.12em] text-ink-faint">
                   <th className="pb-2 pr-3 font-medium">Type</th>
@@ -347,13 +506,19 @@ export default function ElectionDayPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
-                {incidents.slice(0, 16).map((i) => {
+                {scopedIncidents.slice(0, 16).map((i) => {
                   const ward = getWard(i.wardId);
                   const last = i.log.at(-1)!;
                   return (
-                    <tr key={i.id} className="align-top">
+                    <tr
+                      key={i.id}
+                      onClick={() => setDrawer({ kind: 'incident', id: i.id })}
+                      className="cursor-pointer align-top transition-colors hover:bg-surface-raised"
+                    >
                       <td className="py-2.5 pr-3">
-                        <div className="text-sm text-ink">{INCIDENT_TYPE_LABELS[i.type]}</div>
+                        <div className="text-sm font-medium text-ink">
+                          {INCIDENT_TYPE_LABELS[i.type]}
+                        </div>
                         <div className="text-[11px] text-ink-faint">{i.description}</div>
                       </td>
                       <td className={`py-2.5 pr-3 text-xs uppercase ${SEVERITY_TONE[i.severity]}`}>
@@ -365,18 +530,8 @@ export default function ElectionDayPage() {
                           {getLga(i.lgaCode)?.name}
                         </div>
                       </td>
-                      <td className="py-2.5 pr-3">
-                        <span
-                          className={`text-[10px] uppercase tracking-[0.1em] ${
-                            i.tier === 'agent' ? 'text-aligned' : 'text-ink-faint'
-                          }`}
-                        >
-                          {i.tier}
-                        </span>
-                      </td>
-                      <td className="py-2.5 pr-3 text-xs text-ink-muted">
-                        {DESK_LABELS[i.desk]}
-                      </td>
+                      <td className="py-2.5 pr-3 text-[10px] uppercase text-aligned">{i.tier}</td>
+                      <td className="py-2.5 pr-3 text-xs text-ink-muted">{DESK_LABELS[i.desk]}</td>
                       <td className="py-2.5 pr-3">
                         <span
                           className={`inline-block whitespace-nowrap rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${STATUS_TONE[i.status]}`}
@@ -384,17 +539,7 @@ export default function ElectionDayPage() {
                           {INCIDENT_STATUS_LABELS[i.status]}
                         </span>
                       </td>
-                      <td className="py-2.5 text-[11px] text-ink-faint">
-                        {last.note}
-                        <div>
-                          {new Date(last.at).toLocaleTimeString('en-NG', {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            timeZone: 'UTC',
-                          })}{' '}
-                          · {last.by}
-                        </div>
-                      </td>
+                      <td className="py-2.5 text-[11px] text-ink-faint">{last.note}</td>
                     </tr>
                   );
                 })}
@@ -403,45 +548,42 @@ export default function ElectionDayPage() {
           </div>
         </Panel>
 
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           <Panel
-            title="Citizen reports"
-            note={`${visibleReports.length} surfaced of ${citizenReports.length}`}
+            title="Citizen reports (tier two)"
+            note={`${visibleReports.length} surfaced of ${scopedCitizenReports.length}`}
           >
             <div className="space-y-2">
               {visibleReports.slice(0, 6).map((r) => (
-                <div key={r.id} className="rounded border border-line bg-surface-raised px-3 py-2">
+                <div key={r.id} className="rounded-lg border border-line bg-surface-raised px-3 py-2.5">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
                       {CITIZEN_REPORT_LABELS[r.kind]} · {getWard(r.wardId)?.name}
                     </span>
-                    <span className="figure text-[10px] text-reconciled">
-                      ×{r.corroborations}
-                    </span>
+                    <span className="figure text-[10px] text-reconciled">×{r.corroborations}</span>
                   </div>
                   <p className="mt-1 text-xs text-ink-muted">{r.note}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-3 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              Open reports need{' '}
-              <span className="figure text-ink">{CORROBORATION_THRESHOLD}</span> independent
-              corroborations before surfacing, and never enter the tally.
+            <p className="mt-3 border-t border-line pt-3 text-xs text-ink-muted">
+              Requires <span className="figure text-ink">{CORROBORATION_THRESHOLD}</span> independent
+              corroborations to surface and never enters the tally.
             </p>
           </Panel>
 
-          <Panel title="Agent readiness" note={`${agents.length} enumerated polling unit positions`}>
+          <Panel title="Agent readiness" note={`${scopedAgents.length} enumerated positions`}>
             <div className="space-y-2">
               {(
                 ['checked_in', 'deployed', 'accredited', 'unreachable', 'nominated', 'stood_down'] as const
               ).map((status) => {
-                const n = agents.filter((a) => a.status === status).length;
+                const n = scopedAgents.filter((a) => a.status === status).length;
                 return (
                   <div key={status} className="flex items-center gap-3">
                     <span className="w-28 shrink-0 text-[11px] text-ink-muted">
                       {AGENT_STATUS_LABELS[status]}
                     </span>
-                    <div className="h-1.5 flex-1 overflow-hidden rounded-sm bg-surface-raised">
+                    <div className="h-2 flex-1 overflow-hidden rounded-sm bg-surface-raised">
                       <div
                         className={`h-full ${
                           status === 'checked_in'
@@ -450,22 +592,232 @@ export default function ElectionDayPage() {
                               ? 'bg-aggrieved'
                               : 'bg-unknown'
                         }`}
-                        style={{ width: `${(n / agents.length) * 100}%` }}
+                        style={{ width: `${(n / (scopedAgents.length || 1)) * 100}%` }}
                       />
                     </div>
-                    <span className="figure w-12 shrink-0 text-right text-xs text-ink">{n}</span>
+                    <span className="figure w-10 shrink-0 text-right text-xs text-ink">{n}</span>
                   </div>
                 );
               })}
             </div>
-            <p className="mt-3 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              Accreditation separates tier-one EC8A submissions from tier-two observations. The 225
-              post-2021 polling units are onboarded into this same roster once INEC Kwara&rsquo;s
-              ward directory is imported.
-            </p>
           </Panel>
         </div>
       </div>
+
+      {/* Deep Drawer for LGA EC8As, Ward EC8A forms, or Incident Action Log */}
+      <DetailDrawer
+        open={drawer !== null}
+        onClose={() => setDrawer(null)}
+        onBack={
+          drawer?.kind === 'ward' && drawer.fromLga
+            ? () => setDrawer({ kind: 'lga', lgaCode: drawer.fromLga! })
+            : undefined
+        }
+        backLabel={
+          drawer?.kind === 'ward' && drawer.fromLga
+            ? `Back to ${getLga(drawer.fromLga)?.name ?? 'LGA'}`
+            : undefined
+        }
+        eyebrow={
+          drawer?.kind === 'incident'
+            ? `Incident · ${activeIncident ? DESK_LABELS[activeIncident.desk] : ''}`
+            : drawer?.kind === 'ward'
+              ? `Ward EC8A forms · ${getLga(getWard(drawer.wardId)?.lgaCode ?? '')?.name ?? ''}`
+              : 'LGA election-day returns'
+        }
+        title={
+          drawer?.kind === 'incident'
+            ? activeIncident
+              ? INCIDENT_TYPE_LABELS[activeIncident.type]
+              : ''
+            : drawer?.kind === 'ward'
+              ? `${getWard(drawer.wardId)?.name ?? ''} Ward`
+              : drawer?.kind === 'lga'
+                ? `${getLga(drawer.lgaCode)?.name ?? ''} Local Government`
+                : ''
+        }
+      >
+        {drawer?.kind === 'lga' && (() => {
+          const lgaSubs = allSubmissions.filter((s) => s.lgaCode === drawer.lgaCode);
+          const lgaTally = computeTally(lgaSubs);
+          return (
+            <div className="space-y-4">
+              <div className="rounded-lg border border-line bg-surface-raised p-3.5">
+                <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+                  Collected tally ({lgaSubs.length} EC8As)
+                </div>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {lgaTally.parties.map((p) => (
+                    <div key={p.partyCode} className="rounded border border-line bg-surface p-2">
+                      <div className="text-[10px] font-semibold text-ink-faint">{p.partyCode}</div>
+                      <div className="figure text-sm font-semibold text-ink">
+                        {p.votes.toLocaleString('en-NG')}
+                      </div>
+                      <div className="figure text-[10px] text-accent">{pct(p.share, 1)}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+                  Tap any ward to inspect photographed EC8A sheets
+                </div>
+                {wardsInLga(drawer.lgaCode).map((w) => {
+                  const got = wardSubmissionCount.get(w.id) ?? 0;
+                  return (
+                    <button
+                      key={w.id}
+                      type="button"
+                      onClick={() =>
+                        setDrawer({ kind: 'ward', wardId: w.id, fromLga: drawer.lgaCode })
+                      }
+                      className="flex w-full items-center justify-between rounded-lg border border-line bg-surface-raised px-3.5 py-2.5 text-left hover:border-accent/50"
+                    >
+                      <span className="text-sm font-medium text-ink">{w.name}</span>
+                      <span className="figure text-xs text-ink-muted">
+                        {got}/{w.declaredPollingUnitCount} PUs ›
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })()}
+
+        {drawer?.kind === 'ward' && (() => {
+          const wardSubs = allSubmissions.filter((s) => s.wardId === drawer.wardId);
+          return (
+            <div className="space-y-3">
+              <div className="text-xs text-ink-muted">
+                {wardSubs.length} photographed Form EC8A submissions received for this ward.
+              </div>
+              {wardSubs.length === 0 ? (
+                <div className="rounded-lg border border-dashed border-aggrieved/40 bg-aggrieved/5 p-4 text-xs text-aggrieved">
+                  No EC8A submissions received yet for this ward. Chase ward collation officer.
+                </div>
+              ) : (
+                wardSubs.map((s) => (
+                  <div key={s.id} className="rounded-lg border border-line bg-surface-raised p-3.5">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="figure text-xs font-semibold text-ink">
+                        PU {s.pollingUnitId}
+                      </span>
+                      <div className="flex gap-1.5">
+                        {s.form.syncedLate && (
+                          <span className="rounded bg-reconciled/15 px-1.5 py-0.5 text-[9px] font-semibold uppercase text-reconciled">
+                            Offline sync
+                          </span>
+                        )}
+                        {s.disputed && (
+                          <span className="rounded bg-aggrieved/15 px-1.5 py-0.5 text-[9px] font-semibold uppercase text-aggrieved">
+                            Disputed
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-2 grid grid-cols-4 gap-1.5">
+                      {Object.entries(s.votes).map(([party, v]) => (
+                        <div key={party} className="rounded border border-line bg-surface px-2 py-1.5 text-center">
+                          <div className="text-[9px] text-ink-faint">{party}</div>
+                          <div className="figure text-xs font-semibold text-ink">{v}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[10px] text-ink-faint">
+                      <span>Agent: {s.agentName}</span>
+                      <span className="figure">
+                        GPS {s.form.lat.toFixed(3)}, {s.form.lng.toFixed(3)} · ±{s.form.accuracyMetres}m
+                      </span>
+                    </div>
+                    {s.disputed && (
+                      <div className="mt-2 rounded border border-aggrieved/30 bg-aggrieved/5 px-2.5 py-1.5 text-[11px] text-aggrieved">
+                        Dispute on {s.disputed.field}: {s.disputed.values[0]} vs{' '}
+                        {s.disputed.values[1]} (retained for legal desk).
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+          );
+        })()}
+
+        {drawer?.kind === 'incident' && activeIncident && (
+          <div className="space-y-5">
+            <div className="rounded-lg border border-line bg-surface-raised p-4">
+              <div className="flex items-center justify-between gap-2">
+                <span className={`text-xs uppercase ${SEVERITY_TONE[activeIncident.severity]}`}>
+                  {activeIncident.severity} severity · {activeIncident.tier} tier
+                </span>
+                <span
+                  className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${STATUS_TONE[activeIncident.status]}`}
+                >
+                  {INCIDENT_STATUS_LABELS[activeIncident.status]}
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-ink">{activeIncident.description}</p>
+              <div className="mt-2 text-xs text-ink-muted">
+                Location: {getWard(activeIncident.wardId)?.name},{' '}
+                {getLga(activeIncident.lgaCode)?.name} · Reported by {activeIncident.reportedBy}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+                Update desk status (live demo)
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {(['open', 'acknowledged', 'actioned', 'resolved', 'unfounded'] as const).map(
+                  (st) => (
+                    <button
+                      key={st}
+                      type="button"
+                      onClick={() =>
+                        setIncidentOverrides((prev) => ({ ...prev, [activeIncident.id]: st }))
+                      }
+                      className={`rounded-md border px-2.5 py-1.5 text-xs font-medium ${
+                        activeIncident.status === st
+                          ? 'border-accent bg-accent/15 text-accent'
+                          : 'border-line bg-surface-raised text-ink-muted hover:text-ink'
+                      }`}
+                    >
+                      {INCIDENT_STATUS_LABELS[st]}
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+                Audit trail ({activeIncident.log.length})
+              </h3>
+              <ol className="space-y-2">
+                {[...activeIncident.log].reverse().map((entry, idx) => (
+                  <li
+                    key={idx}
+                    className="rounded-lg border border-line bg-surface-raised px-3.5 py-2.5 text-xs"
+                  >
+                    <div className="flex items-center justify-between text-[10px] text-ink-faint">
+                      <span>{entry.by}</span>
+                      <span className="figure">
+                        {new Date(entry.at).toLocaleTimeString('en-NG', {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          timeZone: 'UTC',
+                        })}{' '}
+                        UTC
+                      </span>
+                    </div>
+                    <div className="mt-1 text-ink">{entry.note}</div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        )}
+      </DetailDrawer>
     </>
   );
 }

@@ -1,5 +1,11 @@
+'use client';
+
+import { useMemo, useState } from 'react';
+
+import { DetailDrawer } from '@/components/detail-drawer';
+import { WardDrawerBody } from '@/components/geo-drilldown';
 import { PageHeader, Panel } from '@/components/shell';
-import { FEDERAL_CONSTITUENCIES, getLga } from '@/lib/geography';
+import { FEDERAL_CONSTITUENCIES, getLga, getWard, lgas } from '@/lib/geography';
 import {
   ASK_LABELS,
   KIND_LABELS,
@@ -13,7 +19,8 @@ import {
   type ReconciliationStage,
   type Stakeholder,
 } from '@/lib/party/reconciliation';
-import { seedStakeholders } from '@/lib/simulation/seed';
+import { seedRoster, seedStakeholders } from '@/lib/simulation/seed';
+import { analyse } from '@/lib/war-room/analysis';
 
 const STAGE_TONE: Record<ReconciliationStage, string> = {
   identified: 'border-unknown/40 text-unknown',
@@ -35,66 +42,69 @@ function StageChip({ stage }: { stage: ReconciliationStage }) {
   );
 }
 
-function StakeholderRow({ s, rank }: { s: Stakeholder; rank: number }) {
-  const days = daysSinceContact(s);
-  const lga = getLga(s.lgaCode);
-  const fc = FEDERAL_CONSTITUENCIES.find((x) => x.id === s.constituencyId);
-  const cold = days === null || days >= 14;
-  const open = s.stage !== 'reconciled' && s.stage !== 'refused';
-
-  return (
-    <tr className="align-top">
-      <td className="figure py-3 pr-3 text-xs text-ink-faint">{rank}</td>
-      <td className="py-3 pr-3">
-        <div className="text-sm text-ink">{s.name}</div>
-        <div className="mt-0.5 text-[11px] text-ink-faint">
-          {KIND_LABELS[s.kind]}
-          {s.bloc && <span className="ml-1.5 text-aggrieved">· {s.bloc}</span>}
-        </div>
-      </td>
-      <td className="py-3 pr-3 text-xs text-ink-muted">
-        {lga?.name}
-        <div className="text-[11px] text-ink-faint">{fc?.shortName}</div>
-      </td>
-      <td className="py-3 pr-3">
-        <StageChip stage={s.stage} />
-      </td>
-      <td className="py-3 pr-3 text-xs text-ink-muted">
-        {ASK_LABELS[s.ask]}
-        {s.askDetail && <div className="text-[11px] text-ink-faint">{s.askDetail}</div>}
-      </td>
-      <td className="figure py-3 pr-3 text-right text-sm text-ink">{s.carriesWardIds.length}</td>
-      <td className="figure py-3 pr-3 text-right text-sm text-ink-muted">
-        {reconciliationWeight(s).toFixed(1)}
-      </td>
-      <td className="py-3 pr-3 text-right">
-        {days === null ? (
-          <span className="text-[11px] text-aggrieved">no contact</span>
-        ) : (
-          <span className={`figure text-sm ${open && cold ? 'text-passive' : 'text-ink-muted'}`}>
-            {days}d
-          </span>
-        )}
-      </td>
-      <td className="py-3 text-xs text-ink-faint">{s.handlerId ?? '—'}</td>
-    </tr>
-  );
-}
+type DrawerState =
+  | { kind: 'stakeholder'; id: string }
+  | { kind: 'ward'; wardId: string; fromStakeholderId: string }
+  | null;
 
 export default function ReconciliationPage() {
-  const stakeholders = seedStakeholders();
-  const summary = summarise(stakeholders);
-  const ranked = byPriority(stakeholders);
-  const cold = stalled(stakeholders);
+  const initialStakeholders = useMemo(() => seedStakeholders(), []);
+  const { entries } = useMemo(() => seedRoster(), []);
+
+  const [stageOverrides, setStageOverrides] = useState<Record<string, ReconciliationStage>>({});
+  const [stageFilter, setStageFilter] = useState<'all' | ReconciliationStage>('all');
+  const [lgaFilter, setLgaFilter] = useState<string>('all');
+  const [query, setQuery] = useState('');
+  const [drawer, setDrawer] = useState<DrawerState>(null);
+
+  const stakeholders: Stakeholder[] = useMemo(
+    () =>
+      initialStakeholders.map((s) =>
+        stageOverrides[s.id] ? { ...s, stage: stageOverrides[s.id] } : s
+      ),
+    [initialStakeholders, stageOverrides]
+  );
+
+  const analysis = useMemo(() => analyse(entries, stakeholders), [entries, stakeholders]);
+  const summary = useMemo(() => summarise(stakeholders), [stakeholders]);
+  const ranked = useMemo(() => byPriority(stakeholders), [stakeholders]);
+  const cold = useMemo(() => stalled(stakeholders), [stakeholders]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return ranked.filter((s) => {
+      if (stageFilter !== 'all' && s.stage !== stageFilter) return false;
+      if (lgaFilter !== 'all' && s.lgaCode !== lgaFilter) return false;
+      if (q) {
+        const lgaName = getLga(s.lgaCode)?.name.toLowerCase() ?? '';
+        const match =
+          s.name.toLowerCase().includes(q) ||
+          (s.bloc ?? '').toLowerCase().includes(q) ||
+          lgaName.includes(q) ||
+          KIND_LABELS[s.kind].toLowerCase().includes(q);
+        if (!match) return false;
+      }
+      return true;
+    });
+  }, [ranked, stageFilter, lgaFilter, query]);
+
+  const activeStakeholder =
+    drawer?.kind === 'stakeholder'
+      ? stakeholders.find((s) => s.id === drawer.id)
+      : drawer?.kind === 'ward'
+        ? stakeholders.find((s) => s.id === drawer.fromStakeholderId)
+        : undefined;
+
+  const activeWard = drawer?.kind === 'ward' ? getWard(drawer.wardId) : undefined;
 
   return (
     <>
       <PageHeader
         eyebrow="Reconciliation · PDP & SDP Reunification"
         title="Unifying Kwara South behind one Senate ticket"
-        lede="Closing the 21,016-vote 2023 gap depends on harmonising legacy PDP ward officers, returning 2023 SDP structures, and Igbomina–Ekiti caucuses before 16 January 2027. Every stakeholder is tracked by named handler, recorded ask, and the exact wards they carry."
+        lede="Tap any pipeline stage card to filter, or tap any stakeholder to inspect their full contact log, carried wards, and advance their stage."
         aside={
-          <div className="grid grid-cols-3 gap-4 rounded border border-line bg-surface-raised px-4 py-3">
+          <div className="grid grid-cols-3 gap-4 rounded-lg border border-line bg-surface-raised px-4 py-3">
             <div>
               <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Open</div>
               <div className="figure text-xl font-semibold text-ink">
@@ -118,66 +128,151 @@ export default function ReconciliationPage() {
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
-        <Panel title="Pipeline" note={`${summary.total} stakeholders across 7 LGAs`}>
-          <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-7">
-            {[...STAGE_ORDER, 'refused' as const].map((stage) => (
-              <div
-                key={stage}
-                className="rounded border border-line bg-surface-raised px-3 py-2.5"
-              >
-                <div className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
-                  {STAGE_LABELS[stage]}
-                </div>
-                <div className="figure mt-1 text-2xl font-semibold text-ink">
-                  {summary.byStage[stage]}
-                </div>
-              </div>
-            ))}
+        {/* Clickable Pipeline Stage Cards */}
+        <Panel title="Pipeline" note="Tap any stage to filter stakeholders">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">
+            {[...STAGE_ORDER, 'refused' as const].map((stage) => {
+              const active = stageFilter === stage;
+              return (
+                <button
+                  key={stage}
+                  type="button"
+                  onClick={() => setStageFilter((cur) => (cur === stage ? 'all' : stage))}
+                  className={`rounded-lg border px-3 py-2.5 text-left transition-all active:scale-[0.98] ${
+                    active
+                      ? 'border-accent/60 bg-accent/15'
+                      : 'border-line bg-surface-raised hover:border-line-bright'
+                  }`}
+                >
+                  <div className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
+                    {STAGE_LABELS[stage]}
+                  </div>
+                  <div className="figure mt-1 text-2xl font-semibold text-ink">
+                    {summary.byStage[stage]}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </Panel>
 
+        {/* Going cold — clickable pills */}
         {cold.length > 0 && (
           <Panel
             title="Going cold"
-            note="Open cases with no contact in 14 days, heaviest first"
+            note="Tap any stalling stakeholder to open their dossier"
           >
             <div className="flex flex-wrap gap-2">
               {cold.slice(0, 12).map((s) => {
                 const days = daysSinceContact(s);
                 return (
-                  <div
+                  <button
                     key={s.id}
-                    className="flex items-center gap-2 rounded border border-passive/30 bg-passive/5 px-2.5 py-1.5"
+                    type="button"
+                    onClick={() => setDrawer({ kind: 'stakeholder', id: s.id })}
+                    className="flex items-center gap-2 rounded-md border border-passive/30 bg-passive/5 px-2.5 py-2 transition-colors hover:border-passive hover:bg-passive/15 active:scale-[0.98]"
                   >
-                    <span className="text-xs text-ink">{s.name}</span>
+                    <span className="text-xs font-medium text-ink">{s.name}</span>
                     <span className="figure text-[11px] text-passive">
                       {days === null ? 'never' : `${days}d`}
                     </span>
                     <span className="figure text-[11px] text-ink-faint">
                       {s.carriesWardIds.length}w
                     </span>
-                  </div>
+                  </button>
                 );
               })}
-              {cold.length > 12 && (
-                <span className="self-center text-[11px] text-ink-faint">
-                  +{cold.length - 12} more
-                </span>
-              )}
             </div>
-            <p className="mt-3 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              With fewer than eight weeks to 16 January, a stakeholder carrying four Ifelodun or
-              Irepodun wards going quiet for a fortnight costs more than a week of rallies.
-            </p>
           </Panel>
         )}
 
+        {/* Filter bar + Search */}
+        <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
+            <button
+              type="button"
+              onClick={() => setLgaFilter('all')}
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-xs ${
+                lgaFilter === 'all'
+                  ? 'border-accent/60 bg-accent/15 text-accent'
+                  : 'border-line bg-surface text-ink-muted hover:text-ink'
+              }`}
+            >
+              All 7 LGAs
+            </button>
+            {lgas.map((l) => (
+              <button
+                key={l.code}
+                type="button"
+                onClick={() => setLgaFilter((cur) => (cur === l.code ? 'all' : l.code))}
+                className={`shrink-0 rounded-full border px-3 py-1.5 text-xs ${
+                  lgaFilter === l.code
+                    ? 'border-accent/60 bg-accent/15 text-accent'
+                    : 'border-line bg-surface text-ink-muted hover:text-ink'
+                }`}
+              >
+                {l.name}
+              </button>
+            ))}
+          </div>
+
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search name, bloc, role…"
+            className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-xs text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none sm:w-64"
+          />
+        </div>
+
+        {/* Stakeholders — Mobile Card Stack + Desktop Clickable Table */}
         <Panel
           title="By recovery weight"
-          note="Wards carried, scaled by standing — not by who is loudest"
+          note={`${filtered.length} of ${ranked.length} stakeholders · tap any to open dossier`}
         >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[860px]">
+          {/* Mobile cards */}
+          <div className="space-y-2.5 md:hidden">
+            {filtered.slice(0, 40).map((s, i) => {
+              const days = daysSinceContact(s);
+              const lga = getLga(s.lgaCode);
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'stakeholder', id: s.id })}
+                  className="block w-full rounded-lg border border-line bg-surface-raised p-3.5 text-left transition-colors hover:border-line-bright active:scale-[0.99]"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="figure text-[10px] text-ink-faint">#{i + 1}</span>
+                        <span className="truncate text-sm font-semibold text-ink">{s.name}</span>
+                      </div>
+                      <div className="mt-0.5 text-[11px] text-ink-muted">
+                        {KIND_LABELS[s.kind]} · {lga?.name}
+                      </div>
+                      {s.bloc && <div className="mt-0.5 text-[11px] text-aggrieved">{s.bloc}</div>}
+                    </div>
+                    <StageChip stage={s.stage} />
+                  </div>
+                  <div className="mt-3 flex items-center justify-between border-t border-line pt-2 text-[11px]">
+                    <span className="text-ink-muted">{ASK_LABELS[s.ask]}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="figure text-ink">{s.carriesWardIds.length} wards</span>
+                      <span className="figure text-passive">
+                        {days === null ? 'no contact' : `${days}d ago`}
+                      </span>
+                      <span className="text-accent">›</span>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Desktop clickable table */}
+          <div className="hidden overflow-x-auto md:block">
+            <table className="w-full min-w-[780px]">
               <thead>
                 <tr className="border-b border-line text-left text-[10px] uppercase tracking-[0.12em] text-ink-faint">
                   <th className="pb-2 pr-3 font-medium">#</th>
@@ -187,23 +282,219 @@ export default function ReconciliationPage() {
                   <th className="pb-2 pr-3 font-medium">Ask</th>
                   <th className="pb-2 pr-3 text-right font-medium">Wards</th>
                   <th className="pb-2 pr-3 text-right font-medium">Weight</th>
-                  <th className="pb-2 pr-3 text-right font-medium">Last contact</th>
-                  <th className="pb-2 font-medium">Handler</th>
+                  <th className="pb-2 text-right font-medium">Last contact</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
-                {ranked.slice(0, 40).map((s, i) => (
-                  <StakeholderRow key={s.id} s={s} rank={i + 1} />
-                ))}
+                {filtered.slice(0, 40).map((s, i) => {
+                  const days = daysSinceContact(s);
+                  const lga = getLga(s.lgaCode);
+                  const fc = FEDERAL_CONSTITUENCIES.find((x) => x.id === s.constituencyId);
+                  const coldFlag = days === null || days >= 14;
+                  const open = s.stage !== 'reconciled' && s.stage !== 'refused';
+                  return (
+                    <tr
+                      key={s.id}
+                      onClick={() => setDrawer({ kind: 'stakeholder', id: s.id })}
+                      className="cursor-pointer align-top transition-colors hover:bg-surface-raised"
+                    >
+                      <td className="figure py-3 pr-3 text-xs text-ink-faint">{i + 1}</td>
+                      <td className="py-3 pr-3">
+                        <div className="text-sm font-medium text-ink">{s.name}</div>
+                        <div className="mt-0.5 text-[11px] text-ink-faint">
+                          {KIND_LABELS[s.kind]}
+                          {s.bloc && <span className="ml-1.5 text-aggrieved">· {s.bloc}</span>}
+                        </div>
+                      </td>
+                      <td className="py-3 pr-3 text-xs text-ink-muted">
+                        {lga?.name}
+                        <div className="text-[11px] text-ink-faint">{fc?.shortName}</div>
+                      </td>
+                      <td className="py-3 pr-3">
+                        <StageChip stage={s.stage} />
+                      </td>
+                      <td className="py-3 pr-3 text-xs text-ink-muted">{ASK_LABELS[s.ask]}</td>
+                      <td className="figure py-3 pr-3 text-right text-sm text-ink">
+                        {s.carriesWardIds.length}
+                      </td>
+                      <td className="figure py-3 pr-3 text-right text-sm text-ink-muted">
+                        {reconciliationWeight(s).toFixed(1)}
+                      </td>
+                      <td className="py-3 text-right">
+                        {days === null ? (
+                          <span className="text-[11px] text-aggrieved">no contact</span>
+                        ) : (
+                          <span
+                            className={`figure text-sm ${open && coldFlag ? 'text-passive' : 'text-ink-muted'}`}
+                          >
+                            {days}d
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
-          <p className="mt-4 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-            Showing the top {Math.min(40, ranked.length)} of {ranked.length}. Weight is wards
-            carried × a standing multiplier, keeping committee time on load-bearing ward blocs.
-          </p>
         </Panel>
       </div>
+
+      {/* Stakeholder / Nested Ward Dossier Drawer */}
+      <DetailDrawer
+        open={drawer !== null}
+        onClose={() => setDrawer(null)}
+        onBack={
+          drawer?.kind === 'ward'
+            ? () => setDrawer({ kind: 'stakeholder', id: drawer.fromStakeholderId })
+            : undefined
+        }
+        backLabel={
+          drawer?.kind === 'ward'
+            ? `Back to ${activeStakeholder?.name ?? 'Stakeholder'}`
+            : undefined
+        }
+        eyebrow={
+          drawer?.kind === 'ward'
+            ? `Carried ward · ${getLga(activeWard?.lgaCode ?? '')?.name ?? ''}`
+            : `Stakeholder dossier · ${getLga(activeStakeholder?.lgaCode ?? '')?.name ?? ''}`
+        }
+        title={
+          drawer?.kind === 'ward'
+            ? `${activeWard?.name ?? ''} Ward`
+            : activeStakeholder?.name ?? ''
+        }
+        subtitle={
+          drawer?.kind === 'stakeholder' && activeStakeholder
+            ? `${KIND_LABELS[activeStakeholder.kind]}${activeStakeholder.bloc ? ` · ${activeStakeholder.bloc}` : ''}`
+            : undefined
+        }
+      >
+        {drawer?.kind === 'stakeholder' && activeStakeholder && (
+          <div className="space-y-5">
+            {/* Stage switcher */}
+            <div className="rounded-lg border border-line bg-surface-raised p-3.5">
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
+                  Update reconciliation stage (live demo)
+                </span>
+                <StageChip stage={activeStakeholder.stage} />
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {[...STAGE_ORDER, 'refused' as const].map((stage) => (
+                  <button
+                    key={stage}
+                    type="button"
+                    onClick={() =>
+                      setStageOverrides((prev) => ({ ...prev, [activeStakeholder.id]: stage }))
+                    }
+                    className={`rounded-md border px-2.5 py-1.5 text-[11px] font-medium transition-colors ${
+                      activeStakeholder.stage === stage
+                        ? 'border-accent bg-accent/15 text-accent'
+                        : 'border-line bg-surface text-ink-muted hover:border-line-bright hover:text-ink'
+                    }`}
+                  >
+                    {STAGE_LABELS[stage]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Key attributes */}
+            <div className="grid grid-cols-2 gap-2.5">
+              <div className="rounded-lg border border-line bg-surface-raised p-3">
+                <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Ask</div>
+                <div className="mt-1 text-xs font-medium text-ink">
+                  {ASK_LABELS[activeStakeholder.ask]}
+                </div>
+              </div>
+              <div className="rounded-lg border border-line bg-surface-raised p-3">
+                <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+                  Recovery weight
+                </div>
+                <div className="figure mt-1 text-base font-semibold text-accent">
+                  {reconciliationWeight(activeStakeholder).toFixed(1)}{' '}
+                  <span className="text-xs font-normal text-ink-muted">
+                    ({activeStakeholder.carriesWardIds.length}w)
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Clickable Wards Carried */}
+            <div>
+              <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+                Wards carried ({activeStakeholder.carriesWardIds.length}) — tap to inspect ward
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {activeStakeholder.carriesWardIds.map((wid) => {
+                  const w = getWard(wid);
+                  return (
+                    <button
+                      key={wid}
+                      type="button"
+                      onClick={() =>
+                        setDrawer({
+                          kind: 'ward',
+                          wardId: wid,
+                          fromStakeholderId: activeStakeholder.id,
+                        })
+                      }
+                      className="rounded-md border border-line-bright bg-surface-raised px-3 py-2 text-xs text-ink transition-colors hover:border-accent/60 hover:text-accent"
+                    >
+                      {w?.name ?? wid}{' '}
+                      <span className="figure text-[10px] text-ink-faint">
+                        ({w?.declaredPollingUnitCount ?? 0} PUs)
+                      </span>{' '}
+                      ›
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Contact Log Timeline */}
+            <div>
+              <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
+                Contact log ({activeStakeholder.contactLog.length})
+              </h3>
+              {activeStakeholder.contactLog.length === 0 ? (
+                <div className="rounded-lg border border-dashed border-aggrieved/40 bg-aggrieved/5 p-3.5 text-xs text-aggrieved">
+                  No contact recorded yet. Assign a Kwara South handler immediately.
+                </div>
+              ) : (
+                <ol className="space-y-2.5">
+                  {[...activeStakeholder.contactLog].reverse().map((entry) => (
+                    <li
+                      key={entry.id}
+                      className="rounded-lg border border-line bg-surface-raised p-3"
+                    >
+                      <div className="flex items-center justify-between gap-2 text-[10px] uppercase tracking-[0.1em] text-ink-faint">
+                        <span>
+                          {entry.channel.replace('_', ' ')} · Handler {entry.byHandlerId}
+                        </span>
+                        <span className="figure">
+                          {new Date(entry.at).toLocaleDateString('en-NG')}
+                        </span>
+                      </div>
+                      <p className="mt-1.5 text-xs leading-relaxed text-ink">{entry.note}</p>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          </div>
+        )}
+
+        {drawer?.kind === 'ward' && analysis.wardControl.get(drawer.wardId) && (
+          <WardDrawerBody
+            wardId={drawer.wardId}
+            entries={entries}
+            control={analysis.wardControl.get(drawer.wardId)!}
+            stakeholders={stakeholders}
+          />
+        )}
+      </DetailDrawer>
     </>
   );
 }
