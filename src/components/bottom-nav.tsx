@@ -2,139 +2,111 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
-interface Item {
+/**
+ * Mobile-first bottom navigation — ZERO hamburger, ZERO hidden "More" drawer.
+ *
+ * Five direct 56px thumb targets with OSINT promoted as a primary destination with a live signal
+ * indicator. Secondary surfaces (Directives, Field, Public Ledger, Results) sit in a 1-tap
+ * horizontal rail under the mobile header so nothing is ever hidden behind a menu icon.
+ */
+
+interface TabItem {
   href: string;
   label: string;
+  featured?: boolean;
   icon: React.ReactNode;
 }
 
 const icon = (d: string) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="size-5">
     <path d={d} strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
-const PRIMARY: Item[] = [
-  { href: '/war-room', label: 'Overview', icon: icon('M3 13h4v8H3zM10 3h4v18h-4zM17 9h4v12h-4z') },
+const TABS: TabItem[] = [
+  {
+    href: '/war-room',
+    label: 'Overview',
+    icon: icon('M3 13h4v8H3zM10 3h4v18h-4zM17 9h4v12h-4z'),
+  },
+  {
+    href: '/war-room/narrative',
+    label: 'OSINT',
+    featured: true,
+    icon: icon(
+      'M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14'
+    ),
+  },
   {
     href: '/war-room/structure',
     label: 'Map',
     icon: icon('M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v4H4zM14 15h6v4h-6z'),
   },
   {
-    href: '/war-room/comms',
-    label: 'Directives',
-    icon: icon('M4 5h16v10H8l-4 4z'),
+    href: '/war-room/reconciliation',
+    label: 'Reconcile',
+    icon: icon('M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0-8a4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75'),
   },
   {
     href: '/war-room/election-day',
-    label: 'Election',
+    label: 'Poll Day',
     icon: icon('M9 12l2 2 4-4M12 3l7 4v5c0 4.4-3 8.3-7 9-4-.7-7-4.6-7-9V7z'),
   },
 ];
 
-const MORE: { href: string; label: string; note: string }[] = [
-  { href: '/war-room/reconciliation', label: 'Reconciliation', note: 'Stakeholder pipeline' },
-  { href: '/war-room/narrative', label: 'Narrative & OSINT', note: 'Sentiment and claims' },
-  { href: '/field', label: 'Ward officer view', note: 'What the field sees' },
-  { href: '/ledger', label: 'Public ledger', note: 'Senatorial commitments' },
-  { href: '/ledger/results', label: 'Public results', note: 'Parallel count' },
-];
-
 export function BottomNav() {
   const pathname = usePathname();
-  const [openPath, setOpenPath] = useState<string | null>(null);
-  const open = openPath === pathname;
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
-
-  const isMoreActive = MORE.some((m) => pathname === m.href);
 
   return (
-    <>
-      {open && (
-        <div
-          className="fixed inset-0 z-40 bg-ground/80 backdrop-blur-sm lg:hidden"
-          onClick={() => setOpenPath(null)}
-          aria-hidden="true"
-        />
-      )}
-
-      <div
-        className={`fixed inset-x-0 bottom-0 z-50 rounded-t-2xl border-t border-line bg-surface transition-transform duration-200 lg:hidden ${
-          open ? 'translate-y-0' : 'pointer-events-none translate-y-full'
-        }`}
-        style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 4.5rem)' }}
-        role="dialog"
-        aria-label="More destinations"
-        aria-hidden={!open}
-      >
-        <div className="mx-auto mt-2 h-1 w-10 rounded-full bg-line-bright" />
-        <ul className="px-3 py-3">
-          {MORE.map((m) => (
-            <li key={m.href}>
+    <nav
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-line-bright bg-surface/98 shadow-[0_-8px_24px_rgba(0,0,0,0.45)] backdrop-blur lg:hidden"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+      aria-label="Primary mobile navigation"
+    >
+      <ul className="grid grid-cols-5">
+        {TABS.map((item) => {
+          const active = pathname === item.href;
+          return (
+            <li key={item.href}>
               <Link
-                href={m.href}
-                className={`flex items-center justify-between rounded-lg px-4 py-3.5 ${
-                  pathname === m.href ? 'bg-surface-raised text-accent' : 'text-ink'
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                className={`relative flex h-[60px] flex-col items-center justify-center gap-1 transition-colors active:scale-95 ${
+                  active
+                    ? 'text-accent'
+                    : item.featured
+                      ? 'text-ink'
+                      : 'text-ink-muted hover:text-ink'
                 }`}
               >
-                <span>
-                  <span className="block text-sm">{m.label}</span>
-                  <span className="block text-[11px] text-ink-faint">{m.note}</span>
-                </span>
-                <span className="text-ink-faint">›</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+                {/* Top active indicator bar */}
+                {active && (
+                  <span className="absolute inset-x-3 top-0 h-[2.5px] rounded-b-full bg-accent" />
+                )}
 
-      <nav
-        className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-surface/95 backdrop-blur lg:hidden"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-        aria-label="Primary"
-      >
-        <ul className="flex">
-          {PRIMARY.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <li key={item.href} className="flex-1">
-                <Link
-                  href={item.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={`flex h-14 flex-col items-center justify-center gap-0.5 ${
-                    active ? 'text-accent' : 'text-ink-faint'
+                <span className="relative">
+                  {item.icon}
+                  {item.featured && (
+                    <span
+                      className="absolute -right-1 -top-0.5 size-2 rounded-full bg-accent ring-2 ring-surface"
+                      aria-hidden="true"
+                    />
+                  )}
+                </span>
+
+                <span
+                  className={`text-[10px] leading-none tracking-tight ${
+                    active || item.featured ? 'font-semibold' : 'font-medium'
                   }`}
                 >
-                  {item.icon}
-                  <span className="text-[10px] leading-none">{item.label}</span>
-                </Link>
-              </li>
-            );
-          })}
-          <li className="flex-1">
-            <button
-              type="button"
-              onClick={() => setOpenPath((cur) => (cur === pathname ? null : pathname))}
-              aria-expanded={open}
-              className={`flex h-14 w-full flex-col items-center justify-center gap-0.5 ${
-                open || isMoreActive ? 'text-accent' : 'text-ink-faint'
-              }`}
-            >
-              {icon('M5 12h.01M12 12h.01M19 12h.01')}
-              <span className="text-[10px] leading-none">More</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </>
+                  {item.label}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

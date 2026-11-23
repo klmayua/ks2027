@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { BottomNav } from '@/components/bottom-nav';
-import { SidebarNav } from '@/components/sidebar-nav';
+import { MobileSubRail, SidebarNav } from '@/components/sidebar-nav';
 import { campaignConfig, daysUntil, primaryElection } from '@/config/campaign.config';
 
 export default function WarRoomLayout({ children }: { children: React.ReactNode }) {
@@ -10,10 +10,10 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="flex min-h-screen">
-      {/* Mobile header */}
+      {/* Mobile fixed header + 1-tap rail — ZERO hamburger menu */}
       <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-surface/95 backdrop-blur lg:hidden">
         <div className="pdp-bar h-[2px] w-full" />
-        <div className="flex items-center justify-between px-4 py-2.5">
+        <div className="flex items-center justify-between px-4 py-2">
           <Link href="/war-room" className="min-w-0">
             <div className="flex items-center gap-1.5">
               <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
@@ -22,12 +22,16 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
               <span className="rounded-sm border border-accent/40 bg-accent/10 px-1 py-px text-[8px] font-bold uppercase tracking-[0.1em] text-accent">
                 {campaignConfig.principal.partyAbbreviation}
               </span>
+              <span className="inline-flex items-center gap-1 rounded-sm border border-accent/30 bg-accent/10 px-1 py-px text-[8px] font-semibold uppercase tracking-[0.08em] text-accent">
+                <span className="size-1 rounded-full bg-accent" />
+                OSINT
+              </span>
             </div>
             <div className="truncate text-xs font-medium text-ink">
-              {campaignConfig.principal.shortName} · War Room
+              {campaignConfig.principal.shortName} · Kwara South
             </div>
           </Link>
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
             {campaignConfig.simulation.enabled && (
               <span className="rounded-sm border border-passive/40 bg-passive/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-passive">
                 Sim
@@ -39,6 +43,7 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
             </div>
           </div>
         </div>
+        <MobileSubRail />
       </header>
 
       <aside className="hidden w-60 shrink-0 flex-col border-r border-line bg-surface lg:flex">
@@ -56,7 +61,7 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
             <div className="mt-1 text-sm font-medium text-ink">
               {campaignConfig.principal.shortName}
             </div>
-            <div className="mt-0.5 text-[11px] text-ink-faint">Senatorial War Room</div>
+            <div className="mt-0.5 text-[11px] text-ink-faint">OSINT &amp; Senatorial War Room</div>
           </Link>
         </div>
 
@@ -95,7 +100,8 @@ export default function WarRoomLayout({ children }: { children: React.ReactNode 
         </div>
       </aside>
 
-      <main className="min-w-0 flex-1 pb-24 pt-14 lg:pb-0 lg:pt-0">{children}</main>
+      {/* Top padding clears mobile header + 1-tap sub-rail; bottom padding clears 60px BottomNav */}
+      <main className="min-w-0 flex-1 pb-24 pt-[92px] lg:pb-0 lg:pt-0">{children}</main>
 
       <BottomNav />
     </div>

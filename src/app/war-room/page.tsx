@@ -37,6 +37,8 @@ import {
 } from '@/lib/geography/results-2023';
 import { RISK_LABELS, type WardControl } from '@/lib/party/structure';
 import { seedRoster, seedStakeholders } from '@/lib/simulation/seed';
+import { seedClaims, seedMentions, seedResponses } from '@/lib/simulation/seed-narrative';
+import { breakdown, isSendable, velocity } from '@/lib/narrative/osint';
 import { analyse } from '@/lib/war-room/analysis';
 
 const pct = (n: number, dp = 0) => `${(n * 100).toFixed(dp)}%`;
@@ -51,6 +53,19 @@ export default function WarRoomOverview() {
   const { entries } = useMemo(() => seedRoster(), []);
   const stakeholders = useMemo(() => seedStakeholders(), []);
   const a = useMemo(() => analyse(entries, stakeholders), [entries, stakeholders]);
+
+  const osintMentions = useMemo(() => seedMentions(), []);
+  const osintClaims = useMemo(() => seedClaims(), []);
+  const osintResponses = useMemo(() => seedResponses(), []);
+  const osintStats = useMemo(() => breakdown(osintMentions), [osintMentions]);
+  const topClaim = useMemo(
+    () => [...osintClaims].sort((x, y) => velocity(y) - velocity(x))[0],
+    [osintClaims]
+  );
+  const heldDrafts = useMemo(
+    () => osintResponses.filter((r) => !isSendable(r)).length,
+    [osintResponses]
+  );
 
   const [drawer, setDrawer] = useState<DrawerState>(null);
 
@@ -168,6 +183,44 @@ export default function WarRoomOverview() {
             onClick={() => setDrawer({ kind: 'kpi', topic: 'core' })}
           />
         </div>
+
+        {/* Live OSINT Command Banner — front and center intelligence entry */}
+        <Link
+          href="/war-room/narrative"
+          className="group flex flex-col justify-between gap-3 rounded-lg border border-accent/40 bg-accent/[0.07] p-4 transition-all hover:border-accent hover:bg-accent/[0.12] sm:flex-row sm:items-center"
+        >
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-accent">
+                <span className="size-1.5 animate-pulse rounded-full bg-accent" />
+                Live OSINT
+              </span>
+              <span className="figure text-xs text-ink">
+                {osintStats.total} mentions ·{' '}
+                <span className={osintStats.net >= 0 ? 'text-aligned' : 'text-aggrieved'}>
+                  {osintStats.net >= 0 ? '+' : ''}
+                  {(osintStats.net * 100).toFixed(0)} net
+                </span>
+              </span>
+              {heldDrafts > 0 && (
+                <span className="rounded bg-passive/15 px-1.5 py-0.5 text-[10px] font-semibold text-passive">
+                  {heldDrafts} draft held at approval gate
+                </span>
+              )}
+            </div>
+            {topClaim && (
+              <p className="mt-1.5 line-clamp-1 text-xs text-ink-muted sm:text-sm">
+                <strong className="text-aggrieved">
+                  ×{velocity(topClaim).toFixed(1)} rumour alert:
+                </strong>{' '}
+                {topClaim.statement}
+              </p>
+            )}
+          </div>
+          <span className="shrink-0 text-xs font-semibold text-accent transition-transform group-hover:translate-x-0.5">
+            Open OSINT Command →
+          </span>
+        </Link>
 
         {/* Quick LGA Drill-Down Strip — thumb-friendly on mobile */}
         <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">

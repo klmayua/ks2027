@@ -30,6 +30,7 @@ import {
   type Language,
   type Mention,
   type Response,
+  type SourceKind,
 } from '@/lib/narrative/osint';
 import {
   TOPICS,
@@ -62,6 +63,22 @@ const ASSESSMENT_LABELS: Record<Claim['assessment'], string> = {
   substantially_true: 'Substantially true',
 };
 
+const SOURCE_ORDER: SourceKind[] = [
+  'radio',
+  'news',
+  'social_public',
+  'field_report',
+  'official_statement',
+];
+
+const SOURCE_SUB: Record<SourceKind, string> = {
+  radio: 'Okin FM · Harmony · Radio Kwara · Sobi',
+  news: 'Vanguard · ThisDay · Tribune · Daily Trust',
+  social_public: 'Public posts · open feeds only',
+  field_report: '83 Kwara South ward officers',
+  official_statement: 'Party & INEC public statements',
+};
+
 function Spark({ values }: { values: number[] }) {
   const max = Math.max(...values, 1);
   return (
@@ -90,6 +107,7 @@ export default function NarrativePage() {
   const [approvals, setApprovals] = useState<Record<string, boolean>>({});
   const [claimFilter, setClaimFilter] = useState<'all' | 'accelerating' | 'held' | 'conceded'>('all');
   const [fcFilter, setFcFilter] = useState<'all' | FederalConstituencyId>('all');
+  const [sourceFilter, setSourceFilter] = useState<'all' | SourceKind>('all');
   const [drawer, setDrawer] = useState<DrawerState>(null);
 
   const responses: Response[] = useMemo(
@@ -116,14 +134,29 @@ export default function NarrativePage() {
 
   const filteredMentions = useMemo(
     () =>
-      fcFilter === 'all' ? mentions : mentions.filter((m) => m.constituencyId === fcFilter),
-    [mentions, fcFilter]
+      mentions.filter((m) => {
+        if (fcFilter !== 'all' && m.constituencyId !== fcFilter) return false;
+        if (sourceFilter !== 'all' && m.sourceKind !== sourceFilter) return false;
+        return true;
+      }),
+    [mentions, fcFilter, sourceFilter]
   );
 
   const overall = useMemo(() => breakdown(filteredMentions), [filteredMentions]);
   const constituencies = useMemo(() => byConstituency(mentions), [mentions]);
   const languages = useMemo(() => byLanguage(filteredMentions), [filteredMentions]);
   const uncertain = useMemo(() => lowConfidence(filteredMentions), [filteredMentions]);
+
+  const bySource = useMemo(
+    () =>
+      SOURCE_ORDER.map((kind) => {
+        const items = mentions.filter(
+          (m) => m.sourceKind === kind && (fcFilter === 'all' || m.constituencyId === fcFilter)
+        );
+        return { kind, items, stats: breakdown(items) };
+      }),
+    [mentions, fcFilter]
+  );
 
   const topicRows = useMemo(
     () =>
@@ -173,22 +206,31 @@ export default function NarrativePage() {
   return (
     <>
       <PageHeader
-        eyebrow="Narrative & OSINT · Kwara South"
-        title="Public sources only, human approval always"
-        lede="Okin FM Offa, Harmony FM, Radio Kwara, Sobi FM, national dailies, public social, and ward returns. Every metric card, topic bar, and claim drills into raw evidence."
+        eyebrow="OSINT & Narrative Command · Kwara South"
+        title="Open-source intelligence, public sources only"
+        lede="Real-time monitoring across Kwara South radio (Okin FM Offa, Harmony FM, Radio Kwara, Sobi FM), national press, public social feeds, and 83 ward returns — with a mandatory human sign-off gate."
+        aside={
+          <div className="flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3.5 py-2.5">
+            <span className="size-2 animate-pulse rounded-full bg-accent" />
+            <div className="text-xs">
+              <div className="font-semibold text-accent">13 Public Feeds Active</div>
+              <div className="text-[10px] text-ink-muted">4 languages · Zero covert ingest</div>
+            </div>
+          </div>
+        }
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
-        {/* TOP 6 CLICKABLE KPI NUMBER CARDS — matches Overview command rhythm */}
+        {/* TOP 6 CLICKABLE OSINT KPI NUMBER CARDS */}
         <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
           <InteractiveStatCard
-            label="Public mentions"
+            label="OSINT mentions"
             value={overall.total}
-            sub="last 14 days · tap feed"
+            sub="14-day public feed"
             onClick={() =>
               setDrawer({
                 kind: 'mentions',
-                title: 'All monitored public mentions',
+                title: 'All monitored OSINT mentions',
                 subtitle: `${overall.total} items across Kwara South outlets`,
                 items: filteredMentions,
               })
@@ -202,8 +244,8 @@ export default function NarrativePage() {
             onClick={() =>
               setDrawer({
                 kind: 'mentions',
-                title: 'Negative mentions driving risk',
-                subtitle: `${overall.negative} negative items across monitored topics`,
+                title: 'Negative OSINT signals',
+                subtitle: `${overall.negative} negative mentions across Kwara South`,
                 items: filteredMentions.filter((m) => m.sentiment === 'negative'),
               })
             }
@@ -212,17 +254,17 @@ export default function NarrativePage() {
             label="Accelerating"
             value={acceleratingCount}
             tone="bad"
-            sub={`of ${claims.length} tracked claims`}
+            sub={`of ${claims.length} active claims`}
             active={claimFilter === 'accelerating'}
             onClick={() =>
               setClaimFilter((cur) => (cur === 'accelerating' ? 'all' : 'accelerating'))
             }
           />
           <InteractiveStatCard
-            label="Held at gate"
+            label="Approval gate"
             value={awaitingApproval.length}
             tone={awaitingApproval.length > 0 ? 'warn' : 'good'}
-            sub={awaitingApproval.length > 0 ? 'tap to review & approve' : 'all signed off'}
+            sub={awaitingApproval.length > 0 ? 'held · tap to sign off' : 'all drafts cleared'}
             onClick={() => {
               if (awaitingApproval[0]) {
                 setDrawer({ kind: 'claim', claimId: awaitingApproval[0].claimId });
@@ -239,7 +281,7 @@ export default function NarrativePage() {
             onClick={() =>
               setDrawer({
                 kind: 'mentions',
-                title: 'Non-English Kwara South discourse',
+                title: 'Non-English OSINT stream',
                 subtitle: `${nonEnglishMentions.length} Yoruba, Pidgin, and Fulfulde items`,
                 items: nonEnglishMentions,
               })
@@ -249,23 +291,61 @@ export default function NarrativePage() {
             label="Human review"
             value={uncertain.length}
             tone="warn"
-            sub="below 65% confidence"
+            sub="<65% confidence queue"
             onClick={() =>
               setDrawer({
                 kind: 'mentions',
                 title: 'Low-confidence human review queue',
-                subtitle: `${uncertain.length} mentions routed to human analysts`,
+                subtitle: `${uncertain.length} mentions routed for analyst read`,
                 items: uncertain,
               })
             }
           />
         </div>
 
-        {/* ABOVE-THE-FOLD VISUAL DASHBOARD GRID */}
+        {/* OSINT SOURCE CHANNEL CARDS — clickable horizontal scroll on mobile, 5-col grid on desktop */}
+        <div className="-mx-4 flex gap-2.5 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:px-0 lg:grid-cols-5">
+          {bySource.map(({ kind, items, stats }) => {
+            const active = sourceFilter === kind;
+            return (
+              <button
+                key={kind}
+                type="button"
+                onClick={() => setSourceFilter((cur) => (cur === kind ? 'all' : kind))}
+                className={`flex min-w-[168px] shrink-0 flex-col justify-between rounded-lg border p-3 text-left transition-all active:scale-[0.98] sm:min-w-0 ${
+                  active
+                    ? 'border-accent/60 bg-accent/15'
+                    : 'border-line bg-surface hover:border-line-bright hover:bg-surface-raised'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-faint">
+                    {SOURCE_LABELS[kind]}
+                  </span>
+                  <span
+                    className={`figure text-xs font-semibold ${
+                      stats.net >= 0 ? 'text-aligned' : 'text-aggrieved'
+                    }`}
+                  >
+                    {stats.net >= 0 ? '+' : ''}
+                    {(stats.net * 100).toFixed(0)}
+                  </span>
+                </div>
+                <div className="mt-1.5 flex items-baseline justify-between">
+                  <span className="figure text-xl font-semibold text-ink">{items.length}</span>
+                  <span className="text-[10px] text-accent">{active ? 'Filtered ✕' : 'Filter ›'}</span>
+                </div>
+                <div className="mt-1 truncate text-[10px] text-ink-muted">{SOURCE_SUB[kind]}</div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ABOVE-THE-FOLD VISUAL OSINT DASHBOARD */}
         <div className="grid gap-4 lg:grid-cols-5">
           <Panel
             title="Topic net sentiment"
-            note="Tap any topic bar to read its raw public mentions"
+            note="Tap any topic bar to read raw public excerpts"
             className="lg:col-span-3"
           >
             <DivergingBars
@@ -292,7 +372,7 @@ export default function NarrativePage() {
 
           <Panel
             title="Sentiment balance & constituency pulse"
-            note="Tap constituency to filter"
+            note="Tap constituency to filter OSINT feed"
             className="lg:col-span-2"
           >
             <div className="flex flex-wrap items-center gap-4 sm:gap-5">
@@ -369,7 +449,7 @@ export default function NarrativePage() {
           </Panel>
         </div>
 
-        {/* FILTER STRIP + 2-COLUMN CLICKABLE TRACKED CLAIM CARDS */}
+        {/* CLAIM FILTER PILLS + 2-COLUMN RUMOUR EARLY-WARNING CARDS */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
             {(
@@ -394,20 +474,23 @@ export default function NarrativePage() {
               </button>
             ))}
           </div>
-          {fcFilter !== 'all' && (
+          {(fcFilter !== 'all' || sourceFilter !== 'all') && (
             <button
               type="button"
-              onClick={() => setFcFilter('all')}
+              onClick={() => {
+                setFcFilter('all');
+                setSourceFilter('all');
+              }}
               className="rounded-md border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] text-accent"
             >
-              Clear constituency filter ✕
+              Clear filters ✕
             </button>
           )}
         </div>
 
         <Panel
-          title="Tracked claims"
-          note="Tap any claim card to inspect velocity curve & operate approval gate"
+          title="Rumour early-warning & response gate"
+          note="Tap any claim card to inspect velocity curve & approve response"
         >
           <div className="grid gap-3 lg:grid-cols-2">
             {rising.length === 0 ? (
@@ -481,7 +564,7 @@ export default function NarrativePage() {
         {/* LANGUAGE BREAKDOWN + HUMAN REVIEW QUEUE */}
         <div className="grid gap-4 lg:grid-cols-2">
           <Panel
-            title="Mentions by language"
+            title="OSINT coverage by language"
             note={`${Math.round(nonEnglishShare * 100)}% non-English · tap any bar`}
           >
             <RankedBars
@@ -505,7 +588,7 @@ export default function NarrativePage() {
           </Panel>
 
           <Panel
-            title="Human review queue"
+            title="Human analyst review queue"
             note={`${uncertain.length} low-confidence · tap any card`}
           >
             <div className="grid gap-2 sm:grid-cols-2">
@@ -547,8 +630,8 @@ export default function NarrativePage() {
         onClose={() => setDrawer(null)}
         eyebrow={
           drawer?.kind === 'claim'
-            ? `Claim dossier · ${activeClaim?.firstSeenSource ?? ''}`
-            : 'Public source mentions'
+            ? `OSINT Claim Dossier · ${activeClaim?.firstSeenSource ?? ''}`
+            : 'Public OSINT feed'
         }
         title={
           drawer?.kind === 'claim'
