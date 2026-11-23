@@ -248,27 +248,58 @@ export default function PowerMapPage() {
           </div>
         </div>
 
-        {/* Clickable Risk Summary Cards */}
-        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-          {(['held', 'contested', 'exposed', 'vacant'] as const).map((risk) => (
-            <InteractiveStatCard
-              key={risk}
-              label={RISK_LABELS[risk]}
-              value={a.control[risk]}
-              sub="wards · tap to filter"
-              tone={
-                risk === 'held'
-                  ? 'good'
-                  : risk === 'contested'
-                    ? 'warn'
-                    : risk === 'exposed'
-                      ? 'bad'
-                      : 'neutral'
-              }
-              active={riskFilter === risk}
-              onClick={() => setRiskFilter((cur) => (cur === risk ? 'all' : risk))}
-            />
-          ))}
+        {/* TOP 6 CLICKABLE KPI NUMBER CARDS — matches Overview command rhythm */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+          <InteractiveStatCard
+            label="Mean control"
+            value={pct(a.meanControl, 1)}
+            tone="accent"
+            sub="83 wards weighted"
+            active={riskFilter === 'all'}
+            onClick={() => setRiskFilter('all')}
+          />
+          <InteractiveStatCard
+            label="Votes held"
+            value={`${(votesHeld / 1000).toFixed(1)}k`}
+            tone="good"
+            sub={`${pct(votesHeld / totalWardVotes)} of district`}
+            active={riskFilter === 'held'}
+            onClick={() => setRiskFilter((cur) => (cur === 'held' ? 'all' : 'held'))}
+          />
+          <InteractiveStatCard
+            label="Votes exposed"
+            value={`${(votesExposed / 1000).toFixed(1)}k`}
+            tone="bad"
+            sub={`${pct(votesExposed / totalWardVotes)} at risk`}
+            active={riskFilter === 'exposed'}
+            onClick={() => setRiskFilter((cur) => (cur === 'exposed' ? 'all' : 'exposed'))}
+          />
+          <InteractiveStatCard
+            label="Held wards"
+            value={a.control.held}
+            tone="good"
+            sub="≥60% core aligned"
+            active={riskFilter === 'held'}
+            onClick={() => setRiskFilter((cur) => (cur === 'held' ? 'all' : 'held'))}
+          />
+          <InteractiveStatCard
+            label="Contested"
+            value={a.control.contested}
+            tone="warn"
+            sub="30–59% control"
+            active={riskFilter === 'contested'}
+            onClick={() => setRiskFilter((cur) => (cur === 'contested' ? 'all' : 'contested'))}
+          />
+          <InteractiveStatCard
+            label="Orphan wards"
+            value={a.orphanWards.length}
+            tone="bad"
+            sub="unclaimed · direct fill"
+            onClick={() => {
+              const first = a.orphanWards[0];
+              if (first) setDrawer({ kind: 'ward', wardId: first, fromLga: first.split('-')[0] });
+            }}
+          />
         </div>
 
         {/* Desktop Interactive Mosaic + Mobile Native Expandable LGA/Ward Cards */}

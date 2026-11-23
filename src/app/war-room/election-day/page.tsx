@@ -2,7 +2,13 @@
 
 import { useMemo, useState } from 'react';
 
-import { Legend, SERIES, StackedBar, WeightedMosaic } from '@/components/charts';
+import {
+  InteractiveStatCard,
+  Legend,
+  SERIES,
+  StackedBar,
+  WeightedMosaic,
+} from '@/components/charts';
 import { DetailDrawer } from '@/components/detail-drawer';
 import { PageHeader, Panel } from '@/components/shell';
 import { getLga, getWard, lgas, wardsInLga } from '@/lib/geography';
@@ -108,6 +114,7 @@ export default function ElectionDayPage() {
 
   const coverage = useMemo(() => computeCoverage(allSubmissions, agents), [allSubmissions, agents]);
   const tally = useMemo(() => computeTally(scopedSubmissions), [scopedSubmissions]);
+  const pdpParty = tally.parties.find((p) => p.partyCode === 'PDP');
 
   const reportedWards = useMemo(() => new Set(allSubmissions.map((s) => s.wardId)), [allSubmissions]);
   const wardSubmissionCount = useMemo(() => {
@@ -149,27 +156,64 @@ export default function ElectionDayPage() {
       <PageHeader
         eyebrow="Election day · Saturday, 16 January 2027"
         title="The evidence is primary, the number is derived"
-        lede="Filter by LGA below or tap any ward, desk, or incident card to inspect raw photographed EC8A returns, disputes, and live incident action logs."
-        aside={
-          <div className="rounded-lg border border-line bg-surface-raised px-5 py-4 text-right">
-            <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-              Kwara South PUs reported
-            </div>
-            <div className="figure mt-1 text-3xl font-semibold text-ink sm:text-4xl">
-              {coverage.reported.toLocaleString('en-NG')}
-              <span className="text-xl text-ink-faint">
-                /{coverage.totalPollingUnits.toLocaleString('en-NG')}
-              </span>
-            </div>
-            <div className="figure mt-0.5 text-sm text-passive">
-              {pct(coverage.rate, 1)} ·{' '}
-              {(coverage.totalPollingUnits - coverage.reported).toLocaleString('en-NG')} outstanding
-            </div>
-          </div>
-        }
+        lede="Live parallel count across 907 Kwara South polling units. Filter by LGA or tap any KPI card, ward tile, or incident to inspect photographed EC8As."
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
+        {/* TOP 6 CLICKABLE KPI NUMBER CARDS */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+          <InteractiveStatCard
+            label="EC8As reported"
+            value={scopedSubmissions.length}
+            tone="good"
+            sub={`of ${coverage.totalPollingUnits} post-2021 PUs`}
+            onClick={() => setDrawer({ kind: 'lga', lgaCode: visibleLgas[0]?.code ?? '05' })}
+          />
+          <InteractiveStatCard
+            label="District coverage"
+            value={pct(coverage.rate, 1)}
+            tone="warn"
+            sub={`${coverage.totalPollingUnits - coverage.reported} outstanding`}
+            onClick={() => setDrawer({ kind: 'lga', lgaCode: visibleLgas[0]?.code ?? '05' })}
+          />
+          <InteractiveStatCard
+            label="PDP share"
+            value={pct(pdpParty?.share ?? 0, 1)}
+            tone="accent"
+            sub={`${(pdpParty?.votes ?? 0).toLocaleString('en-NG')} votes`}
+            onClick={() => setDrawer({ kind: 'lga', lgaCode: '13' })}
+          />
+          <InteractiveStatCard
+            label="Silent wards"
+            value={coverage.silentWardIds.length}
+            tone="bad"
+            sub="zero EC8As received"
+            onClick={() =>
+              coverage.silentWardIds[0] &&
+              setDrawer({
+                kind: 'ward',
+                wardId: coverage.silentWardIds[0],
+                fromLga: coverage.silentWardIds[0].split('-')[0],
+              })
+            }
+          />
+          <InteractiveStatCard
+            label="Open incidents"
+            value={openIncidents.length}
+            tone="bad"
+            sub={`${tally.disputedCount} disputed EC8As`}
+            onClick={() =>
+              openIncidents[0] && setDrawer({ kind: 'incident', id: openIncidents[0].id })
+            }
+          />
+          <InteractiveStatCard
+            label="Synced offline"
+            value={lateSync}
+            sub="rural offline captures"
+            onClick={() => setDrawer({ kind: 'lga', lgaCode: '05' })}
+          />
+        </div>
+
         {/* LGA Filter Strip */}
         <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
           <button
@@ -205,161 +249,7 @@ export default function ElectionDayPage() {
           })}
         </div>
 
-        {/* Coverage Panel */}
-        <Panel
-          title="Coverage"
-          note="Stated before any result — denominator is 907 post-2021 polling units"
-        >
-          <div className="mb-4 h-3 overflow-hidden rounded-sm bg-surface-raised">
-            <div className="h-full bg-aligned" style={{ width: `${coverage.rate * 100}%` }} />
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            <div className="rounded-lg border border-line bg-surface-raised p-3">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Reported</div>
-              <div className="figure mt-1 text-2xl font-semibold text-aligned">
-                {scopedSubmissions.length}
-              </div>
-            </div>
-            <div className="rounded-lg border border-line bg-surface-raised p-3">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Outstanding (district)
-              </div>
-              <div className="figure mt-1 text-2xl font-semibold text-aggrieved">
-                {coverage.totalPollingUnits - coverage.reported}
-              </div>
-            </div>
-            <div className="rounded-lg border border-line bg-surface-raised p-3">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Silent wards
-              </div>
-              <div className="figure mt-1 text-2xl font-semibold text-passive">
-                {coverage.silentWardIds.length}
-              </div>
-            </div>
-            <div className="rounded-lg border border-line bg-surface-raised p-3">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Agents checked in
-              </div>
-              <div className="figure mt-1 text-2xl font-semibold text-ink">
-                {scopedAgents.filter((a) => a.status === 'checked_in').length}
-              </div>
-            </div>
-            <div className="rounded-lg border border-line bg-surface-raised p-3">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Synced offline
-              </div>
-              <div className="figure mt-1 text-2xl font-semibold text-reconciled">{lateSync}</div>
-            </div>
-          </div>
-
-          <div className="mt-3 rounded-lg border border-passive/30 bg-passive/5 p-3 text-[11px] leading-relaxed text-ink-muted">
-            <span className="font-semibold uppercase tracking-[0.1em] text-passive">
-              Denominator note:{' '}
-            </span>
-            Coverage is measured against{' '}
-            <span className="figure text-ink">{coverage.totalPollingUnits}</span> post-2021 PUs (
-            <span className="figure text-ink">{coverage.enumeratedPollingUnits}</span> ward-enumerated
-            + <span className="figure text-passive">{coverage.unallocatedPollingUnits}</span>{' '}
-            unallocated). Against the enumerated subset alone it would read{' '}
-            <span className="figure">{pct(coverage.rateOfEnumerated, 1)}</span> — we display the
-            lower, truer <span className="figure text-ink">{pct(coverage.rate, 1)}</span>.
-          </div>
-        </Panel>
-
-        {/* Ward returns mosaic (desktop) + tappable LGA cards (mobile) */}
-        <Panel
-          title="Where the EC8A returns are"
-          note="Tap any LGA or ward block to inspect individual polling unit forms"
-        >
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <Legend
-              items={[
-                { label: 'Reporting wards', color: '#16a34a', value: String(reportedWards.size) },
-                { label: 'Partial', color: '#fab219' },
-                { label: 'Silent', color: '#d03b3b', value: String(coverage.silentWardIds.length) },
-              ]}
-            />
-          </div>
-
-          <div className="hidden sm:block">
-            <WeightedMosaic
-              height={28}
-              onSelectRow={(lgaCode) => setDrawer({ kind: 'lga', lgaCode })}
-              onSelectCell={(wardId, lgaCode) =>
-                setDrawer({ kind: 'ward', wardId, fromLga: lgaCode })
-              }
-              rows={visibleLgas.map((lga) => {
-                const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
-                return {
-                  id: lga.code,
-                  label: lga.name,
-                  weight: resultFor(lga.code)?.validVotes ?? 0,
-                  note: row ? `${row.reported}/${row.total}` : '—',
-                  cells: wardsInLga(lga.code)
-                    .slice()
-                    .sort((x, y) => y.declaredPollingUnitCount - x.declaredPollingUnitCount)
-                    .map((w) => {
-                      const got = wardSubmissionCount.get(w.id) ?? 0;
-                      const share = w.declaredPollingUnitCount
-                        ? got / w.declaredPollingUnitCount
-                        : 0;
-                      return {
-                        id: w.id,
-                        weight: w.declaredPollingUnitCount,
-                        color: got === 0 ? '#d03b3b' : share >= 0.8 ? '#16a34a' : '#fab219',
-                        title: `${w.name} (${w.id}) — ${got}/${w.declaredPollingUnitCount} enumerated PUs · click to inspect EC8As`,
-                      };
-                    }),
-                };
-              })}
-            />
-          </div>
-
-          {/* Mobile LGA EC8A drill-down cards */}
-          <div className="space-y-2 sm:hidden">
-            {visibleLgas.map((lga) => {
-              const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
-              return (
-                <button
-                  key={lga.code}
-                  type="button"
-                  onClick={() => setDrawer({ kind: 'lga', lgaCode: lga.code })}
-                  className="flex w-full items-center justify-between gap-3 rounded-lg border border-line bg-surface-raised px-3.5 py-3 text-left active:scale-[0.99]"
-                >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-ink">{lga.name}</span>
-                      <span className="figure text-xs text-ink-muted">
-                        {row?.reported}/{row?.total} PUs
-                      </span>
-                    </div>
-                    {row && (
-                      <div className="mt-2">
-                        <StackedBar
-                          height="h-2"
-                          segments={[
-                            { label: 'Reported', value: row.reported, color: '#16a34a' },
-                            {
-                              label: 'Outstanding',
-                              value: Math.max(0, row.total - row.reported),
-                              color: '#2b3444',
-                            },
-                          ]}
-                        />
-                      </div>
-                    )}
-                  </div>
-                  <span className="figure text-xs text-accent">
-                    {row ? `${pct(row.rate, 0)} ›` : '›'}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </Panel>
-
-        {/* Tally + Clickable Incident Desks */}
+        {/* ABOVE-THE-FOLD: LIVE TALLY + INCIDENT DESKS */}
         <div className="grid gap-4 lg:grid-cols-3">
           <Panel
             title={`Collected Senate tally${lgaFilter === 'all' ? '' : ` — ${getLga(lgaFilter)?.name}`}`}
@@ -449,10 +339,105 @@ export default function ElectionDayPage() {
                 </button>
               ))}
             </div>
+            <div className="mt-3 rounded border border-passive/30 bg-passive/5 p-2.5 text-[11px] text-ink-muted">
+              Honest denominator: <span className="figure text-ink">907</span> post-2021 PUs (682
+              ward-enumerated + 225 unallocated).
+            </div>
           </Panel>
         </div>
 
-        {/* Incident Queue — Mobile Tappable Cards + Desktop Clickable Table */}
+        {/* Ward returns mosaic + mobile LGA cards */}
+        <Panel
+          title="Where the EC8A returns are"
+          note="Tap any LGA or ward block to inspect photographed EC8A forms"
+        >
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <Legend
+              items={[
+                { label: 'Reporting wards', color: '#16a34a', value: String(reportedWards.size) },
+                { label: 'Partial', color: '#fab219' },
+                { label: 'Silent', color: '#d03b3b', value: String(coverage.silentWardIds.length) },
+              ]}
+            />
+          </div>
+
+          <div className="hidden sm:block">
+            <WeightedMosaic
+              height={28}
+              onSelectRow={(lgaCode) => setDrawer({ kind: 'lga', lgaCode })}
+              onSelectCell={(wardId, lgaCode) =>
+                setDrawer({ kind: 'ward', wardId, fromLga: lgaCode })
+              }
+              rows={visibleLgas.map((lga) => {
+                const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
+                return {
+                  id: lga.code,
+                  label: lga.name,
+                  weight: resultFor(lga.code)?.validVotes ?? 0,
+                  note: row ? `${row.reported}/${row.total}` : '—',
+                  cells: wardsInLga(lga.code)
+                    .slice()
+                    .sort((x, y) => y.declaredPollingUnitCount - x.declaredPollingUnitCount)
+                    .map((w) => {
+                      const got = wardSubmissionCount.get(w.id) ?? 0;
+                      const share = w.declaredPollingUnitCount
+                        ? got / w.declaredPollingUnitCount
+                        : 0;
+                      return {
+                        id: w.id,
+                        weight: w.declaredPollingUnitCount,
+                        color: got === 0 ? '#d03b3b' : share >= 0.8 ? '#16a34a' : '#fab219',
+                        title: `${w.name} (${w.id}) — ${got}/${w.declaredPollingUnitCount} enumerated PUs`,
+                      };
+                    }),
+                };
+              })}
+            />
+          </div>
+
+          <div className="space-y-2 sm:hidden">
+            {visibleLgas.map((lga) => {
+              const row = coverage.byLga.find((x) => x.lgaCode === lga.code);
+              return (
+                <button
+                  key={lga.code}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'lga', lgaCode: lga.code })}
+                  className="flex w-full items-center justify-between gap-3 rounded-lg border border-line bg-surface-raised px-3.5 py-3 text-left active:scale-[0.99]"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-ink">{lga.name}</span>
+                      <span className="figure text-xs text-ink-muted">
+                        {row?.reported}/{row?.total} PUs
+                      </span>
+                    </div>
+                    {row && (
+                      <div className="mt-2">
+                        <StackedBar
+                          height="h-2"
+                          segments={[
+                            { label: 'Reported', value: row.reported, color: '#16a34a' },
+                            {
+                              label: 'Outstanding',
+                              value: Math.max(0, row.total - row.reported),
+                              color: '#2b3444',
+                            },
+                          ]}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <span className="figure text-xs text-accent">
+                    {row ? `${pct(row.rate, 0)} ›` : '›'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </Panel>
+
+        {/* Incident Queue */}
         <Panel
           title="Incident queue"
           note={`${scopedIncidents.length} incidents · tap any to view log & update status`}
@@ -484,7 +469,9 @@ export default function ElectionDayPage() {
                   </div>
                   <p className="mt-1.5 text-xs text-ink-muted">{i.description}</p>
                   <div className="mt-2 flex items-center justify-between border-t border-line pt-2 text-[10px] uppercase tracking-[0.08em]">
-                    <span className={SEVERITY_TONE[i.severity]}>{i.severity} · {DESK_LABELS[i.desk]}</span>
+                    <span className={SEVERITY_TONE[i.severity]}>
+                      {i.severity} · {DESK_LABELS[i.desk]}
+                    </span>
                     <span className="text-accent">Action log ›</span>
                   </div>
                 </button>
@@ -555,7 +542,10 @@ export default function ElectionDayPage() {
           >
             <div className="space-y-2">
               {visibleReports.slice(0, 6).map((r) => (
-                <div key={r.id} className="rounded-lg border border-line bg-surface-raised px-3 py-2.5">
+                <div
+                  key={r.id}
+                  className="rounded-lg border border-line bg-surface-raised px-3 py-2.5"
+                >
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
                       {CITIZEN_REPORT_LABELS[r.kind]} · {getWard(r.wardId)?.name}
@@ -604,7 +594,6 @@ export default function ElectionDayPage() {
         </div>
       </div>
 
-      {/* Deep Drawer for LGA EC8As, Ward EC8A forms, or Incident Action Log */}
       <DetailDrawer
         open={drawer !== null}
         onClose={() => setDrawer(null)}
@@ -718,7 +707,10 @@ export default function ElectionDayPage() {
                     </div>
                     <div className="mt-2 grid grid-cols-4 gap-1.5">
                       {Object.entries(s.votes).map(([party, v]) => (
-                        <div key={party} className="rounded border border-line bg-surface px-2 py-1.5 text-center">
+                        <div
+                          key={party}
+                          className="rounded border border-line bg-surface px-2 py-1.5 text-center"
+                        >
                           <div className="text-[9px] text-ink-faint">{party}</div>
                           <div className="figure text-xs font-semibold text-ink">{v}</div>
                         </div>
@@ -727,7 +719,8 @@ export default function ElectionDayPage() {
                     <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[10px] text-ink-faint">
                       <span>Agent: {s.agentName}</span>
                       <span className="figure">
-                        GPS {s.form.lat.toFixed(3)}, {s.form.lng.toFixed(3)} · ±{s.form.accuracyMetres}m
+                        GPS {s.form.lat.toFixed(3)}, {s.form.lng.toFixed(3)} · ±
+                        {s.form.accuracyMetres}m
                       </span>
                     </div>
                     {s.disputed && (

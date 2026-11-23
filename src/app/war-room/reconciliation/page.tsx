@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 
+import { Funnel, InteractiveStatCard, RankedBars, SERIES } from '@/components/charts';
 import { DetailDrawer } from '@/components/detail-drawer';
 import { WardDrawerBody } from '@/components/geo-drilldown';
 import { PageHeader, Panel } from '@/components/shell';
@@ -52,7 +53,9 @@ export default function ReconciliationPage() {
   const { entries } = useMemo(() => seedRoster(), []);
 
   const [stageOverrides, setStageOverrides] = useState<Record<string, ReconciliationStage>>({});
-  const [stageFilter, setStageFilter] = useState<'all' | ReconciliationStage>('all');
+  const [stageFilter, setStageFilter] = useState<'all' | 'open' | 'stalled' | ReconciliationStage>(
+    'all'
+  );
   const [lgaFilter, setLgaFilter] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [drawer, setDrawer] = useState<DrawerState>(null);
@@ -69,11 +72,53 @@ export default function ReconciliationPage() {
   const summary = useMemo(() => summarise(stakeholders), [stakeholders]);
   const ranked = useMemo(() => byPriority(stakeholders), [stakeholders]);
   const cold = useMemo(() => stalled(stakeholders), [stakeholders]);
+  const coldSet = useMemo(() => new Set(cold.map((s) => s.id)), [cold]);
+
+  const openCount = summary.total - summary.byStage.reconciled - summary.byStage.refused;
+  const recoveryPct =
+    summary.wardsAtStake + summary.wardsRecovered > 0
+      ? Math.round(
+          (summary.wardsRecovered / (summary.wardsAtStake + summary.wardsRecovered)) * 100
+        )
+      : 0;
+
+  const wardsByLga = useMemo(
+    () =>
+      lgas
+        .map((l) => {
+          const set = new Set<string>();
+          for (const s of stakeholders) {
+            if (s.lgaCode === l.code && s.stage !== 'reconciled' && s.stage !== 'refused') {
+              for (const w of s.carriesWardIds) set.add(w);
+            }
+          }
+          return {
+            lgaCode: l.code,
+            name: l.name,
+            wards: set.size,
+            openCases: stakeholders.filter(
+              (s) => s.lgaCode === l.code && s.stage !== 'reconciled' && s.stage !== 'refused'
+            ).length,
+          };
+        })
+        .sort((a, b) => b.wards - a.wards),
+    [stakeholders]
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return ranked.filter((s) => {
-      if (stageFilter !== 'all' && s.stage !== stageFilter) return false;
+      if (stageFilter === 'open' && (s.stage === 'reconciled' || s.stage === 'refused'))
+        return false;
+      else if (stageFilter === 'stalled' && !coldSet.has(s.id)) return false;
+      else if (
+        stageFilter !== 'all' &&
+        stageFilter !== 'open' &&
+        stageFilter !== 'stalled' &&
+        s.stage !== stageFilter
+      )
+        return false;
+
       if (lgaFilter !== 'all' && s.lgaCode !== lgaFilter) return false;
       if (q) {
         const lgaName = getLga(s.lgaCode)?.name.toLowerCase() ?? '';
@@ -86,7 +131,7 @@ export default function ReconciliationPage() {
       }
       return true;
     });
-  }, [ranked, stageFilter, lgaFilter, query]);
+  }, [ranked, stageFilter, lgaFilter, query, coldSet]);
 
   const activeStakeholder =
     drawer?.kind === 'stakeholder'
@@ -97,73 +142,147 @@ export default function ReconciliationPage() {
 
   const activeWard = drawer?.kind === 'ward' ? getWard(drawer.wardId) : undefined;
 
+  // Funnel stages (cumulative progress)
+  const funnelStages = [
+    { label: 'Identified+', value: summary.total },
+    {
+      label: 'Assigned+',
+      value: summary.total - summary.byStage.identified,
+    },
+    {
+      label: 'Engaged+',
+      value:
+        summary.byStage.engaged +
+        summary.byStage.ask_tabled +
+        summary.byStage.agreed +
+        summary.byStage.reconciled,
+    },
+    {
+      label: 'Agreed+',
+      value: summary.byStage.agreed + summary.byStage.reconciled,
+    },
+    { label: 'Reconciled', value: summary.byStage.reconciled },
+  ];
+
   return (
     <>
       <PageHeader
         eyebrow="Reconciliation · PDP & SDP Reunification"
         title="Unifying Kwara South behind one Senate ticket"
-        lede="Tap any pipeline stage card to filter, or tap any stakeholder to inspect their full contact log, carried wards, and advance their stage."
-        aside={
-          <div className="grid grid-cols-3 gap-4 rounded-lg border border-line bg-surface-raised px-4 py-3">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Open</div>
-              <div className="figure text-xl font-semibold text-ink">
-                {summary.total - summary.byStage.reconciled - summary.byStage.refused}
-              </div>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">At stake</div>
-              <div className="figure text-xl font-semibold text-aggrieved">
-                {summary.wardsAtStake}
-              </div>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Stalled</div>
-              <div className="figure text-xl font-semibold text-passive">
-                {summary.stalledCount}
-              </div>
-            </div>
-          </div>
-        }
+        lede="Tap any KPI card, LGA bar, or stakeholder below to filter the pipeline, inspect contact logs, and advance reconciliation stages live."
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
-        {/* Clickable Pipeline Stage Cards */}
-        <Panel title="Pipeline" note="Tap any stage to filter stakeholders">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">
-            {[...STAGE_ORDER, 'refused' as const].map((stage) => {
-              const active = stageFilter === stage;
-              return (
-                <button
-                  key={stage}
-                  type="button"
-                  onClick={() => setStageFilter((cur) => (cur === stage ? 'all' : stage))}
-                  className={`rounded-lg border px-3 py-2.5 text-left transition-all active:scale-[0.98] ${
-                    active
-                      ? 'border-accent/60 bg-accent/15'
-                      : 'border-line bg-surface-raised hover:border-line-bright'
-                  }`}
-                >
-                  <div className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
-                    {STAGE_LABELS[stage]}
-                  </div>
-                  <div className="figure mt-1 text-2xl font-semibold text-ink">
-                    {summary.byStage[stage]}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </Panel>
+        {/* TOP 6 CLICKABLE KPI NUMBER CARDS */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+          <InteractiveStatCard
+            label="Stakeholders"
+            value={summary.total}
+            sub="across 7 LGAs"
+            active={stageFilter === 'all'}
+            onClick={() => setStageFilter('all')}
+          />
+          <InteractiveStatCard
+            label="Open cases"
+            value={openCount}
+            sub="active negotiation"
+            active={stageFilter === 'open'}
+            onClick={() => setStageFilter((cur) => (cur === 'open' ? 'all' : 'open'))}
+          />
+          <InteractiveStatCard
+            label="Wards at stake"
+            value={summary.wardsAtStake}
+            tone="bad"
+            sub="carried by open blocs"
+            onClick={() => setStageFilter('open')}
+          />
+          <InteractiveStatCard
+            label="Stalled 14d+"
+            value={summary.stalledCount}
+            tone="warn"
+            sub="going cold · tap list"
+            active={stageFilter === 'stalled'}
+            onClick={() => setStageFilter((cur) => (cur === 'stalled' ? 'all' : 'stalled'))}
+          />
+          <InteractiveStatCard
+            label="Reconciled"
+            value={summary.byStage.reconciled}
+            tone="good"
+            sub={`${summary.wardsRecovered} wards recovered`}
+            active={stageFilter === 'reconciled'}
+            onClick={() => setStageFilter((cur) => (cur === 'reconciled' ? 'all' : 'reconciled'))}
+          />
+          <InteractiveStatCard
+            label="Recovery rate"
+            value={`${recoveryPct}%`}
+            tone="accent"
+            sub={`${summary.byStage.refused} refused`}
+            active={stageFilter === 'refused'}
+            onClick={() => setStageFilter((cur) => (cur === 'refused' ? 'all' : 'refused'))}
+          />
+        </div>
 
-        {/* Going cold — clickable pills */}
-        {cold.length > 0 && (
+        {/* ABOVE-THE-FOLD VISUAL DASHBOARD GRID */}
+        <div className="grid gap-4 lg:grid-cols-5">
           <Panel
-            title="Going cold"
-            note="Tap any stalling stakeholder to open their dossier"
+            title="Pipeline conversion"
+            note="Tap any stage card below to filter"
+            className="lg:col-span-3"
           >
+            <Funnel stages={funnelStages} />
+            <div className="mt-4 grid grid-cols-2 gap-2 border-t border-line pt-3 sm:grid-cols-4 lg:grid-cols-7">
+              {[...STAGE_ORDER, 'refused' as const].map((stage) => {
+                const active = stageFilter === stage;
+                return (
+                  <button
+                    key={stage}
+                    type="button"
+                    onClick={() => setStageFilter((cur) => (cur === stage ? 'all' : stage))}
+                    className={`rounded-md border px-2.5 py-2 text-left transition-all ${
+                      active
+                        ? 'border-accent/60 bg-accent/15'
+                        : 'border-line bg-surface-raised hover:border-line-bright'
+                    }`}
+                  >
+                    <div className="truncate text-[9px] uppercase tracking-[0.08em] text-ink-faint">
+                      {STAGE_LABELS[stage]}
+                    </div>
+                    <div className="figure mt-0.5 text-lg font-semibold text-ink">
+                      {summary.byStage[stage]}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </Panel>
+
+          <Panel
+            title="Wards at stake by LGA"
+            note="Tap any LGA to filter stakeholders"
+            className="lg:col-span-2"
+          >
+            <RankedBars
+              data={wardsByLga.map((x) => ({
+                id: x.lgaCode,
+                label: x.name,
+                value: x.wards,
+                note: `${x.openCases} open cases`,
+                color: lgaFilter === x.lgaCode ? SERIES[0] : '#d03b3b',
+              }))}
+              activeId={lgaFilter === 'all' ? null : lgaFilter}
+              onSelect={(d) =>
+                d.id && setLgaFilter((cur) => (cur === d.id ? 'all' : d.id!))
+              }
+              valueFormat={(n) => `${n} wards`}
+            />
+          </Panel>
+        </div>
+
+        {/* Going cold clickable pills */}
+        {cold.length > 0 && (
+          <Panel title="Going cold" note="Tap any stalling stakeholder to open their dossier">
             <div className="flex flex-wrap gap-2">
-              {cold.slice(0, 12).map((s) => {
+              {cold.slice(0, 10).map((s) => {
                 const days = daysSinceContact(s);
                 return (
                   <button
@@ -225,12 +344,11 @@ export default function ReconciliationPage() {
           />
         </div>
 
-        {/* Stakeholders — Mobile Card Stack + Desktop Clickable Table */}
+        {/* Stakeholders — Mobile Cards + Desktop Clickable Table */}
         <Panel
           title="By recovery weight"
           note={`${filtered.length} of ${ranked.length} stakeholders · tap any to open dossier`}
         >
-          {/* Mobile cards */}
           <div className="space-y-2.5 md:hidden">
             {filtered.slice(0, 40).map((s, i) => {
               const days = daysSinceContact(s);
@@ -258,9 +376,9 @@ export default function ReconciliationPage() {
                   <div className="mt-3 flex items-center justify-between border-t border-line pt-2 text-[11px]">
                     <span className="text-ink-muted">{ASK_LABELS[s.ask]}</span>
                     <div className="flex items-center gap-3">
-                      <span className="figure text-ink">{s.carriesWardIds.length} wards</span>
+                      <span className="figure text-ink">{s.carriesWardIds.length}w</span>
                       <span className="figure text-passive">
-                        {days === null ? 'no contact' : `${days}d ago`}
+                        {days === null ? 'no contact' : `${days}d`}
                       </span>
                       <span className="text-accent">›</span>
                     </div>
@@ -270,7 +388,6 @@ export default function ReconciliationPage() {
             })}
           </div>
 
-          {/* Desktop clickable table */}
           <div className="hidden overflow-x-auto md:block">
             <table className="w-full min-w-[780px]">
               <thead>
@@ -340,7 +457,6 @@ export default function ReconciliationPage() {
         </Panel>
       </div>
 
-      {/* Stakeholder / Nested Ward Dossier Drawer */}
       <DetailDrawer
         open={drawer !== null}
         onClose={() => setDrawer(null)}
@@ -372,7 +488,6 @@ export default function ReconciliationPage() {
       >
         {drawer?.kind === 'stakeholder' && activeStakeholder && (
           <div className="space-y-5">
-            {/* Stage switcher */}
             <div className="rounded-lg border border-line bg-surface-raised p-3.5">
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
@@ -400,7 +515,6 @@ export default function ReconciliationPage() {
               </div>
             </div>
 
-            {/* Key attributes */}
             <div className="grid grid-cols-2 gap-2.5">
               <div className="rounded-lg border border-line bg-surface-raised p-3">
                 <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Ask</div>
@@ -421,7 +535,6 @@ export default function ReconciliationPage() {
               </div>
             </div>
 
-            {/* Clickable Wards Carried */}
             <div>
               <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
                 Wards carried ({activeStakeholder.carriesWardIds.length}) — tap to inspect ward
@@ -453,7 +566,6 @@ export default function ReconciliationPage() {
               </div>
             </div>
 
-            {/* Contact Log Timeline */}
             <div>
               <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">
                 Contact log ({activeStakeholder.contactLog.length})

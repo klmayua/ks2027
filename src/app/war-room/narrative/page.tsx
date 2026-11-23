@@ -2,6 +2,14 @@
 
 import { useMemo, useState } from 'react';
 
+import {
+  DivergingBars,
+  Gauge,
+  InteractiveStatCard,
+  RankedBars,
+  SERIES,
+  StackedBar,
+} from '@/components/charts';
 import { DetailDrawer } from '@/components/detail-drawer';
 import { PageHeader, Panel } from '@/components/shell';
 import { FEDERAL_CONSTITUENCIES, type FederalConstituencyId } from '@/lib/geography';
@@ -79,7 +87,6 @@ export default function NarrativePage() {
   const claims = useMemo(() => seedClaims(), []);
   const initialResponses = useMemo(() => seedResponses(), []);
 
-  // Live human approval gate state (toggle approve / revoke on held drafts!)
   const [approvals, setApprovals] = useState<Record<string, boolean>>({});
   const [claimFilter, setClaimFilter] = useState<'all' | 'accelerating' | 'held' | 'conceded'>('all');
   const [fcFilter, setFcFilter] = useState<'all' | FederalConstituencyId>('all');
@@ -124,8 +131,13 @@ export default function NarrativePage() {
         topic: t,
         items: filteredMentions.filter((m) => m.topicId === t.id),
         breakdown: breakdown(filteredMentions.filter((m) => m.topicId === t.id)),
-      })).sort((a, b) => a.breakdown.net - b.breakdown.net),
+      })).sort((a, b) => b.breakdown.net - a.breakdown.net),
     [filteredMentions]
+  );
+
+  const acceleratingCount = useMemo(
+    () => claims.filter((c) => c.status !== 'dormant' && velocity(c) > 1.6).length,
+    [claims]
   );
 
   const rising = useMemo(() => {
@@ -146,9 +158,11 @@ export default function NarrativePage() {
   }, [claims, fcFilter, claimFilter, responses]);
 
   const awaitingApproval = responses.filter((r) => !isSendable(r));
+  const nonEnglishMentions = filteredMentions.filter((m) => m.language !== 'en');
   const nonEnglishShare = filteredMentions.length
-    ? filteredMentions.filter((m) => m.language !== 'en').length / filteredMentions.length
+    ? nonEnglishMentions.length / filteredMentions.length
     : 0;
+  const positiveShare = overall.total ? overall.positive / overall.total : 0;
 
   const activeClaim =
     drawer?.kind === 'claim' ? claims.find((c) => c.id === drawer.claimId) : undefined;
@@ -161,43 +175,208 @@ export default function NarrativePage() {
       <PageHeader
         eyebrow="Narrative & OSINT · Kwara South"
         title="Public sources only, human approval always"
-        lede="Tap any tracked claim, topic, language bar, or low-confidence mention to drill into raw source excerpts and operate the human approval gate."
-        aside={
-          <div className="grid grid-cols-3 gap-4 rounded-lg border border-line bg-surface-raised px-4 py-3">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Mentions</div>
-              <div className="figure text-xl font-semibold text-ink">{overall.total}</div>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Net</div>
-              <div
-                className={`figure text-xl font-semibold ${
-                  overall.net >= 0 ? 'text-aligned' : 'text-aggrieved'
-                }`}
-              >
-                {overall.net >= 0 ? '+' : ''}
-                {(overall.net * 100).toFixed(0)}
-              </div>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">Held</div>
-              <div className="figure text-xl font-semibold text-passive">
-                {awaitingApproval.length}
-              </div>
-            </div>
-          </div>
-        }
+        lede="Okin FM Offa, Harmony FM, Radio Kwara, Sobi FM, national dailies, public social, and ward returns. Every metric card, topic bar, and claim drills into raw evidence."
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
-        {/* Mobile-friendly Filter Bar */}
+        {/* TOP 6 CLICKABLE KPI NUMBER CARDS — matches Overview command rhythm */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+          <InteractiveStatCard
+            label="Public mentions"
+            value={overall.total}
+            sub="last 14 days · tap feed"
+            onClick={() =>
+              setDrawer({
+                kind: 'mentions',
+                title: 'All monitored public mentions',
+                subtitle: `${overall.total} items across Kwara South outlets`,
+                items: filteredMentions,
+              })
+            }
+          />
+          <InteractiveStatCard
+            label="Net sentiment"
+            value={`${overall.net >= 0 ? '+' : ''}${(overall.net * 100).toFixed(0)}`}
+            tone={overall.net >= 0 ? 'good' : 'bad'}
+            sub={`+${overall.positive} pos · −${overall.negative} neg`}
+            onClick={() =>
+              setDrawer({
+                kind: 'mentions',
+                title: 'Negative mentions driving risk',
+                subtitle: `${overall.negative} negative items across monitored topics`,
+                items: filteredMentions.filter((m) => m.sentiment === 'negative'),
+              })
+            }
+          />
+          <InteractiveStatCard
+            label="Accelerating"
+            value={acceleratingCount}
+            tone="bad"
+            sub={`of ${claims.length} tracked claims`}
+            active={claimFilter === 'accelerating'}
+            onClick={() =>
+              setClaimFilter((cur) => (cur === 'accelerating' ? 'all' : 'accelerating'))
+            }
+          />
+          <InteractiveStatCard
+            label="Held at gate"
+            value={awaitingApproval.length}
+            tone={awaitingApproval.length > 0 ? 'warn' : 'good'}
+            sub={awaitingApproval.length > 0 ? 'tap to review & approve' : 'all signed off'}
+            onClick={() => {
+              if (awaitingApproval[0]) {
+                setDrawer({ kind: 'claim', claimId: awaitingApproval[0].claimId });
+              } else {
+                setClaimFilter('all');
+              }
+            }}
+          />
+          <InteractiveStatCard
+            label="Non-English"
+            value={`${Math.round(nonEnglishShare * 100)}%`}
+            tone="accent"
+            sub="Yoruba · Pidgin · Fulfulde"
+            onClick={() =>
+              setDrawer({
+                kind: 'mentions',
+                title: 'Non-English Kwara South discourse',
+                subtitle: `${nonEnglishMentions.length} Yoruba, Pidgin, and Fulfulde items`,
+                items: nonEnglishMentions,
+              })
+            }
+          />
+          <InteractiveStatCard
+            label="Human review"
+            value={uncertain.length}
+            tone="warn"
+            sub="below 65% confidence"
+            onClick={() =>
+              setDrawer({
+                kind: 'mentions',
+                title: 'Low-confidence human review queue',
+                subtitle: `${uncertain.length} mentions routed to human analysts`,
+                items: uncertain,
+              })
+            }
+          />
+        </div>
+
+        {/* ABOVE-THE-FOLD VISUAL DASHBOARD GRID */}
+        <div className="grid gap-4 lg:grid-cols-5">
+          <Panel
+            title="Topic net sentiment"
+            note="Tap any topic bar to read its raw public mentions"
+            className="lg:col-span-3"
+          >
+            <DivergingBars
+              data={topicRows.map(({ topic, breakdown: b }) => ({
+                id: topic.id,
+                label: topic.label,
+                value: b.net * 100,
+                note: `${b.total} mentions · ${topic.origin}`,
+              }))}
+              format={(n) => `${n > 0 ? '+' : ''}${n.toFixed(0)}`}
+              onSelect={(d) => {
+                const hit = topicRows.find((t) => t.topic.id === d.id);
+                if (hit) {
+                  setDrawer({
+                    kind: 'mentions',
+                    title: hit.topic.label,
+                    subtitle: `${hit.breakdown.total} mentions · Origin: ${hit.topic.origin}`,
+                    items: hit.items,
+                  });
+                }
+              }}
+            />
+          </Panel>
+
+          <Panel
+            title="Sentiment balance & constituency pulse"
+            note="Tap constituency to filter"
+            className="lg:col-span-2"
+          >
+            <div className="flex flex-wrap items-center gap-4 sm:gap-5">
+              <Gauge
+                value={positiveShare}
+                label="Positive share"
+                tone={overall.net >= 0.1 ? 'good' : overall.net >= 0 ? 'warn' : 'bad'}
+              />
+              <div className="min-w-[140px] flex-1 space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="flex items-center gap-1.5 text-ink-muted">
+                    <span className="size-2 rounded-sm bg-aligned" /> Positive
+                  </span>
+                  <span className="figure font-semibold text-aligned">{overall.positive}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="flex items-center gap-1.5 text-ink-muted">
+                    <span className="size-2 rounded-sm bg-unknown" /> Neutral
+                  </span>
+                  <span className="figure font-semibold text-ink">{overall.neutral}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="flex items-center gap-1.5 text-ink-muted">
+                    <span className="size-2 rounded-sm bg-aggrieved" /> Negative
+                  </span>
+                  <span className="figure font-semibold text-aggrieved">{overall.negative}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <StackedBar
+                showLabels
+                segments={[
+                  { label: 'Positive', value: overall.positive, color: '#16a34a' },
+                  { label: 'Neutral', value: overall.neutral, color: '#64748b' },
+                  { label: 'Negative', value: overall.negative, color: '#d03b3b' },
+                ]}
+              />
+            </div>
+
+            <div className="mt-4 space-y-2 border-t border-line pt-3">
+              {constituencies.map(({ constituencyId, breakdown: b }) => {
+                const fc = FEDERAL_CONSTITUENCIES.find((x) => x.id === constituencyId);
+                return (
+                  <button
+                    key={constituencyId}
+                    type="button"
+                    onClick={() =>
+                      setFcFilter((cur) => (cur === constituencyId ? 'all' : constituencyId))
+                    }
+                    className={`flex w-full items-center justify-between rounded-md border px-3 py-2 text-left text-xs transition-colors ${
+                      fcFilter === constituencyId
+                        ? 'border-accent/60 bg-accent/15'
+                        : 'border-line bg-surface-raised hover:border-line-bright'
+                    }`}
+                  >
+                    <span className="font-medium text-ink">{fc?.shortName}</span>
+                    <span className="flex items-center gap-2">
+                      <span className="figure text-[10px] text-ink-faint">{b.total}m</span>
+                      <span
+                        className={`figure font-semibold ${
+                          b.net >= 0 ? 'text-aligned' : 'text-aggrieved'
+                        }`}
+                      >
+                        {b.net >= 0 ? '+' : ''}
+                        {(b.net * 100).toFixed(0)}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </Panel>
+        </div>
+
+        {/* FILTER STRIP + 2-COLUMN CLICKABLE TRACKED CLAIM CARDS */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
             {(
               [
                 ['all', `All claims (${claims.length})`],
-                ['accelerating', 'Accelerating'],
-                ['held', `Awaiting approval (${awaitingApproval.length})`],
+                ['accelerating', `Accelerating (${acceleratingCount})`],
+                ['held', `Held at gate (${awaitingApproval.length})`],
                 ['conceded', 'Conceded'],
               ] as const
             ).map(([id, label]) => (
@@ -215,33 +394,22 @@ export default function NarrativePage() {
               </button>
             ))}
           </div>
-
-          <div className="flex flex-wrap gap-1.5">
-            {(
-              [
-                ['all', 'All Kwara South'],
-                ...FEDERAL_CONSTITUENCIES.map((fc) => [fc.id, fc.shortName] as const),
-              ] as const
-            ).map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                onClick={() => setFcFilter(id as 'all' | FederalConstituencyId)}
-                className={`rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors ${
-                  fcFilter === id
-                    ? 'border-accent/60 bg-accent/15 text-accent'
-                    : 'border-line bg-surface text-ink-muted hover:text-ink'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+          {fcFilter !== 'all' && (
+            <button
+              type="button"
+              onClick={() => setFcFilter('all')}
+              className="rounded-md border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] text-accent"
+            >
+              Clear constituency filter ✕
+            </button>
+          )}
         </div>
 
-        {/* Deep Clickable Tracked Claim Cards */}
-        <Panel title="Tracked claims" note="Ranked by acceleration · tap any claim to inspect & approve">
-          <div className="space-y-3">
+        <Panel
+          title="Tracked claims"
+          note="Tap any claim card to inspect velocity curve & operate approval gate"
+        >
+          <div className="grid gap-3 lg:grid-cols-2">
             {rising.length === 0 ? (
               <p className="text-xs text-ink-muted">No claims match the current filter.</p>
             ) : (
@@ -253,11 +421,11 @@ export default function NarrativePage() {
                     key={claim.id}
                     type="button"
                     onClick={() => setDrawer({ kind: 'claim', claimId: claim.id })}
-                    className="group block w-full rounded-lg border border-line bg-surface-raised p-4 text-left transition-all hover:border-accent/50 hover:bg-ground/40 active:scale-[0.995]"
+                    className="group flex flex-col justify-between rounded-lg border border-line bg-surface-raised p-4 text-left transition-all hover:border-accent/50 hover:bg-ground/40 active:scale-[0.995]"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
+                    <div>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex flex-wrap items-center gap-1.5">
                           <span
                             className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${STATUS_TONE[claim.status]}`}
                           >
@@ -270,49 +438,39 @@ export default function NarrativePage() {
                           </span>
                           {v > 1.6 && (
                             <span className="rounded-sm bg-aggrieved/15 px-1.5 py-px text-[9px] font-semibold uppercase tracking-[0.1em] text-aggrieved">
-                              Accelerating ×{v.toFixed(1)}
+                              ×{v.toFixed(1)}
                             </span>
                           )}
                         </div>
-                        <p className="mt-2 text-sm font-medium leading-relaxed text-ink">
-                          {claim.statement}
-                        </p>
-                        <p className="mt-1.5 text-[11px] text-ink-faint">
-                          {claim.firstSeenSource} · {totalMentions(claim)} mentions ·{' '}
-                          {claim.languages.map((l) => l.toUpperCase()).join('/')} ·{' '}
-                          {claim.constituencyIds
-                            .map(
-                              (id) =>
-                                FEDERAL_CONSTITUENCIES.find((x) => x.id === id)?.shortName ?? id
-                            )
-                            .join(', ')}
-                        </p>
-                      </div>
-                      <div className="flex shrink-0 flex-col items-end gap-2">
                         <Spark values={claim.dailyMentions} />
-                        <span className="text-[11px] text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
-                          Inspect ›
-                        </span>
                       </div>
+                      <p className="mt-2.5 text-sm font-medium leading-snug text-ink">
+                        {claim.statement}
+                      </p>
+                      <p className="mt-1.5 text-[11px] text-ink-faint">
+                        {claim.firstSeenSource} · {totalMentions(claim)} mentions ·{' '}
+                        {claim.languages.map((l) => l.toUpperCase()).join('/')}
+                      </p>
                     </div>
 
-                    {response && (
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-line pt-2.5 text-[11px]">
-                        <span className="text-ink-muted">
-                          {CHANNEL_LABELS[response.channel]} ·{' '}
-                          {response.draftedBy === 'ai_assisted' ? 'AI-assisted' : 'Human'}
-                        </span>
-                        {response.approval ? (
+                    <div className="mt-3 flex items-center justify-between gap-2 border-t border-line pt-2.5 text-[11px]">
+                      {response ? (
+                        response.approval ? (
                           <span className="font-medium text-aligned">
                             ✓ Approved ({response.approval.byRole})
                           </span>
                         ) : (
                           <span className="font-semibold text-passive">
-                            ● Held — tap to review &amp; approve
+                            ● Held — tap to approve
                           </span>
-                        )}
-                      </div>
-                    )}
+                        )
+                      ) : (
+                        <span className="text-ink-faint">Monitoring</span>
+                      )}
+                      <span className="text-ink-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
+                        Inspect ›
+                      </span>
+                    </div>
                   </button>
                 );
               })
@@ -320,163 +478,37 @@ export default function NarrativePage() {
           </div>
         </Panel>
 
-        {/* Topics + Constituencies */}
-        <div className="grid gap-4 lg:grid-cols-3">
+        {/* LANGUAGE BREAKDOWN + HUMAN REVIEW QUEUE */}
+        <div className="grid gap-4 lg:grid-cols-2">
           <Panel
-            title="Topics"
-            note="Tap any topic to inspect raw mentions"
-            className="lg:col-span-2"
+            title="Mentions by language"
+            note={`${Math.round(nonEnglishShare * 100)}% non-English · tap any bar`}
           >
-            <div className="space-y-1.5">
-              {topicRows.map(({ topic, items, breakdown: b }) => (
-                <button
-                  key={topic.id}
-                  type="button"
-                  onClick={() =>
-                    setDrawer({
-                      kind: 'mentions',
-                      title: topic.label,
-                      subtitle: `${b.total} public mentions · Origin: ${topic.origin}`,
-                      items,
-                    })
-                  }
-                  className="group flex w-full flex-wrap items-center justify-between gap-3 rounded-lg border border-transparent px-2.5 py-2.5 text-left transition-colors hover:border-line hover:bg-surface-raised"
-                >
-                  <div className="min-w-0 flex-1">
-                    <div className="text-sm font-medium text-ink">{topic.label}</div>
-                    <div className="mt-0.5 flex items-center gap-2 text-[10px] uppercase tracking-[0.1em]">
-                      <span
-                        className={
-                          topic.origin === 'opponent'
-                            ? 'text-aggrieved'
-                            : topic.origin === 'campaign'
-                              ? 'text-aligned'
-                              : 'text-ink-faint'
-                        }
-                      >
-                        {topic.origin}
-                      </span>
-                      <span className="figure text-ink-faint">{b.total} mentions</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-2 w-24 overflow-hidden rounded-sm">
-                      <span
-                        className="bg-aligned"
-                        style={{ width: `${(b.positive / (b.total || 1)) * 100}%` }}
-                      />
-                      <span
-                        className="bg-unknown"
-                        style={{ width: `${(b.neutral / (b.total || 1)) * 100}%` }}
-                      />
-                      <span
-                        className="bg-aggrieved"
-                        style={{ width: `${(b.negative / (b.total || 1)) * 100}%` }}
-                      />
-                    </div>
-                    <span
-                      className={`figure w-10 text-right text-sm font-semibold ${
-                        b.net >= 0 ? 'text-aligned' : 'text-aggrieved'
-                      }`}
-                    >
-                      {b.net >= 0 ? '+' : ''}
-                      {(b.net * 100).toFixed(0)}
-                    </span>
-                    <span className="text-ink-faint group-hover:text-accent">›</span>
-                  </div>
-                </button>
-              ))}
-            </div>
+            <RankedBars
+              data={languages.map(({ language, count }) => ({
+                id: language,
+                label: LANGUAGE_LABELS[language].split(' ')[0],
+                value: count,
+                note: `${Math.round((count / (filteredMentions.length || 1)) * 100)}% share`,
+                color: language === 'yo' ? SERIES[0] : language === 'en' ? SERIES[1] : SERIES[2],
+              }))}
+              onSelect={(d) => {
+                const lang = d.id as Language;
+                setDrawer({
+                  kind: 'mentions',
+                  title: `${LANGUAGE_LABELS[lang]} mentions`,
+                  subtitle: `${d.value} monitored public items`,
+                  items: filteredMentions.filter((m) => m.language === lang),
+                });
+              }}
+            />
           </Panel>
 
-          <Panel title="By federal constituency" note="Tap to filter">
-            <div className="space-y-3">
-              {constituencies.map(({ constituencyId, breakdown: b }) => {
-                const fc = FEDERAL_CONSTITUENCIES.find((x) => x.id === constituencyId);
-                return (
-                  <button
-                    key={constituencyId}
-                    type="button"
-                    onClick={() =>
-                      setFcFilter((cur) => (cur === constituencyId ? 'all' : constituencyId))
-                    }
-                    className={`block w-full rounded-lg border p-3 text-left transition-colors ${
-                      fcFilter === constituencyId
-                        ? 'border-accent/50 bg-accent/10'
-                        : 'border-line bg-surface-raised hover:border-line-bright'
-                    }`}
-                  >
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-xs font-medium text-ink">{fc?.name}</span>
-                      <span
-                        className={`figure text-sm font-semibold ${
-                          b.net >= 0 ? 'text-aligned' : 'text-aggrieved'
-                        }`}
-                      >
-                        {b.net >= 0 ? '+' : ''}
-                        {(b.net * 100).toFixed(0)}
-                      </span>
-                    </div>
-                    <div className="mt-2 flex h-2 overflow-hidden rounded-sm">
-                      <span
-                        className="bg-aligned"
-                        style={{ width: `${(b.positive / (b.total || 1)) * 100}%` }}
-                      />
-                      <span
-                        className="bg-unknown"
-                        style={{ width: `${(b.neutral / (b.total || 1)) * 100}%` }}
-                      />
-                      <span
-                        className="bg-aggrieved"
-                        style={{ width: `${(b.negative / (b.total || 1)) * 100}%` }}
-                      />
-                    </div>
-                    <div className="figure mt-1.5 text-[10px] text-ink-faint">
-                      {b.total} mentions · +{b.positive} / {b.neutral} / −{b.negative}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </Panel>
-        </div>
-
-        {/* Language + Human Review Queue + Approval Gate */}
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Panel title="Language" note={`${Math.round(nonEnglishShare * 100)}% non-English · tap to inspect`}>
-            <div className="space-y-1.5">
-              {languages.map(({ language, count }) => (
-                <button
-                  key={language}
-                  type="button"
-                  onClick={() =>
-                    setDrawer({
-                      kind: 'mentions',
-                      title: `${LANGUAGE_LABELS[language]} mentions`,
-                      subtitle: `${count} monitored public items`,
-                      items: filteredMentions.filter((m) => m.language === language),
-                    })
-                  }
-                  className="group flex w-full items-center gap-3 rounded-md px-2 py-2 text-left transition-colors hover:bg-surface-raised"
-                >
-                  <span className="w-32 shrink-0 truncate text-[11px] text-ink-muted">
-                    {LANGUAGE_LABELS[language]}
-                  </span>
-                  <div className="h-2 flex-1 overflow-hidden rounded-sm bg-surface-raised">
-                    <div
-                      className="h-full bg-accent"
-                      style={{ width: `${(count / (filteredMentions.length || 1)) * 100}%` }}
-                    />
-                  </div>
-                  <span className="figure w-8 shrink-0 text-right text-xs text-ink">{count}</span>
-                  <span className="text-ink-faint group-hover:text-accent">›</span>
-                </button>
-              ))}
-            </div>
-          </Panel>
-
-          <Panel title="Needs a human read" note={`${uncertain.length} low-confidence`}>
-            <div className="space-y-2">
+          <Panel
+            title="Human review queue"
+            note={`${uncertain.length} low-confidence · tap any card`}
+          >
+            <div className="grid gap-2 sm:grid-cols-2">
               {uncertain.slice(0, 4).map((m) => (
                 <button
                   key={m.id}
@@ -489,13 +521,13 @@ export default function NarrativePage() {
                       items: uncertain,
                     })
                   }
-                  className="block w-full rounded-lg border border-line bg-surface-raised px-3 py-2.5 text-left transition-colors hover:border-passive/50"
+                  className="rounded-lg border border-line bg-surface-raised p-3 text-left transition-colors hover:border-passive/60"
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.1em] text-ink-faint">
-                      {SOURCE_LABELS[m.sourceKind]} · {m.sourceName}
+                    <span className="truncate text-[10px] uppercase tracking-[0.1em] text-ink-faint">
+                      {m.sourceName}
                     </span>
-                    <span className="figure text-[10px] text-passive">
+                    <span className="figure shrink-0 text-[10px] font-semibold text-passive">
                       {(m.confidence * 100).toFixed(0)}%
                     </span>
                   </div>
@@ -505,39 +537,6 @@ export default function NarrativePage() {
                 </button>
               ))}
             </div>
-          </Panel>
-
-          <Panel title="Approval gate" note={`${awaitingApproval.length} held`}>
-            {awaitingApproval.length === 0 ? (
-              <div className="rounded-lg border border-aligned/30 bg-aligned/5 p-3.5 text-xs text-aligned">
-                All drafted responses currently carry named sign-off.
-              </div>
-            ) : (
-              <div className="space-y-2">
-                {awaitingApproval.map((r) => (
-                  <button
-                    key={r.id}
-                    type="button"
-                    onClick={() => setDrawer({ kind: 'claim', claimId: r.claimId })}
-                    className="block w-full rounded-lg border border-passive/40 bg-passive/5 px-3 py-2.5 text-left transition-colors hover:border-passive"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-passive">
-                        {CHANNEL_LABELS[r.channel]} · held
-                      </span>
-                      <span className="text-[11px] text-accent">Review ›</span>
-                    </div>
-                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-ink-muted">
-                      {r.draft}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            )}
-            <p className="mt-3 border-t border-line pt-3 text-xs leading-relaxed text-ink-muted">
-              <code className="text-ink">assertSendable()</code> throws on any response without a
-              named sign-off. Tap a held draft above to operate the gate.
-            </p>
           </Panel>
         </div>
       </div>
@@ -568,7 +567,6 @@ export default function NarrativePage() {
       >
         {drawer?.kind === 'claim' && activeClaim && (
           <div className="space-y-5">
-            {/* Daily mention velocity chart */}
             <div className="rounded-lg border border-line bg-surface-raised p-4">
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
@@ -601,12 +599,12 @@ export default function NarrativePage() {
               </div>
             </div>
 
-            {/* Response & Human Approval Gate */}
             {activeResponse ? (
               <div className="rounded-lg border border-line bg-surface-raised p-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">
-                    {CHANNEL_LABELS[activeResponse.channel]} · {LANGUAGE_LABELS[activeResponse.language]}
+                    {CHANNEL_LABELS[activeResponse.channel]} ·{' '}
+                    {LANGUAGE_LABELS[activeResponse.language]}
                   </span>
                   <span
                     className={`rounded-sm border px-1.5 py-px text-[9px] font-semibold uppercase tracking-[0.1em] ${
@@ -623,7 +621,8 @@ export default function NarrativePage() {
 
                 {activeResponse.citations.length > 0 ? (
                   <div className="mt-3 text-[11px] text-ink-muted">
-                    Citations: <span className="text-ink">{activeResponse.citations.join(' · ')}</span>
+                    Citations:{' '}
+                    <span className="text-ink">{activeResponse.citations.join(' · ')}</span>
                   </div>
                 ) : (
                   <div className="mt-3 rounded border border-aggrieved/30 bg-aggrieved/5 px-3 py-2 text-[11px] text-aggrieved">
@@ -662,7 +661,8 @@ export default function NarrativePage() {
               </div>
             ) : (
               <div className="rounded-lg border border-dashed border-line-bright p-4 text-xs text-ink-muted">
-                No response drafted yet. Claim is under active monitoring across Kwara South outlets.
+                No response drafted yet. Claim is under active monitoring across Kwara South
+                outlets.
               </div>
             )}
           </div>

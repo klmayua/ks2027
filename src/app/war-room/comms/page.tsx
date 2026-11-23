@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 
 import {
   Funnel,
+  InteractiveStatCard,
   Legend,
   RankedBars,
   SERIES,
@@ -110,8 +111,8 @@ export default function DirectivesPage() {
             title: !featuredScope.has(w.id)
               ? `${w.name} — not addressed`
               : ackedWards.has(w.id)
-                ? `${w.name} — Confirmed · click for officer details`
-                : `${w.name} — Silent · click to inspect chase record`,
+                ? `${w.name} — Confirmed · click for details`
+                : `${w.name} — Silent · click to chase`,
           })),
       };
     })
@@ -128,7 +129,8 @@ export default function DirectivesPage() {
     .filter((r) => r.silent > 0)
     .sort((x, y) => y.silent * y.votes - x.silent * x.votes);
 
-  const withProof = completions.filter((c) => c.proof).length;
+  const withProofList = completions.filter((c) => c.proof);
+  const withProof = withProofList.length;
   const channelCounts = channels.reduce<Record<string, number>>((acc, c) => {
     acc[c.level] = (acc[c.level] ?? 0) + 1;
     return acc;
@@ -143,18 +145,56 @@ export default function DirectivesPage() {
       <PageHeader
         eyebrow="Directives · 83 Kwara South wards"
         title="One channel that can be proved"
-        lede="Select any issued directive below to inspect its live acknowledgement funnel, 72-hour arrival curve, silent ward chase list, and geotagged field returns."
-        aside={
-          <div className="flex w-full flex-wrap gap-x-6 gap-y-3 rounded-lg border border-line bg-surface-raised px-4 py-3 sm:px-5 lg:w-auto">
-            <Stat label="Issued" value={directives.length} size="sm" />
-            <Stat label="Channels" value={channels.length} size="sm" sub="auto-derived" />
-            <Stat label="Geotagged proofs" value={withProof} tone="good" size="sm" />
-          </div>
-        }
+        lede="Select any issued directive or tap any KPI card below to inspect confirmation funnels, 72-hour curves, silent wards, and geotagged field proofs."
       />
 
       <div className="space-y-4 p-4 sm:p-6 lg:p-8">
-        {/* Directive selector strip — thumb-friendly switcher */}
+        {/* TOP 6 CLICKABLE KPI NUMBER CARDS */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+          <InteractiveStatCard
+            label="Directives issued"
+            value={directives.length}
+            sub="verified circulars"
+            onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
+          />
+          <InteractiveStatCard
+            label="Wards targeted"
+            value={fc.targetWards}
+            sub={featured.reference}
+            onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
+          />
+          <InteractiveStatCard
+            label="Confirmed rate"
+            value={pct(fc.rate)}
+            tone={fc.rate >= 0.7 ? 'good' : 'warn'}
+            sub={`${fc.acknowledged} confirmed`}
+            onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
+          />
+          <InteractiveStatCard
+            label="Silent wards"
+            value={fc.silentWardIds.length}
+            tone="bad"
+            sub="tap chase list"
+            onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
+          />
+          <InteractiveStatCard
+            label="Geotagged proofs"
+            value={withProof}
+            tone="accent"
+            sub="field photo returns"
+            onClick={() =>
+              withProofList[0] && setDrawer({ kind: 'proof', completion: withProofList[0] })
+            }
+          />
+          <InteractiveStatCard
+            label="Auto-channels"
+            value={channels.length}
+            sub="role-derived"
+            onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
+          />
+        </div>
+
+        {/* Directive selector strip */}
         <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
           {sortedDirectives.map((d) => {
             const c = coverage.get(d.id)!;
@@ -178,7 +218,7 @@ export default function DirectivesPage() {
           })}
         </div>
 
-        {/* Funnel + 72h curve for active directive */}
+        {/* Funnel + 72h curve */}
         <div className="grid gap-4 lg:grid-cols-5">
           <Panel
             title="Where this directive loses people"
@@ -210,10 +250,6 @@ export default function DirectivesPage() {
                 { label: 'Proof submitted', value: fc.completionsWithProof },
               ]}
             />
-            <p className="mt-3 border-t border-line pt-3 text-xs text-ink-muted">
-              Scope: <span className="text-ink">{describeScope(featured.scope)}</span> · Issued by{' '}
-              <span className="text-ink">{featured.issuedByRole}</span>.
-            </p>
           </Panel>
 
           <Panel
@@ -242,12 +278,12 @@ export default function DirectivesPage() {
               onClick={() => setDrawer({ kind: 'directive', id: featured.id })}
               className="mt-3 w-full rounded-lg border border-line bg-surface-raised py-2 text-xs font-medium text-ink transition-colors hover:border-accent/50 hover:text-accent"
             >
-              View all {fc.silentWardIds.length} silent wards to chase ›
+              View all {fc.silentWardIds.length} silent wards ›
             </button>
           </Panel>
         </div>
 
-        {/* Interactive Mosaic (Desktop) + Clickable LGA Cards (Mobile) */}
+        {/* Mosaic + Mobile LGA cards */}
         <Panel
           title="Who confirmed, sized by weight"
           note="Tap any LGA or ward block to inspect confirmation status"
@@ -277,7 +313,6 @@ export default function DirectivesPage() {
             />
           </div>
 
-          {/* Mobile tappable LGA confirmation cards */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
             {rows.map((r) => {
               const lgaRow = fc.byLga.find((x) => x.lgaCode === r.id);
@@ -324,7 +359,7 @@ export default function DirectivesPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <Panel title="Chase list" note="Tap any LGA to see silent wards">
             {worst.length === 0 ? (
-              <p className="text-xs text-aligned">Every addressed ward has confirmed this directive.</p>
+              <p className="text-xs text-aligned">Every addressed ward confirmed.</p>
             ) : (
               <RankedBars
                 data={worst.map((w) => ({
@@ -370,66 +405,59 @@ export default function DirectivesPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-3 border-t border-line pt-3 text-xs text-ink-muted">
-              Revoking a ward office revokes the channel with it. No forged WhatsApp circulars.
-            </p>
           </Panel>
         </div>
 
-        {/* Issued Directives — Tappable Cards on Mobile, Clickable Rows on Desktop */}
-        <Panel title="Issued directives" note="Tap any directive to focus the dashboard or read full text">
+        {/* Issued Directives */}
+        <Panel title="Issued directives" note="Tap any directive to focus dashboard & read text">
           <div className="space-y-2.5 md:hidden">
             {sortedDirectives.map((d) => {
               const c = coverage.get(d.id)!;
               const isSelected = d.id === featured.id;
               return (
-                <div
+                <button
                   key={d.id}
-                  className={`rounded-lg border p-3.5 transition-colors ${
+                  type="button"
+                  onClick={() => {
+                    setSelectedId(d.id);
+                    setDrawer({ kind: 'directive', id: d.id });
+                  }}
+                  className={`block w-full rounded-lg border p-3.5 text-left transition-colors ${
                     isSelected
                       ? 'border-accent/60 bg-accent/10'
                       : 'border-line bg-surface-raised'
                   }`}
                 >
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedId(d.id);
-                      setDrawer({ kind: 'directive', id: d.id });
-                    }}
-                    className="block w-full text-left"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span
-                        className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${PRIORITY_TONE[d.priority]}`}
-                      >
-                        {PRIORITY_LABELS[d.priority]}
-                      </span>
-                      <span className="figure text-[10px] text-ink-faint">
-                        {d.reference} · {timeAgo(d.issuedAt)}
-                      </span>
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${PRIORITY_TONE[d.priority]}`}
+                    >
+                      {PRIORITY_LABELS[d.priority]}
+                    </span>
+                    <span className="figure text-[10px] text-ink-faint">
+                      {d.reference} · {timeAgo(d.issuedAt)}
+                    </span>
+                  </div>
+                  <div className="mt-2 text-sm font-medium text-ink">{d.title}</div>
+                  <div className="mt-1 text-[11px] text-ink-muted">{describeScope(d.scope)}</div>
+                  <div className="mt-2.5 flex items-center gap-2">
+                    <div className="flex-1">
+                      <StackedBar
+                        height="h-2"
+                        segments={[
+                          { label: 'Confirmed', value: c.acknowledged, color: ACK_COLOR.acked },
+                          {
+                            label: 'Silent',
+                            value: c.targetWards - c.acknowledged,
+                            color: ACK_COLOR.silent,
+                          },
+                        ]}
+                      />
                     </div>
-                    <div className="mt-2 text-sm font-medium text-ink">{d.title}</div>
-                    <div className="mt-1 text-[11px] text-ink-muted">{describeScope(d.scope)}</div>
-                    <div className="mt-2.5 flex items-center gap-2">
-                      <div className="flex-1">
-                        <StackedBar
-                          height="h-2"
-                          segments={[
-                            { label: 'Confirmed', value: c.acknowledged, color: ACK_COLOR.acked },
-                            {
-                              label: 'Silent',
-                              value: c.targetWards - c.acknowledged,
-                              color: ACK_COLOR.silent,
-                            },
-                          ]}
-                        />
-                      </div>
-                      <span className="figure text-xs text-ink">{pct(c.rate)}</span>
-                      <span className="text-accent">›</span>
-                    </div>
-                  </button>
-                </div>
+                    <span className="figure text-xs text-ink">{pct(c.rate)}</span>
+                    <span className="text-accent">›</span>
+                  </div>
+                </button>
               );
             })}
           </div>
@@ -516,43 +544,38 @@ export default function DirectivesPage() {
           </div>
         </Panel>
 
-        {/* Clickable Field Returns */}
-        <Panel title="Field returns" note={`${withProof} geotagged · tap any card to inspect proof`}>
+        <Panel title="Field returns" note={`${withProof} geotagged · tap any card`}>
           <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-            {completions
-              .filter((c) => c.proof)
-              .slice(0, 6)
-              .map((c, i) => {
-                const ward = getWard(c.wardId);
-                return (
-                  <button
-                    key={`${c.directiveId}-${c.wardId}-${i}`}
-                    type="button"
-                    onClick={() => setDrawer({ kind: 'proof', completion: c })}
-                    className="group rounded-lg border border-line bg-surface-raised px-3.5 py-3 text-left transition-colors hover:border-accent/50 active:scale-[0.99]"
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="line-clamp-2 text-xs font-medium text-ink">
-                        {c.proof!.caption}
-                      </span>
-                      <span className="text-ink-faint group-hover:text-accent">›</span>
-                    </div>
-                    <div className="mt-2 flex items-center justify-between gap-2">
-                      <span className="truncate text-[11px] text-ink-faint">
-                        {ward?.name} · {c.byPersonName}
-                      </span>
-                      <span className="figure shrink-0 text-[10px] text-reconciled">
-                        ±{c.proof!.accuracyMetres}m
-                      </span>
-                    </div>
-                  </button>
-                );
-              })}
+            {withProofList.slice(0, 6).map((c, i) => {
+              const ward = getWard(c.wardId);
+              return (
+                <button
+                  key={`${c.directiveId}-${c.wardId}-${i}`}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'proof', completion: c })}
+                  className="group rounded-lg border border-line bg-surface-raised px-3.5 py-3 text-left transition-colors hover:border-accent/50 active:scale-[0.99]"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="line-clamp-2 text-xs font-medium text-ink">
+                      {c.proof!.caption}
+                    </span>
+                    <span className="text-ink-faint group-hover:text-accent">›</span>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <span className="truncate text-[11px] text-ink-faint">
+                      {ward?.name} · {c.byPersonName}
+                    </span>
+                    <span className="figure shrink-0 text-[10px] text-reconciled">
+                      ±{c.proof!.accuracyMetres}m
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </Panel>
       </div>
 
-      {/* Deep Drawer for Directive, LGA, Ward, or Proof */}
       <DetailDrawer
         open={drawer !== null}
         onClose={() => setDrawer(null)}
@@ -599,7 +622,6 @@ export default function DirectivesPage() {
                 {drawerDirective.task && (
                   <div className="mt-3 rounded border border-accent/30 bg-accent/10 px-3 py-2 text-xs text-accent">
                     Required return: {drawerDirective.task.instruction}
-                    {drawerDirective.task.requiresProof && ' (Geotagged photograph mandatory)'}
                   </div>
                 )}
               </div>
@@ -636,9 +658,6 @@ export default function DirectivesPage() {
 
         {drawer?.kind === 'lga' && (
           <div className="space-y-2">
-            <p className="text-xs text-ink-muted">
-              Showing ward-by-ward confirmation for <strong className="text-ink">{featured.title}</strong>.
-            </p>
             {wardsInLga(drawer.lgaCode).map((w) => {
               const inScope = featuredScope.has(w.id);
               const ack = featuredAcks.find((a) => a.wardId === w.id);
@@ -656,7 +675,7 @@ export default function DirectivesPage() {
                         ? `Confirmed by ${ack.byPersonName} (${ack.byRole})`
                         : inScope
                           ? 'No confirmation received yet'
-                          : 'Not addressed by this directive'}
+                          : 'Not addressed'}
                     </div>
                   </div>
                   <span
@@ -725,40 +744,38 @@ export default function DirectivesPage() {
         })()}
 
         {drawer?.kind === 'proof' && drawer.completion.proof && (
-          <div className="space-y-4 text-xs">
-            <div className="rounded-lg border border-line bg-surface-raised p-4">
-              <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
-                Verified field submission
-              </div>
-              <div className="mt-2 text-sm font-medium text-ink">
-                {drawer.completion.proof.caption}
-              </div>
-              <dl className="mt-4 grid grid-cols-2 gap-3 border-t border-line pt-3">
-                <div>
-                  <dt className="text-[10px] uppercase text-ink-faint">Ward</dt>
-                  <dd className="mt-0.5 text-ink">
-                    {getWard(drawer.completion.wardId)?.name} (
-                    {getLga(drawer.completion.wardId.split('-')[0])?.name})
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase text-ink-faint">Submitted by</dt>
-                  <dd className="mt-0.5 text-ink">{drawer.completion.byPersonName}</dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase text-ink-faint">GPS Coordinates</dt>
-                  <dd className="figure mt-0.5 text-reconciled">
-                    {drawer.completion.proof.lat}, {drawer.completion.proof.lng}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[10px] uppercase text-ink-faint">Accuracy</dt>
-                  <dd className="figure mt-0.5 text-ink">
-                    ±{drawer.completion.proof.accuracyMetres} metres
-                  </dd>
-                </div>
-              </dl>
+          <div className="rounded-lg border border-line bg-surface-raised p-4 text-xs">
+            <div className="text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+              Verified field submission
             </div>
+            <div className="mt-2 text-sm font-medium text-ink">
+              {drawer.completion.proof.caption}
+            </div>
+            <dl className="mt-4 grid grid-cols-2 gap-3 border-t border-line pt-3">
+              <div>
+                <dt className="text-[10px] uppercase text-ink-faint">Ward</dt>
+                <dd className="mt-0.5 text-ink">
+                  {getWard(drawer.completion.wardId)?.name} (
+                  {getLga(drawer.completion.wardId.split('-')[0])?.name})
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase text-ink-faint">Submitted by</dt>
+                <dd className="mt-0.5 text-ink">{drawer.completion.byPersonName}</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase text-ink-faint">GPS Coordinates</dt>
+                <dd className="figure mt-0.5 text-reconciled">
+                  {drawer.completion.proof.lat}, {drawer.completion.proof.lng}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase text-ink-faint">Accuracy</dt>
+                <dd className="figure mt-0.5 text-ink">
+                  ±{drawer.completion.proof.accuracyMetres} metres
+                </dd>
+              </div>
+            </dl>
           </div>
         )}
       </DetailDrawer>
