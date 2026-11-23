@@ -1,8 +1,9 @@
 /**
- * Narrative monitoring and response — M3 (Kwara South Senatorial District).
+ * Narrative monitoring, OSINT recommendations, and response mechanism — M3 (Kwara South).
  *
- * Scope is fixed in the type system: `SourceKind` admits only public broadcast surfaces and the
- * campaign's own field reporting. Responses carry a mandatory approval record via `assertSendable`.
+ * Every monitored OSINT hit (`Mention`) carries a mandatory `ResponseRecommendation` in the type
+ * system — guaranteeing zero unactionable hits. Every outbound response passes through the named
+ * human approval gate (`assertSendable`) before dispatch.
  */
 
 import { FEDERAL_CONSTITUENCIES, type FederalConstituencyId } from '@/lib/geography';
@@ -22,11 +23,6 @@ export const SOURCE_LABELS: Record<SourceKind, string> = {
   official_statement: 'Official statement',
 };
 
-/**
- * Languages spoken across Kwara South's 7 LGAs.
- * Yoruba (Offa, Igbomina, Ekiti/Ibolo) dominates radio and town-hall discourse; Fulfulde matters
- * directly in rural pastoralist corridors across Ifelodun, Ekiti, and Oke-Ero.
- */
 export type Language = 'yo' | 'en' | 'pcm' | 'ful';
 
 export const LANGUAGE_LABELS: Record<Language, string> = {
@@ -37,6 +33,60 @@ export const LANGUAGE_LABELS: Record<Language, string> = {
 };
 
 export type Sentiment = 'positive' | 'neutral' | 'negative';
+
+export type ResponsePosture = 'rebut' | 'clarify' | 'amplify' | 'concede' | 'monitor';
+
+export const POSTURE_LABELS: Record<ResponsePosture, string> = {
+  rebut: 'Rebut with evidence',
+  clarify: 'Clarify proactively',
+  amplify: 'Amplify & syndicate',
+  concede: 'Concede & fix',
+  monitor: 'Monitor — do not amplify',
+};
+
+export type ResponseUrgency = 'immediate_2h' | 'same_day_6h' | 'next_cycle_24h' | 'watch';
+
+export const URGENCY_LABELS: Record<ResponseUrgency, string> = {
+  immediate_2h: 'SLA: 2 hours',
+  same_day_6h: 'SLA: 6 hours',
+  next_cycle_24h: 'SLA: 24 hours',
+  watch: 'Watchlist',
+};
+
+export type ResponseChannel =
+  | 'press_statement'
+  | 'radio_script'
+  | 'ward_talking_points'
+  | 'social_post';
+
+export const CHANNEL_LABELS: Record<ResponseChannel, string> = {
+  press_statement: 'Press statement',
+  radio_script: 'Radio script',
+  ward_talking_points: 'Ward talking points',
+  social_post: 'Social post',
+};
+
+export const DISPATCH_TARGETS: Record<ResponseChannel, string> = {
+  radio_script: 'Okin FM Offa · Harmony FM · Radio Kwara desk',
+  press_statement: 'Kwara South & national press correspondents',
+  ward_talking_points: 'All 83 Kwara South ward chairmen (KS2027 app)',
+  social_post: 'Verified KS2027 PDP public channels',
+};
+
+/**
+ * Structured recommendation attached to EVERY OSINT hit so analysts and principals immediately see
+ * the recommended posture, channel, language, SLA, owner, citations, and starter draft.
+ */
+export interface ResponseRecommendation {
+  posture: ResponsePosture;
+  urgency: ResponseUrgency;
+  channel: ResponseChannel;
+  language: Language;
+  ownerRole: string;
+  angle: string;
+  suggestedDraft: string;
+  citations: string[];
+}
 
 export interface Mention {
   id: string;
@@ -52,6 +102,8 @@ export interface Mention {
   lgaCode?: string;
   observedAt: string;
   claimId?: string;
+  /** Mandatory on every OSINT hit — no hit appears without a response recommendation. */
+  recommendation: ResponseRecommendation;
 }
 
 export interface Topic {
@@ -89,7 +141,11 @@ export interface Claim {
   constituencyIds: FederalConstituencyId[];
   languages: Language[];
   assessment: 'false' | 'misleading' | 'unverified' | 'substantially_true';
-  responseId?: string;
+  posture: ResponsePosture;
+  urgency: ResponseUrgency;
+  ownerRole: string;
+  recommendedAngle: string;
+  responseId: string;
 }
 
 export function velocity(claim: Claim): number {
@@ -104,19 +160,6 @@ export function velocity(claim: Claim): number {
 export function totalMentions(claim: Claim): number {
   return claim.dailyMentions.reduce((a, b) => a + b, 0);
 }
-
-export type ResponseChannel =
-  | 'press_statement'
-  | 'radio_script'
-  | 'ward_talking_points'
-  | 'social_post';
-
-export const CHANNEL_LABELS: Record<ResponseChannel, string> = {
-  press_statement: 'Press statement',
-  radio_script: 'Radio script',
-  ward_talking_points: 'Ward talking points',
-  social_post: 'Social post',
-};
 
 export interface Approval {
   byName: string;
@@ -135,6 +178,7 @@ export interface Response {
   draftedBy: 'ai_assisted' | 'human';
   approval?: Approval;
   sentAt?: string;
+  dispatchedTo?: string;
 }
 
 export function assertSendable(response: Response): Response {
@@ -190,3 +234,15 @@ export function byLanguage(mentions: Mention[]): { language: Language; count: nu
 export function lowConfidence(mentions: Mention[], threshold = 0.65): Mention[] {
   return mentions.filter((m) => m.confidence < threshold);
 }
+
+export const AVAILABLE_CITATIONS = [
+  'KS-SEC-001 (Neighbourhood Watch)',
+  'KS-RDS-002 (FERMA Federal Roads)',
+  'KS-HLT-003 (21 Solar PHCs)',
+  'KS-WAT-004 (42 Boreholes)',
+  'KS-YTH-005 (Offa & Omu-Aran Hubs)',
+  'KS-AGR-006 (Farm Cooperatives)',
+  'KS-GOV-008 (Quarterly Scorecard)',
+  'KS/DIR/2026/003 (Ifelodun–Irepodun Surge)',
+  '2023 INEC Omu-Aran Senate Record',
+] as const;

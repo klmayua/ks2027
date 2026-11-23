@@ -196,15 +196,18 @@ export default function WarRoomOverview() {
                 Live OSINT
               </span>
               <span className="figure text-xs text-ink">
-                {osintStats.total} mentions ·{' '}
+                {osintStats.total} hits ·{' '}
                 <span className={osintStats.net >= 0 ? 'text-aligned' : 'text-aggrieved'}>
                   {osintStats.net >= 0 ? '+' : ''}
                   {(osintStats.net * 100).toFixed(0)} net
                 </span>
               </span>
+              <span className="rounded bg-aligned/15 px-1.5 py-0.5 text-[10px] font-semibold text-aligned">
+                100% response recs
+              </span>
               {heldDrafts > 0 && (
                 <span className="rounded bg-passive/15 px-1.5 py-0.5 text-[10px] font-semibold text-passive">
-                  {heldDrafts} draft held at approval gate
+                  {heldDrafts} {heldDrafts === 1 ? 'draft' : 'drafts'} awaiting approval
                 </span>
               )}
             </div>
