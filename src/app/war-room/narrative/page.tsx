@@ -20,6 +20,7 @@ import {
   DISPATCH_TARGETS,
   LANGUAGE_LABELS,
   POSTURE_LABELS,
+  RELEVANCE_TIER_LABELS,
   SOURCE_LABELS,
   URGENCY_LABELS,
   breakdown,
@@ -33,6 +34,7 @@ import {
   type ClaimStatus,
   type Language,
   type Mention,
+  type RelevanceTier,
   type Response,
   type ResponseChannel,
   type ResponsePosture,
@@ -61,6 +63,13 @@ const POSTURE_TONE: Record<ResponsePosture, string> = {
   amplify: 'border-aligned/40 bg-aligned/10 text-aligned',
   concede: 'border-passive/40 bg-passive/10 text-passive',
   monitor: 'border-line-bright bg-surface text-ink-muted',
+};
+
+const RELEVANCE_TONE: Record<RelevanceTier, string> = {
+  critical: 'border-aggrieved/50 bg-aggrieved/15 text-aggrieved',
+  high: 'border-accent/50 bg-accent/15 text-accent',
+  elevated: 'border-passive/50 bg-passive/15 text-passive',
+  watch: 'border-line-bright bg-surface text-ink-muted',
 };
 
 const ASSESSMENT_TONE: Record<Claim['assessment'], string> = {
@@ -131,6 +140,7 @@ interface HitActionState {
 type DrawerState =
   | { kind: 'claim'; claimId: string }
   | { kind: 'hit'; mentionId: string; returnTo?: { title: string; subtitle: string; items: Mention[] } }
+  | { kind: 'topic'; topicId: string }
   | { kind: 'mentions'; title: string; subtitle: string; items: Mention[] }
   | null;
 
@@ -283,6 +293,8 @@ export default function NarrativePage() {
     drawer?.kind === 'claim' ? claims.find((c) => c.id === drawer.claimId) : undefined;
   const activeMention =
     drawer?.kind === 'hit' ? mentions.find((m) => m.id === drawer.mentionId) : undefined;
+  const activeTopic =
+    drawer?.kind === 'topic' ? TOPICS.find((t) => t.id === drawer.topicId) : undefined;
 
   const copyText = (key: string, text: string) => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -688,6 +700,57 @@ export default function NarrativePage() {
           })}
         </div>
 
+        {/* 2025–2026 TOPICAL RELEVANCE MATRIX */}
+        <Panel
+          title="2025–2026 Kwara South Topical Relevance Run"
+          note="Ranked by Electoral Weight × Recency × Swing Sensitivity × Candidate Exposure · tap any issue"
+        >
+          <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+            {[...TOPICS]
+              .sort((a, b) => b.relevance.score - a.relevance.score)
+              .map((t) => {
+                const tHits = filteredMentions.filter((m) => m.topicId === t.id);
+                const tStats = breakdown(tHits);
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => setDrawer({ kind: 'topic', topicId: t.id })}
+                    className="group flex flex-col justify-between rounded-lg border border-line bg-surface-raised/70 p-3.5 text-left transition-all hover:border-accent/55 hover:bg-surface-raised active:scale-[0.99]"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span
+                          className={`figure rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase ${RELEVANCE_TONE[t.relevance.tier]}`}
+                        >
+                          {t.relevance.score}/100 · {t.relevance.tier}
+                        </span>
+                        <span
+                          className={`figure text-[11px] font-semibold ${
+                            tStats.net >= 0 ? 'text-aligned' : 'text-aggrieved'
+                          }`}
+                        >
+                          {tStats.total} hits ({tStats.net >= 0 ? '+' : ''}
+                          {(tStats.net * 100).toFixed(0)})
+                        </span>
+                      </div>
+                      <h3 className="mt-2 text-xs font-semibold text-ink group-hover:text-accent">
+                        {t.label}
+                      </h3>
+                      <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-ink-muted">
+                        {t.relevance.whyItMattersNow}
+                      </p>
+                    </div>
+                    <div className="mt-2.5 flex items-center justify-between border-t border-line pt-2 text-[10px] text-ink-faint">
+                      <span className="truncate">{t.relevance.impactedLgas.slice(0, 3).join(' · ')}</span>
+                      <span className="shrink-0 font-semibold text-accent">Relevance brief ›</span>
+                    </div>
+                  </button>
+                );
+              })}
+          </div>
+        </Panel>
+
         {/* ABOVE-THE-FOLD VISUAL DASHBOARD */}
         <div className="grid gap-4 lg:grid-cols-5">
           <Panel
@@ -836,8 +899,8 @@ export default function NarrativePage() {
         </div>
 
         <Panel
-          title="Tracked claims — response playbooks & approval gate"
-          note="All 5 claims carry recommended responses · tap any card to edit, sign off & dispatch"
+          title="Tracked claims — topical relevance, playbooks & approval gate"
+          note={`All ${claims.length} verified-context claims carry topical relevance scores & recommended responses`}
         >
           <div className="grid gap-3 lg:grid-cols-2">
             {rising.map((claim) => {
@@ -853,6 +916,11 @@ export default function NarrativePage() {
                   <div>
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex flex-wrap items-center gap-1.5">
+                        <span
+                          className={`figure rounded-sm border px-1.5 py-px text-[9px] font-bold uppercase ${RELEVANCE_TONE[claim.relevanceTier]}`}
+                        >
+                          Rel {claim.relevanceScore}/100
+                        </span>
                         <span
                           className={`rounded-sm border px-1.5 py-px text-[9px] font-medium uppercase tracking-[0.1em] ${STATUS_TONE[claim.status]}`}
                         >
@@ -974,16 +1042,23 @@ export default function NarrativePage() {
                       <span className="text-ink-faint">
                         {m.sourceName} · {SOURCE_LABELS[m.sourceKind]} · {m.language.toUpperCase()}
                       </span>
-                      <span
-                        className={`figure font-semibold ${
-                          m.sentiment === 'positive'
-                            ? 'text-aligned'
-                            : m.sentiment === 'negative'
-                              ? 'text-aggrieved'
-                              : 'text-ink-muted'
-                        }`}
-                      >
-                        {m.sentiment} · {Math.round(m.confidence * 100)}%
+                      <span className="flex items-center gap-1.5">
+                        <span
+                          className={`figure rounded border px-1 py-px text-[9px] font-bold ${RELEVANCE_TONE[m.relevanceTier]}`}
+                        >
+                          Rel {m.relevanceScore}
+                        </span>
+                        <span
+                          className={`figure font-semibold ${
+                            m.sentiment === 'positive'
+                              ? 'text-aligned'
+                              : m.sentiment === 'negative'
+                                ? 'text-aggrieved'
+                                : 'text-ink-muted'
+                          }`}
+                        >
+                          {m.sentiment} · {Math.round(m.confidence * 100)}%
+                        </span>
                       </span>
                     </div>
 
@@ -1093,27 +1168,89 @@ export default function NarrativePage() {
             ? `Claim Response Mechanism · ${activeClaim?.firstSeenSource ?? ''}`
             : drawer?.kind === 'hit'
               ? `OSINT Hit Response Mechanism · ${activeMention?.sourceName ?? ''}`
-              : 'OSINT Hits & Recommendations'
+              : drawer?.kind === 'topic' && activeTopic
+                ? `Topical Relevance Brief · ${RELEVANCE_TIER_LABELS[activeTopic.relevance.tier]}`
+                : 'OSINT Hits & Recommendations'
         }
         title={
           drawer?.kind === 'claim'
             ? activeClaim?.statement ?? ''
             : drawer?.kind === 'hit'
               ? activeMention?.excerpt ?? ''
-              : drawer?.kind === 'mentions'
-                ? drawer.title
-                : ''
+              : drawer?.kind === 'topic'
+                ? activeTopic?.label ?? ''
+                : drawer?.kind === 'mentions'
+                  ? drawer.title
+                  : ''
         }
         subtitle={
           drawer?.kind === 'claim' && activeClaim
-            ? `${CLAIM_STATUS_LABELS[activeClaim.status]} · ${ASSESSMENT_LABELS[activeClaim.assessment]} · ${totalMentions(activeClaim)} mentions`
+            ? `Rel ${activeClaim.relevanceScore}/100 · ${CLAIM_STATUS_LABELS[activeClaim.status]} · ${ASSESSMENT_LABELS[activeClaim.assessment]} · ${totalMentions(activeClaim)} mentions`
             : drawer?.kind === 'hit' && activeMention
-              ? `${SOURCE_LABELS[activeMention.sourceKind]} · ${LANGUAGE_LABELS[activeMention.language]} · ${activeMention.sentiment} (${Math.round(activeMention.confidence * 100)}% conf.)`
-              : drawer?.kind === 'mentions'
-                ? drawer.subtitle
-                : undefined
+              ? `Rel ${activeMention.relevanceScore}/100 · ${SOURCE_LABELS[activeMention.sourceKind]} · ${LANGUAGE_LABELS[activeMention.language]} · ${activeMention.sentiment}`
+              : drawer?.kind === 'topic' && activeTopic
+                ? `Relevance Score: ${activeTopic.relevance.score}/100 · Impacted: ${activeTopic.relevance.impactedLgas.join(', ')}`
+                : drawer?.kind === 'mentions'
+                  ? drawer.subtitle
+                  : undefined
         }
       >
+        {drawer?.kind === 'topic' && activeTopic && (
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-2.5">
+              {(
+                [
+                  ['Electoral Weight', activeTopic.relevance.electoralWeight],
+                  ['Recency & Velocity', activeTopic.relevance.recencyMomentum],
+                  ['Swing Sensitivity', activeTopic.relevance.swingSensitivity],
+                  ['Candidate Exposure', activeTopic.relevance.candidateExposure],
+                ] as const
+              ).map(([label, score]) => (
+                <div key={label} className="rounded-md border border-line bg-surface-raised p-3">
+                  <div className="flex justify-between text-[10px] uppercase text-ink-faint">
+                    <span>{label}</span>
+                    <span className="figure font-bold text-accent">{score}/100</span>
+                  </div>
+                  <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-ground">
+                    <div className="h-full rounded-full bg-accent" style={{ width: `${score}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-md border border-accent/35 bg-accent/[0.06] p-3.5 text-xs">
+              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-accent">
+                Why This Issue Matters Right Now (2025–2027 Cycle)
+              </div>
+              <p className="mt-1.5 leading-relaxed text-ink">{activeTopic.relevance.whyItMattersNow}</p>
+            </div>
+
+            <div className="rounded-md border border-line bg-ground/70 p-3.5 text-xs">
+              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-faint">
+                Verified 2025–2026 Kwara South Real-World Anchor
+              </div>
+              <p className="mt-1.5 leading-relaxed text-ink-muted">
+                {activeTopic.relevance.verifiedContext}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                const topicHits = filteredMentions.filter((m) => m.topicId === activeTopic.id);
+                setDrawer({
+                  kind: 'mentions',
+                  title: `${activeTopic.label} (${topicHits.length} hits)`,
+                  subtitle: 'Every hit carries a recommended response playbook — tap any to respond',
+                  items: topicHits,
+                });
+              }}
+              className="w-full rounded-md bg-accent px-4 py-2.5 text-xs font-semibold text-ground hover:opacity-90"
+            >
+              Inspect All {filteredMentions.filter((m) => m.topicId === activeTopic.id).length} Hits &amp; Open Response Mechanism →
+            </button>
+          </div>
+        )}
         {drawer?.kind === 'claim' && activeClaim && (
           <div className="space-y-5">
             <div className="rounded-lg border border-line bg-surface-raised p-3.5">

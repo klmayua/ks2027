@@ -37,9 +37,12 @@ import {
 } from '@/lib/geography/results-2023';
 import { RISK_LABELS, type WardControl } from '@/lib/party/structure';
 import { seedRoster, seedStakeholders } from '@/lib/simulation/seed';
-import { seedClaims, seedMentions, seedResponses } from '@/lib/simulation/seed-narrative';
+import { TOPICS, seedClaims, seedMentions, seedResponses } from '@/lib/simulation/seed-narrative';
 import { breakdown, isSendable, velocity } from '@/lib/narrative/osint';
+import { GROUND_GAME_MATRIX } from '@/lib/intelligence/dossier';
 import { analyse } from '@/lib/war-room/analysis';
+import { DIGITAL_PRESETS, simulateDigitalWave } from '@/lib/war-room/digital-wave';
+import { PREDICTION_PRESETS, runPrediction } from '@/lib/war-room/predictive';
 
 const pct = (n: number, dp = 0) => `${(n * 100).toFixed(dp)}%`;
 
@@ -65,6 +68,26 @@ export default function WarRoomOverview() {
   const heldDrafts = useMemo(
     () => osintResponses.filter((r) => !isSendable(r)).length,
     [osintResponses]
+  );
+  const topRelevanceTopic = useMemo(
+    () => [...TOPICS].sort((x, y) => y.relevance.score - x.relevance.score)[0],
+    []
+  );
+  const statusQuoForecast = useMemo(
+    () => runPrediction(PREDICTION_PRESETS.status_quo.inputs),
+    []
+  );
+  const fullWaveForecast = useMemo(
+    () => runPrediction(PREDICTION_PRESETS.full_execution.inputs),
+    []
+  );
+  const fullDigitalSim = useMemo(
+    () => simulateDigitalWave(DIGITAL_PRESETS.full_wave.inputs),
+    []
+  );
+  const popoolaGroundLeads = useMemo(
+    () => GROUND_GAME_MATRIX.filter((d) => d.leader === 'popoola').length,
+    []
   );
 
   const [drawer, setDrawer] = useState<DrawerState>(null);
@@ -184,46 +207,148 @@ export default function WarRoomOverview() {
           />
         </div>
 
-        {/* Live OSINT Command Banner — front and center intelligence entry */}
-        <Link
-          href="/war-room/narrative"
-          className="group flex flex-col justify-between gap-3 rounded-lg border border-accent/40 bg-accent/[0.07] p-4 transition-all hover:border-accent hover:bg-accent/[0.12] sm:flex-row sm:items-center"
-        >
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-accent">
-                <span className="size-1.5 animate-pulse rounded-full bg-accent" />
-                Live OSINT
-              </span>
-              <span className="figure text-xs text-ink">
-                {osintStats.total} hits ·{' '}
-                <span className={osintStats.net >= 0 ? 'text-aligned' : 'text-aggrieved'}>
-                  {osintStats.net >= 0 ? '+' : ''}
-                  {(osintStats.net * 100).toFixed(0)} net
+        {/* 4 DISTINCT DEEP-DIVE STRATEGIC ENGINE CARDS */}
+        <div className="grid gap-3 md:grid-cols-2">
+          {/* 1. Predictive Engine Card */}
+          <Link
+            href="/war-room/predict"
+            className="group flex flex-col justify-between rounded-lg border border-accent/45 bg-accent/[0.06] p-4 transition-all hover:border-accent hover:bg-accent/[0.11]"
+          >
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="rounded bg-accent/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-accent">
+                  Predictive Engine · Situation → Action
                 </span>
-              </span>
-              <span className="rounded bg-aligned/15 px-1.5 py-0.5 text-[10px] font-semibold text-aligned">
-                100% response recs
-              </span>
-              {heldDrafts > 0 && (
-                <span className="rounded bg-passive/15 px-1.5 py-0.5 text-[10px] font-semibold text-passive">
-                  {heldDrafts} {heldDrafts === 1 ? 'draft' : 'drafts'} awaiting approval
+                <span className="figure rounded bg-aligned/15 px-2 py-0.5 text-[10px] font-bold text-aligned">
+                  {fullWaveForecast.winProbabilityPct}% Win w/ Full Execution
                 </span>
+              </div>
+              <div className="mt-2.5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <div>
+                  <span className="text-[10px] uppercase text-ink-faint">Do Nothing: </span>
+                  <span className="figure text-sm font-bold text-aggrieved">
+                    {statusQuoForecast.marginPdpVsApc.toLocaleString()} ({statusQuoForecast.winProbabilityPct}%)
+                  </span>
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase text-ink-faint">Full + Digital: </span>
+                  <span className="figure text-sm font-bold text-aligned">
+                    +{fullWaveForecast.marginPdpVsApc.toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              <p className="mt-1.5 line-clamp-2 text-xs text-ink-muted">
+                <strong className="text-ink">#1 Mandatory Action:</strong>{' '}
+                {statusQuoForecast.mandatoryActions[0]?.title} (+
+                {statusQuoForecast.mandatoryActions[0]?.marginalVoteYield.toLocaleString()} votes).
+              </p>
+            </div>
+            <div className="mt-3 flex items-center justify-between border-t border-line/70 pt-2 text-xs font-semibold text-accent">
+              <span>Inspect Situation, Forecast &amp; Playbook</span>
+              <span className="transition-transform group-hover:translate-x-0.5">Open Predictive Engine →</span>
+            </div>
+          </Link>
+
+          {/* 2. Digital Wave Simulator Card */}
+          <Link
+            href="/war-room/digital"
+            className="group flex flex-col justify-between rounded-lg border border-aligned/40 bg-surface p-4 transition-all hover:border-aligned hover:bg-surface-raised"
+          >
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="rounded bg-aligned/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-aligned">
+                  Digital Wave Sim · Aug 2026 Mechanics
+                </span>
+                <span className="figure rounded bg-accent/15 px-2 py-0.5 text-[10px] font-bold text-accent">
+                  +{fullDigitalSim.liftOverAnalogBaseline.toLocaleString()} vs Analog
+                </span>
+              </div>
+              <div className="mt-2.5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <span className="figure text-lg font-bold text-aligned">
+                  +{fullDigitalSim.totalNetDigitalSwing.toLocaleString()} net votes
+                </span>
+                <span className="figure text-xs text-ink-muted">
+                  {fullDigitalSim.coveredPollingUnits}/907 PUs un-riggable · {fullDigitalSim.inputs.incidentResponseMinutes}-min SLA
+                </span>
+              </div>
+              <p className="mt-1.5 line-clamp-2 text-xs text-ink-muted">
+                Translates the 4 proven August 2026 digital mechanisms (PU capture, 4-language narrative velocity, tracked youth/diaspora turnout, live incident triage) onto Kwara South.
+              </p>
+            </div>
+            <div className="mt-3 flex items-center justify-between border-t border-line pt-2 text-xs font-semibold text-aligned">
+              <span>Compare With Digital vs. Without Digital</span>
+              <span className="transition-transform group-hover:translate-x-0.5">Open Digital Wave Sim →</span>
+            </div>
+          </Link>
+
+          {/* 3. OSINT & Topical Relevance Card */}
+          <Link
+            href="/war-room/narrative"
+            className="group flex flex-col justify-between rounded-lg border border-line-bright bg-surface p-4 transition-all hover:border-accent hover:bg-surface-raised"
+          >
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded bg-accent/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-accent">
+                  <span className="size-1.5 animate-pulse rounded-full bg-accent" />
+                  OSINT &amp; Topical Relevance
+                </span>
+                <span className="figure rounded bg-aggrieved/15 px-2 py-0.5 text-[10px] font-bold text-aggrieved">
+                  Top Rel: {topRelevanceTopic?.relevance.score}/100
+                </span>
+              </div>
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span className="figure font-semibold text-ink">{osintStats.total} hits</span>
+                <span className="rounded bg-aligned/15 px-1.5 py-0.5 text-[10px] font-semibold text-aligned">
+                  100% response recs
+                </span>
+                {heldDrafts > 0 && (
+                  <span className="rounded bg-passive/15 px-1.5 py-0.5 text-[10px] font-semibold text-passive">
+                    {heldDrafts} awaiting sign-off
+                  </span>
+                )}
+              </div>
+              {topClaim && (
+                <p className="mt-1.5 line-clamp-2 text-xs text-ink-muted">
+                  <strong className="text-aggrieved">×{velocity(topClaim).toFixed(1)} alert:</strong>{' '}
+                  {topClaim.statement}
+                </p>
               )}
             </div>
-            {topClaim && (
-              <p className="mt-1.5 line-clamp-1 text-xs text-ink-muted sm:text-sm">
-                <strong className="text-aggrieved">
-                  ×{velocity(topClaim).toFixed(1)} rumour alert:
-                </strong>{' '}
-                {topClaim.statement}
+            <div className="mt-3 flex items-center justify-between border-t border-line pt-2 text-xs font-semibold text-accent">
+              <span>2025–2026 Topical Run + Response Mechanism</span>
+              <span className="transition-transform group-hover:translate-x-0.5">Open OSINT Command →</span>
+            </div>
+          </Link>
+
+          {/* 4. Candidate & Rivals Deep-Dive Dossier Card */}
+          <Link
+            href="/war-room/dossier"
+            className="group flex flex-col justify-between rounded-lg border border-line-bright bg-surface p-4 transition-all hover:border-accent hover:bg-surface-raised"
+          >
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="rounded bg-surface-raised px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-ink">
+                  Candidate Dossier · PDP Legacy Ground Game
+                </span>
+                <span className="figure rounded bg-aligned/15 px-2 py-0.5 text-[10px] font-bold text-aligned">
+                  15-Yr PDP Legacy (2004–2019)
+                </span>
+              </div>
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span className="font-semibold text-aligned">Popoola leads {popoolaGroundLeads}/8</span>
+                <span className="text-ink-faint">·</span>
+                <span className="text-ink-muted">vs. Adewoye (APC) &amp; Oyedepo (ADC)</span>
+              </div>
+              <p className="mt-1.5 line-clamp-2 text-xs text-ink-muted">
+                Verified career dossiers, May 2026 Ashiru primary fracture, 2018 Offa/Saraki inoculation, and side-by-side ground-game audit across all 7 LGAs.
               </p>
-            )}
-          </div>
-          <span className="shrink-0 text-xs font-semibold text-accent transition-transform group-hover:translate-x-0.5">
-            Open OSINT Command →
-          </span>
-        </Link>
+            </div>
+            <div className="mt-3 flex items-center justify-between border-t border-line pt-2 text-xs font-semibold text-accent">
+              <span>Side-by-Side Ground-Game Comparison</span>
+              <span className="transition-transform group-hover:translate-x-0.5">Open Deep Dossier →</span>
+            </div>
+          </Link>
+        </div>
 
         {/* Quick LGA Drill-Down Strip — thumb-friendly on mobile */}
         <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">

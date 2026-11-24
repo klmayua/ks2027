@@ -10,17 +10,25 @@ export interface NavSection {
 
 export const WAR_ROOM_SECTIONS: NavSection[] = [
   {
+    group: 'Decision Engine',
+    items: [
+      { href: '/war-room', label: 'Overview', badge: 'HUB' },
+      { href: '/war-room/predict', label: 'Predictive Engine', badge: 'CORE', highlight: true },
+      { href: '/war-room/digital', label: 'Digital Wave Sim', badge: '907 PU', highlight: true },
+    ],
+  },
+  {
     group: 'Intelligence',
     items: [
-      { href: '/war-room', label: 'Overview', badge: 'M1' },
-      { href: '/war-room/narrative', label: 'OSINT & Narrative', badge: 'LIVE', highlight: true },
+      { href: '/war-room/narrative', label: 'OSINT & Topical', badge: 'LIVE', highlight: true },
+      { href: '/war-room/dossier', label: 'Candidate Dossier', badge: 'DEEP' },
     ],
   },
   {
     group: 'Structure',
     items: [
-      { href: '/war-room/structure', label: 'Power map', badge: 'M1' },
-      { href: '/war-room/reconciliation', label: 'Reconciliation', badge: 'M1' },
+      { href: '/war-room/structure', label: 'Power map', badge: '83 W' },
+      { href: '/war-room/reconciliation', label: 'Reconciliation', badge: 'PDP+SDP' },
     ],
   },
   {
@@ -28,23 +36,25 @@ export const WAR_ROOM_SECTIONS: NavSection[] = [
     items: [
       { href: '/war-room/comms', label: 'Directives', badge: 'M2' },
       { href: '/war-room/election-day', label: 'Election day', badge: 'M4' },
-      { href: '/field', label: 'Ward officer view', badge: 'M2' },
+      { href: '/field', label: 'Ward officer view', badge: 'FIELD' },
     ],
   },
   {
     group: 'Public',
     items: [
       { href: '/ledger', label: 'Public ledger', badge: 'M5' },
-      { href: '/ledger/results', label: 'Public results', badge: 'M5' },
+      { href: '/ledger/results', label: 'Public results', badge: 'IReV' },
     ],
   },
 ];
 
 const MOBILE_RAIL: { href: string; label: string }[] = [
-  { href: '/war-room/narrative', label: 'OSINT' },
+  { href: '/war-room/structure', label: 'Power Map' },
+  { href: '/war-room/reconciliation', label: 'Reconcile' },
+  { href: '/war-room/election-day', label: 'Poll Day' },
   { href: '/war-room/comms', label: 'Directives' },
   { href: '/field', label: 'Field View' },
-  { href: '/ledger', label: 'Public Ledger' },
+  { href: '/ledger', label: 'Ledger' },
   { href: '/ledger/results', label: 'Results' },
 ];
 

@@ -1,9 +1,11 @@
 /**
- * Narrative monitoring, OSINT recommendations, and response mechanism — M3 (Kwara South).
+ * Narrative monitoring, OSINT topical relevance, recommendations, and response mechanism — M3 (Kwara South).
  *
- * Every monitored OSINT hit (`Mention`) carries a mandatory `ResponseRecommendation` in the type
- * system — guaranteeing zero unactionable hits. Every outbound response passes through the named
- * human approval gate (`assertSendable`) before dispatch.
+ * Every monitored topic, tracked claim, and individual OSINT hit (`Mention`) carries:
+ *   1. An explicit `TopicalRelevance` score (0–100) grounded in electoral weight, 72h velocity,
+ *      swing sensitivity, and direct candidate exposure for the 2025–2027 Kwara South cycle.
+ *   2. A mandatory `ResponseRecommendation` — guaranteeing zero unactionable hits.
+ *   3. Named human approval gate (`assertSendable`) before outbound dispatch.
  */
 
 import { FEDERAL_CONSTITUENCIES, type FederalConstituencyId } from '@/lib/geography';
@@ -33,6 +35,35 @@ export const LANGUAGE_LABELS: Record<Language, string> = {
 };
 
 export type Sentiment = 'positive' | 'neutral' | 'negative';
+
+export type RelevanceTier = 'critical' | 'high' | 'elevated' | 'watch';
+
+export const RELEVANCE_TIER_LABELS: Record<RelevanceTier, string> = {
+  critical: 'Critical Relevance',
+  high: 'High Relevance',
+  elevated: 'Elevated',
+  watch: 'Watch',
+};
+
+export interface TopicalRelevance {
+  /** Composite topical relevance score for the 2027 Kwara South Senate cycle (0–100). */
+  score: number;
+  tier: RelevanceTier;
+  /** Share of district electorate affected (0–100). */
+  electoralWeight: number;
+  /** Recency & 72h acceleration weight (0–100). */
+  recencyMomentum: number;
+  /** Impact on swing / SDP / ADC / undecided voters (0–100). */
+  swingSensitivity: number;
+  /** Direct exposure to Popoola vs. Adewoye vs. Oyedepo (0–100). */
+  candidateExposure: number;
+  /** Crisp 1-sentence reason why this topic matters right now. */
+  whyItMattersNow: string;
+  /** Verified 2025–2026 real-world event or press anchor. */
+  verifiedContext: string;
+  /** Primary target LGAs impacted. */
+  impactedLgas: string[];
+}
 
 export type ResponsePosture = 'rebut' | 'clarify' | 'amplify' | 'concede' | 'monitor';
 
@@ -67,10 +98,10 @@ export const CHANNEL_LABELS: Record<ResponseChannel, string> = {
 };
 
 export const DISPATCH_TARGETS: Record<ResponseChannel, string> = {
-  radio_script: 'Okin FM Offa · Harmony FM · Radio Kwara desk',
-  press_statement: 'Kwara South & national press correspondents',
-  ward_talking_points: 'All 83 Kwara South ward chairmen (KS2027 app)',
-  social_post: 'Verified KS2027 PDP public channels',
+  radio_script: 'Okin FM Offa · Harmony FM · Radio Kwara · Sobi FM desk',
+  press_statement: 'Kwara South & national press correspondents (NUJ Ilorin)',
+  ward_talking_points: 'All 83 Kwara South ward chairmen & liaison desks (KS2027 app)',
+  social_post: 'Verified KS2027 PDP WhatsApp / TikTok / Facebook / X broadcast nodes',
 };
 
 /**
@@ -102,6 +133,10 @@ export interface Mention {
   lgaCode?: string;
   observedAt: string;
   claimId?: string;
+  /** Topical relevance score (0–100) inherited & adjusted per hit. */
+  relevanceScore: number;
+  relevanceTier: RelevanceTier;
+  whyRelevant: string;
   /** Mandatory on every OSINT hit — no hit appears without a response recommendation. */
   recommendation: ResponseRecommendation;
 }
@@ -110,6 +145,7 @@ export interface Topic {
   id: string;
   label: string;
   origin: 'campaign' | 'opponent' | 'organic';
+  relevance: TopicalRelevance;
 }
 
 export type ClaimStatus =
@@ -134,6 +170,7 @@ export const CLAIM_STATUS_LABELS: Record<ClaimStatus, string> = {
 export interface Claim {
   id: string;
   statement: string;
+  topicId: string;
   status: ClaimStatus;
   firstSeenAt: string;
   firstSeenSource: string;
@@ -141,6 +178,10 @@ export interface Claim {
   constituencyIds: FederalConstituencyId[];
   languages: Language[];
   assessment: 'false' | 'misleading' | 'unverified' | 'substantially_true';
+  relevanceScore: number;
+  relevanceTier: RelevanceTier;
+  whyItMattersNow: string;
+  verifiedAnchor: string;
   posture: ResponsePosture;
   urgency: ResponseUrgency;
   ownerRole: string;
@@ -236,13 +277,13 @@ export function lowConfidence(mentions: Mention[], threshold = 0.65): Mention[] 
 }
 
 export const AVAILABLE_CITATIONS = [
-  'KS-SEC-001 (Neighbourhood Watch)',
-  'KS-RDS-002 (FERMA Federal Roads)',
-  'KS-HLT-003 (21 Solar PHCs)',
-  'KS-WAT-004 (42 Boreholes)',
-  'KS-YTH-005 (Offa & Omu-Aran Hubs)',
-  'KS-AGR-006 (Farm Cooperatives)',
-  'KS-GOV-008 (Quarterly Scorecard)',
-  'KS/DIR/2026/003 (Ifelodun–Irepodun Surge)',
-  '2023 INEC Omu-Aran Senate Record',
+  'KS-SEC-001 (Offa Neighbourhood Watch 2011–2013 Record)',
+  'KS-RDS-002 (Ilorin–Omu-Aran–Kabba & Iloffa–Ekiti FERMA Brief)',
+  'KS-GOV-008 (83 Ward Liaison Officers — NUJ News Keg Pledge)',
+  'KS/DIR/2026/003 (Ifelodun–Irepodun 65% Field Surge)',
+  '2023 INEC Omu-Aran Record (PDP+SDP 59,215 > APC 55,966)',
+  'May 18, 2026 APC Primary Record (Ashiru 3rd-Place Fracture)',
+  'Kwara South Dev. Forum 2026 Rural Displacement Brief',
+  'March 2022 High Court Injunction (Justice Yusuf / Sec. 109)',
+  'Galaxy TV / The Niche Public Reconciliation Transcript',
 ] as const;
