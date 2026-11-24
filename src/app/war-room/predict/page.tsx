@@ -282,6 +282,84 @@ export default function PredictiveEnginePage() {
             })}
           </div>
 
+          {/* =====================================================================
+              ACT 2 (EXECUTIVE-FIRST): WHAT MUST BE DONE NOW (ABOVE THE SLIDERS)
+              ===================================================================== */}
+          <section className="space-y-3 pt-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="rounded bg-aligned/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-aligned">
+                  What MUST Be Done Now
+                </span>
+                <span className="text-xs text-ink-muted">
+                  Auto-ranked by exact marginal vote yield from your active scenario to target
+                </span>
+              </div>
+              <span className="text-xs text-ink-faint">Tap any directive for execution blueprint</span>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-2">
+              {prediction.mandatoryActions.map((act) => (
+                <button
+                  key={act.id}
+                  type="button"
+                  onClick={() => setDrawer({ kind: 'action', action: act })}
+                  className="group flex flex-col justify-between rounded-lg border border-line bg-surface p-4 text-left transition-all hover:border-accent/60 hover:bg-surface-raised active:scale-[0.99]"
+                >
+                  <div>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="figure flex size-6 items-center justify-center rounded-full bg-accent/15 text-xs font-bold text-accent">
+                          #{act.rank}
+                        </span>
+                        <span
+                          className={`rounded border px-2 py-0.5 text-[10px] font-bold uppercase ${URGENCY_BADGE[act.urgency]}`}
+                        >
+                          {act.urgency}
+                        </span>
+                      </div>
+                      <span className="figure rounded bg-aligned/15 px-2 py-0.5 text-xs font-bold text-aligned">
+                        {act.marginalVoteYield > 0
+                          ? `+${act.marginalVoteYield.toLocaleString()} net votes`
+                          : 'Target Locked ✓'}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-2.5 text-sm font-semibold text-ink group-hover:text-accent">
+                      {act.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-ink-muted">{act.whyItMatters}</p>
+                  </div>
+
+                  <div className="mt-3 border-t border-line pt-2.5">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-[11px]">
+                      <span className="text-ink-faint">{act.targetArea}</span>
+                      <span className="font-semibold text-accent">Inspect steps ›</span>
+                    </div>
+                    <div className="mt-1 flex flex-wrap items-center justify-between gap-2 text-[10px] text-ink-faint">
+                      <span>Now: {act.currentStateLabel}</span>
+                      <span>Deadline: {act.deadlineWindow}</span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* =====================================================================
+              ACT 3: STRESS-TEST SIMULATOR (INTERACTIVE LEVERS + 7-LGA SWING)
+              ===================================================================== */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
+            <div className="flex items-center gap-2">
+              <span className="rounded bg-surface-raised px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-ink-muted">
+                Step 3 · Stress-Test Simulator
+              </span>
+              <span className="text-xs text-ink-muted">
+                Tune individual levers to see what happens if any action above slips
+              </span>
+            </div>
+          </div>
+
           {/* Interactive Driver Console + Live Projected Split */}
           <div className="grid gap-4 lg:grid-cols-5">
             <Panel
@@ -556,70 +634,6 @@ export default function PredictiveEnginePage() {
             </Panel>
           </div>
         </div>
-
-        {/* =====================================================================
-            ACT 3: WHAT MUST BE DONE (Auto-Ranked Mandatory Priority Playbook)
-            ===================================================================== */}
-        <section className="space-y-3">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <span className="rounded bg-aligned/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-aligned">
-                Step 3 · What MUST Be Done
-              </span>
-              <span className="text-xs text-ink-muted">
-                Auto-ranked by exact marginal vote yield from your current scenario to target
-              </span>
-            </div>
-            <span className="text-xs text-ink-faint">Tap any directive for execution blueprint</span>
-          </div>
-
-          <div className="grid gap-3 md:grid-cols-2">
-            {prediction.mandatoryActions.map((act) => (
-              <button
-                key={act.id}
-                type="button"
-                onClick={() => setDrawer({ kind: 'action', action: act })}
-                className="group flex flex-col justify-between rounded-lg border border-line bg-surface p-4 text-left transition-all hover:border-accent/60 hover:bg-surface-raised active:scale-[0.99]"
-              >
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="figure flex size-6 items-center justify-center rounded-full bg-accent/15 text-xs font-bold text-accent">
-                        #{act.rank}
-                      </span>
-                      <span
-                        className={`rounded border px-2 py-0.5 text-[10px] font-bold uppercase ${URGENCY_BADGE[act.urgency]}`}
-                      >
-                        {act.urgency}
-                      </span>
-                    </div>
-                    <span className="figure rounded bg-aligned/15 px-2 py-0.5 text-xs font-bold text-aligned">
-                      {act.marginalVoteYield > 0
-                        ? `+${act.marginalVoteYield.toLocaleString()} net votes`
-                        : 'Target Locked ✓'}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-2.5 text-sm font-semibold text-ink group-hover:text-accent">
-                    {act.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-ink-muted">{act.whyItMatters}</p>
-                </div>
-
-                <div className="mt-3 border-t border-line pt-2.5">
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-[11px]">
-                    <span className="text-ink-faint">{act.targetArea}</span>
-                    <span className="font-semibold text-accent">Inspect steps ›</span>
-                  </div>
-                  <div className="mt-1 flex flex-wrap items-center justify-between gap-2 text-[10px] text-ink-faint">
-                    <span>Now: {act.currentStateLabel}</span>
-                    <span>Deadline: {act.deadlineWindow}</span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
       </div>
 
       {/* Deep-Dive Drawer */}

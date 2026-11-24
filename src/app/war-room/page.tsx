@@ -17,6 +17,7 @@ import {
 import { DetailDrawer } from '@/components/detail-drawer';
 import { LgaDrawerBody, RISK_COLOR, WardDrawerBody } from '@/components/geo-drilldown';
 import { PageHeader, Panel } from '@/components/shell';
+import { UrgentActionBoard } from '@/components/urgent-action-board';
 import { campaignConfig, daysUntil, primaryElection } from '@/config/campaign.config';
 import {
   FEDERAL_CONSTITUENCIES,
@@ -206,6 +207,9 @@ export default function WarRoomOverview() {
             onClick={() => setDrawer({ kind: 'kpi', topic: 'core' })}
           />
         </div>
+
+        {/* UNIFIED REALITIES → ACT NOW COMMAND BOARD (ABOVE THE FOLD) */}
+        <UrgentActionBoard />
 
         {/* 4 DISTINCT DEEP-DIVE STRATEGIC ENGINE CARDS */}
         <div className="grid gap-3 md:grid-cols-2">
